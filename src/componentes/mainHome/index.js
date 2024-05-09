@@ -33,51 +33,72 @@ function MainHome() {
 
   return (
 
-    <section>
+    <section className='sectionHome'>
 
-      <Swiper
+        <div className='mainTexto'>
 
-        slidesPerView={1}
 
-        style={{
+            <h1>Lorem Ipsum</h1>
 
-          "--swiper-pagination-color": "#72c000",
-          "--swiper-navigation-color": "#72c000",
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-        }}
 
-        effect={'fade'}  // Set the effect to 'fade'
-        grabCursor={true}
-        loop={true}  // Maintain loop for continuous fading
 
-        autoplay={{
-          delay: 2000
-        }}
+        </div>
 
-        pagination={{ clickable: true }}
-        navigation
-        className="swiperMaster"
+    
 
-      >
-        {listaFotoHome.map((item) => (
+        <div className='swiperSlide'>
 
-          <SwiperSlide key={item.id}>
+            <Swiper
 
-            <SlideshowLightbox
-              fullScreen={true}
-              showControls={true}
-              modalClose="clickOutside"
-              className="grid grid-cols-3 gap-2 mx-auto"
-            >
+                slidesPerView={1}
 
-              <img className="w-full rounded standImg" src={item.imagem} />
+                style={{
 
-            </SlideshowLightbox>
+                "--swiper-pagination-color": "#72c000",
+                "--swiper-navigation-color": "#72c000",
 
-          </SwiperSlide>
+                }}
 
-        ))}
-      </Swiper>
+                effect={'fade'}  // Set the effect to 'fade'
+                grabCursor={true}
+                loop={true}  // Maintain loop for continuous fading
+
+                autoplay={{
+                delay: 2000
+                }}
+
+                // pagination={{ clickable: true }}
+                // navigation
+                
+
+                >
+                {listaFotoHome.map((item) => (
+
+                <SwiperSlide key={item.id}>
+
+                    <SlideshowLightbox
+                    fullScreen={true}
+                    showControls={true}
+                    modalClose="clickOutside"
+                    className="swipeImg grid grid-cols-3 gap-2 mx-auto"
+                    >
+
+                    <img className="w-full rounded standImg" src={item.imagem} />
+
+                    </SlideshowLightbox>
+
+                </SwiperSlide>
+
+                ))}
+            </Swiper>
+
+
+
+        </div>
+
+      
 
     </section>
 
