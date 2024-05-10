@@ -52,6 +52,8 @@ function MainHome() {
 
             <Swiper
 
+                className='swiperReal'
+
                 slidesPerView={1}
 
                 style={{
