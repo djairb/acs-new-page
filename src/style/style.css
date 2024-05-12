@@ -26,35 +26,47 @@ section {
 
 }
 
-.sectionHome{
+.sectionTextImg{
 
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 850px;
+    height: 800px;
+
+    background-color: rgb(255, 235, 108);
+
+    
 
 
 }
 
 .mainTexto{
 
+    width: 50%;    
     
-    width: 50%;
-    background-color: aqua;
     height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
     
+}
+
+.mainTexto p{
+
+  width: 80%;
+  text-align: justify;
+  margin: 0 auto;
+  
 }
 
 .swiperSlide{
 
-    width: 50%;
     
-
-    
-    
-    background-color: blueviolet;
-    height: 100%;
+    width: 50%;  
 
     
     
@@ -63,11 +75,68 @@ section {
 
 
 .swipeImg img{
-    width: 100%;
-	height: 850px;
+
+  width: 100%;
+	height: 100%;
 	object-fit: contain;
+  
     
     
+}
+
+.swiperImg{
+  background-color: black;
+  align-items: center;
+
+  
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .sectionTextImg{
+
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    height: auto;
+
+    
+
+
+  }
+
+  
+  .mainTexto{
+
+    width: 100%;    
+    
+    
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-around;
+    
+  }
+
+  .swiperSlide{
+
+    
+    width: 100%;  
+
+    
+    
+  }
+
+  
+  .mainTexto p{
+
+    width: 90%;
+    
+  }
+
+
+
+
 }
 
 

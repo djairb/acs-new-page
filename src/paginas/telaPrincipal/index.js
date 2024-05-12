@@ -15,6 +15,7 @@ function TelaPrincipal() {
 
       <main>
 
+        <MainHome/>
         <MainHome/>       
 
 
