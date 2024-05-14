@@ -16,7 +16,12 @@ function TelaPrincipal() {
       <main>
 
         <MainHome/>
-        <MainHome/>       
+
+        <div className='spaceLine'></div>
+
+        <MainHome/>
+
+        <div className='spaceLine'></div>       
 
 
 

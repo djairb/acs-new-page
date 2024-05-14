@@ -15,20 +15,16 @@ import 'swiper/css/scrollbar';
 import 'lightbox.js-react/dist/index.css';
 import { SlideshowLightbox } from 'lightbox.js-react';
 
-import imagem01 from "../../img/mainHome/01.png";
-import imagem02 from "../../img/mainHome/02.png";
 
+
+
+import { listaFotoHome } from '../../imgBd';
 
 register();
 
 function MainHome() {
 
-  const listaFotoHome = [
 
-    { id: 1, imagem: imagem01 },
-    { id: 2, imagem: imagem02 },
-
-  ];
 
 
   return (
@@ -96,11 +92,13 @@ function MainHome() {
 
 
 
-        </div>
+        </div>       
 
       
 
     </section>
+
+    
 
 
 
