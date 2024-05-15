@@ -1,7 +1,8 @@
 import React from "react";
 
 import '../../style/style.css';
-import MainHome from "../../componentes/mainHome";
+import MainHome from "../../componentes/main_home";
+import Navbar from "../../componentes/nav";
 
 
 
@@ -14,6 +15,8 @@ function TelaPrincipal() {
     <>   
 
       <main>
+
+        <Navbar/>
 
         <MainHome/>
 
