@@ -3,6 +3,7 @@ import React from "react";
 import '../../style/style.css';
 import MainHome from "../../componentes/main_home";
 import Navbar from "../../componentes/nav";
+import Location from "../../componentes/location";
 
 
 
@@ -24,6 +25,10 @@ function TelaPrincipal() {
 
         <MainHome/>
 
+        <div className='spaceLine'></div>
+
+        <Location/>
+        
         <div className='spaceLine'></div>       
 
 

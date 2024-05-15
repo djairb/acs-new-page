@@ -79,7 +79,7 @@ function MainHome() {
                     className="swipeImg grid grid-cols-3 gap-2 mx-auto"
                     >
 
-                    <img className="w-full rounded standImg" src={item.imagem} />
+                        <img className="w-full rounded standImg" src={item.imagem} />
 
                     </SlideshowLightbox>
 
