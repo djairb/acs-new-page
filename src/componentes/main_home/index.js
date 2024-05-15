@@ -22,11 +22,11 @@ import { listaFotoHome } from '../../imgBd';
 
 register();
 
-function MainHome() {
+function MainHome(props) {
 
   return (
 
-    <section className='sectionTextImg'>
+    <section className= {'sectionTextImg' + ' ' + props.reverse}>
 
         <div className='mainTexto'>
 

@@ -98,6 +98,10 @@ section {
   margin: 0 auto;
 }
 
+.reverse{
+  flex-direction: row-reverse;
+}
+
 
 
 header {
@@ -311,6 +315,11 @@ header .nav-btn {
   
   
   
+  }
+
+  .sectionLocation{
+
+    flex-direction: column-reverse;
   }
 
 

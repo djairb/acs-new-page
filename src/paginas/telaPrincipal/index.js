@@ -19,7 +19,13 @@ function TelaPrincipal() {
 
         <Navbar/>
 
-        <MainHome/>
+        <MainHome
+
+        reverse="reverse"
+        
+        
+        
+        />
 
         <div className='spaceLine'></div>
 
@@ -28,7 +34,7 @@ function TelaPrincipal() {
         <div className='spaceLine'></div>
 
         <Location/>
-        
+
         <div className='spaceLine'></div>       
 
 
