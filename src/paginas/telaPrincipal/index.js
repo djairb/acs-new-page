@@ -33,6 +33,8 @@ function TelaPrincipal() {
 
         <div className='spaceLine'></div>
 
+        <h1>Conheça nossa sede</h1>
+
         <Location/>
 
         <div className='spaceLine'></div>       

@@ -5,5 +5,6 @@ export const listaFotoHome = [
 
     { id: 1, imagem: imagem01 },
     { id: 2, imagem: imagem02 },
+    { id: 3, imagem: imagem01 },
 
   ];

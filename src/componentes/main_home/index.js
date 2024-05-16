@@ -62,8 +62,8 @@ function MainHome(props) {
                 delay: 2000
                 }}
 
-                // pagination={{ clickable: true }}
-                // navigation
+                pagination={{ clickable: true }}
+                navigation
                 
 
                 >
