@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { register } from 'swiper/element/bundle';
 
@@ -21,41 +21,23 @@ import { SlideshowLightbox } from 'lightbox.js-react';
 import { listaFotoHome } from '../../imgBd';
 
 register();
-function MainHome() {
-    const strings = ["Inovação", "Desenvolvimento", "Cidadania", "Educação", "Inclusão", "Transformação", "Crescimento", "Progresso", "Cuidado", "Colaboração"];
-    const [index, setIndex] = useState(0);
-    const [text, setText] = useState(strings[0]);
-    const [fade, setFade] = useState(false);
-    const textColor = '#FFBF00';
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setIndex((prevIndex) => (prevIndex + 1) % strings.length);
-            setFade(true); // Ativar o efeito de fade quando a palavra muda
-        }, 2000); // Tempo de exibição de cada palavra em milissegundos
+function MainProject(props) {
 
-        return () => clearInterval(interval);
-    }, []);
+  return (
 
-    useEffect(() => {
-        setText(strings[index]);
-    }, [index]);
+    <section className= {'sectionTextImg' + ' ' + props.reverse}>
 
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setFade(false); // Desativar o efeito de fade depois de 1 segundo
-        }, 2000); // Tempo de duração do efeito de fade
+        <div className='mainTexto'>
 
-        return () => clearTimeout(timeout);
-    }, [text]);
 
-    return (
-        <section className='sectionTextImg'>
-            <div className='mainTexto'>
+            <h1>Lorem Ipsum</h1>
 
-                <h1 className='mainSomos'>Somos Conexão Social para <span style={{ color: textColor }} className={fade ? 'fade-text fontText' : 'fontText'}>{text}</span></h1>
-                
-            </div>         
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
+
+
+
+        </div>    
 
         <div className='swiperSlide'>
 
@@ -122,4 +104,4 @@ function MainHome() {
   );
 }
 
-export default MainHome;
+export default MainProject;

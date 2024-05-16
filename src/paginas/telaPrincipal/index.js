@@ -4,6 +4,7 @@ import '../../style/style.css';
 import MainHome from "../../componentes/main_home";
 import Navbar from "../../componentes/nav";
 import Location from "../../componentes/location";
+import MainProject from "../../componentes/main_project";
 
 
 
@@ -19,7 +20,12 @@ function TelaPrincipal() {
 
         <Navbar/>
 
-        <MainHome
+
+        <MainHome/>
+
+        <div className='spaceLine'></div>
+
+        <MainProject
 
         reverse="reverse"
         
@@ -27,13 +33,11 @@ function TelaPrincipal() {
         
         />
 
-        <div className='spaceLine'></div>
-
-        <MainHome/>
+        
 
         <div className='spaceLine'></div>
 
-        <h1>Conheça nossa sede</h1>
+        <h1>Faça nos uma visita</h1>
 
         <Location/>
 
