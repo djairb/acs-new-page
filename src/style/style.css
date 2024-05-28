@@ -1,17 +1,17 @@
 /* Import the Poppins font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 
 /* Apply the Poppins font family to all elements */
 * {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;  
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
-
+.app,
 header,
 main,
 footer,
@@ -37,7 +37,7 @@ section {
     width: 100%;
     height: 100vh;
 
-    background-color: rgb(255, 235, 108);
+    
 
     
 
@@ -63,6 +63,8 @@ section {
   width: 80%;
   text-align: justify;
   margin: 0 auto;
+  font-weight: 500; /* Negrito */
+  font-size: 20px;
   
 }
 
@@ -183,7 +185,7 @@ header .nav-btn {
   display: flex; /* Alinha os elementos lado a lado */
   justify-content: center;
   align-items: center;
-  height: 800px;
+  height: 100vh;
   
 }
 
@@ -197,6 +199,7 @@ header .nav-btn {
   width: 100%; /* Faz a imagem preencher completamente a largura da div */
   height: 100%; /* Faz a imagem preencher completamente a altura da div */
   object-fit: cover; /* Faz a imagem cobrir toda a div, cortando o excesso se necessário */
+  object-position: top left;
 }
 
 .slideOxe{
@@ -221,6 +224,7 @@ header .nav-btn {
 
 .fontText{
   font-family: 'Pacifico', cursive;
+  letter-spacing: 4px;
 }
 
 @keyframes fade {
@@ -235,18 +239,54 @@ header .nav-btn {
 .mainTexto .mainSomos{
   font-size: 80px;
   margin-left: 10px;
+  letter-spacing: -5px; 
 
   
 }
 
 
+.parceirosSection{
+
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to right, #ffd551, #f08528);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+}
+
+.containerParceiros{
+
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  width: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+  
 
 
 
+}
 
+.parceirosSection .containerParceiros img{
+  width: 90px;
+  
+  transition: transform 0.3s ease-in-out;
+  object-fit: scale-down;
+  
+  
+}
 
+.parceirosSection .containerParceiros img:hover{
 
+  transform: scale(1.3);
 
+}
 
 
 @media only screen and (max-width: 1024px) {
@@ -290,6 +330,15 @@ header .nav-btn {
   .mainTexto p{
 
     width: 90%;
+    
+  }
+
+  .sectionTextImg .mainTexto .mainSomos{
+
+    font-size: 50px;
+    line-height: 70px;
+    letter-spacing: 0px; 
+    
     
   }
 

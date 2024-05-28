@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import {SlideshowLightbox} from 'lightbox.js-react'
+import 'lightbox.js-react/dist/index.css'
 import { register } from 'swiper/element/bundle';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -6,8 +8,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
-import 'lightbox.js-react/dist/index.css';
-import { SlideshowLightbox } from 'lightbox.js-react';
+
 import { listaFotoHome } from '../../imgBd';
 
 register();
@@ -46,7 +47,7 @@ function MainHome() {
     return (
         <section className='sectionTextImg'>
             <div className='mainTexto'>
-                <h1 className='mainSomos'>Somos Conexão Social para <br/> <span style={{ color: '#FFBF00' }} className={fade ? 'fade-text fontText' : 'fontText'}>{text}</span></h1>
+                <h1 className='mainSomos'>Somos Conexão <br/> Social para <br/> <span style={{ color: '#FFBF00' }} className={fade ? 'fade-text fontText' : 'fontText'}>{text}</span></h1>
             </div>
             <div className='swiperSlide'>
                 <Swiper
@@ -59,13 +60,14 @@ function MainHome() {
                     effect='fade'
                     grabCursor={true}
                     loop={true}
-                    autoplay={{ delay: 3000 }}
+                    autoplay={{ delay: 2000 }}
                     pagination={{ clickable: true }}
                     navigation
                 >
                     {listaFotoHome.map((item, index) => (
                         <SwiperSlide key={index}>
                             <SlideshowLightbox
+                                theme="day"
                                 fullScreen={true}
                                 showControls={true}
                                 modalClose="clickOutside"

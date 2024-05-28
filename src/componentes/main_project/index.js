@@ -73,6 +73,7 @@ function MainProject(props) {
                 <SwiperSlide key={item.id}>
 
                     <SlideshowLightbox
+                    theme="day"
                     fullScreen={true}
                     showControls={true}
                     modalClose="clickOutside"
