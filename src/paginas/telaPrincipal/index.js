@@ -23,6 +23,8 @@ function TelaPrincipal() {
 
         <Navbar/>
 
+        <div className='spaceLineNav'></div>
+
 
         <MainHome/>
 
@@ -50,11 +52,23 @@ function TelaPrincipal() {
 
         
 
-        <div className='spaceLine'></div>
+        
 
         <Parceiros/>
 
-        <h1>Faça nos uma visita</h1>
+        <div className="visitaDiv">
+
+          <h1 className="visitaH1">Faça-nos uma visita</h1>
+
+          <p className="visitaP">Centro Tecnológico de Inclusão Digital e Social - Rua Projetada A, sem número, Bairro Salinas - Lagoa de Itaenga/PE <br/> Telefone:
+            (081) - 3653 - 2272 <br/> E-mail: <a
+              href="mailto:administrativo@aconexaosocial.org">administrativo@aconexaosocial.org</a>
+          </p>
+
+
+        </div>
+
+        
 
         <Location/>
 

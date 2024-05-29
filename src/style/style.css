@@ -96,11 +96,16 @@ section {
   
 }
 
-.spaceLine{
-  background-color: rgb(4, 255, 0);
-  width: 90vw;
-  height: 10px;
+.spaceLine, .spaceLineNav{
+  background-image: linear-gradient(to right, #ffd551, #f08528);
+  width: 90%;
+  height: 3px;
   margin: 0 auto;
+}
+
+.spaceLineNav{
+
+  width: 100%;
 }
 
 .reverse{
@@ -248,7 +253,7 @@ header .nav-btn {
 .parceirosSection{
 
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-image: linear-gradient(to right, #ffd551, #f08528);
   display: flex;
   flex-direction: column;
@@ -263,17 +268,18 @@ header .nav-btn {
   display: flex;
   flex-direction: row;
   gap: 50px;
-  width: 80%;
+  width: 100%;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: white;
+  
   
 
 
 
 }
 
-.parceirosSection .containerParceiros img{
+.parceirosSection .containerParceiros img,
+.parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro img{
   width: 90px;
   
   transition: transform 0.3s ease-in-out;
@@ -282,10 +288,72 @@ header .nav-btn {
   
 }
 
-.parceirosSection .containerParceiros img:hover{
+.parceirosSection .containerParceiros img:hover,
+.parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro img:hover{
 
   transform: scale(1.3);
 
+}
+
+.parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro p{
+  font-weight: bold;
+  font-size: large;
+}
+
+.parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro{
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.parceirosSection .parceirosTituloLogo .bbPixParceiro{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+
+
+
+.parceirosTituloLogo{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  width: 85%;
+  border-radius: 30px;
+  padding: 20px 0;
+  margin: 10px 0;
+
+}
+
+.visitaP{
+  font-weight: bold;
+
+}
+
+.visitaP a{
+  color: #f08528;
+
+}
+
+.visitaDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
 }
 
 
@@ -401,6 +469,13 @@ header .nav-btn {
 
     flex-direction: column-reverse;
   }
+
+  .parceirosSection .parceirosTituloLogo .bbPixParceiro{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+
 
 
 
