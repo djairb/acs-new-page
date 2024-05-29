@@ -280,7 +280,7 @@ header .nav-btn {
 
 .parceirosSection .containerParceiros img,
 .parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro img{
-  width: 90px;
+  width: 95px;
   
   transition: transform 0.3s ease-in-out;
   object-fit: scale-down;
@@ -332,7 +332,7 @@ header .nav-btn {
   background-color: white;
   width: 85%;
   border-radius: 30px;
-  padding: 20px 0;
+  padding: 20px 05px;
   margin: 10px 0;
 
 }

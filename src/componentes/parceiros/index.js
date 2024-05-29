@@ -3,8 +3,11 @@ import bb from "../../img/parceiros/voce-tambem/bb.png";
 import pix from "../../img/parceiros/voce-tambem/pix.png";
 
 const importAll = (r) => r.keys().map(r);
-const images = importAll(require.context('../../img/parceiros', false, /\.(png|jpe?g|svg)$/));
-console.log(images)
+
+const quemEsta = importAll(require.context('../../img/parceiros/quem-esta', false, /\.(png|jpe?g|svg)$/));
+
+const quemJaEsteve = importAll(require.context('../../img/parceiros/quem-ja-esteve', false, /\.(png|jpe?g|svg)$/));
+
 
 
 
@@ -19,12 +22,12 @@ function Parceiros(){
 
             <div className="parceirosTituloLogo">
 
-                <h1 className="parceirosTitle">Quem está conosco:</h1>
+                <h1 className="parceirosTitle">Confira nossos parceiros:</h1>
                 
                 <div className="containerParceiros">
                     
 
-                    {images.map((image, index) => (
+                    {quemEsta.map((image, index) => (
 
                         <img key={index} src={image} alt={`Imagem ${index}`} target="_blank" />
 
@@ -37,7 +40,7 @@ function Parceiros(){
                 <div className="containerParceiros">
                     
 
-                    {images.map((image, index) => (
+                    {quemJaEsteve.map((image, index) => (
 
                         <img key={index} src={image} alt={`Imagem ${index}`} target="_blank" />
 
