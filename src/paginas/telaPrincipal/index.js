@@ -34,7 +34,7 @@ function TelaPrincipal() {
         <MainProject
 
           reverse="reverse"
-          projetoValue={0}
+          projetoValue={1}
         
         
         
