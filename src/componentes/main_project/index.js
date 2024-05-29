@@ -19,17 +19,16 @@ import { listaFotoHome } from '../../imgBd';
 
 import {projetosTexto} from '../../data-projects'
 
+let oxe = "../../img/logos-projetos";
+
 //joga todas as imagens da pasta pra cá
 const importAll = (r) => r.keys().map(r);
 
-const logosProjetos = importAll(require.context('../../img/logos-projetos', false, /\.(png|jpe?g|svg)$/));
+const logosProjetos = importAll(require.context("../../img/logos-projetos", false, /\.(png|jpe?g|svg)$/));
 
 register();
 
-//projetosValue pega o index (começando de 0) tanto do array de imagens quanto do array de texto
-
-
-
+//projetosValue pega o index (começando de 0) tanto do array de imagens quanto do array de texto - vai ter q importar geral vey - vai da uma zica da pox
 
 function MainProject(props) {
 
@@ -41,11 +40,7 @@ function MainProject(props) {
    
             <img className='imgLogoProject' src={logosProjetos[props.projetoValue]}/>
 
-            <p>{projetosTexto[props.projetoValue]}</p>
-
-                       
-
-
+            <p>{projetosTexto[props.projetoValue]}</p>                      
 
         </div>    
 
