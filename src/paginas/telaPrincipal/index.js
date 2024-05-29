@@ -6,6 +6,7 @@ import Navbar from "../../componentes/nav";
 import Location from "../../componentes/location";
 import MainProject from "../../componentes/main_project";
 import Parceiros from "../../componentes/parceiros";
+import Footer from "../../componentes/folter";
 
 
 
@@ -72,7 +73,9 @@ function TelaPrincipal() {
 
         <Location/>
 
-        <div className='spaceLine'></div>       
+        <div className='spaceLine'></div>
+
+        <Footer/>       
 
 
 

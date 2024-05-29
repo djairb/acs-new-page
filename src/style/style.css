@@ -356,6 +356,54 @@ header .nav-btn {
   margin: 10px 0;
 }
 
+.container-sociais img {
+  width: 27px;
+
+}
+
+.container-sociais {
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 15px;
+
+
+
+}
+
+footer {
+  /* Altura do elemento. */
+  min-height: 70px;
+  background-image: linear-gradient(to right, #f0aa28, #f08528);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  
+
+
+}
+
+
+.pFooter {
+  font-size: 18px;
+  color: white;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+
+  text-align: center;
+
+
+
+}
+
+
 
 @media only screen and (max-width: 1024px) {
 
@@ -474,6 +522,21 @@ header .nav-btn {
     flex-direction: column;
     gap: 20px;
   }
+
+  .pFooter {
+
+
+    width: 90%
+  }
+
+  footer {
+    /* Altura do elemento. */
+    min-height: 90px;
+        
+  
+  
+  }
+  
 
 
 
