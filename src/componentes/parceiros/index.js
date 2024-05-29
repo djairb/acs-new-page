@@ -9,9 +9,6 @@ const quemEsta = importAll(require.context('../../img/parceiros/quem-esta', fals
 const quemJaEsteve = importAll(require.context('../../img/parceiros/quem-ja-esteve', false, /\.(png|jpe?g|svg)$/));
 
 
-
-
-
 function Parceiros(){       
    
 

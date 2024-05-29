@@ -33,7 +33,9 @@ function TelaPrincipal() {
 
         <MainProject
 
-        reverse="reverse"
+          reverse="reverse"
+          projetoValue={0}
+        
         
         
         
@@ -43,19 +45,13 @@ function TelaPrincipal() {
 
         <div className='spaceLine'></div>
 
-        <MainProject
-
-        reverse=""
-        
-        
-        
-        />
-
+       
         
 
         
 
         <Parceiros/>
+        
 
         <div className="visitaDiv">
 

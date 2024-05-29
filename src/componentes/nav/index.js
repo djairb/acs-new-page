@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 function Navbar(){
     
 
-    //user ta setado como padrão
+    //user ta setado como padrão  - massa
 
     const navigate = useNavigate();
 
@@ -16,8 +16,7 @@ function Navbar(){
 
     const showNavBar = () => {
 
-        navRef.current.classList.toggle("responsive_nav");
-        
+        navRef.current.classList.toggle("responsive_nav");       
     }   
 
     return (
@@ -27,17 +26,8 @@ function Navbar(){
             <Link to="/"><img  src={logo} alt="logo-techFest" /></Link>
              <nav ref={navRef}>
 
-                <Link to="/tela-todos-palestra">Palestras</Link>
-
-                <Link to="/tela-todos-oficina">Oficinas</Link>
-
-                <Link to="/tela-todos-stands">Stands</Link>
-
-                <Link to="/tela-todos-game">Disputas de Games</Link>
-
-                <Link to="/tela-todos-apresentacao">Apresentações Culturais</Link>
-
-                <Link to="/tela-todos-show">Shows</Link>         
+                <Link to="/tela-todos-palestra">Transparência</Link>
+        
         
                 <button className= "nav-btn nav-close-btn" onClick={showNavBar}>
                     <FaTimes/>                
