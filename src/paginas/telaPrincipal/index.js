@@ -9,6 +9,7 @@ import Parceiros from "../../componentes/parceiros";
 import Footer from "../../componentes/folter";
 
 import { mainHomeData } from "../../data-projects";
+import MensagemVisita from "../../componentes/mensagemVisita";
 
 function TelaPrincipal() {  
  
@@ -47,19 +48,10 @@ function TelaPrincipal() {
         ))}  
 
         <Parceiros/>
-        
 
-        <div className="visitaDiv">
+        <MensagemVisita/>
 
-          <h1 className="visitaH1">Vem visitar a gente!</h1>
-
-          <p className="visitaP">Centro Tecnológico de Inclusão Digital e Social - Rua Projetada A, sem número, Bairro Salinas - Lagoa de Itaenga/PE <br/> Telefone:
-            (081) - 3653 - 2272 <br/> E-mail: <a
-              href="mailto:administrativo@aconexaosocial.org">administrativo@aconexaosocial.org</a>
-          </p>
-
-
-        </div>        
+        <div className='spaceLine'></div>       
 
         <Location/>
 
