@@ -77,10 +77,7 @@ function MainProject(props) {
                         </SlideshowLightbox>
                     </SwiperSlide>
                 ))}
-            </Swiper>
-
-
-        
+            </Swiper>      
 
 
 

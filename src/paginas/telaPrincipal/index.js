@@ -37,31 +37,22 @@ function TelaPrincipal() {
 
         {mainHomeData.map((item) => (
 
+          <>
 
-          <MainProject
+            <MainProject
 
             reverse={item.reverse}
             textoProjeto={item.textoProjeto}
             logoProjeto={item.logoProjeto}
             slideProjeto={item.slideProjeto}
 
-          />
+            />
 
-          
-          
+            <div className='spaceLine'></div>     
+                    
+          </>      
 
-          
-        ))}
-
-        
-
-        
-
-
-       
-        
-
-        
+        ))}  
 
         <Parceiros/>
         
@@ -82,7 +73,6 @@ function TelaPrincipal() {
 
         <Location/>
 
-        <div className='spaceLine'></div>
 
         <Footer/>       
 
