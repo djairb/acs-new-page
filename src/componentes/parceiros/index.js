@@ -8,6 +8,46 @@ const quemEsta = importAll(require.context('../../img/parceiros/quem-esta', fals
 
 const quemJaEsteve = importAll(require.context('../../img/parceiros/quem-ja-esteve', false, /\.(png|jpe?g|svg)$/));
 
+const quemEstaLink = [
+
+    "https://www.bb.com.br/site/",
+    "https://nubank.com.br/",
+    "https://www.daycoval.com.br/",
+    "https://jsl.com.br/",
+    "https://www.cantustore.com.br/",
+    "https://www.elecnor.com.br/",
+    "https://www.brasilcap.com.br/",
+    "https://www.copaenergia.com.br/",
+    "",
+    "",
+    "https://itaenga.pe.gov.br/",
+    "https://rems.org.br/",
+    "",
+    "",
+    "",
+    "https://www.edenred.com.br/"
+
+]
+
+const quemJaEsteveLink = [
+
+    "https://www.bayer.com.br/pt/",
+    "https://www.lojas2001.com.br/",
+    "https://www.autobelochevrolet.com.br/",
+    "https://www.facebook.com/p/BS-Sport-Management-Ltda-100065531351370/?_rdr",
+    "https://www.cese.org.br/",
+    "https://www.cedca.pe.gov.br/",
+    "https://www.sas.pe.gov.br/",
+    "https://www.itausocial.org.br/"
+
+
+
+
+
+
+
+]
+
 
 function Parceiros(){       
    
@@ -26,7 +66,15 @@ function Parceiros(){
 
                     {quemEsta.map((image, index) => (
 
+                        
+                    <a href={quemEstaLink[index]} target="_blank">
+
                         <img key={index} src={image} alt={`Imagem ${index}`} target="_blank" />
+                    
+                    
+                    </a>
+
+                        
 
                     ))}
                     
@@ -39,7 +87,14 @@ function Parceiros(){
 
                     {quemJaEsteve.map((image, index) => (
 
-                        <img key={index} src={image} alt={`Imagem ${index}`} target="_blank" />
+                        <a href={quemJaEsteveLink[index]} target="_blank">
+
+                            <img key={index} src={image} alt={`Imagem ${index}`} target="_blank" />
+
+
+                        </a>
+
+                        
 
                     ))}
                     
