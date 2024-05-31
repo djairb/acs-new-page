@@ -8,6 +8,8 @@ import MainProject from "../../componentes/main_project";
 import Parceiros from "../../componentes/parceiros";
 import Footer from "../../componentes/folter";
 
+import { mainHomeData } from "../../data-projects";
+
 
 const importAll = (r) => r.keys().map(r);
 
@@ -33,21 +35,28 @@ function TelaPrincipal() {
 
         <div className='spaceLine'></div>
 
-        <MainProject
+        {mainHomeData.map((item) => (
 
-          reverse="reverse"
-          projetoValue={1}
-          logosProjetos={logosProjetos}
-          slideProject={imgBlue}
-        
-        
-        
-        
-        />
+
+          <MainProject
+
+            reverse={item.reverse}
+            textoProjeto={item.textoProjeto}
+            logoProjeto={item.logoProjeto}
+            slideProjeto={item.slideProjeto}
+
+          />
+
+          
+          
+
+          
+        ))}
 
         
 
-        <div className='spaceLine'></div>
+        
+
 
        
         

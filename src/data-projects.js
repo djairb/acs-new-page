@@ -10,3 +10,40 @@ export const projetosTexto = [
 
 
 ];
+
+const importAll = (r) => r.keys().map(r);
+
+const logosProjetos = importAll(require.context("../src/img/logos-projetos", false, /\.(png|jpe?g|svg)$/));
+
+const red = importAll(require.context("../src/img/mainHome/red", false, /\.(png|jpe?g|svg)$/));
+
+const blue = importAll(require.context("../src/img/mainHome/blue", false, /\.(png|jpe?g|svg)$/));
+
+
+
+export const mainHomeData = [
+
+    {
+        id: 0,
+        reverse:"reverse",
+        logoProjeto: logosProjetos[0],
+        textoProjeto: 'A iniciativa promove a inclusão das pessoas idosas no meio digital e social. Segundo o “Pew Research Center”, em 2021, de aproximadamente 29 milhões de brasileiros idosos, apenas 5 milhões estavam conectados, ou seja, 80% dos idosos brasileiros não aproveitam os benefícios da tecnologia. Diante disso, o projeto surgiu para estimular o envelhecimento ativo e saudável dos participantes e, assim, fortalecer os seus vínculos comunitários. Um conjunto de atividades são oferecidas pela a ACS, inclusive atividades físicas como a hidroginástica, que tem por finalidade alcançar habilidades que resultem em um melhor desempenho dos idosos em suas atividades cotidianas.',
+        slideProjeto: red,
+
+        
+      },
+
+      {
+        id: 1,
+        reverse:"",
+        logoProjeto: logosProjetos[1],
+        textoProjeto: 'Outro pai, so vamo',
+        slideProjeto: blue,
+
+        
+      },
+
+
+
+
+];

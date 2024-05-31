@@ -15,15 +15,6 @@ import 'swiper/css/scrollbar';
 import 'lightbox.js-react/dist/index.css';
 import { SlideshowLightbox } from 'lightbox.js-react';
 
-
-import {projetosTexto} from '../../data-projects'
-
-
-//joga todas as imagens da pasta pra cá
-
-
-
-
 register();
 
 //projetosValue pega o index (começando de 0) tanto do array de imagens quanto do array de texto - vai ter q importar geral vey - vai da uma zica da pox
@@ -38,16 +29,14 @@ function MainProject(props) {
 
         <div className='mainTexto'>
    
-            <img className='imgLogoProject' src={props.logosProjetos[props.projetoValue]}/>
+            <img className='imgLogoProject' src={props.logoProjeto}/>
 
-            <p>{projetosTexto[props.projetoValue]}</p> 
+            <p>{props.textoProjeto}</p> 
                                  
 
         </div>    
 
-        <div className='swiperSlide'>
-
-            
+        <div className='swiperSlide'>         
 
             <Swiper
 
@@ -75,7 +64,7 @@ function MainProject(props) {
 
                 >
                 
-                {props.slideProject.map((item, index) => (
+                {props.slideProjeto.map((item, index) => (
                     <SwiperSlide key={index}>
                         <SlideshowLightbox
                             theme="day"
