@@ -15,15 +15,12 @@ import 'swiper/css/scrollbar';
 import 'lightbox.js-react/dist/index.css';
 import { SlideshowLightbox } from 'lightbox.js-react';
 
-import { listaFotoHome } from '../../imgBd';
 
 import {projetosTexto} from '../../data-projects'
 
 
 //joga todas as imagens da pasta pra cá
-const importAll = (r) => r.keys().map(r);
 
-const logosProjetos = importAll(require.context("../../img/logos-projetos", false, /\.(png|jpe?g|svg)$/));
 
 
 
@@ -44,10 +41,6 @@ function MainProject(props) {
             <img className='imgLogoProject' src={props.logosProjetos[props.projetoValue]}/>
 
             <p>{projetosTexto[props.projetoValue]}</p> 
-
-            {console.log("aq")}
-            {console.log(props.slideProject)}
-
                                  
 
         </div>    
@@ -83,18 +76,18 @@ function MainProject(props) {
                 >
                 
                 {props.slideProject.map((item, index) => (
-                        <SwiperSlide key={index}>
-                            <SlideshowLightbox
-                                theme="day"
-                                fullScreen={true}
-                                showControls={true}
-                                modalClose="clickOutside"
-                                className="swipeImg grid grid-cols-3 gap-2 mx-auto"
-                            >
-                                <img className="w-full rounded standImg" src={item} />
-                            </SlideshowLightbox>
-                        </SwiperSlide>
-                    ))}
+                    <SwiperSlide key={index}>
+                        <SlideshowLightbox
+                            theme="day"
+                            fullScreen={true}
+                            showControls={true}
+                            modalClose="clickOutside"
+                            className="swipeImg grid grid-cols-3 gap-2 mx-auto"
+                        >
+                            <img className="w-full rounded standImg" src={item} />
+                        </SlideshowLightbox>
+                    </SwiperSlide>
+                ))}
             </Swiper>
 
 

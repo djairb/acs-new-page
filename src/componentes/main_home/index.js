@@ -9,7 +9,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
-import { listaFotoHome } from '../../imgBd';
+
+const importAll = (r) => r.keys().map(r);
+
+const mainHome = importAll(require.context("../../img/mainHome/main_home", false, /\.(png|jpe?g|svg)$/));
 
 register();
 
@@ -18,7 +21,7 @@ function MainHome() {
     const [index, setIndex] = useState(0);
     const [text, setText] = useState(strings[0]);
     const [fade, setFade] = useState(false);
-    const [imageIndex, setImageIndex] = useState(0);
+   
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -37,12 +40,7 @@ function MainHome() {
         return () => clearTimeout(timeout);
     }, [index]);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setImageIndex(prevIndex => (prevIndex + 1) % listaFotoHome.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
+    
 
     return (
         <section className='sectionTextImg'>
@@ -64,7 +62,7 @@ function MainHome() {
                     pagination={{ clickable: true }}
                     navigation
                 >
-                    {listaFotoHome.map((item, index) => (
+                    {mainHome.map((item, index) => (
                         <SwiperSlide key={index}>
                             <SlideshowLightbox
                                 theme="day"
@@ -73,7 +71,7 @@ function MainHome() {
                                 modalClose="clickOutside"
                                 className="swipeImg grid grid-cols-3 gap-2 mx-auto"
                             >
-                                <img className="w-full rounded standImg" src={item.imagem} />
+                                <img className="w-full rounded standImg" src={item} />
                             </SlideshowLightbox>
                         </SwiperSlide>
                     ))}
