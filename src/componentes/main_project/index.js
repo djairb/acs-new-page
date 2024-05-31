@@ -10,7 +10,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
-// No need to import EffectCoverflow as fade effect doesn't require it
 
 import 'lightbox.js-react/dist/index.css';
 import { SlideshowLightbox } from 'lightbox.js-react';
@@ -24,8 +23,6 @@ function MainProject(props) {
   return (
 
     <section className= {'sectionTextImg' + ' ' + props.reverse}>
-
-        
 
         <div className='mainTexto'>
    
@@ -79,18 +76,9 @@ function MainProject(props) {
                 ))}
             </Swiper>      
 
-
-
         </div>       
 
-      
-
     </section>
-
-    
-
-
-
 
   );
 }
