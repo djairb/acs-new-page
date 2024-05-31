@@ -19,12 +19,13 @@ import { listaFotoHome } from '../../imgBd';
 
 import {projetosTexto} from '../../data-projects'
 
-let oxe = "../../img/logos-projetos";
 
 //joga todas as imagens da pasta pra cá
 const importAll = (r) => r.keys().map(r);
 
 const logosProjetos = importAll(require.context("../../img/logos-projetos", false, /\.(png|jpe?g|svg)$/));
+
+
 
 register();
 
@@ -36,15 +37,24 @@ function MainProject(props) {
 
     <section className= {'sectionTextImg' + ' ' + props.reverse}>
 
+        
+
         <div className='mainTexto'>
    
-            <img className='imgLogoProject' src={logosProjetos[props.projetoValue]}/>
+            <img className='imgLogoProject' src={props.logosProjetos[props.projetoValue]}/>
 
-            <p>{projetosTexto[props.projetoValue]}</p>                      
+            <p>{projetosTexto[props.projetoValue]}</p> 
+
+            {console.log("aq")}
+            {console.log(props.slideProject)}
+
+                                 
 
         </div>    
 
         <div className='swiperSlide'>
+
+            
 
             <Swiper
 
@@ -68,31 +78,27 @@ function MainProject(props) {
                 }}
 
                 pagination={{ clickable: true }}
-                navigation
-                
+                navigation                
 
                 >
                 
-                {listaFotoHome.map((item) => (
-
-                <SwiperSlide key={item.id}>
-
-                    <SlideshowLightbox
-                    theme="day"
-                    fullScreen={true}
-                    showControls={true}
-                    modalClose="clickOutside"
-                    className="swipeImg grid grid-cols-3 gap-2 mx-auto"
-                    >
-
-                        <img className="w-full rounded standImg" src={item.imagem} />
-
-                    </SlideshowLightbox>
-
-                </SwiperSlide>
-
-                ))}
+                {props.slideProject.map((item, index) => (
+                        <SwiperSlide key={index}>
+                            <SlideshowLightbox
+                                theme="day"
+                                fullScreen={true}
+                                showControls={true}
+                                modalClose="clickOutside"
+                                className="swipeImg grid grid-cols-3 gap-2 mx-auto"
+                            >
+                                <img className="w-full rounded standImg" src={item} />
+                            </SlideshowLightbox>
+                        </SwiperSlide>
+                    ))}
             </Swiper>
+
+
+        
 
 
 

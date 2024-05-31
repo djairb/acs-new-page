@@ -9,12 +9,14 @@ import Parceiros from "../../componentes/parceiros";
 import Footer from "../../componentes/folter";
 
 
+const importAll = (r) => r.keys().map(r);
+
+const logosProjetos = importAll(require.context("../../img/logos-projetos", false, /\.(png|jpe?g|svg)$/));
+
+const imgBlue = importAll(require.context("../../img/mainHome/blue", false, /\.(png|jpe?g|svg)$/));
 
 
-
-function TelaPrincipal() {
-
-  
+function TelaPrincipal() {  
  
   return (
 
@@ -35,6 +37,8 @@ function TelaPrincipal() {
 
           reverse="reverse"
           projetoValue={1}
+          logosProjetos={logosProjetos}
+          slideProject={imgBlue}
         
         
         
