@@ -25,8 +25,21 @@ function MainProject(props) {
     <section className= {'sectionTextImg' + ' ' + props.reverse}>
 
         <div className='mainTexto'>
+
+
+            <SlideshowLightbox
+                theme="day"
+                fullScreen={true}
+                showControls={true}
+                modalClose="clickOutside"
+                className="swipeImg grid grid-cols-3 gap-2 mx-auto"
+                >
+
+                    <img className="imgLogoProject w-full rounded" src={props.logoProjeto} />
+
+            </SlideshowLightbox>
    
-            <img className='imgLogoProject' src={props.logoProjeto}/>
+            
 
             <p>{props.textoProjeto}</p> 
                                  
