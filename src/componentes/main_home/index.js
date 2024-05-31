@@ -9,6 +9,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
+import logoHome from '../../img/logoAcs.png';
+
 
 const importAll = (r) => r.keys().map(r);
 
@@ -45,6 +47,9 @@ function MainHome() {
     return (
         <section className='sectionTextImg'>
             <div className='mainTexto'>
+
+                <img src={logoHome} alt="" />
+
                 <h1 className='mainSomos'>Somos Conexão <br/> Social para <br/> <span style={{ color: '#FFBF00' }} className={fade ? 'fade-text fontText' : 'fontText'}>{text}</span></h1>
             </div>
             <div className='swiperSlide'>
@@ -52,8 +57,8 @@ function MainHome() {
                     className='swiperReal'
                     slidesPerView={1}
                     style={{
-                        "--swiper-pagination-color": "#72c000",
-                        "--swiper-navigation-color": "#72c000",
+                        "--swiper-pagination-color": "#f08528",
+                        "--swiper-navigation-color": "#f08528",
                     }}
                     effect='fade'
                     grabCursor={true}
@@ -71,7 +76,7 @@ function MainHome() {
                                 modalClose="clickOutside"
                                 className="swipeImg grid grid-cols-3 gap-2 mx-auto"
                             >
-                                <img className="w-full rounded standImg" src={item} />
+                                <img className="w-full rounded" src={item} />
                             </SlideshowLightbox>
                         </SwiperSlide>
                     ))}

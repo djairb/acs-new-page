@@ -33,10 +33,10 @@ function TelaPrincipal() {
 
             <MainProject
 
-            reverse={item.reverse}
-            textoProjeto={item.textoProjeto}
-            logoProjeto={item.logoProjeto}
-            slideProjeto={item.slideProjeto}
+              reverse={item.reverse}
+              textoProjeto={item.textoProjeto}
+              logoProjeto={item.logoProjeto}
+              slideProjeto={item.slideProjeto}
 
             />
 
@@ -51,7 +51,7 @@ function TelaPrincipal() {
 
         <div className="visitaDiv">
 
-          <h1 className="visitaH1">Faça-nos uma visita</h1>
+          <h1 className="visitaH1">Vem visitar a gente!</h1>
 
           <p className="visitaP">Centro Tecnológico de Inclusão Digital e Social - Rua Projetada A, sem número, Bairro Salinas - Lagoa de Itaenga/PE <br/> Telefone:
             (081) - 3653 - 2272 <br/> E-mail: <a

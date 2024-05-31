@@ -43,8 +43,8 @@ function MainProject(props) {
 
                 style={{
 
-                "--swiper-pagination-color": "#72c000",
-                "--swiper-navigation-color": "#72c000",
+                "--swiper-pagination-color": "#f08528",
+                "--swiper-navigation-color": "#f08528",
 
                 }}
 

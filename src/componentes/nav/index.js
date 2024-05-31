@@ -2,7 +2,7 @@ import { useContext, useRef, useState } from "react";
 import {FaBars, FaTimes} from "react-icons/fa";
 
 
-import logo from "../../img/mainHome/acsLogo.jpg";
+import logo from "../../img/logoAcs.png";
 import { Link, useNavigate } from "react-router-dom";
 
 function Navbar(){
@@ -23,7 +23,7 @@ function Navbar(){
 
         <header>           
 
-            <Link to="/"><img  src={logo} alt="logo-techFest" /></Link>
+            <Link to="/"><img  src={logo} alt="" /></Link>
              <nav ref={navRef}>
 
                 <Link to="/tela-todos-palestra">Transparência</Link>

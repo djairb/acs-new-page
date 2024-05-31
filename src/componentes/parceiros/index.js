@@ -19,7 +19,7 @@ function Parceiros(){
 
             <div className="parceirosTituloLogo">
 
-                <h1 className="parceirosTitle">Confira nossos parceiros:</h1>
+                <h1 className="parceirosTitle">Esses são nossos parceiros:</h1>
                 
                 <div className="containerParceiros">
                     
