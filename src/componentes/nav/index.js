@@ -26,7 +26,7 @@ function Navbar(){
             <Link to="/"><img  src={logo} alt="" /></Link>
              <nav ref={navRef}>
 
-                <Link to="/tela-todos-palestra">Transparência</Link>
+                {/* <Link to="/tela-todos-palestra">Transparência</Link> */}
         
         
                 <button className= "nav-btn nav-close-btn" onClick={showNavBar}>
