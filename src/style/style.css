@@ -252,6 +252,15 @@ header .nav-btn {
   
 }
 
+
+.mainTexto .mainSomos .fontText{
+  
+  letter-spacing: 0px;
+  font-size: 92px; 
+
+  
+}
+
 .sectionTextImg .mainTexto img{
 
   width: 180px;
@@ -473,10 +482,19 @@ footer {
   .sectionTextImg .mainTexto .mainSomos{
 
     font-size: 50px;
-    line-height: 70px;
+    line-height: 64px;
     letter-spacing: 0px; 
     
     
+
+    
+  }
+
+  .sectionTextImg .mainTexto .mainSomos .fontText{
+    
+    letter-spacing: 0px;
+
+    font-size: 55px;
   }
 
   header .nav-btn {
@@ -574,9 +592,6 @@ footer {
       
   }
 
-  .fontText{
-    font-size: 45px;
-  }
   
 
   
