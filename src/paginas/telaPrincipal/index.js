@@ -8,7 +8,7 @@ import MainProject from "../../componentes/main_project";
 import Parceiros from "../../componentes/parceiros";
 import Footer from "../../componentes/folter";
 
-import { mainHomeData } from "../../data-projects";
+import { mainHomeData } from "../../dados/data-projects";
 import MensagemVisita from "../../componentes/mensagemVisita";
 
 function TelaPrincipal() {  

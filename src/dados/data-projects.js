@@ -1,18 +1,18 @@
 const importAll = (r) => r.keys().map(r);
 
-const logosProjetos = importAll(require.context("../src/img/logos-projetos", false, /\.(png|jpe?g|svg)$/));
+const logosProjetos = importAll(require.context("../img/logos-projetos", false, /\.(png|jpe?g|svg)$/));
 
-const conectaVidas = importAll(require.context("../src/img/mainHome/conecta-vidas", false, /\.(png|jpe?g|svg)$/));
+const conectaVidas = importAll(require.context("../img/mainHome/conecta-vidas", false, /\.(png|jpe?g|svg)$/));
 
-const passaporteDigital = importAll(require.context("../src/img/mainHome/passaporte-digital", false, /\.(png|jpe?g|svg)$/));
+const passaporteDigital = importAll(require.context("../img/mainHome/passaporte-digital", false, /\.(png|jpe?g|svg)$/));
 
-const oportunizarRural = importAll(require.context("../src/img/mainHome/comunidade-rural", false, /\.(png|jpe?g|svg)$/));
+const oportunizarRural = importAll(require.context("../img/mainHome/comunidade-rural", false, /\.(png|jpe?g|svg)$/));
 
-const oportunizarUrbano = importAll(require.context("../src/img/mainHome/comunidade-urbano", false, /\.(png|jpe?g|svg)$/));
+const oportunizarUrbano = importAll(require.context("../img/mainHome/comunidade-urbano", false, /\.(png|jpe?g|svg)$/));
 
-const centroFormacao = importAll(require.context("../src/img/mainHome/centro-formacao", false, /\.(png|jpe?g|svg)$/));
+const centroFormacao = importAll(require.context("../img/mainHome/centro-formacao", false, /\.(png|jpe?g|svg)$/));
 
-const vamoSimbora = importAll(require.context("../src/img/mainHome/vamo-simbora", false, /\.(png|jpe?g|svg)$/));
+const vamoSimbora = importAll(require.context("../img/mainHome/vamo-simbora", false, /\.(png|jpe?g|svg)$/));
 
 
 

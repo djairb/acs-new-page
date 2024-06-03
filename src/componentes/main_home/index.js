@@ -52,13 +52,13 @@ function MainHome() {
                     theme="day"
                     fullScreen={true}
                     showControls={true}
-                    modalClose="clickOutside"
+                    modalClose="clickOutside"                 
                     className="swipeImg grid grid-cols-3 gap-2 mx-auto"
                 >
                     <img className="w-full rounded" src={logoHome} />
                 </SlideshowLightbox>                
 
-                <h1 className='mainSomos'>Somos Conexão <br/> Social para <br/> <span style={{ color: '#FFBF00' }} className={fade ? 'fade-text fontText' : 'fontText'}>{text}</span></h1>
+                <h1 className='mainSomos'>Somos Conexão <br/> Social para <br/> <span className={fade ? 'fade-text fontText' : 'fontText'}>{text}</span></h1>
             </div>
             <div className='swiperSlide'>
                 <Swiper
