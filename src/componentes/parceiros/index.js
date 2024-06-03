@@ -39,13 +39,6 @@ const quemJaEsteveLink = [
     "https://www.cedca.pe.gov.br/",
     "https://www.sas.pe.gov.br/",
     "https://www.itausocial.org.br/"
-
-
-
-
-
-
-
 ]
 
 
@@ -69,8 +62,7 @@ function Parceiros(){
                         
                     <a href={quemEstaLink[index]} target="_blank">
 
-                        <img key={index} src={image} alt={`Imagem ${index}`} target="_blank" />
-                    
+                        <img key={index} src={image} alt={`Imagem ${index}`} target="_blank" />                   
                     
                     </a>
 

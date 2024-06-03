@@ -1,7 +1,7 @@
 import React from "react";
 
 import '../../style/style.css';
-import MainHome from "../../componentes/main_home";
+
 import Navbar from "../../componentes/nav";
 import Location from "../../componentes/location";
 import MainProject from "../../componentes/main_project";
@@ -11,17 +11,18 @@ import Footer from "../../componentes/folter";
 import { mainHomeData } from "../../dados/data-projects";
 import MensagemVisita from "../../componentes/mensagemVisita";
 
-function TelaPrincipal() {  
+function Transparencia() {  
  
   return (
 
-    <>
+    <>   
 
-      <Navbar/>   
+      <main>
 
-      <main>       
+        <Navbar/>
 
         <div className='spaceLineNav'></div>
+
 
         <MainHome/>
 
@@ -69,4 +70,4 @@ function TelaPrincipal() {
 
 };
 
-export default TelaPrincipal;
+export default Transparencia;
