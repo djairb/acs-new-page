@@ -21,11 +21,6 @@ section {
   min-width: 320px;
   max-width: 1920px;
   margin: 0 auto;
- 
-
-
-
-
 
 }
 
@@ -35,11 +30,7 @@ section {
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100vh;
-
-    
-
-    
+    min-height: 100vh;  
 
 
 }
@@ -139,7 +130,7 @@ header {
 nav a {
 
   margin: 0 2rem;
-  color: var(--verdeClaro);
+  
   text-decoration: none;
   font-size: 1.3rem;
   
@@ -150,15 +141,31 @@ nav a {
 nav a:hover {
 
 
-  color: var(--bgDark);
+  
 
   font-weight: bold;
 
-  padding: 12px;
-  border-radius: 8px;
+  
 
-  background-color: var(--verdeClaro);
+  
   cursor: pointer;
+
+
+
+  background-image: linear-gradient(to right, #ffbf00, #ff9c00);
+   /* Aplica o degradê apenas ao texto */
+   background-clip: text;
+   /* Cor do texto transparente para mostrar o degradê */
+   -webkit-text-fill-color: transparent;
+
+   
+}
+
+nav a{
+
+  font-weight: bold;
+
+  color: black;
 }
 
 header img {
@@ -438,6 +445,67 @@ footer {
   object-fit: scale-down;
 }
 
+main .boletimSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+main .boletimSection iframe{
+
+  border-radius: 30px;
+
+  
+
+  
+  
+}
+
+
+
+main .selectBoletim{
+
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+  background-color: white;
+  border: 1px solid #f08528;
+  /* Outros estilos que você desejar */
+  border-radius: 5px;
+
+  margin-top: 30px;
+
+  color: #ff9c00;
+
+  font-weight: bolder;
+
+  
+
+  
+
+  
+  
+}
+
+
+main .selectBoletim option:hover{
+
+  color: red;
+
+
+}
+
+.mainBoletim{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 @media only screen and (max-width: 1024px) {
@@ -606,6 +674,14 @@ footer {
     
       
       
+  }
+
+  main .selectBoletim{
+
+    width: 200px;
+
+
+
   }
 
   

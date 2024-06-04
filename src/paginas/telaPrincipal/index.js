@@ -52,17 +52,14 @@ function TelaPrincipal() {
 
         <div className='spaceLine'></div>       
 
-        <Location/>
-
-
-        <Footer/>       
-
+        <Location/>           
 
 
       </main>
 
-      
+      <Footer/> 
 
+    
     </>
 
   );

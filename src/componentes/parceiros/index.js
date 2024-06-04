@@ -54,18 +54,15 @@ function Parceiros(){
 
                 <h1 className="parceirosTitle">Esses são nossos parceiros:</h1>
                 
-                <div className="containerParceiros">
-                    
+                <div className="containerParceiros">                    
 
                     {quemEsta.map((image, index) => (
-
                         
-                    <a href={quemEstaLink[index]} target="_blank">
+                        <a href={quemEstaLink[index]} target="_blank">
 
-                        <img key={index} src={image} alt={`Imagem ${index}`} target="_blank" />                   
-                    
-                    </a>
-
+                            <img key={index} src={image} alt={`Imagem ${index}`} target="_blank" />                   
+                        
+                        </a>
                         
 
                     ))}
