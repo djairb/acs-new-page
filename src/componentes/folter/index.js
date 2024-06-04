@@ -12,7 +12,6 @@ function Footer() {
 
         <footer>
 
-
             <div id="sociais" className="container-sociais">
                 <a href="https://www.facebook.com/conexsoc">
                     <img src={facebook} />

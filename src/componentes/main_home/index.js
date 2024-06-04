@@ -11,6 +11,10 @@ import 'swiper/css/scrollbar';
 
 import logoHome from '../../img/logoAcs.png';
 
+import facebook from "../../img/mainHome/mainHomeSociais/fb.png";
+import instagram from "../../img/mainHome/mainHomeSociais/ig.png";
+import youtube from "../../img/mainHome/mainHomeSociais/yt.png";
+
 
 const importAll = (r) => r.keys().map(r);
 
@@ -56,9 +60,23 @@ function MainHome() {
                     className="swipeImg grid grid-cols-3 gap-2 mx-auto"
                 >
                     <img className="w-full rounded" src={logoHome} />
-                </SlideshowLightbox>                
+                </SlideshowLightbox>
+
+                <div id="sociais" className="container-sociais">
+                    <a href="https://www.facebook.com/conexsoc">
+                        <img src={facebook} />
+                    </a>
+                    <a href="https://www.instagram.com/somosconexaosocial/">
+                        <img src={instagram} />
+                    </a>
+                    <a href="https://www.youtube.com/@SomosConexaoSocial">
+                        <img src={youtube} />
+                    </a>
+                </div>                
 
                 <h1 className='mainSomos'>Somos Conexão <br/> Social para <br/> <span className={fade ? 'fade-text fontText' : 'fontText'}>{text}</span></h1>
+
+                
             </div>
             <div className='swiperSlide'>
                 <Swiper
