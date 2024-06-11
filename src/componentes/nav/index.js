@@ -27,6 +27,8 @@ function Navbar(){
              <nav ref={navRef}>
 
                 <Link to="/boletins-informativos">Boletins Informativos</Link>
+
+                <Link to="/transparencia">Transparência</Link>
         
         
                 <button className= "nav-btn nav-close-btn" onClick={showNavBar}>

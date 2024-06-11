@@ -23,7 +23,7 @@ const mainHome = importAll(require.context("../../img/mainHome/main_home", false
 register();
 
 function MainHome() {
-    const strings = ["Inovação", "Desenvolvimento", "Cidadania", "Educação", "Inclusão", "Transformação", "Crescimento", "Progresso", "Cuidado", "Colaboração"];
+    const strings = ["Inovação", "Desenvolvimento", "Cidadania", "Educação", "Inclusão", "Transformação", "Crescimento", "Progresso", "Cuidado", "Colaboração", "Capacitação"];
     const [index, setIndex] = useState(0);
     const [text, setText] = useState(strings[0]);
     const [fade, setFade] = useState(false);
