@@ -1,7 +1,7 @@
 
-export const boletimData2024 = [
+export const boletimData2024 = [    
 
-    {
+      {
         title: "Boletim Informativo - Janeiro 2024",
         link:"https://drive.google.com/file/d/13m-qTgDM5ig__ctGlLGiFfsSwtmcQCVp/preview"
 
@@ -27,7 +27,22 @@ export const boletimData2024 = [
         link:"https://drive.google.com/file/d/1EL8i4U0VbO9SGCCxINH5j8X47R827t9t/preview"
 
         
-      }
+      },
+      
+      {
+        title: "Boletim Informativo - Maio 2024",
+        link:"https://drive.google.com/file/d/1pk7jZmoFFEbWhaavL3JhUloej88V8R5L/preview"
+
+        
+      },
+
+      
+    {
+      title: "Boletim Informativo - Junho 2024",
+      link:"https://drive.google.com/file/d/1Gi9yjLyIzdNs_7EILvZXbu8sShNaY0sy/preview"
+
+      
+    },
 ];
 
 
