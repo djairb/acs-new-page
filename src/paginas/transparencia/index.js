@@ -147,6 +147,38 @@ function Transparencia() {
 
                 <h3>Política de Voluntariado da Conexão Social</h3>
 
+            </a>
+
+            <h2>2024</h2>            
+
+            <a href="https://drive.google.com/file/d/1x-jM8F3qdjxATp67e66xtI37MAlzvMxD/view?usp=sharing">       
+
+                <h3>2024: 1° TERMO ADITIVO - TERMO DE FOMENTO - PROJETO CONECTA VIDAS</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/18KnqA2WFIeJIDiXdq13gbUpAEgx-4c3e/view?usp=sharing">       
+
+                <h3>2024: TERMO DE FOMENTO N 003.2024</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/16K_676vq3KIVSCOBz6XjfMuycEnOs0QC/view?usp=sharing">       
+
+                <h3>2024: TERMO DE FOMENTO - PROJETO CONECTA VIDAS</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/1CVLtgvjBKVF8yqtuHY9kGgzgkl-Mgxh5/view?usp=sharing">       
+
+                <h3>2024: TERMO DE FOMENTO - PROJETO VAMOSIMBORA?</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/1njvJm8yVPwZEJx72TC_fgGCQZ6cOLuJV/view?usp=sharing">       
+
+                <h3>2024: TERMO DE FOMENTO N° 009/2024</h3>
+
             </a>			
 
             <h2>Editais e Publicações</h2>
