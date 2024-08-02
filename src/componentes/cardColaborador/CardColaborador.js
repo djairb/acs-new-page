@@ -12,7 +12,19 @@ export default function CardColaborador(props) {
 
             <div className="containerCardColaborador">
 
-                <img src={props.foto} />
+                <SlideshowLightbox
+                    theme="day"
+                    fullScreen={true}
+                    showControls={true}
+                    modalClose="clickOutside"
+                    className="swipeImg grid grid-cols-3 gap-2 mx-auto"
+                    >
+                        <img className="w-full rounded"src={props.foto} />
+    
+
+                </SlideshowLightbox>
+
+                
 
                 <div className="colaboradorInfo">
 
