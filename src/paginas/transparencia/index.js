@@ -99,7 +99,15 @@ function Transparencia() {
 
             </a>
 
-			<h2>2023</h2>            
+			<h2>2023</h2>
+
+            
+
+            <a href="https://drive.google.com/file/d/1dJEJjrbkQYVSQuhIj3hFQykRtzKnSnQq/view?usp=sharing">       
+
+                <h3>2023: Balanço Patrimonial</h3>
+
+            </a>            
 
             <a href="https://drive.google.com/file/d/1mQ8UXFeEJ9v4ZkTAfgYEH7R6GD8O-3AD/view?usp=sharing">       
 
