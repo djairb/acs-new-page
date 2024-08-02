@@ -1,5 +1,8 @@
 import React from "react";
 
+import 'lightbox.js-react/dist/index.css';
+import { SlideshowLightbox } from 'lightbox.js-react';
+
 export default function CardColaborador(props) {  
 
 
@@ -11,11 +14,18 @@ export default function CardColaborador(props) {
 
                 <img src={props.foto} />
 
-                
+                <div className="colaboradorInfo">
 
-                <h1>{props.nome}</h1>
+                    <h1>{props.nome}</h1>
 
-                <h2>{props.funcao}</h2>            
+                    <div className="linhaColaborador"></div>
+
+                    <h2>{props.funcao}</h2>  
+
+
+                </div>
+
+                          
                 
 
             </div>
