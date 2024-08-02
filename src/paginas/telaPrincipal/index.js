@@ -11,6 +11,8 @@ import Footer from "../../componentes/folter";
 import { mainHomeData } from "../../dados/data-projects";
 import MensagemVisita from "../../componentes/mensagemVisita";
 
+
+
 function TelaPrincipal() {  
  
   return (
@@ -27,12 +29,12 @@ function TelaPrincipal() {
 
         <div className='spaceLine'></div>
 
-        {mainHomeData.map((item) => (
+        {mainHomeData.map((item, key) => (
 
           <>
 
             <MainProject
-
+              key={key}
               reverse={item.reverse}
               textoProjeto={item.textoProjeto}
               logoProjeto={item.logoProjeto}
