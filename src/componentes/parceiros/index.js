@@ -25,7 +25,11 @@ const quemEstaLink = [
     "",
     "",
     "",
-    "https://www.edenred.com.br/"
+    "https://www.edenred.com.br/",
+    "https://www.laureus.com/sport-for-good",
+    "https://www.nike.com.br/",
+    "https://socialskate.org/",
+    "https://www.b3.com.br/"
 
 ]
 
