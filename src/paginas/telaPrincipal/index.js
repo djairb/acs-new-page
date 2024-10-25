@@ -10,6 +10,7 @@ import Footer from "../../componentes/folter";
 
 import { mainHomeData } from "../../dados/data-projects";
 import MensagemVisita from "../../componentes/mensagemVisita";
+import InscricaoCard from "../../componentes/inscricaoCard";
 
 
 
@@ -26,6 +27,8 @@ function TelaPrincipal() {
         <div className='spaceLineNav'></div>
 
         <MainHome/>
+
+        <InscricaoCard/>
 
         <div className='spaceLine'></div>
 

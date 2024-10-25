@@ -32,6 +32,7 @@ function Navbar(){
 
                 <Link to="/colaboradores">Colaboradores</Link>
 
+
                 <a href="https://somosconexaosocial.org/sra" rel="noopener noreferrer">SRA</a>
 
         
