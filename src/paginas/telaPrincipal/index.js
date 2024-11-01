@@ -28,8 +28,6 @@ function TelaPrincipal() {
 
         <MainHome/>
 
-        <InscricaoCard/>
-
         <div className='spaceLine'></div>
 
         {mainHomeData.map((item, key) => (
