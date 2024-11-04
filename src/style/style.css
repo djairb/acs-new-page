@@ -193,6 +193,7 @@ header .nav-btn {
 }
 
 
+
 /* problemas */
 
 
@@ -649,8 +650,21 @@ main .selectBoletim{
   
 }
 
+.TextoMaisSelecionarImg{
 
-main .mainPicturesSelected{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: space-between;
+  padding: 10px 0;
+
+
+
+
+}
+
+
+.TextoMaisSelecionarImg .mainPicturesSelected{
 
   display: flex;
   flex-wrap: wrap;
@@ -658,7 +672,7 @@ main .mainPicturesSelected{
   align-items: center;
   justify-content: center;
   gap: 50px;
-  background-color: #f08528;
+  
 
 
 }
@@ -676,6 +690,17 @@ main .mainPicturesSelected{
 
 
 }
+
+.mainPicturesSelected img.selected{
+
+  border-bottom: 3px solid #ff9c00; 
+  
+
+  
+
+
+}
+
 
 
 

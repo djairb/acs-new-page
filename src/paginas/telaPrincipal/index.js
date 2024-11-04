@@ -17,8 +17,13 @@ import MensagemVisita from "../../componentes/mensagemVisita";
 
 
 function TelaPrincipal() {
+
   
   const [numeroIdProjeto, setNumeroIdProjeto] = useState(0);
+
+  const [selecionado, setSelecionado] = useState(true);
+
+  
 
     return (    
 
@@ -32,46 +37,46 @@ function TelaPrincipal() {
 
         <MainHome/>
 
+        <div className='spaceLineNav'></div>
 
 
-        <div className="mainPicturesSelected">
-            
-
-          {mainHomeData.map((item, key) => (
-            
-            <img key={key}
-            src={item.logoProjeto}
-            onClick={() => setNumeroIdProjeto(item.id)}
-            
-            
-            />
-    
-
-          ))}
+        <div className="TextoMaisSelecionarImg">
 
 
+          <h2>Conheça nossos projetos:</h2>
 
+          <div className="mainPicturesSelected">
+
+
+            {mainHomeData.map((item, key) => (
+
+              <img key={key}
+                src={item.logoProjeto}
+                onClick={() => setNumeroIdProjeto(item.id)}
+                className={numeroIdProjeto === item.id ? "selected" : ""}
+
+
+              />
+
+
+            ))}
+
+          </div>
 
         </div>
-
         
-
-        <div className='spaceLine'></div>
-
-        {/* <h1>{mainHomeData[0].id}</h1> */}
-
 
         <>
         
 
-        <MainProject
-          key={mainHomeData[numeroIdProjeto].id}
-          reverse={mainHomeData[numeroIdProjeto].reverse}
-          textoProjeto={mainHomeData[numeroIdProjeto].textoProjeto}
-          logoProjeto={mainHomeData[numeroIdProjeto].logoProjeto}
-          slideProjeto={mainHomeData[numeroIdProjeto].slideProjeto}
+          <MainProject
+            key={mainHomeData[numeroIdProjeto].id}
+            reverse={mainHomeData[numeroIdProjeto].reverse}
+            textoProjeto={mainHomeData[numeroIdProjeto].textoProjeto}
+            logoProjeto={mainHomeData[numeroIdProjeto].logoProjeto}
+            slideProjeto={mainHomeData[numeroIdProjeto].slideProjeto}
 
-        />
+          />
 
                  
                     
