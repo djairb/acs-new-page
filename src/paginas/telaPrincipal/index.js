@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import '../../style/style.css';
 import MainHome from "../../componentes/main_home";
@@ -10,13 +10,28 @@ import Footer from "../../componentes/folter";
 
 import { mainHomeData } from "../../dados/data-projects";
 import MensagemVisita from "../../componentes/mensagemVisita";
-import InscricaoCard from "../../componentes/inscricaoCard";
 
 
 
-function TelaPrincipal() {  
+
+
+
+function TelaPrincipal() {
+  
+  const [numeroAlterar, setNumeroAlterar] = useState(0);
+
+  const alterarNumero = () => {
+
+    setNumeroAlterar(numeroAlterar+1);
+    
+};
+
+  
  
   return (
+
+
+    
 
     <>
 
@@ -30,7 +45,35 @@ function TelaPrincipal() {
 
         <div className='spaceLine'></div>
 
-        {mainHomeData.map((item, key) => (
+        {/* <h1>{mainHomeData[0].id}</h1> */}
+
+
+        <>
+        
+        <button onClick={() => alterarNumero()}>Alterar</button>
+
+        <MainProject
+          key={mainHomeData[numeroAlterar].id}
+          reverse={mainHomeData[numeroAlterar].reverse}
+          textoProjeto={mainHomeData[numeroAlterar].textoProjeto}
+          logoProjeto={mainHomeData[numeroAlterar].logoProjeto}
+          slideProjeto={mainHomeData[numeroAlterar].slideProjeto}
+
+        />
+
+                 
+                    
+        </>   
+
+
+
+
+
+
+
+
+
+        {/* {mainHomeData.map((item, key) => (
 
           <>
 
@@ -47,7 +90,7 @@ function TelaPrincipal() {
                     
           </>      
 
-        ))}  
+        ))}   */}
 
         <Parceiros/>
 
