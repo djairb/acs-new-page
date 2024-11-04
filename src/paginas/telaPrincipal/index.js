@@ -18,27 +18,9 @@ import MensagemVisita from "../../componentes/mensagemVisita";
 
 function TelaPrincipal() {
   
-  const [numeroAlterar, setNumeroAlterar] = useState(0);
+  const [numeroIdProjeto, setNumeroIdProjeto] = useState(0);
 
-  const alterarNumero = () => {
-
-    setNumeroAlterar(numeroAlterar+1);
-    
-  };
-
-  const alterarProjeto = () => {
-
-
-
-  }
-
-  const [nomeProjeto, setNomeProjeto] = useState("Alterar");
-
-
-  return (
-
-
-    
+    return (    
 
     <>
 
@@ -50,7 +32,6 @@ function TelaPrincipal() {
 
         <MainHome/>
 
-        <h1>{nomeProjeto}</h1>
 
 
         <div className="mainPicturesSelected">
@@ -60,7 +41,7 @@ function TelaPrincipal() {
             
             <img key={key}
             src={item.logoProjeto}
-            onClick={() => setNomeProjeto(item.textoProjeto)}
+            onClick={() => setNumeroIdProjeto(item.id)}
             
             
             />
@@ -82,14 +63,13 @@ function TelaPrincipal() {
 
         <>
         
-        <button onClick={() => alterarNumero()}>Alterar</button>
 
         <MainProject
-          key={mainHomeData[numeroAlterar].id}
-          reverse={mainHomeData[numeroAlterar].reverse}
-          textoProjeto={mainHomeData[numeroAlterar].textoProjeto}
-          logoProjeto={mainHomeData[numeroAlterar].logoProjeto}
-          slideProjeto={mainHomeData[numeroAlterar].slideProjeto}
+          key={mainHomeData[numeroIdProjeto].id}
+          reverse={mainHomeData[numeroIdProjeto].reverse}
+          textoProjeto={mainHomeData[numeroIdProjeto].textoProjeto}
+          logoProjeto={mainHomeData[numeroIdProjeto].logoProjeto}
+          slideProjeto={mainHomeData[numeroIdProjeto].slideProjeto}
 
         />
 
