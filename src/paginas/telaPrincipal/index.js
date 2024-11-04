@@ -26,14 +26,15 @@ function TelaPrincipal() {
     
   };
 
+  const alterarProjeto = () => {
 
-  
 
 
-  
+  }
 
-  
- 
+  const [nomeProjeto, setNomeProjeto] = useState("Alterar");
+
+
   return (
 
 
@@ -49,6 +50,8 @@ function TelaPrincipal() {
 
         <MainHome/>
 
+        <h1>{nomeProjeto}</h1>
+
 
         <div className="mainPicturesSelected">
             
@@ -56,7 +59,11 @@ function TelaPrincipal() {
           {mainHomeData.map((item, key) => (
             
             <img key={key}
-            src={item.logoProjeto} />
+            src={item.logoProjeto}
+            onClick={() => setNomeProjeto(item.textoProjeto)}
+            
+            
+            />
     
 
           ))}
