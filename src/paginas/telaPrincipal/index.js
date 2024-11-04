@@ -24,7 +24,13 @@ function TelaPrincipal() {
 
     setNumeroAlterar(numeroAlterar+1);
     
-};
+  };
+
+
+  
+
+
+  
 
   
  
@@ -42,6 +48,25 @@ function TelaPrincipal() {
         <div className='spaceLineNav'></div>
 
         <MainHome/>
+
+
+        <div className="mainPicturesSelected">
+            
+
+          {mainHomeData.map((item, key) => (
+            
+            <img key={key}
+            src={item.logoProjeto} />
+    
+
+          ))}
+
+
+
+
+        </div>
+
+        
 
         <div className='spaceLine'></div>
 

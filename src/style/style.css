@@ -650,6 +650,35 @@ main .selectBoletim{
 }
 
 
+main .mainPicturesSelected{
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  background-color: #f08528;
+
+
+}
+
+
+.mainPicturesSelected img{
+
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  
+
+  
+
+
+}
+
+
+
+
 
 
 
