@@ -51,6 +51,70 @@ section {
     
 }
 
+.divReportagens{
+
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  
+  
+
+  
+  
+
+}
+
+.divReportagens .swiperMaster{
+  
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  
+  
+  
+
+}
+
+
+.videoCard{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-evenly;
+  
+  border-radius: 10px;
+  border: 2px solid#f08528;
+  flex: 1;
+  
+  margin: 0 20px;
+  
+  
+  padding-bottom: 30px;
+  background-color: white;
+
+  
+  
+  
+ 
+
+
+
+}
+
+.videoCard iframe{
+  width: 100%;
+  height: 300px;
+  border-radius: 10px 10px 0px 00px;
+ 
+}
+
+.videoCard h3{
+  padding: 10px;
+}
+
+
+
 .mainTexto p{
 
   width: 80%;
@@ -71,6 +135,14 @@ section {
     
 }
 
+.swiperSlideDivVideo{
+
+    
+  width: 50%;  
+
+  
+  
+}
 
 
 .swipeImg img{
@@ -699,12 +771,12 @@ main .selectBoletim{
 
   border-bottom: 4px solid #ff9c00;
    
-  
-
-  
 
 
 }
+
+
+
 
 
 
@@ -898,6 +970,16 @@ main .selectBoletim{
   
     
     
+  
+  }
+
+  
+
+  .videoCard iframe{
+    
+    height: 200px;
+
+  
   
   }
 

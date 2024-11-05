@@ -9,6 +9,8 @@ import Footer from "../../componentes/folter";
 
 import MensagemVisita from "../../componentes/mensagemVisita";
 import ProjetosSelecionar from '../../componentes/projetosSelecionar';
+import VideoCarrossel from '../../componentes/videoCarrossel';
+import InscricaoCard from '../../componentes/inscricaoCard';
 
 function TelaPrincipal() {
 
@@ -26,9 +28,18 @@ function TelaPrincipal() {
 
         <div className='spaceLineNav'></div>
 
+        <InscricaoCard/>
+
+        <div className='spaceLineNav'></div>
+
         <ProjetosSelecionar/>
 
-        <div className='spaceLineNav'></div>           
+        <div className='spaceLineNav'></div>
+
+        <VideoCarrossel/>          
+
+        
+
 
 
         

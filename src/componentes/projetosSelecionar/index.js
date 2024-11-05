@@ -34,6 +34,7 @@ function ProjetosSelecionar() {
             </div>
 
             <MainProject
+            
                 key={mainHomeData[numeroIdProjeto].id}
                 reverse={mainHomeData[numeroIdProjeto].reverse}
                 textoProjeto={mainHomeData[numeroIdProjeto].textoProjeto}

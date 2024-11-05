@@ -27,7 +27,7 @@ function InscricaoCard() {
     return (
         <div className="inscricaoCard">
 
-            <a href="https://forms.gle/Em6z2Ue83L7ryGkD9" target="_blank">
+            <a href="https://drive.google.com/file/d/1TrIFwk35y4Ptu6LCzILZ8OZUfqhv08E5/view?usp=sharing" target="_blank">
                 <img src={imageSrc} alt="Inscrição" />
             </a>
 
