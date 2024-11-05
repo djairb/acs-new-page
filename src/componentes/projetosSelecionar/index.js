@@ -15,21 +15,21 @@ function ProjetosSelecionar() {
             <div className="TextoMaisSelecionarImg">
 
 
-            <h2>Nossos projetos:</h2>
+                <h1 className="h1SectionTitle">Nossos projetos:</h1>
 
-            <div className="mainPicturesSelected">
+                <div className="mainPicturesSelected">
 
-                {mainHomeData.map((item, key) => (
+                    {mainHomeData.map((item, key) => (
 
-                <img key={key}
-                    src={item.logoProjeto}
-                    onClick={() => setNumeroIdProjeto(item.id)}
-                    className={numeroIdProjeto === item.id ? "selected" : ""}
-                />
+                    <img key={key}
+                        src={item.logoProjeto}
+                        onClick={() => setNumeroIdProjeto(item.id)}
+                        className={numeroIdProjeto === item.id ? "selected" : ""}
+                    />
 
-                ))}
+                    ))}
 
-            </div>
+                </div>
 
             </div>
 

@@ -385,6 +385,10 @@ header .nav-btn {
 
 }
 
+.h1SectionTitle{
+  font-size: 1.8em;
+}
+
 .visitaP{
   font-weight: bold;
 
@@ -693,7 +697,8 @@ main .selectBoletim{
 
 .mainPicturesSelected img.selected{
 
-  border-bottom: 3px solid #ff9c00; 
+  border-bottom: 4px solid #ff9c00;
+   
   
 
   

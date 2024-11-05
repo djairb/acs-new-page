@@ -56,7 +56,7 @@ function Parceiros(){
 
             <div className="parceirosTituloLogo">
 
-                <h1 className="parceirosTitle">Esses são nossos parceiros:</h1>
+                <h1 className="h1SectionTitle">Esses são nossos parceiros:</h1>
                 
                 <div className="containerParceiros">                    
 
@@ -73,7 +73,7 @@ function Parceiros(){
                     
                 </div>
 
-                <h1 className="parceirosTitle">Quem já esteve conosco:</h1>
+                <h1 className="h1SectionTitle">Quem já esteve conosco:</h1>
                 
                 <div className="containerParceiros">
                     
@@ -93,7 +93,7 @@ function Parceiros(){
                     
                 </div>
 
-                <h1 className="parceirosTitle">Seja você também um parceiro:</h1>
+                <h1 className="h1SectionTitle">Seja você também um parceiro:</h1>
 
                 <div className="bbPixParceiro">
 
