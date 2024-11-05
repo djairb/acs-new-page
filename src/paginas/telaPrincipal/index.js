@@ -19,11 +19,7 @@ import MensagemVisita from "../../componentes/mensagemVisita";
 function TelaPrincipal() {
 
   
-  const [numeroIdProjeto, setNumeroIdProjeto] = useState(0);
-
-  const [selecionado, setSelecionado] = useState(true);
-
-  
+  const [numeroIdProjeto, setNumeroIdProjeto] = useState(0); 
 
     return (    
 
@@ -43,7 +39,7 @@ function TelaPrincipal() {
         <div className="TextoMaisSelecionarImg">
 
 
-          <h2>Conheça nossos projetos:</h2>
+          <h2>Nossos projetos:</h2>
 
           <div className="mainPicturesSelected">
 
