@@ -11,7 +11,6 @@ export const parceirosList = [
     { id: 4, nome: "Aparício Luís", funcao: "Educador", imagem: colaboradores[4] },
     { id: 5, nome: "Arthur Yure", funcao: "Educador", imagem: colaboradores[5] },
     { id: 6, nome: "Beatriz Sandra", funcao: "Educadora", imagem: colaboradores[6] },
-    { id: 7, nome: "Cleide Rosélia", funcao: "Gastrônoma", imagem: colaboradores[7] },
     { id: 8, nome: "Daniel Neto", funcao: "Educador", imagem: colaboradores[8] },
     { id: 9, nome: "Erika Maria", funcao: "Educadora", imagem: colaboradores[9] },
     { id: 10, nome: "Esmeralda Aparecida", funcao: "Psicóloga", imagem: colaboradores[10] },

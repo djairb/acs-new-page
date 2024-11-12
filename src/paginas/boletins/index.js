@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import '../../style/style.css';
 import Navbar from '../../componentes/nav';
 import Footer from '../../componentes/folter';
-import { boletimData2024, boletimData2023 } from '../../dados/data-boletim';
+
+
+import { boletimData2023Inverse, boletimData2024Inverse } from '../../dados/data-boletim';
 
 
 
@@ -15,10 +17,7 @@ function Boletins() {
     setSelectedValue(event.target.value);
   };
 
-  const selectedData = selectedValue === '2024' ? boletimData2024.reverse() : boletimData2023.reverse();
-
-
-  
+  const selectedData = selectedValue === '2024' ? boletimData2024Inverse: boletimData2023Inverse;  
 
   return (
     <>

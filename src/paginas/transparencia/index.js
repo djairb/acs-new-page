@@ -2,26 +2,12 @@ import React, { useState } from 'react';
 import '../../style/style.css';
 import Navbar from '../../componentes/nav';
 import Footer from '../../componentes/folter';
-import { boletimData2024, boletimData2023 } from '../../dados/data-boletim';
-
-boletimData2023.reverse();
-boletimData2024.reverse();
-
-function Transparencia() {
-
-  
-  const [selectedValue, setSelectedValue] = useState('2024');
-
-  const handleSelectChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
-
-  const selectedData = selectedValue === '2024' ? boletimData2024 : boletimData2023;
 
 
-  
+function Transparencia() {  
 
   return (
+    
     <>
 
       <Navbar />

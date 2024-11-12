@@ -11,6 +11,7 @@ import MensagemVisita from "../../componentes/mensagemVisita";
 import ProjetosSelecionar from '../../componentes/projetosSelecionar';
 import VideoCarrossel from '../../componentes/videoCarrossel';
 import InscricaoCard from '../../componentes/inscricaoCard';
+import MainHomeVideo from '../../componentes/main_home_video';
 
 function TelaPrincipal() {
 
@@ -24,7 +25,7 @@ function TelaPrincipal() {
 
         <div className='spaceLineNav'></div>
 
-        <MainHome/>
+        <MainHomeVideo/>
 
         <div className='spaceLineNav'></div>
 
