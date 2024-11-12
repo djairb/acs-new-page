@@ -76,7 +76,16 @@ function MainHomeVideo() {
 
                 <h1 className='mainSomos'>Somos Conexão Social para <br/> <span className={fade ? 'fade-text fontText' : 'fontText'}>{text}</span></h1>
 
-                <iframe src="https://www.youtube.com/embed/4ueL6Zz6KCg?autoplay=1&mute=1&loop=1&playlist=4ueL6Zz6KCg" title="Conheça a Associação Conexão Social" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div className="video-container">
+                    <iframe
+                        src="https://www.youtube.com/embed/4ueL6Zz6KCg?autoplay=1&mute=1&loop=1&playlist=4ueL6Zz6KCg"
+                        title="Conheça a Associação Conexão Social"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                    ></iframe>
+                </div>
 
                 
 
