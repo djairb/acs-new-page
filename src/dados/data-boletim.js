@@ -1,5 +1,11 @@
 
-export const boletimData2024Inverse = [ 
+export const boletimData2024Inverse = [
+  
+  {
+    title: "Boletim Informativo - Outubro 2024",
+    link: "https://drive.google.com/file/d/1w65gIwhCEbOLmXpSoFwe9suJaXNK3gTL/preview"  
+
+  }, 
 
   {
     title: "Boletim Informativo - Setembro 2024",
