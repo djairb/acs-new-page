@@ -173,6 +173,12 @@ function Transparencia() {
 
                 <h3>2024: TERMO DE FOMENTO N° 009/2024</h3>
 
+            </a>
+
+            <a href="https://drive.google.com/file/d/1mmT6OB2Xu9uUE6rMa36-l5tla5pWHMKD/view?usp=sharing">
+                 
+                <h3>2024: TERMO DE FOMENTO N° 023/2024</h3>
+
             </a>			
 
             <h2>Editais e Publicações</h2>

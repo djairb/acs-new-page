@@ -13,6 +13,8 @@ const quemEstaLink = [
     "https://www.bb.com.br/site/",
     "https://nubank.com.br/",
     "https://www.daycoval.com.br/",
+    "https://www.pe.gov.br/",
+    "https://portal.educacao.pe.gov.br/",
     "https://jsl.com.br/",
     "https://www.cantustore.com.br/",
     "https://www.elecnor.com.br/",
@@ -28,7 +30,6 @@ const quemEstaLink = [
     "https://www.edenred.com.br/",
     "https://www.laureus.com/sport-for-good",
     "https://www.nike.com.br/",
-    "https://socialskate.org/",
     "https://www.b3.com.br/"
 
 ]
