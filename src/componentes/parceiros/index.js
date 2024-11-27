@@ -47,8 +47,7 @@ const quemJaEsteveLink = [
 ]
 
 
-function Parceiros(){       
-   
+function Parceiros(){      
 
     return (
               
@@ -69,7 +68,6 @@ function Parceiros(){
                         
                         </a>
                         
-
                     ))}
                     
                 </div>

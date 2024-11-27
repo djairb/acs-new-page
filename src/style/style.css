@@ -686,20 +686,21 @@ main .selectBoletim{
 
 .containerCardColaborador{
   width: 400px;
-  height: 450px;
+  height: auto;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  
 
   
 }
 
 .containerCardColaborador img{
   width: 400px;  /* Define a largura da imagem */
-  height: 400px;
-  
+  height: auto;
  
  
   object-fit: contain;
@@ -709,7 +710,7 @@ main .selectBoletim{
 
 .containerCardColaborador .colaboradorInfo {
   position: absolute; /* Posiciona o h1 sobre a imagem */
-  bottom: 10px; /* Ajusta a posição do h1 do fundo da imagem (ajuste conforme necessário) */
+  bottom: 0px; /* Ajusta a posição do h1 do fundo da imagem (ajuste conforme necessário) */
  
   background-color: #ffffff; /* Fundo semitransparente para melhorar a legibilidade */
   border: 2px solid #ff9c00;
@@ -721,8 +722,11 @@ main .selectBoletim{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
-  width: 100%;
+  justify-content: space-around;
+
+  
+  width: 90%;
+  height: 80px;
 }
 
 .containerCardColaborador .colaboradorInfo h1{
@@ -821,8 +825,11 @@ main .selectBoletim{
 
     flex-direction: column-reverse;
     justify-content: space-around;
-    height: auto;
-    padding-bottom: 20px;
+    min-height: 0px;
+    padding-bottom: 5px;
+    
+    
+    
 
     
 

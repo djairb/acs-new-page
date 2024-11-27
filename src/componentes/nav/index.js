@@ -30,16 +30,11 @@ function Navbar(){
 
                 <Link to="/transparencia">Transparência</Link>
 
-                <Link to="/colaboradores">Colaboradores</Link>
-
-
+          
                 <a href="https://somosconexaosocial.org/sra" rel="noopener noreferrer">SRA</a>
 
                 <a href="https://rebecalima.com.br/" rel="noopener noreferrer">Blog Rebeca Lima</a>
 
-                
-
-        
         
                 <button className= "nav-btn nav-close-btn" onClick={showNavBar}>
                     <FaTimes/>                

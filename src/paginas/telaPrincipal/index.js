@@ -12,6 +12,7 @@ import ProjetosSelecionar from '../../componentes/projetosSelecionar';
 import VideoCarrossel from '../../componentes/videoCarrossel';
 import InscricaoCard from '../../componentes/inscricaoCard';
 import MainHomeVideo from '../../componentes/main_home_video';
+import ColaboradorCarrossel from '../../componentes/colaboradorCarrossel';
 
 function TelaPrincipal() {
 
@@ -37,12 +38,9 @@ function TelaPrincipal() {
 
         <div className='spaceLineNav'></div>
 
-        <VideoCarrossel/>          
+        <VideoCarrossel/>
 
-        
-
-
-
+        <ColaboradorCarrossel/>     
         
 
         <Parceiros/>
