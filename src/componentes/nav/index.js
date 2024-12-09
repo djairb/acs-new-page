@@ -27,6 +27,8 @@ function Navbar(){
             <Link to="/"><img  src={logoHomeNatal} alt="" /></Link>
              <nav ref={navRef}>
 
+                <Link to="/quem-somos">Quem Somos</Link>
+
                 <Link to="/boletins-informativos">Boletins Informativos</Link>
 
                 <Link to="/transparencia">Transparência</Link>

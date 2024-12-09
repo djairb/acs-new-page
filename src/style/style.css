@@ -36,6 +36,20 @@ section {
 
 }
 
+.sectionTextImgQuemSomos{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+  
+  /* flex-direction: column;   */
+
+
+}
+
+
 
 
 .mainTexto{
@@ -50,6 +64,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 15px;
+    
     
     
 }
@@ -161,6 +176,19 @@ section {
     
     
 }
+
+.swiperSlideQuemSomos{
+
+    
+  width: 100%;  
+
+  
+  
+}
+
+
+
+
 
 .swiperSlideDivVideo{
 
@@ -574,6 +602,15 @@ footer {
   object-fit: scale-down;
 }
 
+.sectionTextImg .mainTexto .quemsomosh1{
+
+  font-size: larger;
+
+}
+
+
+
+
 main .boletimSection{
   display: flex;
   justify-content: center;
@@ -626,6 +663,30 @@ main .selectBoletim{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+}
+
+.mainQuemSomos{
+
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+
+  justify-content: space-around;
+
+  align-content: space-between;
+  text-align: center;
+
+  
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  gap: 30px;
+  
+
+
 }
 
 

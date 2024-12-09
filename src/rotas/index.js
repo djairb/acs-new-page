@@ -5,6 +5,7 @@ import Boletins from "../paginas/boletins";
 import Transparencia from "../paginas/transparencia";
 import Colaboradores from "../paginas/colaboradores";
 import QualificacaoRedes from "../paginas/qualificacaoRedes";
+import QuemSomos from "../paginas/quemSomos";
 
 const Rotas = () => (
   <HashRouter>
@@ -15,7 +16,8 @@ const Rotas = () => (
       <Route exact path='transparencia' element={<Transparencia/>} />   
       <Route exact path='colaboradores' element={<Colaboradores/>} />
       <Route exact path='colaboradores' element={<Colaboradores/>} />
-      <Route exact path='curso-qualificacao-redes' element={<QualificacaoRedes/>} />     
+      <Route exact path='curso-qualificacao-redes' element={<QualificacaoRedes/>} />
+      <Route exact path='quem-somos' element={<QuemSomos/>} />     
 
     </Routes>
   </HashRouter>
