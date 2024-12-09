@@ -3,6 +3,7 @@ import {FaBars, FaTimes} from "react-icons/fa";
 
 
 import logo from "../../img/logoAcs.png";
+import logoHomeNatal from '../../img/logoAcsNatal.png'
 import { Link, useNavigate } from "react-router-dom";
 
 function Navbar(){
@@ -23,7 +24,7 @@ function Navbar(){
 
         <header>           
 
-            <Link to="/"><img  src={logo} alt="" /></Link>
+            <Link to="/"><img  src={logoHomeNatal} alt="" /></Link>
              <nav ref={navRef}>
 
                 <Link to="/boletins-informativos">Boletins Informativos</Link>

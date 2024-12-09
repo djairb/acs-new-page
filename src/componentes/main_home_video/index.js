@@ -11,6 +11,8 @@ import 'swiper/css/scrollbar';
 
 import logoHome from '../../img/logoAcs.png';
 
+import logoHomeNatal from '../../img/logoAcsNatal.png'
+
 import facebook from "../../img/mainHome/mainHomeSociais/fb.png";
 import instagram from "../../img/mainHome/mainHomeSociais/ig.png";
 import youtube from "../../img/mainHome/mainHomeSociais/yt.png";
@@ -59,7 +61,7 @@ function MainHomeVideo() {
                     modalClose="clickOutside"                 
                     className="swipeImg grid grid-cols-3 gap-2 mx-auto"
                 >
-                    <img className="w-full rounded" src={logoHome} />
+                    <img className="w-full rounded" src={logoHomeNatal} />
                 </SlideshowLightbox>
 
                 <div id="sociais" className="container-sociais">
