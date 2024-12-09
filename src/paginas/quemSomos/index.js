@@ -22,7 +22,9 @@ function QuemSomos() {
 
               {mainQuemSomos.map((item, key) => (
 
-                  <section className='sectionTextImgQuemSomos'>
+                <>
+
+                <div className={'sectionTextImgQuemSomos' + ' ' + item.reverse}>
                       <div className='mainTexto'>
 
                           <h1 className='quemsomosh1'>{item.titulo}</h1>
@@ -44,13 +46,23 @@ function QuemSomos() {
                               <img className="w-full rounded standImg" src={item.imagem} />
                           </SlideshowLightbox>
 
-
-
                       </div>
 
 
 
-                  </section>
+                  </div>
+
+                  <div className='spaceLine'></div>
+                
+                </>
+
+                  
+                  
+                  
+
+                  
+
+                  
 
               ))}
 
