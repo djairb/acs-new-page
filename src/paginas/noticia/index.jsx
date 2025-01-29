@@ -72,40 +72,37 @@ const Noticia = () => {
         carregarNoticia();
       }, [slug]);
 
-      // useEffect(() => {
-    //     const carregarFotosNoticia = async () => {
+      useEffect(() => {
+        const carregarFotosNoticia = async () => {
 
-    //         if (!noticiaCarregadaCompleta) return;
+            if (!noticiaCarregadaCompleta) return;
             
 
-    //         setLoadingImg(true); //mantem o loading aberto
+            setLoadingImg(true); //mantem o loading aberto
 
-    //         try {
-    //             const fotosResponse = await Axios.get(`${API_BASE_URL_NOTICIAS}/getAllFotosByIdNoticia`, {
-    //                 headers: {
-    //                     Authorization: `Bearer ${user.token}`, // O token armazenado no contexto
-    //                 },
-    //                 params: { id: noticiaCarregada.id_noticia }
-    //             });
+            try {
+                const fotosResponse = await Axios.get(`${API_BASE_URL_NOTICIAS}/getAllFotosByIdNoticiaGeral`, {
+                    
+                    params: { id: noticiaCarregada.id_noticia }
+                });
 
-    //             setFotosNoticia(fotosResponse.data.map((image) => ({
-    //                 ...image,
-    //                 blob: arrayBufferToDataURL(new Uint8Array(image.foto.data))
-    //             })));
+                setFotosNoticia(fotosResponse.data.map((image) => ({
+                    ...image,
+                    blob: arrayBufferToDataURL(new Uint8Array(image.foto.data))
+                })));
 
-    //             setLoadingImg(false);
-                
+                setLoadingImg(false);               
                 
 
-    //         } catch (error) {
-    //             console.error('Erro ao carregar fotos:', error);
-    //             alert("Ocorreu um erro ao tentar carregar as fotos da turma. Por favor, tente novamente mais tarde.");
-    //             setLoadingImg(false);
-    //         }
-    //     };
+            } catch (error) {
+                console.error('Erro ao carregar fotos:', error);
+                alert("Ocorreu um erro ao tentar carregar as fotos da turma. Por favor, tente novamente mais tarde.");
+                setLoadingImg(false);
+            }
+        };
 
-    //     carregarFotosNoticia();
-    // }, [noticiaCarregadaCompleta]);
+        carregarFotosNoticia();
+    }, [noticiaCarregadaCompleta]);
 
 
     return (
@@ -118,6 +115,27 @@ const Noticia = () => {
                     <img src={dataFoto} />
 
                     <h1>{noticiaCarregada.titulo}</h1>
+                    
+
+
+                    {(fotosNoticia.map((image) => (
+                        <div key={image.id_foto}>
+                            <SlideshowLightbox
+                                theme="day"
+                                fullScreen={false}
+                                showControls={true}
+                                modalClose="clickOutside"
+                                className="grid grid-cols-3 gap-2 mx-auto"
+                            >
+                                <img
+                                    className='w-full rounded'
+                                    src={image.blob}
+                                    alt={`uploaded preview`}
+                                />
+                            </SlideshowLightbox>
+
+                        </div>
+                    )))}
                 
                 </div>
             ) : (
