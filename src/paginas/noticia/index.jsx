@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../../style/style.css';
+import '../../style/styleGpt.css';
 import { useParams } from 'react-router-dom';
 
 
@@ -9,6 +9,8 @@ import { SlideshowLightbox } from 'lightbox.js-react';
 import 'lightbox.js-react/dist/index.css'
 
 import { API_BASE_URL_NOTICIAS } from '../../infra/apiConfig';
+import Navbar from '../../componentes/nav';
+import Footer from '../../componentes/folter';
 
 
 
@@ -33,7 +35,7 @@ const Noticia = () => {
     const [fotosNoticia, setFotosNoticia] = useState([]);
 
 
-    const [isHome, setIsHome] = useState(false);
+    
 
     const [dataFoto, setDataFoto] = useState(false);
 
@@ -43,6 +45,18 @@ const Noticia = () => {
         const binaryString = Array.from(bytes).map(byte => String.fromCharCode(byte)).join('');
         const base64String = window.btoa(binaryString);
         return `data:${mimeType};base64,${base64String}`;
+    };
+
+    const formatDate = (isoDate) => {
+        const date = new Date(isoDate);
+        if (isNaN(date.getTime())) {
+          return ''; // Retorna vazio se a data não for válida
+        }
+        // Formatar a data para 'yyyy-MM-dd' (sem a parte de hora)
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Adiciona zero à esquerda se necessário
+        const day = String(date.getDate()).padStart(2, '0'); // Adiciona zero à esquerda se necessário
+        return `${year}-${month}-${day}`;
     };
     
     
@@ -107,7 +121,13 @@ const Noticia = () => {
 
     return (
 
+        <>
+
+        <Navbar />
+
         <main className='mainNoticia'>
+
+            
             {loadingGeral && <div className="spinnerButton"><div></div></div>}
             {noticiaCarregadaCompleta ? ( // Condição para carregar os dados
                 <div>
@@ -115,7 +135,8 @@ const Noticia = () => {
                     <img src={dataFoto} />
 
                     <h1>{noticiaCarregada.titulo}</h1>
-                    
+
+                    <p>{noticiaCarregada.descricao}</p>                   
 
 
                     {(fotosNoticia.map((image) => (
@@ -136,6 +157,8 @@ const Noticia = () => {
 
                         </div>
                     )))}
+
+                    <p> Autor: {noticiaCarregada.nome_autor}, em {formatDate(noticiaCarregada.data_noticia)}</p> 
                 
                 </div>
             ) : (
@@ -144,7 +167,11 @@ const Noticia = () => {
 
 
 
-        </main> 
+        </main>
+        
+        <Footer />
+
+        </>
 
 
 
