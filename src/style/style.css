@@ -867,6 +867,21 @@ main .selectBoletim{
 
 }
 
+.mainNoticia{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+.mainNoticia div{
+  
+  background-color: #f1892a;
+}
+
 
 
 @media only screen and (max-width: 1024px) {

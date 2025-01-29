@@ -24,7 +24,7 @@ function Navbar(){
 
         <header>           
 
-            <Link to="/"><img  src={logoHomeNatal} alt="" /></Link>
+            <Link to="/"><img  src={logo} alt="" /></Link>
              <nav ref={navRef}>
 
                 <Link to="/quem-somos">Quem Somos</Link>

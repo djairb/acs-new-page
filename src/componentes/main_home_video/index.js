@@ -61,7 +61,7 @@ function MainHomeVideo() {
                     modalClose="clickOutside"                 
                     className="swipeImg grid grid-cols-3 gap-2 mx-auto"
                 >
-                    <img className="w-full rounded" src={logoHomeNatal} />
+                    <img className="w-full rounded" src={logoHome} />
                 </SlideshowLightbox>
 
                 <div id="sociais" className="container-sociais">
