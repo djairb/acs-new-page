@@ -11,8 +11,11 @@ import MensagemVisita from "../../componentes/mensagemVisita";
 import ProjetosSelecionar from '../../componentes/projetosSelecionar';
 import VideoCarrossel from '../../componentes/videoCarrossel';
 import InscricaoCard from '../../componentes/inscricaoCard';
-import MainHomeVideo from '../../componentes/main_home_video';
+
 import ColaboradorCarrossel from '../../componentes/colaboradorCarrossel';
+import MainVideo from '../../componentes/main_video';
+import MainSomosConexao from '../../componentes/main_somos_conexao';
+
 
 function TelaPrincipal() {
 
@@ -26,11 +29,13 @@ function TelaPrincipal() {
 
         <div className='spaceLineNav'></div>
 
-        <MainHomeVideo/>
+        <MainVideo/>
 
         <div className='spaceLineNav'></div>
 
-        <InscricaoCard/>
+        
+
+        {/* <InscricaoCard/> */}
 
         <div className='spaceLineNav'></div>
 
@@ -47,9 +52,13 @@ function TelaPrincipal() {
 
         <MensagemVisita/>
 
-        <div className='spaceLine'></div>       
+        <div className='spaceLine'></div>
 
-        <Location/>           
+               
+
+        <Location/>
+
+        <MainSomosConexao/>           
 
 
       </main>

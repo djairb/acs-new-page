@@ -24,7 +24,7 @@ const mainHome = importAll(require.context("../../img/mainHome/main_home", false
 
 register();
 
-function MainHomeVideo() {
+function MainVideo() {
     const strings = ["Inovação", "Desenvolvimento", "Cidadania", "Educação", "Inclusão", "Transformação", "Crescimento", "Progresso", "Cuidado", "Colaboração", "Capacitação"];
     const [index, setIndex] = useState(0);
     const [text, setText] = useState(strings[0]);
@@ -54,30 +54,6 @@ function MainHomeVideo() {
         <section className='sectionTextImg'>
             <div className='mainTexto'>                
 
-                <SlideshowLightbox
-                    theme="day"
-                    fullScreen={true}
-                    showControls={true}
-                    modalClose="clickOutside"                 
-                    className="swipeImg grid grid-cols-3 gap-2 mx-auto"
-                >
-                    <img className="w-full rounded" src={logoHome} />
-                </SlideshowLightbox>
-
-                <div id="sociais" className="container-sociais">
-                    <a href="https://www.facebook.com/conexsoc">
-                        <img src={facebook} />
-                    </a>
-                    <a href="https://www.instagram.com/somosconexaosocial/">
-                        <img src={instagram} />
-                    </a>
-                    <a href="https://www.youtube.com/@SomosConexaoSocial">
-                        <img src={youtube} />
-                    </a>
-                </div>                
-
-                <h1 className='mainSomos'>Somos Conexão Social para <br/> <span className={fade ? 'fade-text fontText' : 'fontText'}>{text}</span></h1>
-
                 <div className="video-container">
                     <iframe
                         src="https://www.youtube.com/embed/4ueL6Zz6KCg?autoplay=1&mute=1&loop=1&playlist=4ueL6Zz6KCg"
@@ -100,4 +76,4 @@ function MainHomeVideo() {
     );
 }
 
-export default MainHomeVideo;
+export default MainVideo;

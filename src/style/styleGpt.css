@@ -4,7 +4,7 @@
     align-items: center; /* Centraliza os elementos horizontalmente */
     justify-content: center; /* Centraliza os elementos verticalmente */
     width: 100%; 
-    height: 100dvh; /* Ocupa toda a altura da tela */
+    /* height: 100dvh; */
     padding: 20px; /* Adiciona margens internas */
     overflow-y: auto; /* Adiciona barra de rolagem vertical se o conteúdo exceder a altura da tela */
   }
