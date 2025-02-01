@@ -37,14 +37,6 @@ export default function CardNoticiaOld(props) {
 
                 <h1 className="tituloCardNoticia">{props.titulo}</h1>
 
-                {/* <h2>Data:</h2>
-
-                <p>{formattedDate}</p>
-
-                <h2>Autor:</h2>
-
-                <p>{props.nome_autor}</p> */}
-
                 <button
                     onClick={handleClickVisualizar}
                 >
