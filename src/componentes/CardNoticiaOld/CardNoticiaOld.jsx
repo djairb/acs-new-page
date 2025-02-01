@@ -3,21 +3,11 @@ import '../../style/style.css';
 import { useNavigate } from 'react-router-dom';
 
 export default function CardNoticiaOld(props) {
-
     const navigate = useNavigate();
 
-
     const handleClickVisualizar = () => {
-
-        //SLUG
-        navigate(`/noticias/${props.slug}`)
-        // id_noticia, slug, exibir_na_home, 
-
-    }
-
-    const date = new Date(props.data_noticia);
-
-    const formattedDate = date.toLocaleDateString();
+        navigate(`/noticias/${props.slug}`);
+    };
 
     const arrayBufferToDataURL = (arrayBuffer, mimeType = 'image/jpeg') => {
         const bytes = new Uint8Array(arrayBuffer);
@@ -26,32 +16,20 @@ export default function CardNoticiaOld(props) {
         return `data:${mimeType};base64,${base64String}`;
     };
 
-    const dataFoto = arrayBufferToDataURL(new Uint8Array(props.foto_capa.data))
-    
-    return (        
+    const dataFoto = arrayBufferToDataURL(new Uint8Array(props.foto_capa.data));
 
-        <>
-            <div className={`containerCardNoticiaEdicao`}>
-
-                <img src={dataFoto} />
-
-                <h1 className="tituloCardNoticia">{props.titulo}</h1>
-
-                <button
-                    onClick={handleClickVisualizar}
-                >
-                    Visualizar Notícia
-                </button>
-
-
+    return (
+        <div className="containerCardNoticiaEdicao" onClick={handleClickVisualizar}>
+            <div className="cardImagemContainer">
+                <img
+                    src={dataFoto}
+                    alt="Capa da Notícia"
+                    className="cardImagem"
+                />
+                <div className="cardOverlay">
+                    <h1 className="tituloCardNoticia">{props.titulo}</h1>
+                </div>
             </div>
-
-        </>
-
-
-    )
-
-
-
-
+        </div>
+    );
 }
