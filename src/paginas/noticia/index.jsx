@@ -32,7 +32,7 @@ const Noticia = () => {
         const year = date.getFullYear();
         const month = String(date.getMonth() + 1).padStart(2, '0');
         const day = String(date.getDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
+        return `${day}/${month}/${year}`;
     };
 
     useEffect(() => {
@@ -94,10 +94,10 @@ const Noticia = () => {
                             <img src={dataFoto} alt="Capa da Notícia" className="capa-imagem" />
                         </SlideshowLightbox>
 
-                        {/* <h1 className="titulo-noticia">{noticiaCarregada.titulo}</h1> */}
+                        <h1 className="titulo-noticia">{noticiaCarregada.titulo}</h1>
 
-                        <h1 className="titulo-noticia">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
-                        <p>{noticiaCarregada.descricao}</p>
+                        
+                        <p className="descricao-noticia">{noticiaCarregada.descricao}</p>
 
                         {loadingImg ? <div className="spinner"></div> : (
                             <div className="carrossel-imagens">
@@ -121,7 +121,7 @@ const Noticia = () => {
                             </div>
                         )}
 
-                        <p className="autor-data"> Autor: {noticiaCarregada.nome_autor}, em {formatDate(noticiaCarregada.data_noticia)}</p>
+                        <p className="autor-data"> Por: {noticiaCarregada.nome_autor}, em {formatDate(noticiaCarregada.data_noticia)}</p>
                     </div>
                 ) : (
                     <p>Carregando dados...</p>

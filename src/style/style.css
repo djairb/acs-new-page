@@ -1103,13 +1103,19 @@ main .selectBoletim{
 /* Estilo do título */
 .titulo-noticia {
   text-align: center;
-  width: 100%;
+  width: 100%; /* 100% da div pai/
   
   word-wrap: break-word; /* Quebra palavras longas */
-    overflow-wrap: break-word; /* Alternativa moderna para word-wrap */
-    white-space: normal;
+  overflow-wrap: break-word; /* Alternativa moderna para word-wrap */
+  white-space: normal;
 
   
+}
+
+.descricao-noticia{
+  font-size: 18px;
+  line-height: 25px;
+	text-align: justify;
 }
 
 /* Estilo do carrossel de imagens */
@@ -1132,7 +1138,6 @@ main .selectBoletim{
 /* Estilo do autor e data */
 .autor-data {
   text-align: center;
-  margin-top: 20px;
 }
 
 /* Estilo do spinner */
