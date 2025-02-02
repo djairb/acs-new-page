@@ -7,6 +7,7 @@ import 'lightbox.js-react/dist/index.css';
 import { API_BASE_URL_NOTICIAS } from '../../infra/apiConfig';
 import Navbar from '../../componentes/nav';
 import Footer from '../../componentes/folter';
+import ParceirosNoticia from '../../componentes/parceirosNoticia';
 
 const Noticia = () => {
     const { slug } = useParams();
@@ -80,6 +81,8 @@ const Noticia = () => {
     return (
         <div className="page-container">
             <Navbar />
+
+            <div className='spaceLineNav'></div>
             <main className="main-noticia">
                 {loadingGeral && <div className="spinner"><div></div></div>}
                 {noticiaCarregadaCompleta ? (
@@ -122,6 +125,10 @@ const Noticia = () => {
                         )}
 
                         <p className="autor-data"> Por: {noticiaCarregada.nome_autor}, em {formatDate(noticiaCarregada.data_noticia)}</p>
+
+                        <div className='spaceLineNav'></div>
+
+                        <ParceirosNoticia/>
                     </div>
                 ) : (
                     <p>Carregando dados...</p>
