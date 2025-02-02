@@ -1103,6 +1103,12 @@ main .selectBoletim{
 /* Estilo do título */
 .titulo-noticia {
   text-align: center;
+  width: 100%;
+  
+  word-wrap: break-word; /* Quebra palavras longas */
+    overflow-wrap: break-word; /* Alternativa moderna para word-wrap */
+    white-space: normal;
+
   
 }
 

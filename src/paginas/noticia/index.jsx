@@ -94,7 +94,9 @@ const Noticia = () => {
                             <img src={dataFoto} alt="Capa da Notícia" className="capa-imagem" />
                         </SlideshowLightbox>
 
-                        <h1 className="titulo-noticia">{noticiaCarregada.titulo}</h1>
+                        {/* <h1 className="titulo-noticia">{noticiaCarregada.titulo}</h1> */}
+
+                        <h1 className="titulo-noticia">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
                         <p>{noticiaCarregada.descricao}</p>
 
                         {loadingImg ? <div className="spinner"></div> : (
