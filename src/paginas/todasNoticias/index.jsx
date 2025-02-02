@@ -57,7 +57,6 @@ const TodasNoticias = () => {
                 <CardNoticiaOld
 
                   key={noticia.id_noticia}
-                  id_noticia={noticia.id_noticia}
                   foto_capa={noticia.foto_capa}
                   titulo={noticia.titulo}                  
                   slug={noticia.slug}
