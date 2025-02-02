@@ -20,17 +20,21 @@ const quemEstaLink = [
     "https://www.elecnor.com.br/",
     "https://www.brasilcap.com.br/",
     "https://www.copaenergia.com.br/",
-    "",
-    "",
-    "https://itaenga.pe.gov.br/",
-    "https://rems.org.br/",
-    "",
-    "",
-    "",
     "https://www.edenred.com.br/",
     "https://www.laureus.com/sport-for-good",
     "https://www.nike.com.br/",
-    "https://www.b3.com.br/"
+    "https://www.b3.com.br/",
+    "https://www.santander.com.br/",
+    "https://www.caixa.gov.br/",
+    "https://www.bbseguros.com.br/",
+    "https://rems.org.br/",
+    "",
+    "",
+    "https://itaenga.pe.gov.br/",    
+    "",
+    "",
+    ""
+    
 
 ]
 

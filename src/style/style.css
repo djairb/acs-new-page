@@ -1141,11 +1141,7 @@ main .selectBoletim{
 }
 
 /* Estilo do spinner */
-.spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 
 
