@@ -1016,6 +1016,50 @@ main .selectBoletim{
 }
 
 
+.mainNoticia{
+
+	width: 100%;
+  min-width: 320px;
+  max-width: 1220px;
+  margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  
+
+
+}
+
+.mainNoticia div{
+  flex: 1;
+  
+}
+
+.mainNoticia img{
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+
+
+}
+
+.mainNoticia h1{
+	margin: 10px auto;
+	text-align: center;
+	background-color: #fff;
+}
+
+.mainNoticia p{
+
+	font-size: 17px;
+    line-height: 20px;
+	text-align: justify;
+	background-color: #fff;
+	width: 95%;
+}
+
+
 
 
 
