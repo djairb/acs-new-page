@@ -131,15 +131,24 @@ const Noticia = () => {
             {loadingGeral && <div className="spinnerButton"><div></div></div>}
             {noticiaCarregadaCompleta ? ( // Condição para carregar os dados
                 <div>
+                        <SlideshowLightbox
+                            theme="day"
+                            fullScreen={false}
+                            showControls={true}
+                            modalClose="clickOutside"
+                            className="grid grid-cols-3 gap-2 mx-auto"
+                        >
+                            <img src={dataFoto} />
+                        </SlideshowLightbox>
 
-                    <img src={dataFoto} />
+                    
 
                     <h1>{noticiaCarregada.titulo}</h1>
 
                     <p>{noticiaCarregada.descricao}</p>                   
 
 
-                    {(fotosNoticia.map((image) => (
+                    {loadingImg ? <div className="spinner"></div> : (fotosNoticia.map((image) => (
                         <div key={image.id_foto}>
                             <SlideshowLightbox
                                 theme="day"
