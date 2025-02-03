@@ -997,7 +997,7 @@ main .selectBoletim{
   margin: 0; /* Garante que não há margin */
 }
 
-.containerCardNoticiaEdicao:hover {
+.containerCardNoticiaEdicao:hover, .containerCardNoticiaHome:hover {
   transform: scale(1.05); /* Efeito de zoom no hover */
 }
 

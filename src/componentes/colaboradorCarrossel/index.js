@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import CardVideo from "../cardVideo";
 import { reportagensDrive } from "../../dados/data-video-reportagens";
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 import { EffectFade } from 'swiper/modules';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
