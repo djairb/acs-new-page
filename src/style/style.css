@@ -99,6 +99,37 @@ section {
   height: 100%;
 }
 
+.divNoticiasHome .swiperMaster{
+
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #f08528;
+  flex-direction: column;
+  margin: 0 auto;
+
+
+
+
+}
+
+
+.divNoticiasHome{
+  margin: 20px 0;
+  height: 400px;
+
+
+
+}
+
+.divNoticiasHome h1{
+  padding-bottom: 20px;
+
+
+
+}
+
 
 .divReportagens{
 

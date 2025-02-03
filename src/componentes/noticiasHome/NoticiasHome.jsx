@@ -24,6 +24,26 @@ const NoticiasHome = () => {
   const [noticias, setNoticias] = useState([]);
   
   const [loading, setLoading] = useState(false);
+
+  const [numeroSlide, alterarNumeroSlide] = useState(3);
+  
+  
+    useEffect(() => {
+      const handleResize = () => {
+          if (window.innerWidth <= 768) {
+              alterarNumeroSlide(1); // imagem mobile
+          } else {
+            alterarNumeroSlide(3); // imagem desktop
+          }
+      };
+  
+      // Adiciona o event listener e executa a verificação inicial
+      window.addEventListener('resize', handleResize);
+      handleResize();
+  
+      // Limpa o event listener ao desmontar o componente
+      return () => window.removeEventListener('resize', handleResize);
+  }, []);
   
   useEffect(() => {
     const carregarNoticias = async () => {
@@ -49,7 +69,7 @@ const NoticiasHome = () => {
 
   return (
 
-      <div className="divReportagens">
+      <div className="divNoticiasHome">
           <h1 className="h1SectionTitle">Notícias</h1>
 
           {loading ? <div className="spinner"><div></div></div> :
@@ -57,8 +77,8 @@ const NoticiasHome = () => {
               noticias.length === 0 ? <p></p> :
 
                   <Swiper
-                      slidesPerView={1} // Ajuste este valor para o número desejado de vídeos por vez
-                      spaceBetween={1} // Espaçamento entre os slides (em pixels)
+                      slidesPerView={numeroSlide} // Ajuste este valor para o número desejado de vídeos por vez
+                      spaceBetween={5} // Espaçamento entre os slides (em pixels)
                       style={{
                           "--swiper-pagination-color": "#f08528",
                           "--swiper-navigation-color": "#f08528",
@@ -68,7 +88,7 @@ const NoticiasHome = () => {
                       autoplay={true}
 
                       navigation
-                      className="swiperMaster"
+                      
                   >
                       {noticias.map((noticia) => (
                           <SwiperSlide key={noticia.id_noticia}>
