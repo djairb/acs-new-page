@@ -8,9 +8,10 @@ import Axios from 'axios';
 
 import { API_BASE_URL_NOTICIAS } from '../../infra/apiConfig';
 import CardNoticiaOld from '../../componentes/CardNoticiaOld/CardNoticiaOld';
+import CardNoticiaHome from '../CardNoticiaHome/CardNoticiaHome';
 
 
-const TodasNoticias = () => {
+const NoticiasHome = () => {
   
   const [noticias, setNoticias] = useState([]);
   
@@ -48,13 +49,13 @@ const TodasNoticias = () => {
 
         <div className='divTodasNoticias'>
 
-          {loading ? <div className="spinnerButton"><div></div></div> :
+          {loading ? <div className="spinner"><div></div></div> :
 
-            noticias.length === 0 ? <p>Sem notícias registradas</p> :
+            noticias.length === 0 ? <p></p> :
 
               noticias.map(noticia => (
 
-                <CardNoticiaOld
+                <CardNoticiaHome
 
                   key={noticia.id_noticia}
                   foto_capa={noticia.foto_capa}
@@ -77,4 +78,4 @@ const TodasNoticias = () => {
   );
 }
 
-export default TodasNoticias;
+export default NoticiasHome;

@@ -740,6 +740,8 @@ main .selectBoletim{
 
 }
 
+
+
 .mainInscricao{
 
   width: 100%;
@@ -970,6 +972,21 @@ main .selectBoletim{
   position: relative;
   width: 100%;
   max-width: 500px; /* Card maior */
+  height: 350px; /* Altura maior */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  padding: 0; /* Garante que não há padding */
+  margin: 0; /* Garante que não há margin */
+}
+
+
+.containerCardNoticiaHome {
+  position: relative;
+  width: 100%;
+  max-width: 700px; /* Card maior */
   height: 350px; /* Altura maior */
   overflow: hidden;
   border-radius: 10px;
