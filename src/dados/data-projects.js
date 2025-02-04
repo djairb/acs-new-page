@@ -14,6 +14,8 @@ const centroFormacao = importAll(require.context("../img/mainHome/centro-formaca
 
 const vamoSimbora = importAll(require.context("../img/mainHome/vamo-simbora", false, /\.(png|jpe?g|svg)$/));
 
+const skateLivre = importAll(require.context("../img/mainHome/skate-livre", false, /\.(png|jpe?g|svg)$/));
+
 
 
 
@@ -72,6 +74,15 @@ export const mainHomeData = [
         logoProjeto: logosProjetos[5],
         textoProjeto: 'O projeto “VamoSimbora” possui o intuito de contribuir com a “autonomia e participação" da pessoa idosa e suas famílias na sociedade. Com o objetivo de promover a participação ativa e contínua para que se reconheçam como atores sociais corresponsáveis pela Política Municipal da Pessoa Idosa. A proposta visa, sobretudo, oferecer alternativas para o desenvolvimento local do município de Lagoa de Itaenga-PE e minimizar os riscos e as condições de vulnerabilidade a que estão sujeitas.',
         slideProjeto: vamoSimbora
+        
+      },
+
+      {
+        id: 6,
+        reverse:"reverse",
+        logoProjeto: logosProjetos[6],
+        textoProjeto: 'Projeto Skate Livre é uma realização da Conexão Social, por meio do Programa Skate pela Mudança Social, e visa promover o desenvolvimento integral de crianças e adolescentes entre eles, meninas e meninos, com idades entre 7 e 14 anos, por meio das oficinas de Skate. O Projeto é fundamentado na crença de que oferecer oportunidades e participação ativa contribuirá para a formação de cidadãos conscientes e responsáveis.',
+        slideProjeto: skateLivre
         
       },
 
