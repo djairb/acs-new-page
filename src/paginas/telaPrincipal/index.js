@@ -36,8 +36,6 @@ function TelaPrincipal() {
 
         <NoticiasHome/>
 
-        
-
         {/* <InscricaoCard/> */}
 
         <div className='spaceLineNav'></div>
@@ -50,14 +48,11 @@ function TelaPrincipal() {
 
         <ColaboradorCarrossel/>     
         
-
         <Parceiros/>
 
         <MensagemVisita/>
 
         <div className='spaceLine'></div>
-
-               
 
         <Location/>
 

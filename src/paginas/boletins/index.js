@@ -4,20 +4,25 @@ import Navbar from '../../componentes/nav';
 import Footer from '../../componentes/folter';
 
 
-import { boletimData2023Inverse, boletimData2024Inverse } from '../../dados/data-boletim';
+import { boletimData2023Inverse, boletimData2024Inverse, boletimData2025Inverse } from '../../dados/data-boletim';
 
 
 
 function Boletins() {
 
   
-  const [selectedValue, setSelectedValue] = useState('2024');
+  const [selectedValue, setSelectedValue] = useState('2025');
 
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
   };
 
-  const selectedData = selectedValue === '2024' ? boletimData2024Inverse: boletimData2023Inverse;  
+  const selectedData = selectedValue === '2025' 
+  ? boletimData2025Inverse 
+  : selectedValue === '2024' 
+  ? boletimData2024Inverse 
+  : boletimData2023Inverse;
+  
 
   return (
     <>
@@ -30,6 +35,7 @@ function Boletins() {
 
         <select className='selectBoletim' value={selectedValue} onChange={handleSelectChange}>
 
+          <option value="2025">Boletins 2025</option>
           <option value="2024">Boletins 2024</option>
           <option value="2023">Boletins 2023</option>
 

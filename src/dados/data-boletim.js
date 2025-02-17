@@ -1,3 +1,13 @@
+export const boletimData2025Inverse = [
+  
+  {
+    title: "Boletim Informativo - Janeiro 2025",
+    link: "https://drive.google.com/file/d/1bCC9LtWNY_89brWsZTDA9ruKGEsRYHCY/preview"
+
+    
+  }
+];
+
 
 export const boletimData2024Inverse = [
   
