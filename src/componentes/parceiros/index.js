@@ -4,16 +4,16 @@ import pix from "../../img/parceiros/voce-tambem/pix.png";
 
 const importAll = (r) => r.keys().map(r);
 
-const quemEsta = importAll(require.context('../../img/parceiros/quem-esta', false, /\.(png|jpe?g|svg)$/));
+export const quemEsta = importAll(require.context('../../img/parceiros/quem-esta', false, /\.(png|jpe?g|svg)$/));
 
 const quemJaEsteve = importAll(require.context('../../img/parceiros/quem-ja-esteve', false, /\.(png|jpe?g|svg)$/));
 
-const quemEstaLink = [
+export const quemEstaLink = [
 
     "https://www.bb.com.br/site/",
     "https://nubank.com.br/",
     "https://www.daycoval.com.br/",
-    "https://www.pe.gov.br/",
+    "https://www.pe.gov.br/secretaria/secretaria-da-mulher/",
     "https://portal.educacao.pe.gov.br/",
     "https://jsl.com.br/",
     "https://www.cantustore.com.br/",
@@ -24,13 +24,15 @@ const quemEstaLink = [
     "https://www.laureus.com/sport-for-good",
     "https://www.nike.com.br/",
     "https://www.b3.com.br/",
-    "https://www.santander.com.br/",
+    "https://www.santander.com.br/sustentabilidade/sociedade/parceiro-do-idoso",
     "https://www.caixa.gov.br/",
+    "https://www.vwfs.com.br/",
+    "https://www.man-es.com/pt/global-pt/brasil",
     "https://www.bbseguros.com.br/",
     "https://rems.org.br/",
+    "https://itaenga.pe.gov.br/",
     "",
-    "",
-    "https://itaenga.pe.gov.br/",    
+    "",    
     "",
     "",
     ""

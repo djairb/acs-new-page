@@ -2,40 +2,7 @@ import bb from "../../img/parceiros/voce-tambem/bb.png";
 
 import pix from "../../img/parceiros/voce-tambem/pix.png";
 
-const importAll = (r) => r.keys().map(r);
-
-const quemEsta = importAll(require.context('../../img/parceiros/quem-esta', false, /\.(png|jpe?g|svg)$/));
-
-const quemEstaLink = [
-
-    "https://www.bb.com.br/site/",
-    "https://nubank.com.br/",
-    "https://www.daycoval.com.br/",
-    "https://www.pe.gov.br/",
-    "https://portal.educacao.pe.gov.br/",
-    "https://jsl.com.br/",
-    "https://www.cantustore.com.br/",
-    "https://www.elecnor.com.br/",
-    "https://www.brasilcap.com.br/",
-    "https://www.copaenergia.com.br/",
-    "https://www.edenred.com.br/",
-    "https://www.laureus.com/sport-for-good",
-    "https://www.nike.com.br/",
-    "https://www.b3.com.br/",
-    "https://www.santander.com.br/",
-    "https://www.caixa.gov.br/",
-    "https://www.bbseguros.com.br/",
-    "https://rems.org.br/",
-    "",
-    "",
-    "https://itaenga.pe.gov.br/",    
-    "",
-    "",
-    ""
-    
-
-]
-
+import { quemEsta, quemEstaLink } from "../parceiros";
 
 
 function ParceirosNoticia(){      
