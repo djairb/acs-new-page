@@ -206,14 +206,25 @@ section {
   
 }
 
+.swiperSlide img{
+    
+  border-radius: 20px;
+  
+}
+
 .swiperSlide{
 
     
-    width: 50%;  
+    width: 50%;
+
+    padding: 0 10px 0 10px; 
+     
 
     
     
 }
+
+
 
 .swiperSlideQuemSomos{
 
