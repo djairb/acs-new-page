@@ -1,6 +1,9 @@
 import React from "react";
 import '../../style/style.css';
 import { useNavigate } from 'react-router-dom';
+import { API_IMAGEM_URL } from "../../infra/apiConfig";
+
+
 
 export default function CardNoticiaOld(props) {
     const navigate = useNavigate();
@@ -9,20 +12,14 @@ export default function CardNoticiaOld(props) {
         navigate(`/noticias/${props.slug}`);
     };
 
-    const arrayBufferToDataURL = (arrayBuffer, mimeType = 'image/jpeg') => {
-        const bytes = new Uint8Array(arrayBuffer);
-        const binaryString = Array.from(bytes).map(byte => String.fromCharCode(byte)).join('');
-        const base64String = window.btoa(binaryString);
-        return `data:${mimeType};base64,${base64String}`;
-    };
 
-    const dataFoto = arrayBufferToDataURL(new Uint8Array(props.foto_capa.data));
 
     return (
         <div className="containerCardNoticiaEdicao" onClick={handleClickVisualizar}>
             <div className="cardImagemContainer">
                 <img
-                    src={dataFoto}
+                
+                    src={`${API_IMAGEM_URL}${props.foto_capa}`}
                     alt="Capa da Notícia"
                     className="cardImagem"
                 />

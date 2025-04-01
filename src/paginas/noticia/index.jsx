@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Axios from "axios";
 import { SlideshowLightbox } from 'lightbox.js-react';
 import 'lightbox.js-react/dist/index.css';
-import { API_BASE_URL_NOTICIAS } from '../../infra/apiConfig';
+import { API_BASE_URL_NOTICIAS, API_IMAGEM_URL } from '../../infra/apiConfig';
 import Navbar from '../../componentes/nav';
 import Footer from '../../componentes/folter';
 import ParceirosNoticia from '../../componentes/parceirosNoticia';
@@ -18,12 +18,6 @@ const Noticia = () => {
     const [fotosNoticia, setFotosNoticia] = useState([]);
     const [dataFoto, setDataFoto] = useState(false);
 
-    const arrayBufferToDataURL = (arrayBuffer, mimeType = 'image/jpeg') => {
-        const bytes = new Uint8Array(arrayBuffer);
-        const binaryString = Array.from(bytes).map(byte => String.fromCharCode(byte)).join('');
-        const base64String = window.btoa(binaryString);
-        return `data:${mimeType};base64,${base64String}`;
-    };
 
     const formatDate = (isoDate) => {
         const date = new Date(isoDate);
@@ -45,7 +39,7 @@ const Noticia = () => {
                 });
                 setNoticiaCarregada(responseNoticia.data[0]);
                 setNoticiaCarregadaCompleta(true);
-                setDataFoto(arrayBufferToDataURL(new Uint8Array(responseNoticia.data[0].foto_capa.data)));
+                
             } catch (error) {
                 console.error('Erro ao tentar carregar as Notícias:', error);
                 alert("Ocorreu um erro ao tentar carregar notícias. Por favor, tente novamente mais tarde.");
@@ -64,10 +58,7 @@ const Noticia = () => {
                 const fotosResponse = await Axios.get(`${API_BASE_URL_NOTICIAS}/getAllFotosByIdNoticiaGeral`, {
                     params: { id: noticiaCarregada.id_noticia }
                 });
-                setFotosNoticia(fotosResponse.data.map((image) => ({
-                    ...image,
-                    blob: arrayBufferToDataURL(new Uint8Array(image.foto.data))
-                })));
+                setFotosNoticia(fotosResponse.data);
                 setLoadingImg(false);
             } catch (error) {
                 console.error('Erro ao carregar fotos:', error);
@@ -94,12 +85,11 @@ const Noticia = () => {
                             modalClose="clickOutside"
                             className="grid grid-cols-3 gap-2 mx-auto"
                         >
-                            <img src={dataFoto} alt="Capa da Notícia" className="capa-imagem" />
+                            <img src={`${API_IMAGEM_URL}${noticiaCarregada.foto_capa}`} alt="Capa da Notícia" className="capa-imagem" />
                         </SlideshowLightbox>
 
                         <h1 className="titulo-noticia">{noticiaCarregada.titulo}</h1>
 
-                        
                         <p className="descricao-noticia">{noticiaCarregada.descricao}</p>
 
                         {loadingImg ? <div className="spinner"></div> : (
@@ -114,7 +104,7 @@ const Noticia = () => {
                                             className="grid grid-cols-3 gap-2 mx-auto"
                                         >
                                             <img
-                                                src={image.blob}
+                                                src={`${API_IMAGEM_URL}${image.foto}`}
                                                 alt={`uploaded preview`}
                                                 className="imagem-carrossel"
                                             />
