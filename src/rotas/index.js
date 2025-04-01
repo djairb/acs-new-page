@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TelaPrincipal from "../paginas/telaPrincipal";
 import Boletins from "../paginas/boletins";
 import Transparencia from "../paginas/transparencia";
@@ -10,27 +10,18 @@ import Noticia from "../paginas/noticia";
 import TodasNoticias from "../paginas/todasNoticias";
 
 const Rotas = () => (
-  <HashRouter>
+  <Router>
     <Routes>
-        
       <Route exact path='/' element={<TelaPrincipal/>} />
-      <Route exact path='boletins-informativos' element={<Boletins/>} />
-      <Route exact path='transparencia' element={<Transparencia/>} />   
-      <Route exact path='colaboradores' element={<Colaboradores/>} />
-      <Route exact path='colaboradores' element={<Colaboradores/>} />
-      <Route exact path='curso-qualificacao-redes' element={<QualificacaoRedes/>} />
-      <Route exact path='quem-somos' element={<QuemSomos/>} />
-
-      <Route exact path='noticias' element={<TodasNoticias/>} />
-
-
-      
-
-
-      <Route path="/noticias/:slug" element={<Noticia />} />     
-
+      <Route exact path='/boletins-informativos' element={<Boletins/>} />
+      <Route exact path='/transparencia' element={<Transparencia/>} />   
+      <Route exact path='/colaboradores' element={<Colaboradores/>} />
+      <Route exact path='/curso-qualificacao-redes' element={<QualificacaoRedes/>} />
+      <Route exact path='/quem-somos' element={<QuemSomos/>} />
+      <Route exact path='/noticias' element={<TodasNoticias/>} />
+      <Route path="/noticias/:slug" element={<Noticia />} />
     </Routes>
-  </HashRouter>
+  </Router>
 );
 
 export default Rotas;
