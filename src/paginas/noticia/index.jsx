@@ -16,7 +16,7 @@ const Noticia = () => {
     const [noticiaCarregada, setNoticiaCarregada] = useState(false);
     const [loadingImg, setLoadingImg] = useState(false);
     const [fotosNoticia, setFotosNoticia] = useState([]);
-    const [dataFoto, setDataFoto] = useState(false);
+    
 
 
     const formatDate = (isoDate) => {
