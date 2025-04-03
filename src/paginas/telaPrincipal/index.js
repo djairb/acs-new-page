@@ -46,7 +46,7 @@ function TelaPrincipal() {
 
         <VideoCarrossel/>
 
-        <ColaboradorCarrossel/>     
+        {/* <ColaboradorCarrossel/>      */}
         
         <Parceiros/>
 

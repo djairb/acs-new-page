@@ -914,11 +914,16 @@ main .selectBoletim{
   height: 150px;
   object-fit: contain;
   cursor: pointer;
+  transition: transform 0.3s ease;
   
 
   
 
 
+}
+
+.mainPicturesSelected img:hover{
+  transform: scale(1.1); /* Efeito de zoom na imagem */
 }
 
 .mainPicturesSelected img.selected{
