@@ -117,7 +117,7 @@ section {
 
 .divNoticiasHome{
   margin: 20px 0;
-  height: 400px;
+  min-height: 400px;
 
 
 
@@ -1042,10 +1042,20 @@ main .selectBoletim{
   margin: 0; /* Garante que não há margin */
 }
 
-.containerCardNoticiaEdicao:hover, .containerCardNoticiaHome:hover {
+.containerCardNoticiaEdicao:hover{
   transform: scale(1.05); /* Efeito de zoom no hover */
 }
 
+
+.containerCardNoticiaHome:hover {
+  transform: scale(1.01); /* Efeito de zoom no hover */
+  
+}
+
+.containerCardNoticiaHome div h1:hover {
+
+  color: #f08528;
+}
 .cardImagemContainer {
   position: absolute; /* Cobre todo o espaço do card */
   top: 0;
