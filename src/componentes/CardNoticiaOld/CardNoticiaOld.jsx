@@ -9,6 +9,7 @@ export default function CardNoticiaOld(props) {
     const navigate = useNavigate();
 
     const handleClickVisualizar = () => {
+        sessionStorage.setItem('noticiasScrollPosition', window.scrollY);
         navigate(`/noticias/${props.slug}`);
     };
 
