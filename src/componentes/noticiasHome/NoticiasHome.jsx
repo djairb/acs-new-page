@@ -17,6 +17,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
+import { useNavigate } from 'react-router-dom';
 
 
 const NoticiasHome = () => {
@@ -26,6 +27,13 @@ const NoticiasHome = () => {
   const [loading, setLoading] = useState(false);
 
   const [numeroSlide, alterarNumeroSlide] = useState(3);
+
+  const navigate = useNavigate();
+
+  const handleClickTodasNoticias = () => {
+    navigate('/noticias');
+    window.scrollTo(0, 0);
+  };
   
   
     useEffect(() => {
@@ -103,6 +111,13 @@ const NoticiasHome = () => {
                       ))}
                   </Swiper>
           }
+
+          <button
+            className="buttonMainPage"
+            onClick={handleClickTodasNoticias}
+          >
+            Todas Notícias
+          </button>
 
 
       </div>
