@@ -9,6 +9,8 @@ import Navbar from '../../componentes/nav';
 import Footer from '../../componentes/folter';
 import ParceirosNoticia from '../../componentes/parceirosNoticia';
 
+import { useNavigate } from 'react-router-dom';
+
 const Noticia = () => {
     const { slug } = useParams();
     const [loadingGeral, setLoadingGeral] = useState(false);
@@ -70,6 +72,13 @@ const Noticia = () => {
         carregarFotosNoticia();
     }, [noticiaCarregadaCompleta]);
 
+    const navigate = useNavigate();
+
+    const handleClickVoltar = () => {
+        navigate(-1);
+        
+    };
+
     return (
         <div className="page-container">
             <Navbar />
@@ -120,10 +129,19 @@ const Noticia = () => {
                         <div className='spaceLineNav'></div>
 
                         <ParceirosNoticia/>
+
+                        
                     </div>
                 ) : (
                     <p>Carregando dados...</p>
                 )}
+
+                <button
+                    className="buttonMainPage"
+                    onClick={handleClickVoltar}
+                >
+                    Voltar
+                </button>
             </main>
             <Footer />
         </div>
