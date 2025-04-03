@@ -33,6 +33,7 @@ const NoticiasHome = () => {
   const handleClickTodasNoticias = () => {
     navigate('/noticias');
     window.scrollTo(0, 0);
+    
   };
   
   
