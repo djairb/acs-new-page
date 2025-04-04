@@ -48,22 +48,32 @@ const TodasNoticias = () => {
     <>
       <Navbar />
       <main className='mainTodasNoticias' ref={newsContainerRef}>
+
         <div className='divTodasNoticias'>
           {loading ? (
+
             <div className="spinnerButton"><div></div></div>
+
           ) : noticias.length === 0 ? (
+
             <p>Sem notícias registradas</p>
+
           ) : (
+
             noticias.map(noticia => (
+
               <CardNoticiaOld
                 key={noticia.id_noticia}
                 foto_capa={noticia.foto_capa}
                 titulo={noticia.titulo}
                 slug={noticia.slug}
               />
+
             ))
           )}
+          
         </div>
+
       </main>
       <Footer />
     </>

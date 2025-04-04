@@ -8,6 +8,7 @@ import QualificacaoRedes from "../paginas/qualificacaoRedes";
 import QuemSomos from "../paginas/quemSomos";
 import Noticia from "../paginas/noticia";
 import TodasNoticias from "../paginas/todasNoticias";
+import GaleriaImagens from "../paginas/galeria";
 
 const Rotas = () => (
   <HashRouter>
@@ -23,7 +24,7 @@ const Rotas = () => (
 
       <Route exact path='noticias' element={<TodasNoticias/>} />
 
-
+      <Route exact path='galeria' element={<GaleriaImagens/>} />
       
 
 

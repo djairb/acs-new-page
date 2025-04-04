@@ -19,7 +19,7 @@ const VideoCarrossel = () => {
   useEffect(() => {
     const handleResize = () => {
         if (window.innerWidth <= 768) {
-            alterarNumeroSlide(2); // imagem mobile
+            alterarNumeroSlide(1); // imagem mobile
         } else {
           alterarNumeroSlide(3); // imagem desktop
         }
