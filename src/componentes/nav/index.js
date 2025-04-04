@@ -29,7 +29,7 @@ function Navbar(){
 
                 <Link to="/quem-somos">Quem Somos</Link>
 
-                <Link to="/boletins-informativos">Boletins Informativos</Link>
+                <Link to="/boletins-informativos">Boletins</Link>
 
                 <Link to="/transparencia">Transparência</Link>
 

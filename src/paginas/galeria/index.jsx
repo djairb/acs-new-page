@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import '../../style/style.css';
 import Navbar from '../../componentes/nav';
 import Footer from '../../componentes/folter';
+import { SlideshowLightbox } from 'lightbox.js-react';
+import 'lightbox.js-react/dist/index.css';
 import Axios from 'axios';
 import { API_BASE_URL_NOTICIAS, API_IMAGEM_URL } from '../../infra/apiConfig';
 
@@ -34,7 +36,7 @@ const GaleriaImagens = () => {
     
       <Navbar />
       <main className='mainGaleria'>
-        <h1 className="tituloGaleria">Galeria de Imagens</h1>
+        <div className='spaceLineNav espacoLine'></div>
         
         
         <div className='containerGaleria'>
@@ -42,20 +44,27 @@ const GaleriaImagens = () => {
             <div className="spinnerButton"><div></div></div>
           ) : imagens.length === 0 ? (
             <p>Nenhuma imagem encontrada</p>
-          ) : (
-
-            
-            
+          ) : (            
             imagens.map((imagem) => (
               <div 
                 key={imagem.caminho_foto} 
                 className={`cardImagem`}
               >
-                <img 
+
+                <SlideshowLightbox
+                  theme="day"
+                  fullScreen={false}
+                  showControls={true}
+                  modalClose="clickOutside"
+                  className="grid grid-cols-3 gap-2 mx-auto"
+                >
+                  <img 
                   src={`${API_IMAGEM_URL}${imagem.caminho_foto}`}
                   alt={`Imagem da notícia ${imagem.id_origem}`}
                   className="imagemGaleria"
                 />
+                </SlideshowLightbox>
+                
               </div>
             ))
           )}
