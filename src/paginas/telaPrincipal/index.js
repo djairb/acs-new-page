@@ -16,6 +16,7 @@ import ColaboradorCarrossel from '../../componentes/colaboradorCarrossel';
 import MainVideo from '../../componentes/main_video';
 import MainSomosConexao from '../../componentes/main_somos_conexao';
 import NoticiasHome from '../../componentes/noticiasHome/NoticiasHome';
+import GaleriaHome from '../../componentes/galeriaHome/GaleriaHome';
 
 
 function TelaPrincipal() {
@@ -37,6 +38,10 @@ function TelaPrincipal() {
         <NoticiasHome/>
 
         {/* <InscricaoCard/> */}
+
+        <div className='spaceLineNav'></div>
+
+        <GaleriaHome/>
 
         <div className='spaceLineNav'></div>
 
