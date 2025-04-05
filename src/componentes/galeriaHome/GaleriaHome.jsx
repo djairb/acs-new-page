@@ -18,6 +18,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import { useNavigate } from 'react-router-dom';
+import { SlideshowLightbox } from 'lightbox.js-react';
 
 
 const GaleriaHome = () => {
@@ -79,52 +80,65 @@ const GaleriaHome = () => {
 
   return (
 
-      <div className="divNoticiasHome">
-          <h1 className="h1SectionTitle">Galeria</h1>
+    <div className="divNoticiasHome">
+      <h1 className="h1SectionTitle">Galeria</h1>
 
-          {loading ? <div className="spinner"><div></div></div> :
+      {loading ? <div className="spinner"><div></div></div> :
 
-         
+        imagens.length === 0 ? <p></p> :
 
-              imagens.length === 0 ? <p></p> :
+          <Swiper
+            slidesPerView={numeroSlide} // Ajuste este valor para o número desejado de vídeos por vez
+            spaceBetween={5} // Espaçamento entre os slides (em pixels)
+            style={{
+              "--swiper-pagination-color": "#f08528",
+              "--swiper-navigation-color": "#f08528",
+            }}
+            grabCursor={true}
+            loop={true}
+            autoplay={true}
 
-                  <Swiper
-                      slidesPerView={numeroSlide} // Ajuste este valor para o número desejado de vídeos por vez
-                      spaceBetween={5} // Espaçamento entre os slides (em pixels)
-                      style={{
-                          "--swiper-pagination-color": "#f08528",
-                          "--swiper-navigation-color": "#f08528",
-                      }}
-                      grabCursor={true}
-                      loop={true}
-                      autoplay={true}
+            navigation
 
-                      navigation
-                      
-                  >
-                      {imagens.map((imagem) => (
-                        <SwiperSlide key={imagem.caminho_foto}>
-                          <img
-                            src={`${API_IMAGEM_URL}${imagem.caminho_foto}`}
-                            alt={`Imagem da notícia ${imagem.id_origem}`}
-                            className="imagemGaleria"
-                          />
-
-                        </SwiperSlide>
-                      ))}
-                  </Swiper>
-          }
-
-          <button
-            className="buttonMainPage"
-            onClick={handleClickTodasFotos}
           >
-            Todas as Fotos
-          </button>
+            {imagens.map((imagem) => (
+              <SwiperSlide key={imagem.caminho_foto}>
+                <div
+                  key={imagem.caminho_foto}
+                  className={`cardImagem`}
+                >
+
+                  <SlideshowLightbox
+                    theme="day"
+                    fullScreen={false}
+                    showControls={true}
+                    modalClose="clickOutside"
+                    className="grid grid-cols-3 gap-2 mx-auto"
+                  >
+                    <img
+                      src={`${API_IMAGEM_URL}${imagem.caminho_foto}`}
+                      alt={`Imagem da notícia ${imagem.id_origem}`}
+                      className="imagemGaleria imagemHome"
+                    />
+                  </SlideshowLightbox>
+
+                </div>
+
+              </SwiperSlide>
+            ))}
+          </Swiper>
+      }
+
+      <button
+        className="buttonMainPage"
+        onClick={handleClickTodasFotos}
+      >
+        Todas as Fotos
+      </button>
 
 
-      </div>
-   
+    </div>
+
   );
 }
 
