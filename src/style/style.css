@@ -160,6 +160,8 @@ section {
 .videoCard{
   display: flex;
   flex-direction: column;
+  /* align-items: stretch; */
+  /* depois concerta esse container - agora foca no techfest */
   gap: 20px;
   justify-content: space-evenly;
   
