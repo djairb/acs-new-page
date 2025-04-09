@@ -17,6 +17,7 @@ import MainVideo from '../../componentes/main_video';
 import MainSomosConexao from '../../componentes/main_somos_conexao';
 import NoticiasHome from '../../componentes/noticiasHome/NoticiasHome';
 import GaleriaHome from '../../componentes/galeriaHome/GaleriaHome';
+import OdsHome from '../../componentes/odsHome/OdsHome';
 
 
 function TelaPrincipal() {
@@ -46,6 +47,10 @@ function TelaPrincipal() {
         <div className='spaceLineNav'></div>
 
         <ProjetosSelecionar/>
+
+        <div className='spaceLineNav'></div>
+
+        <OdsHome/>
 
         <div className='spaceLineNav'></div>
 

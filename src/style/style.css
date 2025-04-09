@@ -1230,6 +1230,20 @@ main .selectBoletim{
 
 }
 
+.imageOds{
+  width: 320px;
+  border-radius: 20px;
+}
+
+.pOds{
+  width: 90%;
+  text-align: justify;
+  text-align-last: center;
+  margin: 0 auto;
+  font-weight: 500; /* Negrito */
+  font-size: 20px;
+}
+
 /* Estilo do título */
 .titulo-noticia {
   text-align: center;
@@ -1525,6 +1539,10 @@ main .selectBoletim{
 
   
   
+  }
+  .pOds{
+    width: 95%;
+    
   }
 
   
