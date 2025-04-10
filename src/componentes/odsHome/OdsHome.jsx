@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import CardVideo from "../cardVideo";
-
-import { EffectFade } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
