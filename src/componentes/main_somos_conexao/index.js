@@ -18,9 +18,9 @@ import instagram from "../../img/mainHome/mainHomeSociais/ig.png";
 import youtube from "../../img/mainHome/mainHomeSociais/yt.png";
 
 
-const importAll = (r) => r.keys().map(r);
 
-const mainHome = importAll(require.context("../../img/mainHome/main_home", false, /\.(png|jpe?g|svg)$/));
+
+
 
 register();
 

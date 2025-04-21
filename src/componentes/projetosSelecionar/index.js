@@ -39,7 +39,7 @@ function ProjetosSelecionar() {
                 reverse={mainHomeData[numeroIdProjeto].reverse}
                 textoProjeto={mainHomeData[numeroIdProjeto].textoProjeto}
                 logoProjeto={mainHomeData[numeroIdProjeto].logoProjeto}
-                slideProjeto={mainHomeData[numeroIdProjeto].slideProjeto}
+                baseUrl={mainHomeData[numeroIdProjeto].baseUrl}
 
             />
 

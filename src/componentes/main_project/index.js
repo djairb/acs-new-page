@@ -16,6 +16,8 @@ import { SlideshowLightbox } from 'lightbox.js-react';
 
 register();
 
+const mapaArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg"]
+
 //projetosValue pega o index (começando de 0) tanto do array de imagens quanto do array de texto - vai ter q importar geral vey - vai da uma zica da pox
 
 function MainProject(props) {
@@ -74,7 +76,7 @@ function MainProject(props) {
 
                 >
                 
-                {props.slideProjeto.map((item, index) => (
+                {mapaArray.map((item, index) => (
                     <SwiperSlide key={index}>
                         <SlideshowLightbox
                             theme="day"
@@ -83,7 +85,9 @@ function MainProject(props) {
                             modalClose="clickOutside"
                             className="swipeImg grid grid-cols-3 gap-2 mx-auto"
                         >
-                            <img className="w-full rounded standImg" src={item} />
+                            <img className="w-full rounded standImg" src={`${props.baseUrl}${item}`} />
+
+                            
                         </SlideshowLightbox>
                     </SwiperSlide>
                 ))}

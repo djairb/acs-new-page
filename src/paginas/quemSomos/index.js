@@ -2,7 +2,7 @@ import '../../style/style.css';
 import Navbar from '../../componentes/nav';
 import Footer from '../../componentes/folter';
 
-import logoHome from '../../img/logoAcs.png';
+
 import { SlideshowLightbox } from 'lightbox.js-react';
 
 import { mainQuemSomos} from "../../dados/data-quemsomos";
