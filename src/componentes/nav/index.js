@@ -3,7 +3,7 @@ import {FaBars, FaTimes} from "react-icons/fa";
 
 
 import logo from "../../img/logoAcs.png";
-import logoHomeNatal from '../../img/logoAcsNatal.png'
+
 import { Link, useNavigate } from "react-router-dom";
 
 function Navbar(){

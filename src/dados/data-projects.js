@@ -101,6 +101,14 @@ export const mainHomeData = [
       baseUrl: "https://somosconexaosocial.org/site_img/projeto_sementes/"
       
     },
+    {
+      id: 9,
+      reverse:"",
+      logoProjeto: logosProjetos[9],
+      textoProjeto: 'Oferecendo atividades esportivas como vôlei, futebol, futsal e handebol para crianças e adolescentes de 7 a 15 anos. O Projeto Oportunizar Comunidade tem como foco o desenvolvimento físico, social e emocional, promovendo o trabalho em equipe, a inclusão e hábitos saudáveis.',
+      baseUrl: "https://somosconexaosocial.org/site_img/oportunizar_pe/"
+      
+    },
 
 
 
