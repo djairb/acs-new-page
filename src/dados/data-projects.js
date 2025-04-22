@@ -85,6 +85,23 @@ export const mainHomeData = [
       
     },
 
+    {
+      id: 7,
+      reverse:"",
+      logoProjeto: logosProjetos[7],
+      textoProjeto: 'O Projeto Inovação e Tecnologia com Elas é uma iniciativa transformadora que busca capacitar mulheres entre 16 e 35 anos para empreender e expandir suas oportunidades por meio da tecnologia. O objetivo é claro: fornecer ferramentas para que essas mulheres possam transformar suas vidas e alcançar a tão sonhada independência financeira.',
+      baseUrl: "https://somosconexaosocial.org/site_img/inovacao_com_elas/"
+      
+    },
+    {
+      id: 8,
+      reverse:"reverse",
+      logoProjeto: logosProjetos[8],
+      textoProjeto: 'Projeto Sementes é uma iniciativa que capacita jovens em Infraestrutura de Redes, combinando formação técnica de qualidade com uma visão prática do mercado de trabalho. Mais do que ensinar, o projeto busca despertar o potencial de cada participante, plantando oportunidades reais de crescimento profissional e pessoal.',
+      baseUrl: "https://somosconexaosocial.org/site_img/projeto_sementes/"
+      
+    },
+
 
 
 
