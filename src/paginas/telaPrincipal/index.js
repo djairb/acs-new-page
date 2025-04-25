@@ -18,6 +18,8 @@ import MainSomosConexao from '../../componentes/main_somos_conexao';
 import NoticiasHome from '../../componentes/noticiasHome/NoticiasHome';
 import GaleriaHome from '../../componentes/galeriaHome/GaleriaHome';
 import OdsHome from '../../componentes/odsHome/OdsHome';
+import CardVideo from '../../componentes/cardVideo';
+import CardTechfest from '../../componentes/cardTechFest';
 
 
 function TelaPrincipal() {
@@ -30,6 +32,10 @@ function TelaPrincipal() {
 
       <main>       
 
+        
+
+        <CardTechfest/>
+
         <div className='spaceLineNav'></div>
 
         <MainVideo/>
@@ -38,7 +44,7 @@ function TelaPrincipal() {
 
         <NoticiasHome/>
 
-        {/* <InscricaoCard/> */}
+        
 
         <div className='spaceLineNav'></div>
 
