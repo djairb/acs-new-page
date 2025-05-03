@@ -1,13 +1,7 @@
 
 export const reportagensDrive = [
   
-    {
-      id: 0,
-      videoUrl: "https://drive.google.com/file/d/1h3wS2VRgAizIZdECdr9BhELhKQCfWmdf/preview",
-      descricaoVideo:"Declare proteção a criança TJPE"
-      
-    },
-
+   
     {
       id: 1,
       videoUrl: "https://drive.google.com/file/d/1HiegHrY5AgGaU3MtQYJusfPvuGbZIgNr/preview",
@@ -75,4 +69,30 @@ export const reportagensDrive = [
       
     }
    
+];
+
+export const outrosVideosDrive = [
+  
+  {
+    id: 0,
+    videoUrl: "https://drive.google.com/file/d/1h3wS2VRgAizIZdECdr9BhELhKQCfWmdf/preview",
+    descricaoVideo:"Declare proteção a criança TJPE"
+    
+  },
+
+  {
+
+    
+    id: 1,
+    videoUrl: "https://drive.google.com/file/d/1k8_fVKSnxiHSpyhRr0XiqS7c2EjxOt3T/preview",
+    descricaoVideo:"Lei de Incentivo ao Esporte"
+    
+  },
+  {
+    id: 2,
+    videoUrl: "https://drive.google.com/file/d/13FL-jj51tjkodRmOtYUNA1qYZs-fAt09/preview",
+    descricaoVideo:"Projeto Skate Livre"
+    
+  }
+ 
 ];
