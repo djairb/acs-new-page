@@ -1015,12 +1015,13 @@ main .selectBoletim{
 .projectDetailsOds .projetoOds {
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1.5rem;
   padding: 1rem 0;
   border-bottom: 1px solid #ddd; /* linha divisória suave */
   min-height: 100px; /* garante que todos tenham a mesma altura mínima */
   width: 80%;
+  margin: 0 auto;
   
 }
 
@@ -1043,6 +1044,12 @@ main .selectBoletim{
   
 }
 
+
+.swiperClass{
+  width: 100%;
+
+  margin: 0 auto;
+}
 
 
 
