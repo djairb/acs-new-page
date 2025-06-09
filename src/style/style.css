@@ -924,7 +924,7 @@ main .selectBoletim{
   
 }
 
-.TextoMaisSelecionarImg{
+.TextoMaisSelecionarImg, .TextoMaisSelecionarImgOds{
 
   display: flex;
   flex-direction: column;
@@ -938,7 +938,7 @@ main .selectBoletim{
 }
 
 
-.TextoMaisSelecionarImg .mainPicturesSelected{
+.TextoMaisSelecionarImg .mainPicturesSelected, .TextoMaisSelecionarImgOds .mainPicturesSelectedOds{
 
   display: flex;
   flex-wrap: wrap;
@@ -952,7 +952,9 @@ main .selectBoletim{
 }
 
 
-.mainPicturesSelected img{
+
+
+.mainPicturesSelected img, .mainPicturesSelectedOds img{
 
   width: 150px;
   height: 150px;
@@ -966,17 +968,81 @@ main .selectBoletim{
 
 }
 
-.mainPicturesSelected img:hover{
+.mainPicturesSelectedOds img{
+
+  width: 180px;
+  height: 180px;
+  padding-bottom: 5px;
+
+  
+  
+
+  
+
+
+}
+
+.mainPicturesSelected img:hover, .mainPicturesSelectedOds img:hover{
   transform: scale(1.1); /* Efeito de zoom na imagem */
 }
 
-.mainPicturesSelected img.selected{
+.mainPicturesSelected img.selected, .mainPicturesSelectedOds img.selected{
 
   border-bottom: 4px solid #ff9c00;
    
 
 
 }
+
+.projectDetailsOds{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.projectDetailsOds img{
+  width: 320px;
+  height: 320px;
+  border-radius: 20px;
+}
+
+
+
+
+.projectDetailsOds .projetoOds {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd; /* linha divisória suave */
+  min-height: 100px; /* garante que todos tenham a mesma altura mínima */
+  width: 80%;
+}
+
+.projectDetailsOds .projetoOds:last-child {
+  border-bottom: none;
+}
+
+.projectDetailsOds .projetoOds-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain; /* mantém proporção e centraliza dentro do espaço */
+  flex-shrink: 0; /* impede a imagem de encolher */
+}
+
+.projectDetailsOds .projetoOds-text {
+  flex: 1;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  
+}
+
+
 
 
 
@@ -1544,21 +1610,4 @@ main .selectBoletim{
     width: 95%;
     
   }
-
-  
-
-  
-  
-  
-  
-  
-
-
-
-
-
-
 }
-
-
-

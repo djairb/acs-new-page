@@ -21,6 +21,7 @@ import OdsHome from '../../componentes/odsHome/OdsHome';
 import CardVideo from '../../componentes/cardVideo';
 import CardTechfest from '../../componentes/cardTechFest';
 import VideoCarrossel2 from '../../componentes/videoCarrossel2';
+import OdsSelecionar from '../../componentes/odsSelecionar';
 
 
 function TelaPrincipal() {
@@ -57,7 +58,7 @@ function TelaPrincipal() {
 
         <div className='spaceLineNav'></div>
 
-        <OdsHome/>
+        <OdsSelecionar/>
 
         <div className='spaceLineNav'></div>
 
