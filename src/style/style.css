@@ -1021,6 +1021,7 @@ main .selectBoletim{
   border-bottom: 1px solid #ddd; /* linha divisória suave */
   min-height: 100px; /* garante que todos tenham a mesma altura mínima */
   width: 80%;
+  
 }
 
 .projectDetailsOds .projetoOds:last-child {

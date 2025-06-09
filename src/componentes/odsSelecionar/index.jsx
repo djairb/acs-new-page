@@ -14,9 +14,6 @@ function OdsSelecionar() {
         <>
             <div className="TextoMaisSelecionarImgOds">
 
-                {console.log(logosOds)}
-
-
                 <h1 className="h1SectionTitle">Objetivos de Desenvolvimento Sustentável - ACS</h1>
 
                 <div className="mainPicturesSelectedOds">
@@ -43,7 +40,10 @@ function OdsSelecionar() {
 
                     <p className="pOds">Estes são os projetos que contribuem para este Objetivo de Desenvolvimento Sustentável: </p>
 
+                    
+
                     {odsHomeData[numeroIdProjeto].listaProjetos.map((item, key) => (
+
                         <div className="projetoOds" key={key}>
                             <img src={item.projetoLogo} alt="Logo do projeto" className="projetoOds-img" />
                             <p className="projetoOds-text">{item.descricao}</p>
