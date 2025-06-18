@@ -970,9 +970,10 @@ main .selectBoletim{
 
 .mainPicturesSelectedOds img{
 
-  width: 180px;
-  height: 180px;
-  padding-bottom: 5px;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  border-radius: 10px;
 
   
   
@@ -989,6 +990,14 @@ main .selectBoletim{
 .mainPicturesSelected img.selected, .mainPicturesSelectedOds img.selected{
 
   border-bottom: 4px solid #ff9c00;
+   
+
+
+}
+
+.mainPicturesSelectedOds img.selected{
+
+  border: 5px solid #ff9c00;
    
 
 
@@ -1039,7 +1048,7 @@ main .selectBoletim{
 .projectDetailsOds .projetoOds-text {
   flex: 1;
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   
 }

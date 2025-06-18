@@ -39,11 +39,11 @@ function OdsSelecionar() {
 
                 <div className="projectDetailsOds">
 
-                    <img
+                    {/* <img
 
                         src={odsHomeData[numeroIdProjeto].logoOds}
 
-                    />
+                    /> */}
 
                     <p className="pOds">Estes são os projetos que contribuem para este Objetivo de Desenvolvimento Sustentável: </p>
 
