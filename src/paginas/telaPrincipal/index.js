@@ -22,6 +22,7 @@ import CardVideo from '../../componentes/cardVideo';
 import CardTechfest from '../../componentes/cardTechFest';
 import VideoCarrossel2 from '../../componentes/videoCarrossel2';
 import OdsSelecionar from '../../componentes/odsSelecionar';
+import CardContratacao from '../../componentes/cardContratacao';
 
 
 function TelaPrincipal() {
@@ -36,7 +37,8 @@ function TelaPrincipal() {
 
         
 
-        <CardTechfest/>
+        {/* <CardTechfest/> */}
+        <CardContratacao/>
 
         <div className='spaceLineNav'></div>
 
