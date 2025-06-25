@@ -46,6 +46,7 @@ function OdsSelecionar() {
                     /> */}
 
                     <p className="pOds">Estes são os projetos que contribuem para este Objetivo de Desenvolvimento Sustentável: </p>
+                    {/* muda este pra o nome descritivo - joga esse nome no objeto */}
 
                     <Swiper
                         slidesPerView={1} // Ajuste este valor para o número desejado de vídeos por vez
