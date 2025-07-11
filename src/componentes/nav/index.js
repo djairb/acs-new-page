@@ -35,8 +35,8 @@ function Navbar(){
 
                 <Link to="/transparencia">Transparência</Link>
 
-                <Link to="/noticias">Notícias</Link>
-                <Link to="/galeria">Galeria</Link>
+                <Link to="/noticias">Blog Rebeca</Link>
+                {/* <Link to="/galeria">Galeria</Link> */}
 
           
                 <a href="https://somosconexaosocial.org/sra" rel="noopener noreferrer">SRA</a>

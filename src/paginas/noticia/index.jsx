@@ -10,6 +10,7 @@ import Footer from '../../componentes/folter';
 import ParceirosNoticia from '../../componentes/parceirosNoticia';
 
 import { useNavigate } from 'react-router-dom';
+import RodapeBlog from '../../componentes/rodapeBlog';
 
 const Noticia = () => {
     const { slug } = useParams();
@@ -83,7 +84,6 @@ const Noticia = () => {
         <div className="page-container">
             <Navbar />
 
-            <div className='spaceLineNav'></div>
             <main className="main-noticia">
                 {loadingGeral && <div className="spinner"><div></div></div>}
                 {noticiaCarregadaCompleta ? (
@@ -126,12 +126,16 @@ const Noticia = () => {
 
                         <p className="autor-data"> Por: {noticiaCarregada.nome_autor}, em {formatDate(noticiaCarregada.data_noticia)}</p>
 
+                        
+
+                        <RodapeBlog/>
+
                         <div className='spaceLineNav'></div>
 
                         <ParceirosNoticia/>
-
                         
                     </div>
+
                 ) : (
                     <p>Carregando dados...</p>
                 )}
@@ -143,6 +147,7 @@ const Noticia = () => {
                     Voltar
                 </button>
             </main>
+            
             <Footer />
         </div>
     );
