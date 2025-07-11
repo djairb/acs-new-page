@@ -22,6 +22,8 @@ function Navbar(){
 
     return (
 
+        <>
+
         <header>           
 
             <Link to="/"><img  src={logo} alt="" /></Link>
@@ -51,9 +53,15 @@ function Navbar(){
                 <FaBars/>                
             </button>     
 
-
+        
 
         </header>
+
+        <div className='spaceLineNav'></div>
+
+        </>
+
+        
     );
 }
 

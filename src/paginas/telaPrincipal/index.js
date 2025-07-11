@@ -40,7 +40,7 @@ function TelaPrincipal() {
         {/* <CardTechfest/> */}
         {/* <CardContratacao/> */}
 
-        <div className='spaceLineNav'></div>
+        
 
         <MainVideo/>
 

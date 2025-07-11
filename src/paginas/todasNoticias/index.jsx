@@ -8,6 +8,7 @@ import Axios from 'axios';
 
 import { API_BASE_URL_NOTICIAS } from '../../infra/apiConfig';
 import CardNoticiaOld from '../../componentes/CardNoticiaOld/CardNoticiaOld';
+import Cabecalho from '../../componentes/cabecalhoBlog';
 
 
 const TodasNoticias = () => {
@@ -47,7 +48,15 @@ const TodasNoticias = () => {
   return (
     <>
       <Navbar />
+
+      
+
+      <Cabecalho/>
+      
+    
       <main className='mainTodasNoticias' ref={newsContainerRef}>
+
+        <h2>Posts:</h2>
 
         <div className='divTodasNoticias'>
           {loading ? (
