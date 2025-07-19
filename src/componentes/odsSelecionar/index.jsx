@@ -39,13 +39,13 @@ function OdsSelecionar() {
 
                 <div className="projectDetailsOds">
 
-                    {/* <img
 
-                        src={odsHomeData[numeroIdProjeto].logoOds}
-
-                    /> */}
-
-                    <p className="pOds">Estes são os projetos que contribuem para este Objetivo de Desenvolvimento Sustentável: </p>
+                    <p className="pOds">
+                        Estes são os projetos que promovem a{" "}
+                        <span style={{ color: odsHomeData[numeroIdProjeto].color, fontWeight: "bold" }}>
+                            {odsHomeData[numeroIdProjeto].frase}
+                        </span>
+                    </p>
                     {/* muda este pra o nome descritivo - joga esse nome no objeto */}
 
                     <Swiper

@@ -2,7 +2,7 @@ CREATE DATABASE acsNoticia;
 
 USE acsNoticia;
 
--- ULTIMA ATUALIZAÇÃO - 07.03.2025
+-- ULTIMA ATUALIZAÇÃO - 14.07.2025
 
 -- Criar tabela de usuários
 CREATE TABLE usuarios (
@@ -21,6 +21,7 @@ CREATE TABLE noticias (
     data_noticia DATE NOT NULL,
     descricao MEDIUMTEXT NOT NULL,
     exibir_na_home BOOLEAN DEFAULT FALSE,
+    ir_para_blog BOOLEAN DEFAULT FALSE,
     id_usuario INT NOT NULL,
     nome_autor VARCHAR(255) NOT NULL,
     foto_capa VARCHAR(255) NOT NULL, -- Agora armazenamos o nome do arquivo da imagem

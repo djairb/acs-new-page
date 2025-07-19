@@ -21,6 +21,8 @@ export const odsHomeData = [
 
   {
     id: 0,
+    frase:"ODS 1 - Erradicação da Pobreza",
+    color:'#e5243b',
     logoOds: logosOds[0],
     listaProjetos: [
       {
@@ -48,8 +50,61 @@ export const odsHomeData = [
 
 
   },
-  {
+   {
     id: 1,
+    frase:"ODS 2 - Fome Zero e Agricultura Sustentável",
+    color:'#dda83a',
+    logoOds: logosOds[1],
+    listaProjetos: [
+      {
+        projetoLogo: projetoImagens['Centro Formação'],
+        descricao: "Combate a fome por meio da profissionalização dos seus participantes nos esportes oferecidos."
+      },
+      {
+        projetoLogo: projetoImagens['Conecta Vidas'],
+        descricao: "Promove a Agricultura Sustentável através do ensino de formas agrícolas eficazes."
+      },
+      {
+        projetoLogo: projetoImagens['Oportunizar Rural'],
+        descricao: "Com atividades recreativas no meio rural, geram a conscientização da importância do cuidado com o solo."
+      },
+      {
+        projetoLogo: projetoImagens['Oportunizar Urbano'],
+        descricao: "Eficaz no combate a fome pela promoção de recreação educativa que contribui na formação de seus usuários."
+      },
+      {
+        projetoLogo: projetoImagens['Oportunizar Comunidade'],
+        descricao: "Com ensinos repassados por atividades recreativas geram conscientização e mobilização profissinal eficiente."
+      },
+      {
+        projetoLogo: projetoImagens['Passaporte Digital'],
+        descricao: "Com cursos profissionalizantes, capacitam jovens ao mercado de trabalho, combatendo a fome."
+      },
+      {
+        projetoLogo: projetoImagens['Skate Livre'],
+        descricao: "Reduz a taxa de fome entre os jovens por ofertar intervalos de lanches nutricionalmente equilibrados para seus integrantes."
+      },
+      {
+        projetoLogo: projetoImagens['VamoSimbora?'],
+        descricao: "Com aprendizados práticos e instrução tecnológica adequada, conscientiza seus partipantes da agricultura sustentável."
+      },
+      {
+        projetoLogo: projetoImagens['Tecnologia com Elas'],
+        descricao: "Combate a fome por meio da profissionalização das mulheres que integram o projeto."
+      },
+      {
+        projetoLogo: projetoImagens['Projeto Sementes'],
+        descricao: "Trazendo mais oportunidades de profissionalização dos jovens, combate a fome por meio da capacitação profissional."
+      },
+      
+
+    ],
+
+
+  },
+  {
+    id: 2,frase:"ODS 3 - Saúde e Bem-Estar",
+    color:'#4c9f38',
     logoOds: logosOds[2],
     listaProjetos: [
       {
@@ -86,7 +141,9 @@ export const odsHomeData = [
 
   },
   {
-    id: 2,
+    id: 3,
+    frase:"ODS 4 - Educação de Qualidade",
+    color:'#c5192d',
     logoOds: logosOds[3],
     listaProjetos: [
       {
@@ -131,7 +188,9 @@ export const odsHomeData = [
 
   },
   {
-    id: 3,
+    id: 4,
+    frase:"ODS 5 - Igualdade de Gênero",
+    color:'#ff3a21',
     logoOds: logosOds[4],
     listaProjetos: [
       {
@@ -172,7 +231,9 @@ export const odsHomeData = [
 
   },
   {
-    id: 4,
+    id: 5,
+    frase:"ODS 8 - Trabalho Descente e Crescimento Econômico",
+    color:'#a21942',
     logoOds: logosOds[7],
     listaProjetos: [
 
@@ -193,7 +254,9 @@ export const odsHomeData = [
 
   },
   {
-    id: 5,
+    id: 6,
+    frase:"ODS 9 - Indústria, Inovação e Infraestrutura",
+    color:'#fd6925',
     logoOds: logosOds[8],
     listaProjetos: [
       
@@ -214,7 +277,9 @@ export const odsHomeData = [
 
   },
   {
-    id: 6,
+    id: 7,
+    frase:"ODS 10 - Redução das Desigualdades",
+    color:'#dd1367',
     logoOds: logosOds[9],
     listaProjetos: [
       
@@ -263,7 +328,9 @@ export const odsHomeData = [
 
   },
   {
-    id: 7,
+    id: 8,
+    frase:"ODS 11 - Cidades e Comunidades Sustentáveis",
+    color:'#fd9d24',
     logoOds: logosOds[10],
     listaProjetos: [
       
@@ -294,7 +361,9 @@ export const odsHomeData = [
     ],
   },
   {
-    id: 8,
+    id: 9,
+    frase:"ODS 15 - Vida Terrestre",
+    color:'#56c02b',
     logoOds: logosOds[14],
     listaProjetos: [
       
@@ -313,7 +382,9 @@ export const odsHomeData = [
     ],
   },
   {
-    id: 9,
+    id: 10,
+    frase:"ODS 16 - Paz, Justiça e Instituições Eficazes",
+    color:'#00689d',
     logoOds: logosOds[15],
     listaProjetos: [
       
@@ -345,7 +416,9 @@ export const odsHomeData = [
     ],
   },
   {
-  id: 10,
+  id: 11,
+  frase:"ODS 17 - Parcerias e Meios de Implementação",
+  color:'#19486a',
   logoOds: logosOds[16],
   listaProjetos: [
     
