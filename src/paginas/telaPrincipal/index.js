@@ -48,7 +48,6 @@ function TelaPrincipal() {
 
         <NoticiasHome/>
 
-        
 
         <div className='spaceLineNav'></div>
 

@@ -375,6 +375,47 @@ header .nav-btn {
 
 }
 
+header .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+header .dropdown-toggle {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+
+header .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff; /* ou a cor do seu menu */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 100;
+  min-width: 160px;
+  border-radius: 4px;
+}
+header .dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+header .dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+
 
 
 /* problemas */

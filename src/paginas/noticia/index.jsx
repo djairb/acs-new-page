@@ -19,8 +19,6 @@ const Noticia = () => {
     const [noticiaCarregada, setNoticiaCarregada] = useState(false);
     const [loadingImg, setLoadingImg] = useState(false);
     const [fotosNoticia, setFotosNoticia] = useState([]);
-    
-
 
     const formatDate = (isoDate) => {
         const date = new Date(isoDate);
@@ -125,8 +123,6 @@ const Noticia = () => {
                         )}
 
                         <p className="autor-data"> Por: {noticiaCarregada.nome_autor}, em {formatDate(noticiaCarregada.data_noticia)}</p>
-
-                        
 
                         <RodapeBlog/>
 

@@ -74,7 +74,7 @@ export const odsHomeData = [
       },
       {
         projetoLogo: projetoImagens['Oportunizar Comunidade'],
-        descricao: "Com ensinos repassados por atividades recreativas geram conscientização e mobilização profissinal eficiente."
+        descricao: "Com ensinos repassados por atividades recreativas geram conscientização e mobilização profissional eficiente."
       },
       {
         projetoLogo: projetoImagens['Passaporte Digital'],

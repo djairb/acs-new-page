@@ -44,7 +44,7 @@ function OdsSelecionar() {
                         Estes são os projetos que promovem a{" "}
                         <span style={{ color: odsHomeData[numeroIdProjeto].color, fontWeight: "bold" }}>
                             {odsHomeData[numeroIdProjeto].frase}
-                        </span>
+                        </span>:
                     </p>
                     {/* muda este pra o nome descritivo - joga esse nome no objeto */}
 
