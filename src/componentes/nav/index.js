@@ -33,7 +33,7 @@ function Navbar() {
             {dropdownOpen && (
               <div className="dropdown-menu">
                 <Link to="/noticias">Institucionais</Link>
-                <Link to="/entrevistas">Blog Rebca</Link>
+                <Link to="/blog-rebeca">Blog Rebca</Link>
                 <Link to="/galeria">Galeria</Link>
               </div>
             )}

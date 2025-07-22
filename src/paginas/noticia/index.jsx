@@ -126,14 +126,15 @@ const Noticia = () => {
 
                         
 
-                        {noticiaCarregada.ir_para_blog ?
+                        {noticiaCarregada.ir_para_blog && (
+                            <>
+                                <p className="autor-data">
+                                    Por: {noticiaCarregada.nome_autor}, em {formatDate(noticiaCarregada.data_noticia)}
+                                </p>
+                                <RodapeBlog />
+                            </>
+                        )}
 
-                        <><p className="autor-data"> Por: {noticiaCarregada.nome_autor}, em {formatDate(noticiaCarregada.data_noticia)}</p><RodapeBlog /></>
-                        
-                       
-                        
-                        
-                        : <></> }
 
                         
 

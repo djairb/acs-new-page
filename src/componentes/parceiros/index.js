@@ -27,7 +27,7 @@ export const quemEstaLink = [
     "https://www.santander.com.br/sustentabilidade/sociedade/parceiro-do-idoso",
     "https://www.caixa.gov.br/",
     "https://www.vwfs.com.br/",
-    "https://www.man-es.com/pt/global-pt/brasil",
+    "https://www.everllence.com/",
     "https://www.bbseguros.com.br/",
     "https://rems.org.br/",
     "https://www.instagram.com/bs.sport.management.ltda/",
@@ -49,7 +49,8 @@ const quemJaEsteveLink = [
     "https://www.cese.org.br/",
     "https://www.cedca.pe.gov.br/",
     "https://www.sas.pe.gov.br/",
-    "https://www.itausocial.org.br/"
+    "https://www.itausocial.org.br/",
+    ""
 ]
 
 

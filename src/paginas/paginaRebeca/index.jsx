@@ -11,7 +11,7 @@ import CardNoticiaOld from '../../componentes/CardNoticiaOld/CardNoticiaOld';
 import Cabecalho from '../../componentes/cabecalhoBlog';
 
 
-const TodasNoticias = () => {
+const PaginaRebeca = () => {
   const [noticias, setNoticias] = useState([]);
   const [loading, setLoading] = useState(false);
   const newsContainerRef = useRef(null);
@@ -20,7 +20,7 @@ const TodasNoticias = () => {
     const carregarNoticias = async () => {
       setLoading(true);
       try {
-        const responseNoticias = await Axios.get(`${API_BASE_URL_NOTICIAS}/getAllNoticiasACS`);
+        const responseNoticias = await Axios.get(`${API_BASE_URL_NOTICIAS}/getAllNoticiasRebeca`);
         setNoticias(responseNoticias.data);
         
         // Restaura o scroll APÓS o carregamento das notícias
@@ -48,8 +48,12 @@ const TodasNoticias = () => {
   return (
     <>
       <Navbar />
-   
+
+      <Cabecalho/>
+    
       <main className='mainTodasNoticias' ref={newsContainerRef}>
+
+        <h2>Posts:</h2>
 
         <div className='divTodasNoticias'>
           {loading ? (
@@ -82,6 +86,6 @@ const TodasNoticias = () => {
   );
 };
 
-export default TodasNoticias;
+export default PaginaRebeca;
 
 
