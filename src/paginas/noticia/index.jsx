@@ -98,6 +98,8 @@ const Noticia = () => {
 
                         <h1 className="titulo-noticia">{noticiaCarregada.titulo}</h1>
 
+                        
+
                         <p className="descricao-noticia">{noticiaCarregada.descricao}</p>
 
                         {loadingImg ? <div className="spinner"></div> : (
@@ -122,9 +124,18 @@ const Noticia = () => {
                             </div>
                         )}
 
-                        <p className="autor-data"> Por: {noticiaCarregada.nome_autor}, em {formatDate(noticiaCarregada.data_noticia)}</p>
+                        
 
-                        <RodapeBlog/>
+                        {noticiaCarregada.ir_para_blog ?
+
+                        <><p className="autor-data"> Por: {noticiaCarregada.nome_autor}, em {formatDate(noticiaCarregada.data_noticia)}</p><RodapeBlog /></>
+                        
+                       
+                        
+                        
+                        : <></> }
+
+                        
 
                         <div className='spaceLineNav'></div>
 
