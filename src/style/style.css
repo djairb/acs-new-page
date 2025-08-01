@@ -792,12 +792,6 @@ main .selectBoletim{
   color: #ff9c00;
 
   font-weight: bolder;
-
-  
-
-  
-
-  
   
 }
 
@@ -834,6 +828,58 @@ main .selectBoletim{
 
 
 }
+
+/* Estiliza o container de detalhes */
+details {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px 16px;
+  background-color: #f9f9f9;
+  max-width: 800px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+/* Estiliza o sumário */
+summary {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  padding-left: 24px;
+  list-style: none; /* remove marcador padrão */
+}
+
+/* Adiciona a setinha manual */
+summary::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* Gira a seta quando estiver aberto */
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* Estilo para o conteúdo dentro do details */
+details p {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Detalhes em foco (acessibilidade) */
+summary:focus {
+  outline: none;
+  color: #ff9c00;
+}
+
 
 
 .transparencia{

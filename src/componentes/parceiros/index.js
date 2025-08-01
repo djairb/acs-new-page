@@ -63,6 +63,11 @@ function Parceiros(){
 
             <div className="parceirosTituloLogo">
 
+                <details>
+                    <summary>Parceria</summary>
+                    <p>Para realizarmos nosso trabalho e cumprirmos nossa missão de atender crianças, adolescentes, jovens, mulheres e pessoas idosas, buscamos capacitar e formar uma sociedade mais justa e igualitária, sempre respeitando os valores humanos. Para que isso aconteça, precisamos do apoio de todos, superando os desafios que surgem com cada participante. <br/> Articulamos parcerias importantes, fortalecendo nosso território, garantindo direitos e alinhando nossas ações ao planejamento estratégico. Assim, buscamos programas e projetos incentivados, firmamos parcerias com outras organizações e promovemos a assistência às famílias, aos movimentos sociais e a outras entidades da sociedade civil.</p>
+                </details>
+
                 <h1 className="h1SectionTitle">Esses são nossos parceiros:</h1>
                 
                 <div className="containerParceiros">                    
