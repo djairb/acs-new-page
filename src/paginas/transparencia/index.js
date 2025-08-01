@@ -19,6 +19,13 @@ function Transparencia() {
 
 			<h2>2025</h2>
 
+            <a href="https://drive.google.com/file/d/1QoDylPQ3JEHqOY77lpD5J9opIA5XQQaZ/view?usp=sharing">
+
+
+                <h3>TERMO DE FOMENTO N 004-2025</h3>
+
+            </a>
+
             
             <a href="https://drive.google.com/file/d/1VCRWG5O22GjNcsqbpWt4fr1wTeYr2NLU/view?usp=sharing">
 
@@ -44,6 +51,44 @@ function Transparencia() {
 
 
 			<h2>2024</h2>
+
+            <a href="https://drive.google.com/file/d/12oOHysq9BkZ29unW3_I4qamhNvCdX_GH/view?usp=sharing">       
+
+                <h3>BALANCETE 2024</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/1J0NJWMaYmGw-0JBwuNG0wmEhKYD3YHA_/view?usp=sharing">       
+
+                <h3>TERMO DE CONVÊNIO - PROJETO OPORTUNIZAR COMUNIDADE URBANO</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/1pGmAdXpbaEnILCjYhW5Xs-Cut2g29hNn/view?usp=sharing">       
+
+                <h3>TERMO DE FOMENTO - N° 023 - 2024</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/1mTX0UbMRJsrvar8FkOoQ3SqdrF2S0orb/view?usp=sharing">       
+
+                <h3>TERMO DE FOMENTO - N° 003 - 2024</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/1I-NlMv1qLUmt_yEC33nhCZeWtRkgV-ax/view?usp=sharing">       
+
+                <h3>TERMO DE FOMENTO - N° 005 - 2024</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/1H_XUtHJvKhOrqBIgEwXWWvCW9NGYBhnK/view?usp=sharing">       
+
+                <h3>TERMO DE FOMENTO - N° 009 - 2024</h3>
+
+            </a>
+
+            
 
             <a href="https://drive.google.com/file/d/1mLjZvQNPJgA_69-h5VbmTmxqdmn3oN2E/view?usp=sharing">       
 

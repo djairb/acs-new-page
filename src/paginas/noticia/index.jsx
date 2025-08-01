@@ -98,7 +98,6 @@ const Noticia = () => {
 
                         <h1 className="titulo-noticia">{noticiaCarregada.titulo}</h1>
 
-                        
 
                         <p className="descricao-noticia">{noticiaCarregada.descricao}</p>
 
@@ -124,9 +123,7 @@ const Noticia = () => {
                             </div>
                         )}
 
-                        
-
-                        {noticiaCarregada.ir_para_blog && (
+                        {noticiaCarregada.ir_para_blog === 1 &&  (
                             <>
                                 <p className="autor-data">
                                     Por: {noticiaCarregada.nome_autor}, em {formatDate(noticiaCarregada.data_noticia)}
@@ -134,6 +131,7 @@ const Noticia = () => {
                                 <RodapeBlog />
                             </>
                         )}
+
 
 
                         
