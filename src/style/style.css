@@ -550,14 +550,11 @@ header .dropdown-menu a:hover {
   justify-content: center;
   align-items: center;
   
-  
-
-
 
 }
 
 .parceirosSection .containerParceiros img,
-.parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro img{
+.parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro img, .mainDoacoes .doacaoDiv .bbPixParceiro .bbParceiro img{
   width: 95px;
   
   transition: transform 0.3s ease-in-out;
@@ -567,14 +564,14 @@ header .dropdown-menu a:hover {
 }
 
 .parceirosSection .containerParceiros img:hover,
-.parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro img:hover
+.parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro img:hover, .mainDoacoes .doacaoDiv .bbPixParceiro .bbParceiro img:hover
 {
 
   transform: scale(1.3);
 
 }
 
-.parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro p{
+.parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro p, .mainDoacoes .doacaoDiv .bbPixParceiro .bbParceiro p{
   font-weight: bold;
   font-size: large;
   text-align: center;
@@ -591,12 +588,16 @@ header .dropdown-menu a:hover {
 
 }
 
-.parceirosSection .parceirosTituloLogo .bbPixParceiro{
+.parceirosSection .parceirosTituloLogo .bbPixParceiro, .mainDoacoes .doacaoDiv .bbPixParceiro{
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
   gap: 100px;
+}
+
+.mainDoacoes .doacaoDiv .doacaoNomes h3{
+  font-size: 1.3rem;
 }
 
 
@@ -1555,6 +1556,63 @@ summary:focus {
   font-weight: 400; /* Negrito */
   font-size: 18px;
 }
+
+.telaCompleta {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ocupa a tela toda */
+}
+
+.mainDoacoes {
+  flex: 1; /* ocupa todo o espaço restante entre Navbar e Footer */
+  display: flex; /* se quiser flex interno */
+}
+
+.doacaoDiv{
+  flex: 1; /* ocupa todo o espaço dentro do main */
+  width: 100%;
+  
+ 
+  display: flex;
+
+}
+
+.doacaoDiv .imgDoacao{
+  width: 50%;
+  height: auto;
+  border-radius: 20px;
+
+}
+
+.doacaoDiv .doacaoNomes{
+  width: 50%;
+  height: auto;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  
+  
+
+}
+
+.doacaoDiv .doacaoNomes p, .doacaoDiv .doacaoNomes h1{
+  width: 90%;
+  text-align: justify;
+  
+
+}
+
+.doacaoDiv .doacaoNomes p{
+  line-height: 1.5;
+}
+
+.doacaoDiv .doacaoNomes h1{
+  text-align: center;
+}
+
 
 
 

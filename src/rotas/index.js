@@ -10,6 +10,7 @@ import Noticia from "../paginas/noticia";
 import TodasNoticias from "../paginas/todasNoticias";
 import GaleriaImagens from "../paginas/galeria";
 import PaginaRebeca from "../paginas/paginaRebeca";
+import Doacoes from "../paginas/doacoes";
 
 const Rotas = () => (
   <HashRouter>
@@ -28,6 +29,8 @@ const Rotas = () => (
       <Route exact path='blog-rebeca' element={<PaginaRebeca/>} />
 
       <Route exact path='galeria' element={<GaleriaImagens/>} />
+
+      <Route exact path='doacoes' element={<Doacoes/>} />
       
 
 
