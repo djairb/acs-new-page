@@ -577,7 +577,7 @@ header .dropdown-menu a:hover {
   text-align: center;
 }
 
-.parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro{
+.parceirosSection .parceirosTituloLogo .bbPixParceiro .bbParceiro, .doacaoDiv .doacaoNomes .bbPixParceiro .bbParceiro{
 
   display: flex;
   flex-direction: column;
@@ -1590,9 +1590,9 @@ summary:focus {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:space-around;
   align-items: center;
-  gap: 50px;
+  
   
   
 
@@ -1607,6 +1607,8 @@ summary:focus {
 
 .doacaoDiv .doacaoNomes p{
   line-height: 1.5;
+  font-size: 1.2rem;
+  font-weight: 450;
 }
 
 .doacaoDiv .doacaoNomes h1{
@@ -1848,4 +1850,32 @@ summary:focus {
     width: 95%;
     
   }
+
+    .doacaoDiv {
+      flex-direction: column;
+      width: 100%;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+  
+    }
+  
+    .doacaoDiv .imgDoacao {
+      width: 100%;
+      max-width: 700px;
+  
+    }
+
+    .doacaoDiv .doacaoNomes {
+      width: 100%;
+  
+    }
+
+    .doacaoDiv .doacaoNomes .bbPixParceiro{
+      
+      
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+
 }
