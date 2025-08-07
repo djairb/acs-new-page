@@ -26,7 +26,7 @@ function Footer() {
             </div>
 
 
-            <p className="pFooter">CTAS - Centro de Tecnologia da Associação Conexão Social &copy; 2024</p>
+            <p className="pFooter">CTAS - Centro de Tecnologia da Associação Conexão Social &copy; 2025</p>
 
             {/* <p className="pFooter">CTAS - Centro de Tecnologia da Associação Conexão Social &copy; 2024</p>
                 <p className="pFooter">CTAS - Centro de Tecnologia da Associação Conexão Social &copy; 2024</p> */}
