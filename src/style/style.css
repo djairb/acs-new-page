@@ -73,6 +73,23 @@ section {
   min-height: 450px;
 }
 
+.linkComBorda {
+  background-color: #ff9c00;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.linkComBorda:hover {
+  background-color: #e68a00; /* tom um pouco mais escuro ao passar o mouse */
+}
+
+
+
 
 
 

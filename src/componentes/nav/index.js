@@ -41,6 +41,10 @@ function Navbar() {
 
           <a href="https://somosconexaosocial.org/sra" rel="noopener noreferrer">SRA</a>
 
+          <Link to="/doacoes" className="linkComBorda">
+            Doar
+          </Link>
+
           <button className="nav-btn nav-close-btn" onClick={showNavBar}>
             <FaTimes />
           </button>
