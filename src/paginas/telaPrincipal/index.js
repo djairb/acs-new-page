@@ -4,6 +4,9 @@ import '../../style/style.css';
 import Navbar from "../../componentes/nav";
 import Location from "../../componentes/location";
 
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Parceiros from "../../componentes/parceiros";
 import Footer from "../../componentes/folter";
 
@@ -27,9 +30,43 @@ import CardContratacao from '../../componentes/cardContratacao';
 
 function TelaPrincipal() {
 
+  const [showPopup, setShowPopup] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const jaMostrado = sessionStorage.getItem("popupMostrado");
+
+    if (!jaMostrado) {
+      setShowPopup(true);
+      sessionStorage.setItem("popupMostrado", "true");
+    }
+  }, []);
+
+  const goToOtherPage = () => {
+    setShowPopup(false);
+    navigate("/doacoes");
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
     return (    
 
     <>
+
+    {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-box">
+            <button className="popup-close" onClick={closePopup}>
+              ✖
+            </button>
+            <h2>Bem-vindo!</h2>
+            <p>Ajude a transformar realidades com a Conexão Social!</p>
+            <button className='popup-button' onClick={goToOtherPage}>Doar</button>
+          </div>
+        </div>
+      )}
 
       <Navbar/>   
 
