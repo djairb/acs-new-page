@@ -9,6 +9,8 @@ function Navbar() {
   const navRef = useRef();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  const [dropdownOpen2, setDropdownOpen2] = useState(false);
+
   const showNavBar = () => {
     navRef.current.classList.toggle("responsive_nav");
   };
@@ -19,7 +21,23 @@ function Navbar() {
         <Link to="/"><img src={logo} alt="Logo" /></Link>
 
         <nav ref={navRef}>
-          <Link to="/quem-somos">Quem Somos</Link>
+
+          <div className="dropdown">
+            <button
+              className="dropdown-toggle"
+              onClick={() => setDropdownOpen2(!dropdownOpen2)}
+            >
+              Sobre Nós <FaChevronDown className="dropdown-icon" />
+            </button>
+            {dropdownOpen2 && (
+              <div className="dropdown-menu">
+                <Link to="/quem-somos">Quem Somos</Link>
+                <Link to="/diretoria">Diretoria</Link>
+                
+              </div>
+            )}
+          </div>
+          
           <Link to="/boletins-informativos">Boletins</Link>
           <Link to="/transparencia">Transparência</Link>
 
@@ -40,6 +58,8 @@ function Navbar() {
           </div>
 
           <a href="https://somosconexaosocial.org/sra" rel="noopener noreferrer">SRA</a>
+
+          
 
           <Link to="/doacoes" className="linkComBorda">
             Doar

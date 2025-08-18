@@ -31,7 +31,7 @@ function Boletins() {
 
       <main className='mainBoletim'>
         
-        <div className="spaceLineNav"></div>
+        
 
         <select className='selectBoletim' value={selectedValue} onChange={handleSelectChange}>
 

@@ -11,6 +11,7 @@ import TodasNoticias from "../paginas/todasNoticias";
 import GaleriaImagens from "../paginas/galeria";
 import PaginaRebeca from "../paginas/paginaRebeca";
 import Doacoes from "../paginas/doacoes";
+import Diretoria from "../paginas/diretoria";
 
 const Rotas = () => (
   <HashRouter>
@@ -31,6 +32,8 @@ const Rotas = () => (
       <Route exact path='galeria' element={<GaleriaImagens/>} />
 
       <Route exact path='doacoes' element={<Doacoes/>} />
+
+      <Route exact path='diretoria' element={<Diretoria/>} />
       
 
 

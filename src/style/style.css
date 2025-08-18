@@ -1685,6 +1685,120 @@ summary:focus {
   text-align: center;
 }
 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos existentes da equipe (mantenha os que já tem) */
+.equipe-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f5f7fa;
+}
+
+
+.equipe-titulo {
+    text-align: center;
+    color: #2c3e50;
+    margin: 40px 0;
+    font-size: 2.2em;
+    position: relative;
+}
+
+.equipe-titulo::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #3498db;
+    margin: 15px auto;
+}
+
+/* Cards de diretoria */
+.diretoria, .conselho-fiscal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.membro-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    width: 280px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.membro-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.diretoria .card-header {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+}
+
+.conselho-fiscal .card-header {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.card-header p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+    color: #34495e;
+}
+
+.card-body p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .diretoria, .conselho-fiscal {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .membro-card {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
 
 
 
