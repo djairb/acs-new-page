@@ -1800,6 +1800,37 @@ summary:focus {
 }
 
 
+.btnLoadMore {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.btnLoadMore button {
+  background: #ff9c00; /* cor que você já usou em outros lugares */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+}
+
+.btnLoadMore button:hover {
+  background: #e68a00; /* tom mais escuro no hover */
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 14px rgba(0,0,0,0.2);
+}
+
+.btnLoadMore button:active {
+  transform: translateY(0);
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+}
+
+
 
 
 
