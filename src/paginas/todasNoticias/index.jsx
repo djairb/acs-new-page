@@ -14,15 +14,27 @@ import Cabecalho from '../../componentes/cabecalhoBlog';
 const TodasNoticias = () => {
   const [noticias, setNoticias] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const limit = 12;
+  const [hasMore, setHasMore] = useState(true);
   const newsContainerRef = useRef(null);
 
-  useEffect(() => {
-    const carregarNoticias = async () => {
+  const carregarNoticias = async (pageNum = 1) => {
       setLoading(true);
       try {
-        const responseNoticias = await Axios.get(`${API_BASE_URL_NOTICIAS}/getAllNoticiasACS`);
-        setNoticias(responseNoticias.data);
-        
+        const responseNoticias = await Axios.get(`${API_BASE_URL_NOTICIAS}/getAllNoticiasACS2?page=${pageNum}&limit=${limit}`);
+
+        const novasNoticias = responseNoticias.data;
+
+        if (novasNoticias.length < limit){
+          setHasMore(false);
+        }
+
+        if (pageNum === 1){
+          setNoticias(novasNoticias);
+        } else {
+          setNoticias((prev) => [...prev, ...novasNoticias]);
+        }        
         // Restaura o scroll APÓS o carregamento das notícias
         const savedPosition = sessionStorage.getItem('noticiasScrollPosition');
         if (savedPosition && newsContainerRef.current) {
@@ -42,8 +54,18 @@ const TodasNoticias = () => {
       }
     };
 
-    carregarNoticias();
+  useEffect(() => {
+
+    carregarNoticias(1);
+    
+
   }, []);
+
+    const handleLoadMore = () => {
+    const nextPage = page + 1;
+    setPage(nextPage);
+    carregarNoticias(nextPage);
+  };
 
   return (
     <>
@@ -75,6 +97,18 @@ const TodasNoticias = () => {
           )}
           
         </div>
+
+        {/* Botão Carregar mais */}
+        {hasMore && !loading && noticias.length > 0 && (
+          <div className="btnLoadMore">
+            <button onClick={handleLoadMore}>Carregar mais</button>
+          </div>
+        )}
+
+        {/* Spinner quando carrega novas páginas */}
+        {loading && noticias.length > 0 && (
+          <div className="spinnerButton"><div></div></div>
+        )}
 
       </main>
       <Footer />

@@ -2,7 +2,7 @@
 //https://noticia.somosconexaosocial.org/backnoticia
 //http://localhost:3002
 
-export const API_BASE_URL_NOTICIAS = 'https://noticia.somosconexaosocial.org/backnoticia';
+export const API_BASE_URL_NOTICIAS = 'http://localhost:3002';
 
 // SERVIDOR IMAGENS
 // 'https://somosconexaosocial.org'
