@@ -19,6 +19,7 @@ const Noticia = () => {
     const [noticiaCarregada, setNoticiaCarregada] = useState(false);
     const [loadingImg, setLoadingImg] = useState(false);
     const [fotosNoticia, setFotosNoticia] = useState([]);
+    const [vejaMais, setVejaMais] = useState(null);
 
     const formatDate = (isoDate) => {
         const date = new Date(isoDate);
@@ -69,6 +70,24 @@ const Noticia = () => {
             }
         };
         carregarFotosNoticia();
+    }, [noticiaCarregadaCompleta]);
+
+    useEffect(() => {
+        const carregarVejaMais = async () => {
+            console.log("entrou aqui")
+            if (!noticiaCarregadaCompleta) return;
+            try {
+                const response = await Axios.get(`${API_BASE_URL_NOTICIAS}/getVejaMaisNoticia`, {
+                    params: { id: noticiaCarregada.id_noticia }
+                });
+                if (response.data.length > 0) {
+                    setVejaMais(response.data[0]);
+                }
+            } catch (error) {
+                console.error("Erro ao carregar veja mais:", error);
+            }
+        };
+        carregarVejaMais();
     }, [noticiaCarregadaCompleta]);
 
     const navigate = useNavigate();
@@ -146,12 +165,30 @@ const Noticia = () => {
                     <p>Carregando dados...</p>
                 )}
 
-                <button
+                {vejaMais && (
+    <div className="veja-mais-container">
+        <h2 className="veja-mais-titulo">Veja também</h2>
+        <div
+            className="veja-mais-card"
+            onClick={() => window.open(`#/noticias/${vejaMais.slug}`, "_blank")}
+        >
+            <img
+                src={`${API_IMAGEM_URL}${vejaMais.foto_capa}`}
+                alt={vejaMais.titulo}
+                className="veja-mais-imagem"
+            />
+            <p className="veja-mais-texto">{vejaMais.titulo}</p>
+        </div>
+    </div>
+)}
+
+
+                {/* <button
                     className="buttonMainPage"
                     onClick={handleClickVoltar}
                 >
                     Voltar
-                </button>
+                </button> */}
             </main>
             
             <Footer />
