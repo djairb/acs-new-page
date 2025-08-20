@@ -1238,17 +1238,14 @@ summary:focus {
 
 
 .mainTodasNoticias .divTodasNoticias{
-  width: 90%;
+  width: 100%;
   
   
   flex: 1;
   /*O flex: 1 é uma propriedade poderosa do CSS que, quando aplicado a um elemento dentro de um container flex, faz com que ele ocupe todo o espaço disponível tanto na direção principal quanto na transversal.*/
-  border: 2px solid #f1892a;
-
-  border-radius: 5px;
   
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   padding: 10px 10px;
   flex-wrap: wrap;
