@@ -11,6 +11,8 @@ import ParceirosNoticia from '../../componentes/parceirosNoticia';
 
 import { useNavigate } from 'react-router-dom';
 import RodapeBlog from '../../componentes/rodapeBlog';
+import CardNoticiaOld from '../../componentes/CardNoticiaOld/CardNoticiaOld';
+import CardNoticiaOld2 from '../../componentes/CardNoticiaOld2/CardNoticiaOld2';
 
 const Noticia = () => {
     const { slug } = useParams();
@@ -168,19 +170,15 @@ const Noticia = () => {
                 {vejaMais && (
     <div className="veja-mais-container">
         <h2 className="veja-mais-titulo">Veja também</h2>
-        <div
-            className="veja-mais-card"
-            onClick={() => window.open(`#/noticias/${vejaMais.slug}`, "_blank")}
-        >
-            <img
-                src={`${API_IMAGEM_URL}${vejaMais.foto_capa}`}
-                alt={vejaMais.titulo}
-                className="veja-mais-imagem"
-            />
-            <p className="veja-mais-texto">{vejaMais.titulo}</p>
-        </div>
+        <CardNoticiaOld2
+            key={vejaMais.id_noticia}
+            foto_capa={vejaMais.foto_capa}
+            titulo={vejaMais.titulo}
+            slug={vejaMais.slug}
+        />
     </div>
 )}
+
 
 
                 {/* <button
