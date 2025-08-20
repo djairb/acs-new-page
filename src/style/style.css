@@ -1301,6 +1301,15 @@ summary:focus {
 
 /* Adicione isso ao seu arquivo style.css */
 
+.veja-mais-container{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .containerCardNoticiaEdicao {
   position: relative;
   width: 100%;
@@ -1840,6 +1849,13 @@ summary:focus {
 
 @media only screen and (max-width: 1024px) {
 
+  .containerCardNoticia2 {
+      width: 100%;
+      min-width: 300px;
+  
+
+}
+
   .cabecalhoBlog{
     flex-direction: column;
     width: 100%;
@@ -2096,5 +2112,7 @@ summary:focus {
       gap: 5px;
       margin-bottom: 10px;
     }
+
+    
 
 }

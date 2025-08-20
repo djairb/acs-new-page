@@ -9,7 +9,7 @@ export default function CardNoticiaOld2(props) {
 
     const handleClickVisualizar = () => {
 
-        window.location.hash = `/noticias/${props.slug}`;
+        window.open(`#/noticias/${props.slug}`, '_blank'); // abre em nova guia
         
         
     };
