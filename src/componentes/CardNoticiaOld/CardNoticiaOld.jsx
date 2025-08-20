@@ -31,3 +31,5 @@ export default function CardNoticiaOld(props) {
         </div>
     );
 }
+
+

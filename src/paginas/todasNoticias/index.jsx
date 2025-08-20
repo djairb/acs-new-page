@@ -5,7 +5,6 @@ import Footer from '../../componentes/folter';
 
 import Axios from 'axios';
 
-
 import { API_BASE_URL_NOTICIAS } from '../../infra/apiConfig';
 import CardNoticiaOld from '../../componentes/CardNoticiaOld/CardNoticiaOld';
 import Cabecalho from '../../componentes/cabecalhoBlog';
@@ -27,6 +26,7 @@ const TodasNoticias = () => {
         const novasNoticias = responseNoticias.data;
 
         if (novasNoticias.length < limit){
+          
           setHasMore(false);
         }
 
