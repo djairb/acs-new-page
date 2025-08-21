@@ -49,6 +49,13 @@ function Transparencia() {
 
             </a>
 
+            <a href="https://drive.google.com/file/d/1jyBZr6cQvxtjhsehnCRt8Afo7ZtKqJOW/view?usp=sharing">
+
+                   
+                <h3>POLÍTICA DE SALVAGUARDA - 2025</h3>
+
+            </a>
+
 
 			<h2>2024</h2>
 

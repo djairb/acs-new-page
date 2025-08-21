@@ -8,9 +8,9 @@ function CardContratacao() {
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth <= 768) {
-                setImageSrc("https://somosconexaosocial.org/techfest/servidor_mainpage/ti-pq.jpg"); // imagem mobile
+                setImageSrc("https://somosconexaosocial.org/site_img/public/pq-wpp.jpg"); // imagem mobile
             } else {
-                setImageSrc("https://somosconexaosocial.org/techfest/servidor_mainpage/ti-grande.jpg"); // imagem desktop
+                setImageSrc("https://somosconexaosocial.org/site_img/public/big-wpp.jpg"); // imagem desktop
             }
         };
 
@@ -27,7 +27,7 @@ function CardContratacao() {
 
             
 
-            <a href="https://drive.google.com/file/d/1f2MKC6YmIK6MZOmC3iosQ4s_wWxGJCOa/view?usp=sharing" target="_blank">
+            <a href="https://drive.google.com/drive/folders/1-rIECktSQ_MsEix4pLceAx5Kb6nHvwsN?usp=sharing" target="_blank">
                 <img src={imageSrc} alt="Techfest 2025" />
             </a>
 
