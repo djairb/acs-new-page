@@ -26,6 +26,7 @@ import CardTechfest from '../../componentes/cardTechFest';
 import VideoCarrossel2 from '../../componentes/videoCarrossel2';
 import OdsSelecionar from '../../componentes/odsSelecionar';
 import CardContratacao from '../../componentes/cardContratacao';
+import CardContratacaoSlide from '../../componentes/cardContratacaoSlide';
 
 
 function TelaPrincipal() {
@@ -75,7 +76,7 @@ function TelaPrincipal() {
         
 
         {/* <CardTechfest/> */}
-        <CardContratacao/>
+        <CardContratacaoSlide/>
 
         
 
