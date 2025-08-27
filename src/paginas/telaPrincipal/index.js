@@ -76,9 +76,7 @@ function TelaPrincipal() {
         
 
         {/* <CardTechfest/> */}
-        <CardContratacaoSlide/>
-
-        
+        {/* <CardContratacaoSlide/> */}
 
         <MainVideo/>
 
@@ -101,9 +99,9 @@ function TelaPrincipal() {
 
         <div className='spaceLineNav'></div>
 
-        <VideoCarrossel2/>
+        {/* <VideoCarrossel2/> */}
 
-        {/* <VideoCarrossel/> */}
+        <VideoCarrossel/>
 
         {/* <ColaboradorCarrossel/>      */}
         

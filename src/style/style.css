@@ -227,56 +227,7 @@ section {
 }
 
 
-.videoCard{
-  display: flex;
-  flex-direction: column;
-  /* align-items: stretch; */
-  /* depois concerta esse container - agora foca no techfest */
-  gap: 20px;
-  justify-content: space-evenly;
-  
-  border-radius: 10px;
-  border: 2px solid#f08528;
-  flex: 1;
-  
-  margin: 0 20px;
-  
-  
-  padding-bottom: 30px;
-  background-color: white;
 
-  
-  
-  
- 
-
-
-
-}
-
-.videoCard iframe{
-  width: 100%;
-  height: 300px;
-  border-radius: 10px 10px 0px 00px;
- 
-}
-
-.videoCard h3{
-  padding: 10px;
-}
-
-
-
-.mainTexto p{
-
-  width: 80%;
-  text-align: justify;
-  margin: 0 auto;
-  font-weight: 500; /* Negrito */
-  font-size: 20px;
-  
-  
-}
 
 .swiperSlide img{
     
@@ -1129,8 +1080,8 @@ summary:focus {
 
 .mainPicturesSelectedOds img{
 
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   padding: 5px;
   border-radius: 10px;
 
@@ -1817,7 +1768,14 @@ summary:focus {
 /* Responsividade */
 @media (max-width: 768px) {
 
+  .projectDetailsOds .projetoOds {
+
+    flex-direction: column;
   
+  
+}
+
+
 .imagemHomeContratacao {
 
 
@@ -1867,6 +1825,153 @@ summary:focus {
 .btnLoadMore button:active {
   transform: translateY(0);
   box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+}
+
+.videoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: space-between;
+  border-radius: 12px;
+  border: 2px solid #f08528;
+  margin: 0 20px;
+  padding-bottom: 20px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  height: 420px; /* Altura fixa para todos os cards */
+}
+
+.videoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-color: #e67e22;
+}
+
+.videoCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #f08528, #e67e22, #f39c12);
+}
+
+.videoCard iframe {
+  width: 100%;
+  height: 250px; /* Altura reduzida para equilibrar com a altura fixa */
+  border-radius: 10px 10px 0 0;
+  border: none;
+  transition: transform 0.3s ease;
+  flex-shrink: 0; /* Impede que o iframe reduza */
+}
+
+.videoCard:hover iframe {
+  transform: scale(1.02);
+}
+
+.videoCard h3 {
+  padding: 0 20px;
+  font-size: 1.25rem;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  
+  /* Propriedades para ellipsis em múltiplas linhas */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Número máximo de linhas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 5.6em; /* (line-height * número de linhas) */
+  
+  flex-grow: 1; /* Ocupa espaço disponível */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainTexto p {
+  width: 80%;
+  text-align: justify;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #444;
+  padding: 15px 0;
+}
+
+/* Container para os cards - importante para alinhamento */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Efeitos responsivos */
+@media (max-width: 1024px) {
+  .videoCard {
+    height: 400px;
+    margin: 0 15px;
+  }
+  
+  .videoCard iframe {
+    height: 230px;
+  }
+}
+
+@media (max-width: 768px) {
+  .videoCard {
+    height: 380px;
+    margin: 0 10px;
+    gap: 12px;
+  }
+  
+  .videoCard iframe {
+    height: 210px;
+  }
+  
+  .videoCard h3 {
+    font-size: 1.1rem;
+    padding: 0 15px;
+    -webkit-line-clamp: 2; /* Menos linhas em dispositivos menores */
+  }
+  
+  .mainTexto p {
+    width: 90%;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .videoCard {
+    height: 350px;
+    margin: 0 5px;
+    gap: 10px;
+  }
+  
+  .videoCard iframe {
+    height: 180px;
+  }
+  
+  .videoCard h3 {
+    font-size: 1rem;
+    padding: 0 12px;
+    -webkit-line-clamp: 2;
+  }
+  
+  .mainTexto p {
+    width: 95%;
+    font-size: 16px;
+  }
 }
 
 
@@ -2100,13 +2205,7 @@ summary:focus {
 
   
 
-  .videoCard iframe{
-    
-    height: 200px;
-
-  
-  
-  }
+ 
   .pOds{
     width: 95%;
     
