@@ -19,6 +19,41 @@ function Transparencia() {
 
 			<h2>2025</h2>
 
+            <a href="https://drive.google.com/file/d/1_Km9g0wVQ_O734elQUBYzdqXrCusMZK5/view?usp=sharing">
+
+
+                <h3>CÓDIGO DE ÉTICA E CONDUTA</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/1rg2DA3YEt3fDJw5nZ5dex3r-w0xn59td/view?usp=sharing">
+
+
+                <h3>PLANO DE CAPTAÇÃO DE RECURSOS</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/1C49J0njGEiV4scfG53RaWvB4BHr-ZBbQ/view?usp=sharing">
+
+
+                <h3>PLANO OPERACIONAL ANUAL - POA/2025</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/1U1Ud2oOFH1Kz8BFNiS75tEknozHzFVL9/view?usp=sharing">
+
+
+                <h3>PLANEJAMENTO ESTRATÉGICO E PLANO DE AÇÃO UTILIZADO EM 2025</h3>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/1bQqIlDw4zkGabDfXYrWzOIKbuk1PNTXE/view?usp=sharing">
+
+
+                <h3>PLANO ESTRATÉGICO DE COMUNICAÇÃO</h3>
+
+            </a>
+
             <a href="https://drive.google.com/file/d/1QoDylPQ3JEHqOY77lpD5J9opIA5XQQaZ/view?usp=sharing">
 
 
@@ -110,7 +145,14 @@ function Transparencia() {
             
 
         
-			<h2>2023</h2>
+			<h2>2023</h2>         
+
+
+            <a href="https://drive.google.com/file/d/1M9mryRTMrsadPsUj47MEj9adEeUSJMKG/view?usp=sharing">
+
+                <h3>RELATÓRIO DE IMPACTO - 2023</h3>
+
+            </a>
 
 			<a href="https://drive.google.com/file/d/17HGINeyr4DVDyGHbq7yE96oxsOUIqEYj/view?usp=sharing">       
 
@@ -157,6 +199,19 @@ function Transparencia() {
                 <h3>RELATÓRIO EXECUTIVO - 2022</h3>
 
             </a>
+
+            <h2>2021</h2>
+
+            <a href="https://drive.google.com/file/d/1U_saC2n3qxLKgXKTwykTCXLYMWvoG8MJ/view?usp=sharing">       
+
+                <h3>RELATÓRIO EXECUTIVO - 2021</h3>
+
+            </a>
+
+
+           
+
+
             
         </div>
         
