@@ -2,6 +2,13 @@
 export const reportagensDrive = [
 
   {
+    id: 22,
+    videoUrl: "https://drive.google.com/file/d/1SWZUS8TPJ2hXSKSN_RMyQTxn7HwNCkt_/preview",
+    descricaoVideo: "NE2 - Globo PE - Projeto Conecta Vidas"
+
+  },
+
+  {
     id: 6,
     videoUrl: "https://drive.google.com/file/d/1m_Aafx_3z2yNWk036sfCvcVeG8WVZkL8/preview",
     descricaoVideo: "NE2 - Globo PE - Projeto Passaporte Digital"

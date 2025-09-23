@@ -9,9 +9,6 @@ function Transparencia() {
     return (
 
         <>
-
-
-
             <Navbar />
 
             <main className='mainBoletim'>
