@@ -51,7 +51,7 @@ function Navbar() {
             {dropdownOpen && (
               <div className="dropdown-menu">
                 <Link to="/noticias">Institucionais</Link>
-                <Link to="/blog-rebeca">Blog Rebca</Link>
+                <Link to="/blog-rebeca">Blog Rebeca</Link>
                 <Link to="/galeria">Galeria</Link>
               </div>
             )}
