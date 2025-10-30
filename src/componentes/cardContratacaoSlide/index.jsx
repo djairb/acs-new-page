@@ -11,16 +11,25 @@ function CardContratacaoSlide() {
 
   const files = [
     {
+      key: 0,
+      descricao:'passaporte digital abrace uma causa',
+      imgPq: "https://somosconexaosocial.org/site_img/carrossel-link/passaporte-pq.jpg",
+      imgBig: "https://somosconexaosocial.org/site_img/carrossel-link/passaporte-big.jpg",
+      link: "https://doeseuir.abraceumacausa.com.br/projeto/?projectId=1080",
+    },
+    {
       key: 1,
-      imgPq: "https://somosconexaosocial.org/site_img/public/pq-wpp.jpg",
-      imgBig: "https://somosconexaosocial.org/site_img/public/big-wpp.jpg",
-      link: "https://drive.google.com/drive/folders/1-rIECktSQ_MsEix4pLceAx5Kb6nHvwsN?usp=sharing",
+      descricao:'oportunizar comunidade abrace uma causa',
+      imgPq: "https://somosconexaosocial.org/site_img/carrossel-link/comunidade-pq.jpg",
+      imgBig: "https://somosconexaosocial.org/site_img/carrossel-link/comunidade-big.jpg",
+      link: "https://doeseuir.abraceumacausa.com.br/projeto/?projectId=1283",
     },
     {
       key: 2,
-      imgPq: "https://somosconexaosocial.org/site_img/public/cuidador-pq.jpg",
-      imgBig: "https://somosconexaosocial.org/site_img/public/cuidador-big.jpg",
-      link: "https://forms.gle/vAH3do8uM2VGcyqw9",
+      descricao:'premio inovacao e tecnologia',
+      imgPq: "https://somosconexaosocial.org/site_img/carrossel-link/premio-pq.jpg",
+      imgBig: "https://somosconexaosocial.org/site_img/carrossel-link/premio-big.jpg",
+      link: "https://somosconexaosocial.org/premioinovacao/",
     }
   ];
 

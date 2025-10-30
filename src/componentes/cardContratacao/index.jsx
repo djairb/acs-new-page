@@ -3,14 +3,14 @@ import React, { useState, useEffect } from 'react';
 
 
 function CardContratacao() {
-    const [imageSrc, setImageSrc] = useState("https://somosconexaosocial.org/techfest/servidor_mainpage/ti-grande.jpg");
+    const [imageSrc, setImageSrc] = useState("https://somosconexaosocial.org/techfest/servidor_mainpage/premio-bg-big.jpg");
 
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth <= 768) {
-                setImageSrc("https://somosconexaosocial.org/site_img/public/pq-wpp.jpg"); // imagem mobile
+                setImageSrc("https://somosconexaosocial.org/site_img/public/premio-bg.jpg"); // imagem mobile
             } else {
-                setImageSrc("https://somosconexaosocial.org/site_img/public/big-wpp.jpg"); // imagem desktop
+                setImageSrc("https://somosconexaosocial.org/site_img/public/premio-bg-big.jpg"); // imagem desktop
             }
         };
 
@@ -27,7 +27,7 @@ function CardContratacao() {
 
             
 
-            <a href="https://drive.google.com/drive/folders/1-rIECktSQ_MsEix4pLceAx5Kb6nHvwsN?usp=sharing" target="_blank">
+            <a href="https://somosconexaosocial.org/premioinovacao/" target="_blank">
                 <img src={imageSrc} alt="Techfest 2025" />
             </a>
 

@@ -1538,14 +1538,19 @@ summary:focus {
 
 
 
-.imagemHomeContratacao{
-
+.cardCarrosselContratacao {
+  width: 100%;
   
-  object-position: top;
-  height: auto;
-  object-fit: cover;
-
 }
+
+.imagemHomeContratacao {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+
 
 
 

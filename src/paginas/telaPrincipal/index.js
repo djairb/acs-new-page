@@ -76,7 +76,9 @@ function TelaPrincipal() {
         
 
         {/* <CardTechfest/> */}
-        {/* <CardContratacaoSlide/> */}
+        <CardContratacaoSlide/>
+
+        {/* <CardContratacao/> */}
 
         <MainVideo/>
 
