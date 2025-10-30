@@ -3,7 +3,11 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
 
 import logo from "../../img/logoAcs.png";
+
+import jornada from "../../img/jornada-ods.jpg";
 import { Link } from "react-router-dom";
+
+
 
 function Navbar() {
   const navRef = useRef();
@@ -42,19 +46,21 @@ function Navbar() {
           <Link to="/transparencia">Transparência</Link>
 
           <div className="dropdown">
-            <button
+            {/* <button
               className="dropdown-toggle"
               onClick={() => setDropdownOpen(!dropdownOpen)}
             >
               Notícias <FaChevronDown className="dropdown-icon" />
-            </button>
-            {dropdownOpen && (
+            </button> */}
+
+            <Link to="/noticias">Blog</Link>
+            {/* {dropdownOpen && (
               <div className="dropdown-menu">
-                <Link to="/noticias">Institucionais</Link>
+                
                 <Link to="/blog-rebeca">Blog Rebeca</Link>
                 <Link to="/galeria">Galeria</Link>
               </div>
-            )}
+            )} */}
           </div>
 
           <a href="https://somosconexaosocial.org/sra" rel="noopener noreferrer">SRA</a>
@@ -69,6 +75,7 @@ function Navbar() {
             <FaTimes />
           </button>
         </nav>
+        <Link to="https://www.seloodsbrasil.com.br/"><img src={jornada} alt="em jornada" /></Link>
 
         <button className="nav-btn" onClick={showNavBar}>
           <FaBars />
