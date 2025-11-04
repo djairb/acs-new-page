@@ -79,7 +79,7 @@ const NoticiasHome = () => {
   return (
 
       <div className="divNoticiasHome">
-          <h1 className="h1SectionTitle">Notícias</h1>
+          <h1 className="h1SectionTitle">Blog</h1>
 
           {loading ? <div className="spinner"><div></div></div> :
 
@@ -117,7 +117,7 @@ const NoticiasHome = () => {
             className="buttonMainPage"
             onClick={handleClickTodasNoticias}
           >
-            Todas Notícias
+            Ver Mais
           </button>
 
 

@@ -17,7 +17,7 @@ export const mainHomeVisao = [
   {
     id: 2,
     titulo: "Valores",
-    texto: "Acolhimentoe Qualidade nos Serviços; Aprendizadoe Desenvolvimento; Compromissoe Resiliência; Conexão Social e Trabalho em Rede; Empatia e Cuidado; Ética e Transparência; Inclusão e Participação; Inovação e Adaptabilidade; Respeitoe Diversidade; Responsabilidade Social e Ambiental; Senso de Justiça e Colaboração; Solidariedade e Comunidade.",
+    texto: "Acolhimentoe Qualidade nos Serviços; Aprendizadoe Desenvolvimento; Compromissoe Resiliência; Conexão Social e Trabalho em Rede; Empatia e Cuidado; Ética e Transparência; Inclusão e Participação; Inovação e Adaptabilidade; Respeito e Diversidade; Responsabilidade Social e Ambiental; Senso de Justiça e Colaboração; Solidariedade e Comunidade.",
     imagem: 'https://somosconexaosocial.org/site_img/main_home/04.jpg'
 
   },

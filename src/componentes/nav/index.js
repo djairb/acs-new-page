@@ -26,7 +26,7 @@ function Navbar() {
 
         <nav ref={navRef}>
 
-          <div className="dropdown">
+          {/* <div className="dropdown">
             <button
               className="dropdown-toggle"
               onClick={() => setDropdownOpen2(!dropdownOpen2)}
@@ -40,10 +40,13 @@ function Navbar() {
                 
               </div>
             )}
-          </div>
+          </div> */}
+
+          <Link to="/noticias">Blog</Link>
           
           <Link to="/boletins-informativos">Boletins</Link>
           <Link to="/transparencia">Transparência</Link>
+          <Link to="/diretoria">Diretoria</Link>
 
           <div className="dropdown">
             {/* <button
@@ -53,7 +56,7 @@ function Navbar() {
               Notícias <FaChevronDown className="dropdown-icon" />
             </button> */}
 
-            <Link to="/noticias">Blog</Link>
+            
             {/* {dropdownOpen && (
               <div className="dropdown-menu">
                 

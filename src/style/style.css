@@ -126,55 +126,16 @@ section {
 }
 
 .missao-visao-valores-section {
-  background: var(--amarelo, #FFF275);
+  background: var(--amarelo);
   width: 100%;
-  padding: 60px 20px;
-  margin-top: 40px;
+  padding: 40px 20px;
+  margin-top: 10px;
+  
 }
 
-.missao-visao-valores-container {
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
-.valor-item {
-  flex: 1;
-  background: var(--branco, white);
-  padding: 30px;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
 
-.valor-item:hover {
-  transform: translateY(-10px);
-}
 
-.valor-item h3 {
-  color: var(--azul, #3C91E6);
-  margin-bottom: 20px;
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-
-.valor-item p {
-  color: #333;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  text-align: justify;
-}
-
-.valor-item img {
-  width: 100%;
-  max-width: 250px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 4px;
-}
 
 .saiba-mais-btn {
   background: var(--verde);
@@ -197,8 +158,90 @@ section {
 }
 
 
+
+
+.missao-visao-valores-container {
+  display: flex;
+  flex-wrap: wrap;          /* permite quebrar linha em telas menores */
+  gap: 20px;                /* espaço entre os cards */
+  justify-content: center;  /* centraliza os cards */
+  align-items: stretch;     /* força todos os cards a ficarem com a mesma altura */
+  padding: 40px 20px;       /* espaçamento interno do container */
+  /* cor de fundo opcional, pode ajustar conforme o site */
+}
+
+/* Cada card individual */
+.valor-item {
+  background-color: white; /* verde escuro */
+  color: black;
+  border-radius: 12px;
+  overflow: hidden;
+  flex: 1 1 470px;          /* cresce de forma flexível, mínimo 300px */
+  max-width: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito hover opcional (suave e moderno) */
+.valor-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Título */
+.valor-item h3 {
+  color: var(--vermelho);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 24px 0 16px;
+  padding: 0 20px;
+}
+
+/* Texto */
+.valor-item p {
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  padding: 0 20px;
+  text-align: justify;
+  margin-bottom: 20px;
+  flex-grow: 1; /* empurra a imagem para o final do card */
+}
+
+/* Imagem — colada nas laterais e na parte inferior */
+.valor-item img {
+  width: 100%;
+  object-position: top;
+  height: 300px;            /* altura fixa para manter alinhamento */
+  object-fit: cover;        /* cobre toda a largura */
+  display: block;
+  margin-top: auto;
+  border: none;
+}
+
+
+
+
 /* Responsivo - Mobile */
 @media (max-width: 768px) {
+
+  .valor-item {
+    padding: 20px;
+    min-height: 400px;
+  }
+  
+  .valor-item h3 {
+    font-size: 1.3em;
+  }
+  
+  .valor-item img {
+    height: 150px;
+  }
   .projeto-container {
     flex-direction: column;
     gap: 20px;
@@ -233,16 +276,28 @@ section {
   
   .missao-visao-valores-container {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    padding: 20px 10px;
   }
-  
+
   .valor-item {
-    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .valor-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .valor-item p {
+    font-size: 0.95rem;
+  }
+
+  .valor-item img {
+    height: 150px;
   }
   
-  .valor-item h3 {
-    font-size: 1.3em;
-  }
+  
   .saiba-mais-btn {
     width: 100%;
     max-width: 300px;
