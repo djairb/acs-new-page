@@ -27,6 +27,7 @@ import VideoCarrossel2 from '../../componentes/videoCarrossel2';
 import OdsSelecionar from '../../componentes/odsSelecionar';
 import CardContratacao from '../../componentes/cardContratacao';
 import CardContratacaoSlide from '../../componentes/cardContratacaoSlide';
+import ProjetoComponent from '../../componentes/projetoComponente';
 
 
 function TelaPrincipal() {
@@ -80,7 +81,9 @@ function TelaPrincipal() {
 
         {/* <CardContratacao/> */}
 
-        <MainVideo/>
+        <ProjetoComponent />
+
+        {/* <MainVideo/> */}
 
         <div className='spaceLineNav'></div>
 
