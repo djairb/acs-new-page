@@ -125,6 +125,78 @@ section {
   
 }
 
+.missao-visao-valores-section {
+  background: var(--amarelo, #FFF275);
+  width: 100%;
+  padding: 60px 20px;
+  margin-top: 40px;
+}
+
+.missao-visao-valores-container {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.valor-item {
+  flex: 1;
+  background: var(--branco, white);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.valor-item:hover {
+  transform: translateY(-10px);
+}
+
+.valor-item h3 {
+  color: var(--azul, #3C91E6);
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.valor-item p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.valor-item img {
+  width: 100%;
+  max-width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.saiba-mais-btn {
+  background: var(--verde);
+  color: white;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 25px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.saiba-mais-btn:hover {
+  background: var(--vermelho, #EF3E36);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(239, 62, 54, 0.3);
+}
+
+
 /* Responsivo - Mobile */
 @media (max-width: 768px) {
   .projeto-container {
@@ -154,6 +226,29 @@ section {
   
   .info-container h2 {
     font-size: 1.1em;
+  }
+  .missao-visao-valores-section {
+    padding: 40px 15px;
+  }
+  
+  .missao-visao-valores-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .valor-item {
+    padding: 20px;
+  }
+  
+  .valor-item h3 {
+    font-size: 1.3em;
+  }
+  .saiba-mais-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 16px 30px;
+    font-size: 1em;
+    margin-top: 20px;
   }
 }
 
