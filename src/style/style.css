@@ -2005,7 +2005,7 @@ summary:focus {
     background: white;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    width: 280px;
+    min-width: 280px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

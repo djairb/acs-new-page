@@ -20,15 +20,15 @@ function Diretoria() {
 
                     <div class="membro-card">
                         <div class="card-header">
-                            <h3>Beatriz Sanda da Silva</h3>
+                            <h3>Vitória Silva de Oliveira</h3>
                             <p>Diretora Financeira</p>
                         </div>
                     </div>
 
                     <div class="membro-card">
                         <div class="card-header">
-                            <h3>Geovane de Lima</h3>
-                            <p>Diretor Secretário</p>
+                            <h3>Erlane Maria Bezerra</h3>
+                            <p>Diretora Secretária</p>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,237 @@
+/* =========================================
+   VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================= */
+:root {
+  --verde: #00A859;
+  --vermelho: #EF3E36;
+  --amarelo: #FFF275;
+  --azul: #3C91E6;
+}
+
+/* Section Pai */
+.projetos-section {
+  width: 100%;
+  padding: 60px 20px; /* Espaçamento interno */
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Cinza bem claro para destacar os cards brancos */
+}
+
+.projetos-header h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  color: var(--azul);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Grid Flexbox que segura os cards */
+.projetos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px; /* Espaço entre os cards */
+  justify-content: center;
+  max-width: 1400px; /* Opcional: limita a largura total da grade */
+  margin: 0 auto;
+}
+
+/* =========================================
+   ESTILO DO CARD (PADRÃO / VERTICAL)
+   ========================================= */
+.card-projeto {
+  /* Comportamento Flex: cresce base 470px, trava em 470px */
+  flex: 1 1 470px;
+  max-width: 470px;
+  
+  /* Estética */
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  overflow: hidden; /* Garante que nada vaze as bordas arredondadas */
+  
+  /* Layout Interno */
+  display: flex;
+  flex-direction: column; /* Imagem em cima, Texto embaixo */
+  
+  /* Animação suave ao expandir */
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efeito Hover leve no card fechado */
+.card-projeto:not(.expandido):hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* Container do Swiper (Imagens) */
+.card-carousel-container {
+  width: 100%;
+  height: 260px; /* Altura fixa quando fechado */
+  background-color: #eee;
+  position: relative;
+  transition: all 0.5s ease; /* Animação de redimensionamento */
+}
+
+/* Ajustes finos do Swiper */
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.mySwiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Imagem preenche tudo sem distorcer */
+}
+
+/* Corpo de Texto */
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #fff;
+  transition: all 0.5s ease;
+}
+
+/* Header do Card: Título e Logo */
+.card-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.card-header-content h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.project-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid var(--azul);
+  padding: 2px;
+  background: white;
+}
+
+/* Container do resumo e botão */
+.resumo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.texto-curto {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.btn-leia-mais {
+  align-self: flex-start;
+  background-color: transparent;
+  border: 2px solid var(--verde);
+  color: var(--verde);
+  padding: 8px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.btn-leia-mais:hover {
+  background-color: var(--verde);
+  color: white;
+}
+
+/* =========================================
+   ESTADO EXPANDIDO (HORIZONTAL)
+   ========================================= */
+.card-projeto.expandido {
+  /* Ocupa 100% da linha */
+  flex: 1 1 100%;
+  max-width: 100%;
+  
+  /* Muda orientação para LINHA (Lado a Lado) */
+  flex-direction: row;
+  align-items: stretch; /* Estica para ficarem na mesma altura */
+}
+
+/* Imagem no modo expandido */
+.card-projeto.expandido .card-carousel-container {
+  width: 50%; /* Metade da largura */
+  height: auto; /* Altura automática baseada no texto */
+  min-height: 450px; /* Garante um tamanho bonito */
+}
+
+/* Texto no modo expandido */
+.card-projeto.expandido .card-body {
+  width: 50%; /* Outra metade */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  padding: 40px;
+}
+
+/* Área de Texto Longo (Destaque) */
+.texto-completo {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(255, 242, 117, 0.25); /* --amarelo com transparência */
+  border-left: 5px solid var(--vermelho); /* Borda de destaque */
+  border-radius: 0 8px 8px 0;
+  
+  animation: slideDown 0.5s ease-out;
+}
+
+.texto-completo p {
+  margin: 0 0 10px 0;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Animação de entrada do texto */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================= */
+@media (max-width: 900px) {
+  /* No celular, o grid pode ter uma coluna só */
+  .projetos-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Garante que o card respeite a largura da tela no mobile */
+  .card-projeto {
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 auto;
+  }
+
+  /* IMPORTANTE: Mesmo expandido, no celular fica vertical (um embaixo do outro) */
+  .card-projeto.expandido {
+    flex-direction: column;
+  }
+
+  .card-projeto.expandido .card-carousel-container {
+    width: 100%;
+    height: 300px; /* Altura fixa pro mobile */
+  }
+
+  .card-projeto.expandido .card-body {
+    width: 100%;
+  }
+}

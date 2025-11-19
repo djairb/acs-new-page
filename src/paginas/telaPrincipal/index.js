@@ -28,6 +28,7 @@ import OdsSelecionar from '../../componentes/odsSelecionar';
 import CardContratacao from '../../componentes/cardContratacao';
 import CardContratacaoSlide from '../../componentes/cardContratacaoSlide';
 import ProjetoComponent from '../../componentes/projetoComponente';
+import ProjetosSection from '../../componentes/ProjetosSection/ProjetosSection';
 
 
 function TelaPrincipal() {
@@ -72,9 +73,7 @@ function TelaPrincipal() {
 
       <Navbar/>   
 
-      <main>       
-
-        
+      <main>               
 
         {/* <CardTechfest/> */}
         <CardContratacaoSlide/>
@@ -82,6 +81,8 @@ function TelaPrincipal() {
         {/* <CardContratacao/> */}
 
         <ProjetoComponent />
+
+        <ProjetosSection />
 
         {/* <MainVideo/> */}
 
@@ -92,7 +93,7 @@ function TelaPrincipal() {
 
         <div className='spaceLineNav'></div>
 
-        <GaleriaHome/>
+        {/* <GaleriaHome/> */}
 
         <div className='spaceLineNav'></div>
 

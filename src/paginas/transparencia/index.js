@@ -18,6 +18,17 @@ function Transparencia() {
 
                     <h2>2025</h2>
 
+                    
+
+                    <a href="https://drive.google.com/file/d/1fSscB0xDdqcFRuWlMXlA0yzHCs6Ibxyz/view?usp=sharing">
+
+
+                        <h3>NOTA TÉCNICA - SEE - Gerência Geral de Assuntos Jurídicos - Nº 13832025</h3>
+
+                    </a>
+
+
+
                     <a href="https://drive.google.com/file/d/1_Km9g0wVQ_O734elQUBYzdqXrCusMZK5/view?usp=sharing">
 
 
