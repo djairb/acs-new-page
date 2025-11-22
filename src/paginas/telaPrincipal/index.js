@@ -30,6 +30,7 @@ import CardContratacaoSlide from '../../componentes/cardContratacaoSlide';
 import ProjetoComponent from '../../componentes/projetoComponente';
 import ProjetosSection from '../../componentes/ProjetosSection/ProjetosSection';
 import ProjetosSection2 from '../../componentes/ProjetosSection2/ProjetosSection2';
+import BannerResponsivo from '../../componentes/BannerResponsivo';
 
 
 function TelaPrincipal() {
@@ -104,9 +105,16 @@ function TelaPrincipal() {
 
         <div className='spaceLineNav'></div>
 
-        <OdsSelecionar/>
+        {/* <OdsSelecionar/>
 
-        <div className='spaceLineNav'></div>
+        <div className='spaceLineNav'></div> */}
+
+          <BannerResponsivo
+            imgDesktop="https://somosconexaosocial.org/site_img/ods/em_jornada_big.png"   // Imagem horizontal (ex: 1920x400)
+            imgMobile="https://somosconexaosocial.org/site_img/ods/em_jornada_pq.png"    // Imagem vertical/quadrada (ex: 800x800)
+            link="https://www.seloodsbrasil.com.br/"
+            alt="Selo ODS"
+          />
 
         {/* <VideoCarrossel2/> */}
 

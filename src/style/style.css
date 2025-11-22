@@ -129,7 +129,7 @@ section {
   background: var(--amarelo);
   width: 100%;
   padding: 40px 20px;
-  margin-top: 10px;
+  
   
 }
 
@@ -828,7 +828,7 @@ header .dropdown-menu a:hover {
 
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(to right, #ffd551, #f08528);
+  background-color: var(--azul);
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,0 +1,68 @@
+/* =========================================
+   BANNER RESPONSIVO (BannerResponsivo.css)
+   ========================================= */
+
+.banner-full-width {
+  width: 100%;
+  background-color: transparent; /* ou #fff se preferir */
+  
+  /* O PEDIDO DO FLEXBOX: */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente se tiver altura definida */
+  
+  padding: 20px 0; /* Um respiro em cima e embaixo */
+}
+
+.banner-link {
+  display: flex; /* Garante que o link se comporte como flex container */
+  justify-content: center;
+  width: 100%;
+  
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 0; /* Remove espaços fantasmas abaixo da imagem */
+  transition: opacity 0.3s ease;
+}
+
+.banner-link:hover {
+  opacity: 0.9; /* Feedback visual ao passar o mouse */
+}
+
+/* === ESTILO DA IMAGEM GERAL (Base Desktop) === */
+.banner-img {
+  /* Comportamento Padrão (Desktop) */
+  width: 100%;
+  
+  /* Limite da imagem original Desktop (1128px) pra não pixelar */
+  max-width: 1128px; 
+  
+  height: auto; /* Mantém a proporção original (191px de altura) */
+  object-fit: contain; /* Garante que a imagem caiba direitinho */
+  
+  display: block;
+}
+
+/* === ESTILO ESPECÍFICO PARA MOBILE (Até 768px) === */
+@media (max-width: 768px) {
+  
+  .banner-img {
+    /* Aqui acontece a mágica do 320px Quadrado */
+    
+    width: 100%; 
+    /* Trava a largura máxima em 320px como você pediu */
+    max-width: 320px; 
+    
+    /* Força a imagem a ser QUADRADA (1:1) */
+    aspect-ratio: 1 / 1; 
+    
+    /* Como a original é 1000x1000, 'cover' ou 'contain' funcionam bem.
+       'Contain' garante que apareça inteira. */
+    object-fit: contain; 
+    
+    /* Opcional: Bordas arredondadas no mobile ficam bonitas */
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+}
