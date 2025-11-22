@@ -1,0 +1,41 @@
+/* ================================
+   VARIÁVEIS
+   ================================ */
+:root {
+  --verde: #00A859;
+  --vermelho: #EF3E36;
+  --amarelo: #FFF275;
+  --azul: #3C91E6;
+}
+
+/* ================================
+   SECTION PRINCIPAL
+   ================================ */
+.projetos-section2 {
+  width: 100%;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  background-color: var(--amarelo);
+}
+
+.projetos-header2 h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: var(--azul);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* ================================
+   GRID QUE CONTÉM OS CARDS
+   ================================ */
+.projetos-grid2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}

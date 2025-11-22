@@ -1,6 +1,8 @@
 /* =========================================
-   VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ARQUIVO: Projetos.css (COMPLETO E DEFINITIVO)
    ========================================= */
+
+/* VARIÁVEIS GERAIS */
 :root {
   --verde: #00A859;
   --vermelho: #EF3E36;
@@ -8,31 +10,32 @@
   --azul: #3C91E6;
 }
 
-/* Section Pai */
+/* === SEÇÃO PAI (Fundo Amarelo) === */
 .projetos-section {
   width: 100%;
-  padding: 60px 20px; /* Espaçamento interno */
+  padding: 20px 20px;
   box-sizing: border-box;
-  background-color: #f9f9f9; /* Cinza bem claro para destacar os cards brancos */
+  background-color: var(--verde); 
 }
 
 .projetos-header h2 {
   text-align: center;
   margin-bottom: 40px;
-  font-size: 2.2rem;
-  color: var(--azul);
+  font-size: 2.5rem;
+  color: var(--amarelo);
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 1px;
+  
 }
 
-/* Grid Flexbox que segura os cards */
+/* === GRID (Container dos Cards) === */
 .projetos-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px; /* Espaço entre os cards */
-  justify-content: center;
-  max-width: 1400px; /* Opcional: limita a largura total da grade */
+  gap: 30px; 
+  justify-content: center; 
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -40,40 +43,48 @@
    ESTILO DO CARD (PADRÃO / VERTICAL)
    ========================================= */
 .card-projeto {
-  /* Comportamento Flex: cresce base 470px, trava em 470px */
-  flex: 1 1 470px;
-  max-width: 470px;
+  /* CONFIGURAÇÃO DE LARGURA: */
+  /* Tenta ter 650px. Não cresce além disso (flex-grow: 0) */
+  flex: 0 1 650px;
+  
+  /* Trava dura para manter ele "comportado" quando sozinho na linha */
+  width: 100%;
+  max-width: 650px; 
   
   /* Estética */
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  overflow: hidden; /* Garante que nada vaze as bordas arredondadas */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
   
-  /* Layout Interno */
+  /* Layout Vertical */
   display: flex;
-  flex-direction: column; /* Imagem em cima, Texto embaixo */
+  flex-direction: column;
   
-  /* Animação suave ao expandir */
+  /* Animação suave */
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+  /* Centraliza na linha */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Efeito Hover leve no card fechado */
+/* Efeito Hover no card fechado */
 .card-projeto:not(.expandido):hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-/* Container do Swiper (Imagens) */
+/* === IMAGEM (MODO NORMAL) === */
 .card-carousel-container {
   width: 100%;
-  height: 260px; /* Altura fixa quando fechado */
+  height: 320px; /* Altura fixa quando fechado */
   background-color: #eee;
   position: relative;
-  transition: all 0.5s ease; /* Animação de redimensionamento */
+  transition: all 0.5s ease;
 }
 
-/* Ajustes finos do Swiper */
+/* Swiper Configs */
 .mySwiper {
   width: 100%;
   height: 100%;
@@ -82,10 +93,11 @@
 .mySwiper img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Imagem preenche tudo sem distorcer */
+  object-fit: cover; /* Preenche tudo */
+  object-position: top center; /* Foca no topo (rostos) */
 }
 
-/* Corpo de Texto */
+/* === CORPO DE TEXTO === */
 .card-body {
   padding: 24px;
   display: flex;
@@ -95,32 +107,35 @@
   transition: all 0.5s ease;
 }
 
-/* Header do Card: Título e Logo */
+/* Header: Título e Logo */
 .card-header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .card-header-content h3 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #333;
-  font-weight: 700;
+  font-weight: 800;
 }
 
+/* Logo */
 .project-logo {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
+  object-position: center; /* Centraliza na bolinha */
   border-radius: 50%;
-  border: 2px solid var(--azul);
-  padding: 2px;
+  border: 3px solid var(--azul);
+  padding: 4px;
   background: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Container do resumo e botão */
+/* Resumo e Botão */
 .resumo-container {
   display: flex;
   flex-direction: column;
@@ -129,8 +144,8 @@
 
 .texto-curto {
   margin: 0;
-  color: #666;
-  font-size: 1rem;
+  color: #555;
+  font-size: 1.05rem;
   line-height: 1.5;
 }
 
@@ -139,12 +154,12 @@
   background-color: transparent;
   border: 2px solid var(--verde);
   color: var(--verde);
-  padding: 8px 24px;
+  padding: 10px 28px;
   border-radius: 30px;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
 }
 
@@ -154,84 +169,112 @@
 }
 
 /* =========================================
-   ESTADO EXPANDIDO (HORIZONTAL)
+   ESTADO EXPANDIDO (HORIZONTAL & QUADRADO 1:1)
    ========================================= */
 .card-projeto.expandido {
   /* Ocupa 100% da linha */
   flex: 1 1 100%;
-  max-width: 100%;
+  /* Remove o limite de 650px para poder crescer */
+  max-width: 100%; 
   
-  /* Muda orientação para LINHA (Lado a Lado) */
+  /* Vira Horizontal */
   flex-direction: row;
-  align-items: stretch; /* Estica para ficarem na mesma altura */
+  align-items: stretch;
+  
+  /* Fundo Azul */
+  background-color: var(--azul);
+  box-shadow: 0 20px 50px rgba(60, 145, 230, 0.4);
 }
 
-/* Imagem no modo expandido */
+/* IMAGEM NO MODO EXPANDIDO (A MÁGICA DO 1080x1080) */
 .card-projeto.expandido .card-carousel-container {
-  width: 50%; /* Metade da largura */
-  height: auto; /* Altura automática baseada no texto */
-  min-height: 450px; /* Garante um tamanho bonito */
+  width: 50%; /* Metade da largura do card */
+  
+  /* ISSO GARANTE O FORMATO QUADRADO PERFEITO */
+  aspect-ratio: 1/1; 
+  height: auto; /* Altura se ajusta para manter o quadrado */
+  
+  min-width: 400px; /* Garante visibilidade mínima */
 }
 
-/* Texto no modo expandido */
+/* TEXTO NO MODO EXPANDIDO */
 .card-projeto.expandido .card-body {
-  width: 50%; /* Outra metade */
-  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  width: 50%;
+  background-color: var(--azul);
+  
+  /* Centraliza verticalmente o conteúdo ao lado da imagem gigante */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
   padding: 40px;
 }
 
-/* Área de Texto Longo (Destaque) */
+/* Ajustes de Cores (Fundo Azul) */
+.card-projeto.expandido .card-header-content h3 {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.card-projeto.expandido .texto-curto {
+  color: #e0e0e0;
+}
+
+/* Botão (Branco no Azul) */
+.card-projeto.expandido .btn-leia-mais {
+  border-color: #fff;
+  color: #fff;
+}
+.card-projeto.expandido .btn-leia-mais:hover {
+  background-color: #fff;
+  color: var(--azul);
+}
+
+/* Caixa de Texto Longo */
 .texto-completo {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: rgba(255, 242, 117, 0.25); /* --amarelo com transparência */
-  border-left: 5px solid var(--vermelho); /* Borda de destaque */
-  border-radius: 0 8px 8px 0;
-  
-  animation: slideDown 0.5s ease-out;
+  margin-top: 25px;
+  padding: 25px;
+  background-color: #fff; /* Caixa branca */
+  border-left: 6px solid var(--vermelho);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: slideInRight 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .texto-completo p {
-  margin: 0 0 10px 0;
-  color: #444;
-  font-size: 1rem;
-  line-height: 1.6;
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
-/* Animação de entrada do texto */
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 /* =========================================
    RESPONSIVIDADE (MOBILE)
    ========================================= */
 @media (max-width: 900px) {
-  /* No celular, o grid pode ter uma coluna só */
-  .projetos-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Garante que o card respeite a largura da tela no mobile */
-  .card-projeto {
-    width: 100%;
-    max-width: 100%;
-    flex: 1 1 auto;
-  }
-
-  /* IMPORTANTE: Mesmo expandido, no celular fica vertical (um embaixo do outro) */
+  /* Volta para coluna única */
   .card-projeto.expandido {
     flex-direction: column;
   }
 
   .card-projeto.expandido .card-carousel-container {
     width: 100%;
-    height: 300px; /* Altura fixa pro mobile */
+    min-width: 0;
+    
+    /* No celular, mantém quadrado 1:1 (vai ficar alto e bonito) */
+    /* Se achar muito grande, troque por: aspect-ratio: 16 / 9; */
+    aspect-ratio: 1 / 1; 
+    height: auto;
   }
 
   .card-projeto.expandido .card-body {
     width: 100%;
+    padding: 20px;
+    justify-content: flex-start;
   }
 }

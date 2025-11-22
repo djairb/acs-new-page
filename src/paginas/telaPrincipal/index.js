@@ -29,6 +29,7 @@ import CardContratacao from '../../componentes/cardContratacao';
 import CardContratacaoSlide from '../../componentes/cardContratacaoSlide';
 import ProjetoComponent from '../../componentes/projetoComponente';
 import ProjetosSection from '../../componentes/ProjetosSection/ProjetosSection';
+import ProjetosSection2 from '../../componentes/ProjetosSection2/ProjetosSection2';
 
 
 function TelaPrincipal() {
@@ -84,6 +85,8 @@ function TelaPrincipal() {
 
         <ProjetosSection />
 
+        <ProjetosSection2 />
+
         {/* <MainVideo/> */}
 
         <div className='spaceLineNav'></div>
@@ -95,9 +98,9 @@ function TelaPrincipal() {
 
         {/* <GaleriaHome/> */}
 
-        <div className='spaceLineNav'></div>
+        {/* <div className='spaceLineNav'></div>
 
-        <ProjetosSelecionar/>
+        <ProjetosSelecionar/> */}
 
         <div className='spaceLineNav'></div>
 

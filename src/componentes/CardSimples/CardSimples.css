@@ -1,0 +1,146 @@
+/* =========================================
+   ESTILO DO CARD SIMPLES (Visual idêntico ao ProjectCard)
+   ========================================= */
+
+/* Variáveis (garantindo que existam) */
+:root {
+  --verde: #00A859;
+  --vermelho: #EF3E36;
+  --amarelo: #FFF275;
+  --azul: #3C91E6;
+}
+
+.card-simples {
+  /* COPIADO DO PROJECT CARD: */
+  /* Mantém o tamanho robusto de 650px */
+  flex: 0 1 650px;
+  width: 100%;
+  max-width: 650px;
+  
+  background: #fff;
+  border-radius: 20px; /* Arredondamento padrão */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra padrão */
+  overflow: hidden;
+  
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+  /* Centraliza na linha */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hover igual ao Project Card */
+.card-simples:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* === IMAGEM === */
+.card-simples-img-container {
+  width: 100%;
+  /* Mesma altura do Project Card */
+  height: 320px; 
+  background-color: #eee;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.card-simples-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Foco no topo (rostos/paisagens) */
+  object-position: top center; 
+}
+
+/* === CORPO === */
+.card-simples-body {
+  padding: 24px; /* Mesmo padding */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #fff;
+  height: 100%;
+}
+
+/* === HEADER (Título + Logo) === */
+.card-simples-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-simples-header h3 {
+  margin: 0;
+  font-size: 1.6rem; /* Mesma fonte */
+  color: #333;
+  font-weight: 800;
+  flex: 1;
+}
+
+/* Logo igualzinha ao Project Card */
+.card-simples-logo {
+  width: 100px; /* Tamanho padrão grande */
+  height: 100px;
+  object-fit: contain;
+  object-position: center;
+  
+  border-radius: 50%;
+  border: 3px solid var(--azul);
+  padding: 4px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  
+  flex-shrink: 0;
+  margin-left: 15px;
+}
+
+/* === TEXTO === */
+.card-simples-body p {
+  margin: 0;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* === BOTÃO === */
+.card-simples-btn {
+  align-self: flex-start;
+  display: inline-block;
+  margin-top: 10px;
+  
+  background-color: transparent;
+  border: 2px solid var(--verde);
+  color: var(--verde);
+  padding: 10px 28px;
+  border-radius: 30px;
+  
+  cursor: pointer;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.card-simples-btn:hover {
+  background-color: var(--verde);
+  color: white;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 900px) {
+  .card-simples {
+    /* No celular, ocupa tudo */
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  .card-simples-img-container {
+    height: 250px;
+  }
+}

@@ -31,7 +31,7 @@ const ProjectCard = ({ data }) => {
           navigation
           pagination={{ clickable: true }}
           loop={true}
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
           className="mySwiper"
         >
           {data.imagens.map((imgUrl, index) => (
@@ -59,7 +59,7 @@ const ProjectCard = ({ data }) => {
             className="btn-leia-mais"
             onClick={toggleExpandir}
           >
-            {expandido ? 'Fechar Detalhes' : 'Ver Projeto Completo'}
+            {expandido ? 'Fechar Detalhes' : 'Mais Detalhes'}
           </button>
         </div>
 
