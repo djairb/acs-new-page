@@ -1,0 +1,172 @@
+/* =========================================
+   CARROSSEL DE VÍDEOS (VERSÃO FUNDO VERMELHO)
+   ========================================= */
+
+:root {
+  --verde: #00A859;
+  --vermelho: #EF3E36;
+  --amarelo: #FFF275;
+  --azul: #3C91E6;
+}
+
+/* === 1. CONTAINER DA SEÇÃO (AGORA VERMELHO) === */
+.video-carousel-section {
+  width: 100%;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  
+  /* MUDANÇA PRINCIPAL: Fundo Vermelho */
+  background-color: var(--vermelho); 
+  
+  /* Uma textura sutil (opcional) ou gradiente leve fica show aqui */
+  background-image: linear-gradient(to bottom right, var(--vermelho), #d6302a);
+}
+
+/* === 2. TÍTULO (AGORA BRANCO) === */
+.video-carousel-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.2rem;
+  
+  /* Texto Branco para contraste máximo no vermelho */
+  color: var(--amarelo); 
+  
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+  
+}
+
+/* Ajuste no Swiper */
+.swiper-videos {
+  padding-bottom: 50px !important; /* Espaço para as bolinhas */
+  padding-top: 10px !important;
+}
+
+/* === 3. O CARD DO VÍDEO (BRANCO) === */
+.video-card {
+  background: #ffffff; /* Mantém branco para separar do fundo */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Sombra um pouco mais forte */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px; 
+  height: 100%;
+  
+  /* Borda transparente preparada para o hover */
+  border-bottom: 5px solid transparent; 
+}
+
+/* Efeito Hover: Sobe e ganha borda AMARELA */
+.video-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  
+  /* Vermelho + Amarelo = Combinação clássica e vibrante */
+  border-bottom-color: var(--amarelo); 
+}
+
+/* === ÁREA DO VÍDEO (16:9) === */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background-color: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* === CONTEÚDO DO CARD === */
+.video-content {
+  padding: 25px 20px;
+}
+
+.video-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  
+  /* Título interno em cinza escuro para leitura, ou Azul para identidade */
+  color: #333; 
+  
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* === 4. CUSTOMIZAÇÃO DOS CONTROLES (BRANCO E AMARELO) === */
+
+/* Setinhas de Navegação */
+.swiper-button-next,
+.swiper-button-prev {
+  /* Cor da seta: Vermelha (para combinar com o fundo) */
+  color: var(--vermelho) !important; 
+  
+  /* Fundo do botão: Branco (para aparecer no vermelhão) */
+  background-color: #ffffff;
+  
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.1); /* Cresce um pouquinho ao passar o mouse */
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px !important;
+  font-weight: 900;
+}
+
+/* Bolinhas da Paginação */
+.swiper-pagination-bullet {
+  /* Bolinhas inativas: Branco semi-transparente */
+  background-color: #ffffff;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  /* Bolinha ativa: AMARELO para destacar */
+  background-color: var(--amarelo) !important;
+  opacity: 1;
+  width: 25px; /* Esticadinha */
+  border-radius: 10px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  .video-card {
+    margin: 5px; /* Menos margem no mobile */
+  }
+  
+  .video-carousel-title {
+    font-size: 1.8rem; /* Título menor no mobile */
+    padding: 0 10px;
+  }
+  
+  /* Ajuste das setas no mobile para não cobrir o vídeo */
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 35px;
+    height: 35px;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 14px !important;
+  }
+}

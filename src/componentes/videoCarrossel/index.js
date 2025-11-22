@@ -1,73 +1,82 @@
-import React, { useEffect, useState } from "react";
-import CardVideo from "../cardVideo";
+import React from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Importando os módulos necessários do Swiper v8+
+import { Navigation, Pagination } from 'swiper/modules';
+
+// Importando o CSS do Swiper
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+// Importando SEU CSS novo
+import './VideoCarrossel.css';
 
 import { reportagensDrive } from "../../dados/data-video-reportagens";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade } from 'swiper/modules';
-
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/scrollbar';
 
 const VideoCarrossel = () => {
 
-  const [numeroSlide, alterarNumeroSlide] = useState(3);
-
-
-  useEffect(() => {
-    const handleResize = () => {
-        if (window.innerWidth <= 768) {
-            alterarNumeroSlide(1); // imagem mobile
-        } else {
-          alterarNumeroSlide(3); // imagem desktop
-        }
-    };
-
-    // Adiciona o event listener e executa a verificação inicial
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    // Limpa o event listener ao desmontar o componente
-    return () => window.removeEventListener('resize', handleResize);
-}, []);
-
-
-
   return (
-    <div className="divReportagens">
-      <h1 className="h1SectionTitle">Reportagens sobre a ACS</h1>
+    <section className="video-carousel-section">
+      <h2 className="video-carousel-title">Nossos Vídeos</h2>
 
       <Swiper
-        slidesPerView={numeroSlide} // Ajuste este valor para o número desejado de vídeos por vez
-        spaceBetween={1} // Espaçamento entre os slides (em pixels)
-        style={{
-          "--swiper-pagination-color": "#f08528",
-          "--swiper-navigation-color": "#f08528",
-        }}
-        grabCursor={true}
+        // Módulos ativos
+        modules={[Navigation, Pagination]}
+        
+        // Espaçamento entre slides
+        spaceBetween={20}
+        
+        // Configurações de Loop
         loop={true}
-        autoplay={false}
-        pagination={{ clickable: true }}
-        navigation
-        className="swiperMaster"
+        grabCursor={true}
+        
+        // Paginação (Bolinhas) e Setas
+        pagination={{ clickable: true, dynamicBullets: true }}
+        navigation={true}
+        
+        // BREAKPOINTS: A mágica da responsividade acontece aqui!
+        breakpoints={{
+          // Telas pequenas (Celular): 1 slide
+          320: {
+            slidesPerView: 1,
+          },
+          // Tablets: 2 slides
+          768: {
+            slidesPerView: 2,
+          },
+          // Desktop: 3 slides
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
+        
+        className="swiper-videos"
       >
         {reportagensDrive.map((item) => (
           <SwiperSlide key={item.id}>
+            
+            <div className="video-card">
+              
+              {/* Wrapper para manter o vídeo em 16:9 sempre */}
+              <div className="video-wrapper">
+                <iframe 
+                  src={item.videoUrl} 
+                  title={item.descricaoVideo}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
+              </div>
 
-            <div className="videoCard">
-
-              <iframe src={item.videoUrl} allow="autoplay" frameborder="0"></iframe>
-
-              <h3>{item.descricaoVideo}</h3>
+              <div className="video-content">
+                <h3>{item.descricaoVideo}</h3>
+              </div>
 
             </div>
 
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 }
 

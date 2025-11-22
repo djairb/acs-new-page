@@ -153,6 +153,12 @@ export const reportagensDrive = [
     videoUrl: "https://drive.google.com/file/d/1aj_eySbEqOwP5uv2Y14FtmDiZ1yTiEME/preview",
     descricaoVideo: "VAMOSIMBORA? NeoEnergia"
 
+  },
+  {
+    id: 30,
+    videoUrl: "https://drive.google.com/file/d/1p13-W6hJAxPT5G7fEzEifHvmqylHnI4X/preview",
+    descricaoVideo: "Depoimento Aluna Passaporte Digital"
+
   }
 
 
