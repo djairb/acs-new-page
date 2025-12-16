@@ -18,6 +18,13 @@ function Transparencia() {
 
                     <h2>2025</h2>
 
+                    <a href="https://drive.google.com/file/d/1_6BZcxUtsoEytlWb-JXH0iV5TRAZT7Et/view?usp=sharing">
+
+
+                        <h3>POLÍTICA DE GUARDIÕES DOS DIREITOS DA PESSOA IDOSA</h3>
+
+                    </a>
+
 
                     
 

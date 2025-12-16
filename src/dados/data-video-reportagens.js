@@ -2,6 +2,13 @@
 export const reportagensDrive = [
 
   {
+    id: 63,
+    videoUrl: "https://drive.google.com/file/d/1ayNhW7Aci9-4Kpb6uNLRkXyCiG1pHYry/preview",
+    descricaoVideo: "Diagnóstico Interno - Conecta Vidas VamoSimbora"
+
+  },
+
+  {
     id: 22,
     videoUrl: "https://drive.google.com/file/d/1SWZUS8TPJ2hXSKSN_RMyQTxn7HwNCkt_/preview",
     descricaoVideo: "NE2 - Globo PE - Projeto Conecta Vidas"
