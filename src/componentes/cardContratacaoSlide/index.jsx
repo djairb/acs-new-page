@@ -24,13 +24,13 @@ function CardContratacaoSlide() {
       imgBig: "https://somosconexaosocial.org/site_img/carrossel-link/comunidade-big.jpg",
       link: "https://doeseuir.abraceumacausa.com.br/projeto/?projectId=1283",
     },
-    {
-      key: 2,
-      descricao:'premio inovacao e tecnologia',
-      imgPq: "https://somosconexaosocial.org/site_img/carrossel-link/premio-pq.jpg",
-      imgBig: "https://somosconexaosocial.org/site_img/carrossel-link/premio-big.jpg",
-      link: "https://somosconexaosocial.org/premioinovacao/",
-    }
+    // {
+    //   key: 2,
+    //   descricao:'premio inovacao e tecnologia',
+    //   imgPq: "https://somosconexaosocial.org/site_img/carrossel-link/premio-pq.jpg",
+    //   imgBig: "https://somosconexaosocial.org/site_img/carrossel-link/premio-big.jpg",
+    //   link: "https://somosconexaosocial.org/premioinovacao/",
+    // }
   ];
 
   // Detecta se está em mobile

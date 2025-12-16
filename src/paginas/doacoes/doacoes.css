@@ -1,0 +1,204 @@
+:root {
+  --verde: #00A859;
+  --vermelho: #EF3E36;
+  --amarelo: #FFF275;
+  --azul: #3C91E6;
+  --cinza-claro: white;
+  --texto-escuro: #333;
+}
+
+/* Wrapper Geral */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--cinza-claro);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.donation-main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  flex: 1;
+}
+
+/* --- Estilos do Slider (Swiper) --- */
+.donation-hero {
+  width: 100%;
+  height: 400px; /* Altura fixa para o slider */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 3rem;
+}
+
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Customização dos pontinhos do Swiper */
+.swiper-pagination-bullet-active {
+  background-color: var(--verde) !important;
+}
+
+/* --- Conteúdo de Texto --- */
+.donation-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  color: var(--texto-escuro);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.highlight-text {
+  color: var(--azul);
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.description-secondary {
+  font-size: 1rem;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 1px solid #e0e0e0;
+  display: inline-block;
+}
+
+.highlight-red {
+  color: var(--vermelho);
+  font-weight: bold;
+}
+
+/* --- Cards de Doação --- */
+.donation-methods {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.methods-title {
+  font-size: 1.5rem;
+  color: var(--verde);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cards-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid transparent;
+}
+
+.card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+
+.card-info {
+  text-align: left;
+}
+
+.card-info h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--texto-escuro);
+}
+
+.card-info p {
+  margin: 0.2rem 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Estilização Específica Card Banco do Brasil */
+.card-bb {
+  border-left-color: var(--amarelo); /* Detalhe Amarelo do BB */
+}
+
+/* Estilização Específica Card Pix */
+.card-pix {
+  border-left-color: var(--verde); /* Detalhe Verde do Pix */
+}
+
+.pix-key {
+  font-family: monospace;
+  font-size: 1.1rem !important;
+  color: var(--texto-escuro) !important;
+  background-color: var(--cinza-claro);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.pix-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  background-color: rgba(0, 168, 89, 0.1); /* Verde transparente */
+  color: var(--verde);
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .donation-hero {
+    height: 250px;
+  }
+  
+  .main-title {
+    font-size: 1.8rem;
+  }
+  
+  .cards-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
