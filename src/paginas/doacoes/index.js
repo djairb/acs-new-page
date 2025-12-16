@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './doacoes.css';
 
 // Componentes
@@ -54,11 +54,7 @@ function gerarPixString(chave, nome, cidade, valor) {
   // Payload Format Indicator
   payloadParts.push('000201');
   
-  // Point of Initiation Method (opcional para QR estático)
-  // payloadParts.push('010212'); // Removido para QR estático
-  
-  // Merchant Account Information (Campo 26 - O MAIS IMPORTANTE)
-  // Formato correto: 26[tamanho]0014br.gov.bcb.pix01[tamanho chave][chave]
+  // Merchant Account Information (Campo 26)
   const guiPix = '0014br.gov.bcb.pix';
   const chaveField = `01${chaveLimpa.length.toString().padStart(2, '0')}${chaveLimpa}`;
   const merchantAccountInfo = `${guiPix}${chaveField}`;
@@ -84,7 +80,7 @@ function gerarPixString(chave, nome, cidade, valor) {
   // Merchant City
   payloadParts.push(`60${cidadeTratada.length.toString().padStart(2, '0')}${cidadeTratada}`);
   
-  // Additional Data Field Template (Reference Label - opcional)
+  // Additional Data Field Template
   payloadParts.push('62070503***');
   
   // CRC16 placeholder
@@ -119,6 +115,13 @@ function Doacoes() {
   const [gerandoPix, setGerandoPix] = useState(false);
   const [erroPix, setErroPix] = useState('');
 
+  // Quando o valor muda, limpa o QR Code existente
+  useEffect(() => {
+    if (payloadPix) {
+      setPayloadPix('');
+    }
+  }, [valor]);
+
   // Função chamada ao clicar no botão "Gerar QR Code"
   const handleGerarPix = (e) => {
     e.preventDefault();
@@ -134,7 +137,7 @@ function Doacoes() {
     setGerandoPix(true);
     
     try {
-      // Gera o texto "Copia e Cola" usando a função manual
+      // Gera o código PIX
       const codigo = gerarPixString(
         '07599362000190',  // Chave PIX (CNPJ sem pontuação)
         'CONEXAO SOCIAL',  // Nome do Beneficiário
@@ -158,24 +161,10 @@ function Doacoes() {
     }
   };
 
-  // Função para testar com valor fixo (útil para debug)
-  const testarComValorFixo = (valorTeste) => {
+  // Função para preencher valores rápidos (apenas preenche o input)
+  const preencherValorRapido = (valorTeste) => {
     setValor(valorTeste.toString());
     setErroPix('');
-    
-    try {
-      const codigo = gerarPixString(
-        '07599362000190',
-        'CONEXAO SOCIAL',
-        'LAGOA DE ITAENGA',
-        valorTeste
-      );
-      
-      setPayloadPix(codigo);
-    } catch (error) {
-      console.error('Erro no teste:', error);
-      setErroPix('Erro no teste');
-    }
   };
 
   // Função para copiar o código PIX
@@ -314,7 +303,7 @@ function Doacoes() {
                   </button>
                 </div>
                 
-                {/* Botões de valor rápido */}
+                {/* Botões de valor rápido - APENAS PREENCHEM O INPUT */}
                 <div className="quick-values">
                   <p>Valores sugeridos:</p>
                   <div className="quick-buttons">
@@ -322,7 +311,7 @@ function Doacoes() {
                       <button
                         key={quickVal}
                         type="button"
-                        onClick={() => testarComValorFixo(quickVal)}
+                        onClick={() => preencherValorRapido(quickVal)}
                         className="quick-btn"
                       >
                         R$ {quickVal},00
@@ -372,8 +361,8 @@ function Doacoes() {
                   
                   <p className="pix-note">
                     <small>
-                      <strong>Importante:</strong> Este QR Code é gerado dinamicamente e só funciona para o valor especificado.
-                      Para outros valores, gere um novo código.
+                      <strong>Importante:</strong> Este QR Code é válido apenas para R$ {parseFloat(valor).toFixed(2).replace('.', ',')}.
+                      Para outro valor, digite acima e gere um novo código.
                     </small>
                   </p>
                 </div>
