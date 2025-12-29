@@ -1,4 +1,38 @@
 export const boletimData2025Inverse = [
+
+  {
+    title: "Boletim Informativo - Novembro 2025",
+    link: "https://drive.google.com/file/d/1tQjXDw6DJ-J1xHZtOgvcYpQMP7XNGHFn/preview"
+
+    
+  },
+
+  {
+    title: "Boletim Informativo - Outubro 2025",
+    link: "https://drive.google.com/file/d/16ixcrd0C310S-fmXzAu9iTk0S0X6wQgc/preview"
+
+    
+  },
+
+  {
+    title: "Boletim Informativo - Setembro 2025",
+    link: "https://drive.google.com/file/d/1a9iJDuzj6Wz8TDuvzX6EFMEf4kHsxxpt/preview"
+
+    
+  },
+  {
+    title: "Boletim Informativo - Agosto 2025",
+    link: "https://drive.google.com/file/d/1OPsL_x4CumQd3aXVE9I2zS0L_m92y2J6/preview"
+
+    
+  },
+
+  {
+    title: "Boletim Informativo - Julho 2025",
+    link: "https://drive.google.com/file/d/1o3zCTmhrDDcQhxIYELT11_XckTw3NDH8/preview"
+
+    
+  },
   {
     title: "Boletim Informativo - Junho 2025",
     link: "https://drive.google.com/file/d/1pSO6cz_9d8WW-Pkh01R5X3XncI6olDgv/preview"

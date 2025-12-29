@@ -87,7 +87,7 @@ export const reportagensDrive = [
   {
     id: 0,
     videoUrl: "https://drive.google.com/file/d/15BHzryprR2OKkDEK8Wr8XmYhMCa_gziT/preview",
-    descricaoVideo: "Skate Livre NeoEnergia"
+    descricaoVideo: "Skate Livre"
 
   },
   {
@@ -158,7 +158,7 @@ export const reportagensDrive = [
   {
     id: 21,
     videoUrl: "https://drive.google.com/file/d/1aj_eySbEqOwP5uv2Y14FtmDiZ1yTiEME/preview",
-    descricaoVideo: "VAMOSIMBORA? NeoEnergia"
+    descricaoVideo: "VAMOSIMBORA?"
 
   },
   {
