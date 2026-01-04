@@ -16,7 +16,7 @@ const ProjetoComponent = () => {
                 <div className="projeto-foto-container">
                     <iframe
                         className="video-projeto"
-                        src="https://www.youtube.com/embed/4ueL6Zz6KCg?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0"
+                        src="https://www.youtube.com/embed/-eabN_tSE9g?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
@@ -25,6 +25,8 @@ const ProjetoComponent = () => {
                     </iframe>
                     <h3>Conheça a Associação Conexão Social</h3>
                 </div>
+
+                
 
                 {/* Div com imagem e textos */}
                 <div className="info-container">
