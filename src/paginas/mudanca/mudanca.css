@@ -1,0 +1,394 @@
+:root {
+  --amarelo: #ffb204;
+  --azul: #3460aa;
+  --azul-escuro: #1e3a8a;
+  --amarelo-suave: #ffd166;
+  --cinza-claro: #f8f9fa;
+  --cinza-medio: #e9ecef;
+  --borda-radius: 16px;
+  --sombra: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --sombra-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --transicao: all 0.3s ease;
+}
+
+.seja-mudanca {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* BANNER PRINCIPAL */
+.banner-campanha {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-campanha picture {
+  display: block;
+  position: relative;
+}
+
+.banner-campanha img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  min-height: 400px;
+  max-height: 600px;
+}
+
+/* Overlay gradiente no banner */
+.banner-campanha::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(transparent, white);
+}
+
+/* TEXTO OBJETIVO */
+.campanha-texto {
+  padding: 5rem 1.5rem;
+  max-width: 900px;
+  margin: -50px auto 0;
+  position: relative;
+  z-index: 1;
+  background: white;
+  border-radius: var(--borda-radius);
+  box-shadow: var(--sombra);
+  margin-bottom: 4rem;
+}
+
+.campanha-texto h1 {
+  color: var(--azul);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.campanha-texto h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--amarelo);
+  border-radius: 2px;
+}
+
+.campanha-texto p {
+  font-size: 1.125rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* DESTAQUE PIX */
+.pix-destaque {
+  background: linear-gradient(135deg, var(--amarelo), var(--amarelo-suave));
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  margin: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pix-destaque::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--azul), var(--amarelo));
+}
+
+.pix-destaque h2 {
+  color: var(--azul-escuro);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.pix-chave {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  display: inline-block;
+  margin: 1rem 0;
+  border: 3px dashed var(--azul);
+  transition: var(--transicao);
+  cursor: pointer;
+  position: relative;
+}
+
+.pix-chave:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-hover);
+}
+
+.pix-chave::after {
+  content: 'Clique para copiar';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.875rem;
+  color: var(--azul);
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.pix-destaque span {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
+  color: var(--azul-escuro);
+  font-weight: 500;
+}
+
+/* SEÇÕES DE PRODUTOS */
+.produtos-section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.produtos-section h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.produtos-section .preco {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--amarelo);
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.produtos-section .preco::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+/* SWIPER PERSONALIZADO */
+.produtos-section .swiper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.produtos-section .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.produtos-section .swiper-slide img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: var(--borda-radius);
+  box-shadow: var(--sombra);
+  transition: var(--transicao);
+}
+
+.produtos-section .swiper-slide img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--sombra-hover);
+}
+
+/* NAVEGAÇÃO DO SWIPER */
+.produtos-section .swiper-button-next,
+.produtos-section .swiper-button-prev {
+  color: var(--amarelo);
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: var(--sombra);
+  transition: var(--transicao);
+}
+
+.produtos-section .swiper-button-next:hover,
+.produtos-section .swiper-button-prev:hover {
+  background: var(--azul);
+  color: white;
+}
+
+.produtos-section .swiper-pagination-bullet {
+  background: var(--amarelo);
+  opacity: 0.5;
+  width: 12px;
+  height: 12px;
+  transition: var(--transicao);
+}
+
+.produtos-section .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--azul);
+}
+
+/* FUNDO AZUL */
+.fundo-azul {
+  background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
+  color: white;
+  margin: 2rem 0;
+  border-radius: var(--borda-radius);
+}
+
+.fundo-azul .preco {
+  color: var(--amarelo-suave);
+}
+
+.fundo-azul .swiper-button-next,
+.fundo-azul .swiper-button-prev {
+  background: var(--amarelo);
+  color: var(--azul);
+}
+
+/* ECOBAG SECTION */
+.ecobag-section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ecobag-section img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: var(--borda-radius);
+  box-shadow: var(--sombra);
+  transition: var(--transicao);
+  margin-top: 2rem;
+}
+
+.ecobag-section img:hover {
+  transform: rotate(-2deg) scale(1.03);
+  box-shadow: var(--sombra-hover);
+}
+
+/* FRASE FINAL */
+.frase-final {
+  background: linear-gradient(135deg, var(--azul), var(--amarelo));
+  color: white;
+  text-align: center;
+  padding: 5rem 1.5rem;
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.frase-final::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://somosconexaosocial.org/site_img/seja_mudanca/mudanca-banner.jpg');
+  background-size: cover;
+  opacity: 0.1;
+  mix-blend-mode: overlay;
+}
+
+.frase-final h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.frase-final p {
+  font-size: 1.5rem;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .campanha-texto {
+    padding: 3rem 1.5rem;
+    margin-top: -30px;
+  }
+  
+  .campanha-texto h1 {
+    font-size: 2rem;
+  }
+  
+  .pix-destaque {
+    padding: 2.5rem 1rem;
+  }
+  
+  .pix-chave {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .produtos-section h2 {
+    font-size: 1.75rem;
+  }
+  
+  .produtos-section .preco {
+    font-size: 1.25rem;
+  }
+  
+  .frase-final h2 {
+    font-size: 2rem;
+  }
+  
+  .frase-final p {
+    font-size: 1.25rem;
+  }
+  
+  .produtos-section .swiper-button-next,
+  .produtos-section .swiper-button-prev {
+    display: none;
+  }
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.campanha-texto,
+.pix-destaque,
+.produtos-section,
+.ecobag-section,
+.frase-final {
+  animation: fadeInUp 0.6s ease-out;
+}

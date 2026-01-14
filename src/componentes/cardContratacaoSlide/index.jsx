@@ -10,15 +10,23 @@ function CardContratacaoSlide() {
   const [isMobile, setIsMobile] = useState(false);
 
   const files = [
+
     {
       key: 0,
+      descricao:'conheça a campanha seja a mudança',
+      imgPq: "https://somosconexaosocial.org/site_img/seja_mudanca/mudanca-banner-menor.jpg",
+      imgBig: "https://somosconexaosocial.org/site_img/seja_mudanca/mudanca-banner.jpg",
+      link: "https://somosconexaosocial.org/#/campanha-seja-a-mudanca/",
+    },
+    {
+      key: 1,
       descricao:'passaporte digital abrace uma causa',
       imgPq: "https://somosconexaosocial.org/site_img/carrossel-link/passaporte-pq.jpg",
       imgBig: "https://somosconexaosocial.org/site_img/carrossel-link/passaporte-big.jpg",
       link: "https://doeseuir.abraceumacausa.com.br/projeto/?projectId=1080",
     },
     {
-      key: 1,
+      key: 2,
       descricao:'oportunizar comunidade abrace uma causa',
       imgPq: "https://somosconexaosocial.org/site_img/carrossel-link/comunidade-pq.jpg",
       imgBig: "https://somosconexaosocial.org/site_img/carrossel-link/comunidade-big.jpg",
