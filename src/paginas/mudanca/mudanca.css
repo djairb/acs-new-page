@@ -1,394 +1,1020 @@
-:root {
-  --amarelo: #ffb204;
-  --azul: #3460aa;
-  --azul-escuro: #1e3a8a;
-  --amarelo-suave: #ffd166;
-  --cinza-claro: #f8f9fa;
-  --cinza-medio: #e9ecef;
-  --borda-radius: 16px;
-  --sombra: 0 8px 30px rgba(0, 0, 0, 0.08);
-  --sombra-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
-  --transicao: all 0.3s ease;
+/* Estilos específicos da página da campanha */
+
+/* Estilização das setas de navegação do Swiper */
+.brinde-carousel .swiper-button-next,
+.brinde-carousel .swiper-button-prev {
+  color: white;
+  background: rgba(52, 96, 170, 0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
-.seja-mudanca {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  color: #333;
+.brinde-carousel .swiper-button-next:hover,
+.brinde-carousel .swiper-button-prev:hover {
+  background: rgba(52, 96, 170, 1);
+  transform: scale(1.1);
 }
 
-/* BANNER PRINCIPAL */
-.banner-campanha {
+.brinde-carousel .swiper-button-next:after,
+.brinde-carousel .swiper-button-prev:after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Paginação (bolinhas) */
+.brinde-carousel .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.brinde-carousel .swiper-pagination-bullet-active {
+  background: #3460aa;
+  transform: scale(1.2);
+}
+
+/* Garantir que as setas fiquem sobre a imagem */
+.brinde-carousel {
   position: relative;
+  height: 250px;
+}
+
+.brinde-carousel .swiper {
+  height: 100%;
+}
+
+/* Ajustar posição das setas */
+.brinde-carousel .swiper-button-next {
+  right: 10px;
+}
+
+.brinde-carousel .swiper-button-prev {
+  left: 10px;
+}
+
+/* Ajustar posição da paginação */
+.brinde-carousel .swiper-pagination {
+  bottom: 10px !important;
+}
+
+/* Efeito de transição suave */
+.slide-image-container {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.brinde-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+/* Efeito de zoom ao passar o mouse (opcional) */
+.slide-image-container:hover .brinde-image {
+  transform: scale(1.05);
+}
+
+
+.campanha-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Banner da Campanha */
+.campanha-banner {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
   overflow: hidden;
 }
 
-.banner-campanha picture {
-  display: block;
+.banner-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
   position: relative;
 }
 
-.banner-campanha img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  min-height: 400px;
-  max-height: 600px;
-}
-
-/* Overlay gradiente no banner */
-.banner-campanha::after {
-  content: '';
+.banner-overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  background: linear-gradient(transparent, white);
+  bottom: 0;
+  background: rgba(52, 96, 170, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* TEXTO OBJETIVO */
-.campanha-texto {
-  padding: 5rem 1.5rem;
-  max-width: 900px;
-  margin: -50px auto 0;
-  position: relative;
-  z-index: 1;
+.campanha-logo {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+/* Seção de Introdução */
+.intro-section {
+  padding: 4rem 0;
   background: white;
-  border-radius: var(--borda-radius);
-  box-shadow: var(--sombra);
-  margin-bottom: 4rem;
 }
 
-.campanha-texto h1 {
-  color: var(--azul);
-  font-size: 2.5rem;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.campanha-title {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #3460aa;
+}
+
+.highlight-yellow {
+  color: #feb204;
+  font-weight: 700;
+}
+
+.mission-statement {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mission-statement .lead {
+  font-size: 1.2rem;
+  line-height: 1.8;
   margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Seção de Brindes */
+.brindes-section {
+  padding: 4rem 0;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+.section-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #3460aa;
+}
+
+.highlight-blue {
+  color: #3460aa;
+  font-weight: 700;
+}
+
+.brindes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.brinde-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+.brinde-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.brinde-card.selected {
+  border-color: #3460aa;
+}
+
+.brinde-header {
+  padding: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.brinde-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.valor-minimo {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.brinde-carousel {
+  height: 250px;
   position: relative;
-  display: inline-block;
 }
 
-.campanha-texto h1::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: var(--amarelo);
-  border-radius: 2px;
+.slide-image-container {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.campanha-texto p {
-  font-size: 1.125rem;
-  color: #555;
+.brinde-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.brinde-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* Seção de Doação */
+.doacao-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.doacao-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.methods-title {
+  font-size: 1.8rem;
+  color: #3460aa;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.pix-generator-box {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #e9ecef;
+}
+
+.pix-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 10px;
   margin-bottom: 1.5rem;
-  max-width: 700px;
+}
+
+.currency-symbol {
+  background: #3460aa;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px 0 0 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: border-color 0.3s;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: #3460aa;
+}
+
+.btn-doar {
+  background: #feb204;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-doar:hover:not(:disabled) {
+  background: #e6a000;
+}
+
+.btn-doar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.quick-values {
+  margin-top: 1.5rem;
+}
+
+.quick-values p {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.quick-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.quick-btn {
+  background: #e9ecef;
+  border: 2px solid #dee2e6;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.quick-btn:hover {
+  background: #dee2e6;
+}
+
+.quick-btn.active {
+  background: #3460aa;
+  color: white;
+  border-color: #3460aa;
+}
+
+/* QR Code */
+.pix-result {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #dee2e6;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.qr-frame {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 1rem auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 2px solid #3460aa;
+}
+
+.pix-instruction {
+  text-align: center;
+  color: #666;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+.copy-paste-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.copy-paste-box input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: #f8f9fa;
+}
+
+.copy-paste-box button {
+  background: #3460aa;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.copy-paste-box button:hover {
+  background: #2a4e8c;
+}
+
+.copy-paste-box button.copied {
+  background: #28a745;
+}
+
+/* Formulário de Dados */
+.dados-formulario {
+  margin-top: 3rem;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.form-intro {
+  color: #666;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-group input {
+  padding: 0.75rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3460aa;
+}
+
+.form-group input.error {
+  border-color: #dc3545;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Resumo da Doação */
+.resumo-doacao {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.resumo-doacao h4 {
+  color: #3460aa;
+  margin-bottom: 1rem;
+}
+
+.resumo-detalhes p {
+  margin: 0.5rem 0;
+}
+
+.aviso-envio {
+  color: #666;
+  font-style: italic;
+}
+
+.btn-confirmar {
+  width: 100%;
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-confirmar:hover {
+  background: #218838;
+}
+
+/* Confirmação */
+.confirmacao-doacao {
+  text-align: center;
+  padding: 3rem;
+  background: #d4edda;
+  border-radius: 15px;
+  border: 2px solid #c3e6cb;
+  margin-top: 2rem;
+}
+
+.checkmark {
+  font-size: 4rem;
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+
+/* Seção de Contato */
+.contato-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #3460aa, #2a4e8c);
+  color: white;
+}
+
+.contato-section .section-title {
+  color: white;
+}
+
+.contato-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.contato-item {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.contato-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.15);
+}
+
+.contato-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contato-detalhes h4 {
+  margin-bottom: 0.5rem;
+  color: #feb204;
+}
+
+.contato-detalhes a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contato-detalhes a:hover {
+  color: #feb204;
+  text-decoration: underline;
+}
+
+/* Frase Final */
+.frase-final-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.frase-box {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, #feb204, #ffcc00);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(254, 178, 4, 0.2);
+}
+
+.frase-impactante {
+  font-size: 2rem;
+  color: #3460aa;
+  line-height: 1.4;
+}
+
+.underline-yellow {
+  text-decoration: underline;
+  text-decoration-color: #3460aa;
+  text-decoration-thickness: 3px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .campanha-logo {
+    max-width: 250px;
+  }
+  
+  .campanha-title {
+    font-size: 2rem;
+  }
+  
+  .brindes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .input-wrapper {
+    flex-direction: column;
+  }
+  
+  .currency-symbol {
+    border-radius: 8px;
+    justify-content: center;
+  }
+  
+  .copy-paste-box {
+    flex-direction: column;
+  }
+  
+  .frase-impactante {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-overlay {
+    padding: 20px;
+  }
+  
+  .pix-generator-box {
+    padding: 1rem;
+  }
+  
+  .dados-formulario {
+    padding: 1.5rem;
+  }
+}
+
+/* Banner melhorado */
+.banner-container {
+  position: relative;
+  height: 80vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.banner-main-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.banner-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(52, 96, 170, 0.85) 0%, 
+    rgba(254, 178, 4, 0.7) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-call {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  max-width: 800px;
+}
+
+.banner-title {
+  font-size: 3rem;
+  color: #3460aa;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.banner-highlight {
+  color: #feb204;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.banner-subtitle {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.banner-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.badge {
+  background: #3460aa;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Indicadores de seleção */
+.selected-indicator {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  background: #28a745;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 10;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Status dos brindes */
+.brinde-status {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.status-available {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.btn-selecionar {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  margin-top: 1rem;
+}
+
+.btn-selecionar:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.selected-confirmation {
+  text-align: center;
+  padding: 1rem;
+  background: #e8f5e8;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 2px solid #28a745;
+}
+
+.selected-confirmation small {
+  display: block;
+  margin-top: 0.5rem;
+  color: #666;
+}
+
+/* Legenda de status */
+.legenda-status {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legenda-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.legenda-color.available {
+  background: #28a745;
+}
+
+.legenda-color.selected {
+  background: #3460aa;
+}
+
+/* Resumo da doação melhorado */
+.resumo-doacao {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #dee2e6;
+  margin-bottom: 2rem;
+}
+
+.resumo-doacao h4 {
+  color: #3460aa;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.resumo-detalhes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.resumo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+}
+
+.resumo-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.resumo-valor {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.brinde-resumo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brinde-color-indicator {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.sem-brinde {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.aviso-envio {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #e3f2fd;
+  border-radius: 10px;
+  border-left: 5px solid #2196f3;
+  margin-top: 1rem;
+}
+
+.aviso-icon {
+  font-size: 2rem;
+}
+
+.aviso-envio p {
+  margin: 0;
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.aviso-envio small {
+  color: #546e7a;
+}
+
+/* Section subtitle */
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* DESTAQUE PIX */
-.pix-destaque {
-  background: linear-gradient(135deg, var(--amarelo), var(--amarelo-suave));
-  text-align: center;
-  padding: 3.5rem 1.5rem;
-  margin: 4rem 0;
-  position: relative;
-  overflow: hidden;
+/* Responsividade para o banner */
+@media (max-width: 992px) {
+  .banner-title {
+    font-size: 2.2rem;
+  }
+  
+  .banner-badges {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.pix-destaque::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--azul), var(--amarelo));
-}
-
-.pix-destaque h2 {
-  color: var(--azul-escuro);
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-}
-
-.pix-chave {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--azul-escuro);
-  background: white;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  display: inline-block;
-  margin: 1rem 0;
-  border: 3px dashed var(--azul);
-  transition: var(--transicao);
-  cursor: pointer;
-  position: relative;
-}
-
-.pix-chave:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--sombra-hover);
-}
-
-.pix-chave::after {
-  content: 'Clique para copiar';
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.875rem;
-  color: var(--azul);
-  opacity: 0.8;
-  font-weight: normal;
-}
-
-.pix-destaque span {
-  display: block;
-  margin-top: 1.5rem;
-  font-size: 1.125rem;
-  color: var(--azul-escuro);
-  font-weight: 500;
-}
-
-/* SEÇÕES DE PRODUTOS */
-.produtos-section {
-  padding: 4rem 1.5rem;
-  text-align: center;
-  position: relative;
-}
-
-.produtos-section h2 {
-  font-size: 2.25rem;
-  margin-bottom: 1rem;
-  color: inherit;
-}
-
-.produtos-section .preco {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--amarelo);
-  margin-bottom: 3rem;
-  position: relative;
-  display: inline-block;
-}
-
-.produtos-section .preco::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: currentColor;
-  border-radius: 2px;
-}
-
-/* SWIPER PERSONALIZADO */
-.produtos-section .swiper {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.produtos-section .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.produtos-section .swiper-slide img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: var(--borda-radius);
-  box-shadow: var(--sombra);
-  transition: var(--transicao);
-}
-
-.produtos-section .swiper-slide img:hover {
-  transform: scale(1.02);
-  box-shadow: var(--sombra-hover);
-}
-
-/* NAVEGAÇÃO DO SWIPER */
-.produtos-section .swiper-button-next,
-.produtos-section .swiper-button-prev {
-  color: var(--amarelo);
-  background: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: var(--sombra);
-  transition: var(--transicao);
-}
-
-.produtos-section .swiper-button-next:hover,
-.produtos-section .swiper-button-prev:hover {
-  background: var(--azul);
-  color: white;
-}
-
-.produtos-section .swiper-pagination-bullet {
-  background: var(--amarelo);
-  opacity: 0.5;
-  width: 12px;
-  height: 12px;
-  transition: var(--transicao);
-}
-
-.produtos-section .swiper-pagination-bullet-active {
-  opacity: 1;
-  background: var(--azul);
-}
-
-/* FUNDO AZUL */
-.fundo-azul {
-  background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
-  color: white;
-  margin: 2rem 0;
-  border-radius: var(--borda-radius);
-}
-
-.fundo-azul .preco {
-  color: var(--amarelo-suave);
-}
-
-.fundo-azul .swiper-button-next,
-.fundo-azul .swiper-button-prev {
-  background: var(--amarelo);
-  color: var(--azul);
-}
-
-/* ECOBAG SECTION */
-.ecobag-section {
-  padding: 4rem 1.5rem;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.ecobag-section img {
-  max-width: 400px;
-  width: 100%;
-  border-radius: var(--borda-radius);
-  box-shadow: var(--sombra);
-  transition: var(--transicao);
-  margin-top: 2rem;
-}
-
-.ecobag-section img:hover {
-  transform: rotate(-2deg) scale(1.03);
-  box-shadow: var(--sombra-hover);
-}
-
-/* FRASE FINAL */
-.frase-final {
-  background: linear-gradient(135deg, var(--azul), var(--amarelo));
-  color: white;
-  text-align: center;
-  padding: 5rem 1.5rem;
-  margin-top: 4rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.frase-final::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('https://somosconexaosocial.org/site_img/seja_mudanca/mudanca-banner.jpg');
-  background-size: cover;
-  opacity: 0.1;
-  mix-blend-mode: overlay;
-}
-
-.frase-final h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.frase-final p {
-  font-size: 1.5rem;
-  opacity: 0.95;
-  position: relative;
-  z-index: 1;
-  font-weight: 300;
-}
-
-/* RESPONSIVIDADE */
 @media (max-width: 768px) {
-  .campanha-texto {
-    padding: 3rem 1.5rem;
-    margin-top: -30px;
+  .banner-container {
+    height: 70vh;
+    min-height: 500px;
   }
   
-  .campanha-texto h1 {
-    font-size: 2rem;
+  .banner-title {
+    font-size: 1.8rem;
   }
   
-  .pix-destaque {
-    padding: 2.5rem 1rem;
-  }
-  
-  .pix-chave {
+  .banner-subtitle {
     font-size: 1.1rem;
-    padding: 0.75rem 1.5rem;
   }
   
-  .produtos-section h2 {
-    font-size: 1.75rem;
+  .banner-call {
+    padding: 1.5rem;
   }
   
-  .produtos-section .preco {
-    font-size: 1.25rem;
-  }
-  
-  .frase-final h2 {
-    font-size: 2rem;
-  }
-  
-  .frase-final p {
-    font-size: 1.25rem;
-  }
-  
-  .produtos-section .swiper-button-next,
-  .produtos-section .swiper-button-prev {
-    display: none;
+  .legenda-status {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
 }
 
-/* ANIMAÇÕES */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+@media (max-width: 480px) {
+  .banner-container {
+    height: 60vh;
+    min-height: 400px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .banner-title {
+    font-size: 1.5rem;
+  }
+  
+  .resumo-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 }
 
-.campanha-texto,
-.pix-destaque,
-.produtos-section,
-.ecobag-section,
-.frase-final {
-  animation: fadeInUp 0.6s ease-out;
+/* Adicione ao CSS existente */
+.input-wrapper input:focus {
+  border-color: #feb204;
+  box-shadow: 0 0 0 3px rgba(254, 178, 4, 0.2);
+}
+
+/* Ajustes finais */
+.quick-buttons {
+  justify-content: center;
+}
+
+.brinde-status .status-available {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: rgba(40, 167, 69, 0.1);
 }
