@@ -3,6 +3,9 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import './mudanca.css';
 
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+
 // Componentes
 import Navbar from '../../componentes/nav';
 import Footer from '../../componentes/folter';
@@ -17,6 +20,7 @@ import 'swiper/css/navigation';
 
 // QRCode
 import { QRCodeSVG } from 'qrcode.react';
+import { API_BASE_URL_DOACOES } from '../../infra/apiConfig';
 
 /* --- FUNÇÃO PARA GERAR PIX (MESMA DA PÁGINA ANTERIOR) --- */
 function gerarPixString(chave, nome, cidade, valor) {
@@ -223,19 +227,14 @@ function SejaMudanca() {
       brindeEscolhido: brindeSelecionado?.nome || 'Nenhum brinde selecionado',
       dataDoacao: new Date().toISOString()
     };
-
-    // Log no console (substituir por axios depois)
-    console.log('Dados da doação:', dadosCompletos);
     
-    // Aqui você pode adicionar o axios para enviar para o endpoint
-    /*
     try {
-      const response = await axios.post('SEU_ENDPOINT_AQUI', dadosCompletos);
-      console.log('Resposta do servidor:', response.data);
+      const response = await axios.post(`${API_BASE_URL_DOACOES}/doacoes`, dadosCompletos);
+      // console.log('Resposta do servidor:', response.data);
     } catch (error) {
       console.error('Erro ao enviar:', error);
     }
-    */
+    
 
     // Mostra confirmação
     setDoacaoConcluida(true);
@@ -272,8 +271,8 @@ function SejaMudanca() {
                 <div className="banner-content">
                   <div className="banner-call">
                     <h1 className="banner-title">
-                      <span className="banner-highlight">Seja a Mudança</span><br/>
-                      Que Você Quer Ver no Mundo
+                      <span className="banner-highlight">Mudar o mundo</span><br/>
+                      começa com a sua atitude.
                     </h1>
                     <p className="banner-subtitle">
                       Doe agora e receba um brinde exclusivo da campanha
@@ -351,38 +350,37 @@ function SejaMudanca() {
                     </div>
                     
                     <div className="brinde-carousel">
-                      <div className="brinde-carousel">
-  <Swiper
-    modules={[Navigation, Pagination, Autoplay]}
-    spaceBetween={10}
-    slidesPerView={1}
-    navigation
-    pagination={{ clickable: true }}
-    autoplay={{
-      delay: 3000, // 3 segundos entre cada slide
-      disableOnInteraction: false, // continua mesmo após interação do usuário
-    }}
-    loop={true} // Loop infinito
-    speed={500} // Velocidade da transição (em ms)
-    onSwiper={(swiper) => {
-      // Configuração adicional se necessário
-    }}
-  >
-    {brinde.imagens.map((img, index) => (
-      <SwiperSlide key={index}>
-        <div className="slide-image-container">
-          <img 
-            src={img} 
-            alt={`${brinde.nome} - imagem ${index + 1}`}
-            className="brinde-image"
-            loading="lazy" // Otimização de carregamento
-          />
-        </div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
+  <PhotoProvider>
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay]}
+      spaceBetween={10}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
+      loop={true}
+      speed={500}
+    >
+      {brinde.imagens.map((img, index) => (
+        <SwiperSlide key={index}>
+          <PhotoView src={img}>
+            <div className="slide-image-container">
+              <img 
+                src={img} 
+                alt={`${brinde.nome} - imagem ${index + 1}`}
+                className="brinde-image"
+                loading="lazy"
+              />
+            </div>
+          </PhotoView>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </PhotoProvider>
 </div>
-                    </div>
                     
                     <div className="brinde-info">
                       <p>{brinde.descricao}</p>

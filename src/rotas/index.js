@@ -13,6 +13,8 @@ import PaginaRebeca from "../paginas/paginaRebeca";
 import Doacoes from "../paginas/doacoes";
 import Diretoria from "../paginas/diretoria";
 import Mudanca from "../paginas/mudanca";
+import Login from "../paginas/loginMudanca";
+import ListarDoacoes from "../paginas/listaMudanca";
 
 const Rotas = () => (
   <HashRouter>
@@ -39,7 +41,11 @@ const Rotas = () => (
       
 
 
-      <Route path="/noticias/:slug" element={<Noticia />} />     
+      <Route path="/noticias/:slug" element={<Noticia />} />   
+
+      <Route path="login-doacoes" element={<Login />} />   
+
+      <Route path="listar-doacoes" element={<ListarDoacoes />} />
 
     </Routes>
   </HashRouter>
