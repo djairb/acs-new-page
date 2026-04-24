@@ -44,17 +44,7 @@
   50%       { transform: translateY(-8px); }
 }
 
-/* ── 2. SCROLL-REVEAL (IntersectionObserver via classe JS) ─ */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
-              transform 0.7s cubic-bezier(0.4,0,0.2,1);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
+/* ── 2. SCROLL-REVEAL (IntersectionObserver via classe JS) removido pois agora usamos AOS ─ */
 
 /* ── 3. NAVBAR ATUALIZADO ─────────────────────────────── */
 header {

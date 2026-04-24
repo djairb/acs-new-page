@@ -2,35 +2,23 @@ import './App.css';
 import Rotas from './rotas';
 import { useEffect } from 'react';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function App() {
 
-  // Scroll-reveal global: adiciona .reveal a seções e anima ao entrar na viewport
   useEffect(() => {
-    const targets = document.querySelectorAll(
-      'section, .divNoticiasHome, .projeto-container, ' +
-      '.missao-visao-valores-section, .parceirosSection, ' +
-      '.visita-section, .projetos-section, .projetos-section2, ' +
-      '.videoCard, .containerCardNoticiaHome'
-    );
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('reveal', 'visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.08 }
-    );
-
-    targets.forEach((el) => {
-      el.classList.add('reveal');
-      observer.observe(el);
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 100,
     });
-
-    return () => observer.disconnect();
+    
+    // Recalcula as posições após a renderização inicial (resolve problema de surgirem todos de uma vez)
+    setTimeout(() => {
+      AOS.refresh();
+    }, 1000);
   }, []);
 
   return (

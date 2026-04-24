@@ -84,22 +84,31 @@ function TelaPrincipal() {
       <main>               
 
         {/* <CardTechfest/> */}
-        <CardContratacaoSlide/>
+        <div data-aos="fade-up">
+          <CardContratacaoSlide/>
+        </div>
 
         {/* <CardContratacao/> */}
 
-        <ProjetoComponent />
+        <div data-aos="fade-right">
+          <ProjetoComponent />
+        </div>
 
-        <ProjetosSection />
+        <div data-aos="fade-up">
+          <ProjetosSection />
+        </div>
 
-        <ProjetosSection2 />
+        <div data-aos="fade-up" data-aos-delay="100">
+          <ProjetosSection2 />
+        </div>
 
         {/* <MainVideo/> */}
 
         <div className='spaceLineNav'></div>
 
-        <NoticiasHome/>
-
+        <div data-aos="zoom-in">
+          <NoticiasHome/>
+        </div>
 
         <div className='spaceLineNav'></div>
 
@@ -115,29 +124,40 @@ function TelaPrincipal() {
 
         <div className='spaceLineNav'></div> */}
 
+        <div data-aos="flip-up">
           <BannerResponsivo
             imgDesktop="https://somosconexaosocial.org/site_img/ods/em_jornada_big.png"
             imgMobile="https://somosconexaosocial.org/site_img/ods/em_jornada_pq.png"
             link="https://www.seloodsbrasil.com.br/"
             alt="Selo ODS"
           />
+        </div>
 
         {/* <VideoCarrossel2/> */}
 
-        <VideoCarrossel/>
+        <div data-aos="fade-up">
+          <VideoCarrossel/>
+        </div>
 
         {/* <ColaboradorCarrossel/>      */}
         
-        <Parceiros/>
+        <div data-aos="fade-in">
+          <Parceiros/>
+        </div>
 
-        <MensagemVisita/>
+        <div data-aos="fade-up">
+          <MensagemVisita/>
+        </div>
 
         <div className='spaceLine'></div>
 
-        <Location/>
+        <div data-aos="fade-up">
+          <Location/>
+        </div>
 
-        <MainSomosConexao/>           
-
+        <div data-aos="fade-up">
+          <MainSomosConexao/>           
+        </div>
 
       </main>
 
