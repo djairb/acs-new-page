@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import '../../style/style.css'; // Importe o arquivo CSS
+import '../../style/style.css';
+import '../../style/noticia.css';
 import { useParams } from 'react-router-dom';
 import Axios from "axios";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
@@ -8,10 +9,8 @@ import { API_BASE_URL_NOTICIAS, API_IMAGEM_URL } from '../../infra/apiConfig';
 import Navbar from '../../componentes/nav';
 import Footer from '../../componentes/folter';
 import ParceirosNoticia from '../../componentes/parceirosNoticia';
-
 import { useNavigate } from 'react-router-dom';
 import RodapeBlog from '../../componentes/rodapeBlog';
-import CardNoticiaOld from '../../componentes/CardNoticiaOld/CardNoticiaOld';
 import CardNoticiaOld2 from '../../componentes/CardNoticiaOld2/CardNoticiaOld2';
 
 const Noticia = () => {
@@ -25,15 +24,12 @@ const Noticia = () => {
 
     const formatDate = (isoDate) => {
         const date = new Date(isoDate);
-        if (isNaN(date.getTime())) {
-            return '';
-        }
+        if (isNaN(date.getTime())) return '';
         const year = date.getFullYear();
         const month = String(date.getMonth() + 1).padStart(2, '0');
         const day = String(date.getDate()).padStart(2, '0');
         return `${day}/${month}/${year}`;
     };
-    
 
     useEffect(() => {
         const carregarNoticia = async () => {
@@ -44,7 +40,6 @@ const Noticia = () => {
                 });
                 setNoticiaCarregada(responseNoticia.data[0]);
                 setNoticiaCarregadaCompleta(true);
-                
             } catch (error) {
                 console.error('Erro ao tentar carregar as Notícias:', error);
                 alert("Ocorreu um erro ao tentar carregar notícias. Por favor, tente novamente mais tarde.");
@@ -67,7 +62,6 @@ const Noticia = () => {
                 setLoadingImg(false);
             } catch (error) {
                 console.error('Erro ao carregar fotos:', error);
-                alert("Ocorreu um erro ao tentar carregar as fotos da turma. Por favor, tente novamente mais tarde.");
                 setLoadingImg(false);
             }
         };
@@ -76,7 +70,6 @@ const Noticia = () => {
 
     useEffect(() => {
         const carregarVejaMais = async () => {
-            console.log("entrou aqui")
             if (!noticiaCarregadaCompleta) return;
             try {
                 const response = await Axios.get(`${API_BASE_URL_NOTICIAS}/getVejaMaisNoticia`, {
@@ -94,94 +87,132 @@ const Noticia = () => {
 
     const navigate = useNavigate();
 
-    const handleClickVoltar = () => {
-        navigate(-1);
-        
-    };
-
     return (
         <div className="page-container">
             <Navbar />
 
-            <main className="main-noticia">
-                {loadingGeral && <div className="spinner"><div></div></div>}
-                {noticiaCarregadaCompleta ? (
-                    <div className="content-container">
-                        <PhotoProvider>
-                            <PhotoView src={`${API_IMAGEM_URL}${noticiaCarregada.foto_capa}`}>
-                                <img src={`${API_IMAGEM_URL}${noticiaCarregada.foto_capa}`} alt="Capa da Notícia" className="capa-imagem" style={{ cursor: 'pointer' }} />
-                            </PhotoView>
-                        </PhotoProvider>
+            <main className="noticia-page-main">
 
-                        <h1 className="titulo-noticia">{noticiaCarregada.titulo}</h1>
-
-
-                        <p className="descricao-noticia">{noticiaCarregada.descricao}</p>
-
-                        {loadingImg ? <div className="spinner"></div> : (
-                            <PhotoProvider>
-                                <div className="carrossel-imagens">
-                                    {fotosNoticia.map((image) => (
-                                        <div key={image.id_foto}>
-                                            <PhotoView src={`${API_IMAGEM_URL}${image.foto}`}>
-                                                <img
-                                                    src={`${API_IMAGEM_URL}${image.foto}`}
-                                                    alt={`uploaded preview`}
-                                                    className="imagem-carrossel"
-                                                    style={{ cursor: 'pointer' }}
-                                                />
-                                            </PhotoView>
-                                        </div>
-                                    ))}
-                                </div>
-                            </PhotoProvider>
-                        )}
-
-                        {noticiaCarregada.ir_para_blog === 1 &&  (
-                            <>
-                                <p className="autor-data">
-                                    Por: {noticiaCarregada.nome_autor}, em {formatDate(noticiaCarregada.data_noticia)}
-                                </p>
-                                <RodapeBlog />
-                            </>
-                        )}
-
-
-
-                        
-
-                        <div className='spaceLineNav'></div>
-
-                        <ParceirosNoticia/>
-                        
+                {loadingGeral && (
+                    <div className="noticia-loading">
+                        <div className="noticia-spinner"></div>
+                        <p>Carregando notícia...</p>
                     </div>
-
-                ) : (
-                    <p>Carregando dados...</p>
                 )}
 
+                {noticiaCarregadaCompleta ? (
+                    <article className="noticia-article">
+
+                        {/* ── HERO CAPA ── */}
+                        <div className="noticia-hero">
+                            <PhotoProvider>
+                                <PhotoView src={`${API_IMAGEM_URL}${noticiaCarregada.foto_capa}`}>
+                                    <img
+                                        src={`${API_IMAGEM_URL}${noticiaCarregada.foto_capa}`}
+                                        alt="Capa da Notícia"
+                                        className="noticia-hero-img"
+                                        style={{ cursor: 'zoom-in' }}
+                                    />
+                                </PhotoView>
+                            </PhotoProvider>
+                            <div className="noticia-hero-overlay">
+                                <div className="noticia-hero-badge">Notícia</div>
+                                <h1 className="noticia-hero-titulo">{noticiaCarregada.titulo}</h1>
+                                {noticiaCarregada.ir_para_blog === 1 && (
+                                    <p className="noticia-hero-meta">
+                                        <span className="noticia-hero-meta-icon">✍️</span>
+                                        Por <strong>{noticiaCarregada.nome_autor}</strong> &nbsp;·&nbsp; {formatDate(noticiaCarregada.data_noticia)}
+                                    </p>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* ── CORPO DA NOTÍCIA ── */}
+                        <div className="noticia-body">
+
+                            {/* Fio condutor / subtítulo */}
+                            <div className="noticia-lead">
+                                <p className="noticia-descricao">{noticiaCarregada.descricao}</p>
+                            </div>
+
+                            {/* ── GALERIA EM GRADE ── */}
+                            {loadingImg ? (
+                                <div className="noticia-loading-mini">
+                                    <div className="noticia-spinner"></div>
+                                </div>
+                            ) : fotosNoticia.length > 0 && (
+                                <section className="noticia-galeria-section">
+                                    <div className="noticia-galeria-header">
+                                        <span className="noticia-galeria-linha"></span>
+                                        <h2 className="noticia-galeria-titulo">📸 Galeria de fotos</h2>
+                                        <span className="noticia-galeria-linha"></span>
+                                    </div>
+
+                                    <PhotoProvider>
+                                        <div className={`noticia-galeria-grid ${fotosNoticia.length === 1 ? 'galeria-1' : fotosNoticia.length === 2 ? 'galeria-2' : fotosNoticia.length === 3 ? 'galeria-3' : 'galeria-4plus'}`}>
+                                            {fotosNoticia.map((image, idx) => (
+                                                <PhotoView key={image.id_foto} src={`${API_IMAGEM_URL}${image.foto}`}>
+                                                    <div className={`noticia-galeria-item ${idx === 0 && fotosNoticia.length >= 4 ? 'galeria-destaque' : ''}`}>
+                                                        <img
+                                                            src={`${API_IMAGEM_URL}${image.foto}`}
+                                                            alt={`Foto ${idx + 1}`}
+                                                            className="noticia-galeria-img"
+                                                            style={{ cursor: 'zoom-in' }}
+                                                        />
+                                                        <div className="noticia-galeria-hover">
+                                                            <span>🔍 Ver foto</span>
+                                                        </div>
+                                                    </div>
+                                                </PhotoView>
+                                            ))}
+                                        </div>
+                                    </PhotoProvider>
+
+                                    <p className="noticia-galeria-dica">Clique em qualquer foto para ampliar</p>
+                                </section>
+                            )}
+
+                            {/* ── BLOG RODAPÉ ── */}
+                            {noticiaCarregada.ir_para_blog === 1 && (
+                                <div className="noticia-blog-section">
+                                    <RodapeBlog />
+                                </div>
+                            )}
+
+                        </div>{/* fim noticia-body */}
+
+                        {/* ── DIVISOR ── */}
+                        <div className="spaceLineNav"></div>
+
+                        {/* ── PARCEIROS ── */}
+                        <ParceirosNoticia />
+
+                    </article>
+                ) : (
+                    !loadingGeral && <p className="noticia-sem-dados">Notícia não encontrada.</p>
+                )}
+
+                {/* ── VEJA TAMBÉM ── */}
                 {vejaMais && (
-    <div className="veja-mais-container">
-        <h2 className="veja-mais-titulo">Veja também</h2>
-        <CardNoticiaOld2
-            key={vejaMais.id_noticia}
-            foto_capa={vejaMais.foto_capa}
-            titulo={vejaMais.titulo}
-            slug={vejaMais.slug}
-        />
-    </div>
-)}
+                    <div className="noticia-veja-mais">
+                        <div className="noticia-veja-mais-inner">
+                            <div className="noticia-veja-mais-header">
+                                <span className="noticia-galeria-linha"></span>
+                                <h2 className="noticia-veja-mais-titulo">Veja também</h2>
+                                <span className="noticia-galeria-linha"></span>
+                            </div>
+                            <CardNoticiaOld2
+                                key={vejaMais.id_noticia}
+                                foto_capa={vejaMais.foto_capa}
+                                titulo={vejaMais.titulo}
+                                slug={vejaMais.slug}
+                            />
+                        </div>
+                    </div>
+                )}
 
-
-
-                {/* <button
-                    className="buttonMainPage"
-                    onClick={handleClickVoltar}
-                >
-                    Voltar
-                </button> */}
             </main>
-            
+
             <Footer />
         </div>
     );
