@@ -48,11 +48,13 @@ function TelaPrincipal() {
 
   const goToOtherPage = () => {
     setShowPopup(false);
+    window.dispatchEvent(new Event('iniciarAOS'));
     navigate("/doacoes");
   };
 
   const closePopup = () => {
     setShowPopup(false);
+    window.dispatchEvent(new Event('iniciarAOS'));
   };
 
     return (    
@@ -84,33 +86,37 @@ function TelaPrincipal() {
       <main>               
 
         {/* <CardTechfest/> */}
-        <div data-aos="fade-up">
+        <div data-aos="fade-down" data-aos-duration="1200">
           <CardContratacaoSlide/>
         </div>
 
         {/* <CardContratacao/> */}
 
-        <div data-aos="fade-right">
+        <div data-aos="fade-right" data-aos-duration="1000">
           <ProjetoComponent />
         </div>
 
-        <div data-aos="fade-up">
+        <div data-aos="fade-left" data-aos-duration="1000">
           <ProjetosSection />
         </div>
 
-        <div data-aos="fade-up" data-aos-delay="100">
+        <div data-aos="fade-up" data-aos-duration="1000">
           <ProjetosSection2 />
         </div>
 
         {/* <MainVideo/> */}
 
-        <div className='spaceLineNav'></div>
+        <div data-aos="zoom-in" data-aos-duration="800">
+          <div className='spaceLineNav'></div>
+        </div>
 
-        <div data-aos="zoom-in">
+        <div data-aos="zoom-in-up" data-aos-duration="1000">
           <NoticiasHome/>
         </div>
 
-        <div className='spaceLineNav'></div>
+        <div data-aos="zoom-in" data-aos-duration="800">
+          <div className='spaceLineNav'></div>
+        </div>
 
         {/* <GaleriaHome/> */}
 
@@ -118,13 +124,15 @@ function TelaPrincipal() {
 
         <ProjetosSelecionar/> */}
 
-        <div className='spaceLineNav'></div>
+        <div data-aos="zoom-in" data-aos-duration="800">
+          <div className='spaceLineNav'></div>
+        </div>
 
         {/* <OdsSelecionar/>
 
         <div className='spaceLineNav'></div> */}
 
-        <div data-aos="flip-up">
+        <div data-aos="flip-up" data-aos-duration="1200">
           <BannerResponsivo
             imgDesktop="https://somosconexaosocial.org/site_img/ods/em_jornada_big.png"
             imgMobile="https://somosconexaosocial.org/site_img/ods/em_jornada_pq.png"
@@ -135,27 +143,29 @@ function TelaPrincipal() {
 
         {/* <VideoCarrossel2/> */}
 
-        <div data-aos="fade-up">
+        <div data-aos="fade-up" data-aos-duration="1000">
           <VideoCarrossel/>
         </div>
 
         {/* <ColaboradorCarrossel/>      */}
         
-        <div data-aos="fade-in">
+        <div data-aos="zoom-in" data-aos-duration="1000">
           <Parceiros/>
         </div>
 
-        <div data-aos="fade-up">
+        <div data-aos="flip-down" data-aos-duration="1000">
           <MensagemVisita/>
         </div>
 
-        <div className='spaceLine'></div>
+        <div data-aos="zoom-in" data-aos-duration="800">
+          <div className='spaceLine'></div>
+        </div>
 
-        <div data-aos="fade-up">
+        <div data-aos="fade-right" data-aos-duration="1000">
           <Location/>
         </div>
 
-        <div data-aos="fade-up">
+        <div data-aos="fade-left" data-aos-duration="1000">
           <MainSomosConexao/>           
         </div>
 
