@@ -41,7 +41,7 @@ function Navbar() {
           <Link to="/boletins-informativos" className="nav-link" onClick={closeNav}>Boletins</Link>
           <Link to="/transparencia" className="nav-link" onClick={closeNav}>Transparência</Link>
           <Link to="/diretoria" className="nav-link" onClick={closeNav}>Diretoria</Link>
-          <a href="https://somosconexaosocial.org/sra" rel="noopener noreferrer" className="nav-link" onClick={closeNav}>SRA</a>
+          {/* <a href="https://somosconexaosocial.org/sra" rel="noopener noreferrer" className="nav-link" onClick={closeNav}>SRA</a> */}
 
           <Link to="/doacoes" className="linkComBorda nav-doar" onClick={closeNav}>
             <FaHeart style={{ marginRight: '6px', verticalAlign: 'middle' }} />

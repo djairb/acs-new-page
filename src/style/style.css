@@ -864,7 +864,15 @@ header .dropdown-menu a:hover {
 .sectionNoticias{
   background-image: None;
   min-height: auto;
+  background-color: white;
+}
 
+.sectionNoticias .h1SectionTitle {
+  color: black !important;
+}
+
+.sectionNoticias .bbParceiro p {
+  color: black !important;
 }
 
 .containerParceiros{

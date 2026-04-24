@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import '../../style/style.css'; // Importe o arquivo CSS
 import { useParams } from 'react-router-dom';
 import Axios from "axios";
-import { SlideshowLightbox } from 'lightbox.js-react';
-import 'lightbox.js-react/dist/index.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 import { API_BASE_URL_NOTICIAS, API_IMAGEM_URL } from '../../infra/apiConfig';
 import Navbar from '../../componentes/nav';
 import Footer from '../../componentes/folter';
@@ -107,15 +107,11 @@ const Noticia = () => {
                 {loadingGeral && <div className="spinner"><div></div></div>}
                 {noticiaCarregadaCompleta ? (
                     <div className="content-container">
-                        <SlideshowLightbox
-                            theme="day"
-                            fullScreen={false}
-                            showControls={true}
-                            modalClose="clickOutside"
-                            className="grid grid-cols-3 gap-2 mx-auto"
-                        >
-                            <img src={`${API_IMAGEM_URL}${noticiaCarregada.foto_capa}`} alt="Capa da Notícia" className="capa-imagem" />
-                        </SlideshowLightbox>
+                        <PhotoProvider>
+                            <PhotoView src={`${API_IMAGEM_URL}${noticiaCarregada.foto_capa}`}>
+                                <img src={`${API_IMAGEM_URL}${noticiaCarregada.foto_capa}`} alt="Capa da Notícia" className="capa-imagem" style={{ cursor: 'pointer' }} />
+                            </PhotoView>
+                        </PhotoProvider>
 
                         <h1 className="titulo-noticia">{noticiaCarregada.titulo}</h1>
 
@@ -123,25 +119,22 @@ const Noticia = () => {
                         <p className="descricao-noticia">{noticiaCarregada.descricao}</p>
 
                         {loadingImg ? <div className="spinner"></div> : (
-                            <div className="carrossel-imagens">
-                                {fotosNoticia.map((image) => (
-                                    <div key={image.id_foto}>
-                                        <SlideshowLightbox
-                                            theme="day"
-                                            fullScreen={false}
-                                            showControls={true}
-                                            modalClose="clickOutside"
-                                            className="grid grid-cols-3 gap-2 mx-auto"
-                                        >
-                                            <img
-                                                src={`${API_IMAGEM_URL}${image.foto}`}
-                                                alt={`uploaded preview`}
-                                                className="imagem-carrossel"
-                                            />
-                                        </SlideshowLightbox>
-                                    </div>
-                                ))}
-                            </div>
+                            <PhotoProvider>
+                                <div className="carrossel-imagens">
+                                    {fotosNoticia.map((image) => (
+                                        <div key={image.id_foto}>
+                                            <PhotoView src={`${API_IMAGEM_URL}${image.foto}`}>
+                                                <img
+                                                    src={`${API_IMAGEM_URL}${image.foto}`}
+                                                    alt={`uploaded preview`}
+                                                    className="imagem-carrossel"
+                                                    style={{ cursor: 'pointer' }}
+                                                />
+                                            </PhotoView>
+                                        </div>
+                                    ))}
+                                </div>
+                            </PhotoProvider>
                         )}
 
                         {noticiaCarregada.ir_para_blog === 1 &&  (
