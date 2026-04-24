@@ -96,6 +96,14 @@ function TelaPrincipal() {
           <ProjetoComponent />
         </div>
 
+        <div data-aos="zoom-in" data-aos-duration="800">
+          <div className='spaceLineNav'></div>
+        </div>
+
+        <div data-aos="zoom-in-up" data-aos-duration="1000">
+          <NoticiasHome/>
+        </div>
+
         <div data-aos="fade-left" data-aos-duration="1000">
           <ProjetosSection />
         </div>
@@ -106,13 +114,7 @@ function TelaPrincipal() {
 
         {/* <MainVideo/> */}
 
-        <div data-aos="zoom-in" data-aos-duration="800">
-          <div className='spaceLineNav'></div>
-        </div>
-
-        <div data-aos="zoom-in-up" data-aos-duration="1000">
-          <NoticiasHome/>
-        </div>
+        
 
         <div data-aos="zoom-in" data-aos-duration="800">
           <div className='spaceLineNav'></div>

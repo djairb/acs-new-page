@@ -115,16 +115,20 @@ const Noticia = () => {
                                     />
                                 </PhotoView>
                             </PhotoProvider>
-                            <div className="noticia-hero-overlay">
-                                <div className="noticia-hero-badge">Notícia</div>
-                                <h1 className="noticia-hero-titulo">{noticiaCarregada.titulo}</h1>
-                                {noticiaCarregada.ir_para_blog === 1 && (
-                                    <p className="noticia-hero-meta">
-                                        <span className="noticia-hero-meta-icon">✍️</span>
-                                        Por <strong>{noticiaCarregada.nome_autor}</strong> &nbsp;·&nbsp; {formatDate(noticiaCarregada.data_noticia)}
-                                    </p>
-                                )}
-                            </div>
+                        </div>
+
+                        {/* ── CABEÇALHO DA NOTÍCIA ── */}
+                        <div className="noticia-header-info">
+                            <span className="noticia-header-badge">Notícia</span>
+                            <h1 className="noticia-header-titulo">{noticiaCarregada.titulo}</h1>
+                            {noticiaCarregada.ir_para_blog === 1 && (
+                                <p className="noticia-header-meta">
+                                    <span>✍️</span>
+                                    Por <strong>{noticiaCarregada.nome_autor}</strong>
+                                    <span className="noticia-header-sep">·</span>
+                                    {formatDate(noticiaCarregada.data_noticia)}
+                                </p>
+                            )}
                         </div>
 
                         {/* ── CORPO DA NOTÍCIA ── */}

@@ -508,7 +508,7 @@ section {
 
 .divNoticiasHome .h1SectionTitle {
   padding-bottom: 20px;
-  color: white !important;
+  color: #222 !important;
   text-align: center;
 }
 
@@ -1457,22 +1457,28 @@ summary:focus {
 }
 
 
-.mainTodasNoticias .divTodasNoticias{
+.mainTodasNoticias .divTodasNoticias {
   width: 100%;
-  
-  
-  flex: 1;
-  /*O flex: 1 é uma propriedade poderosa do CSS que, quando aplicado a um elemento dentro de um container flex, faz com que ele ocupe todo o espaço disponível tanto na direção principal quanto na transversal.*/
-  
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 10px 10px;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 5px;
-  
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 10px;
+  box-sizing: border-box;
+}
 
+@media (max-width: 1024px) {
+  .mainTodasNoticias .divTodasNoticias {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .mainTodasNoticias .divTodasNoticias {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 .spinner {
