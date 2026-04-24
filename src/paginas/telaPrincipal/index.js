@@ -14,8 +14,6 @@ import MensagemVisita from "../../componentes/mensagemVisita";
 import ProjetosSelecionar from '../../componentes/projetosSelecionar';
 import VideoCarrossel from '../../componentes/videoCarrossel';
 
-
-
 import MainVideo from '../../componentes/main_video';
 import MainSomosConexao from '../../componentes/main_somos_conexao';
 import NoticiasHome from '../../componentes/noticiasHome/NoticiasHome';
@@ -31,6 +29,7 @@ import ProjetoComponent from '../../componentes/projetoComponente';
 import ProjetosSection from '../../componentes/ProjetosSection/ProjetosSection';
 import ProjetosSection2 from '../../componentes/ProjetosSection2/ProjetosSection2';
 import BannerResponsivo from '../../componentes/BannerResponsivo';
+import { FaHeart, FaTimes } from 'react-icons/fa';
 
 
 function TelaPrincipal() {
@@ -62,13 +61,20 @@ function TelaPrincipal() {
 
     {showPopup && (
         <div className="popup-overlay">
-          <div className="popup-box">
-            <button className="popup-close" onClick={closePopup}>
-              ✖
+          <div className="popup-box popup-box-novo">
+            <button className="popup-close popup-close-novo" onClick={closePopup} aria-label="Fechar">
+              <FaTimes />
             </button>
-            <h2>Bem-vindo!</h2>
-            <p>Ajude a transformar realidades com a Conexão Social!</p>
-            <button className='popup-button' onClick={goToOtherPage}>Doar</button>
+            <div className="popup-heart-icon">
+              <FaHeart />
+            </div>
+            <h2 className="popup-titulo">Faça a diferença!</h2>
+            <p className="popup-desc">Ajude a transformar realidades com a Associação Conexão Social. Cada contribuição conta!</p>
+            <button className='popup-button popup-button-novo' onClick={goToOtherPage}>
+              <FaHeart style={{ marginRight: '8px' }} />
+              Quero Doar
+            </button>
+            <button className="popup-skip" onClick={closePopup}>Agora não</button>
           </div>
         </div>
       )}
@@ -110,8 +116,8 @@ function TelaPrincipal() {
         <div className='spaceLineNav'></div> */}
 
           <BannerResponsivo
-            imgDesktop="https://somosconexaosocial.org/site_img/ods/em_jornada_big.png"   // Imagem horizontal (ex: 1920x400)
-            imgMobile="https://somosconexaosocial.org/site_img/ods/em_jornada_pq.png"    // Imagem vertical/quadrada (ex: 800x800)
+            imgDesktop="https://somosconexaosocial.org/site_img/ods/em_jornada_big.png"
+            imgMobile="https://somosconexaosocial.org/site_img/ods/em_jornada_pq.png"
             link="https://www.seloodsbrasil.com.br/"
             alt="Selo ODS"
           />

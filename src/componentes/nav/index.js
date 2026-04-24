@@ -1,91 +1,68 @@
-import { useRef, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { FaChevronDown } from "react-icons/fa";
+import { useRef, useState, useEffect } from "react";
+import { FaBars, FaTimes, FaHeart, FaChevronDown } from "react-icons/fa";
 
 import logo from "../../img/logoAcs.png";
-
 import jornada from "../../img/jornada-ods.jpg";
 import { Link } from "react-router-dom";
 
-
-
 function Navbar() {
   const navRef = useRef();
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const [dropdownOpen2, setDropdownOpen2] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const showNavBar = () => {
+    const next = !mobileOpen;
+    setMobileOpen(next);
     navRef.current.classList.toggle("responsive_nav");
+  };
+
+  const closeNav = () => {
+    setMobileOpen(false);
+    navRef.current.classList.remove("responsive_nav");
   };
 
   return (
     <>
-      <header>
-        <Link to="/"><img src={logo} alt="Logo" /></Link>
+      <header className={scrolled ? "header-scrolled" : ""}>
+        <Link to="/" onClick={closeNav}>
+          <img src={logo} alt="Logo Associação Conexão Social" className="nav-logo" />
+        </Link>
 
         <nav ref={navRef}>
+          <Link to="/noticias" className="nav-link" onClick={closeNav}>Blog</Link>
+          <Link to="/boletins-informativos" className="nav-link" onClick={closeNav}>Boletins</Link>
+          <Link to="/transparencia" className="nav-link" onClick={closeNav}>Transparência</Link>
+          <Link to="/diretoria" className="nav-link" onClick={closeNav}>Diretoria</Link>
+          <a href="https://somosconexaosocial.org/sra" rel="noopener noreferrer" className="nav-link" onClick={closeNav}>SRA</a>
 
-          {/* <div className="dropdown">
-            <button
-              className="dropdown-toggle"
-              onClick={() => setDropdownOpen2(!dropdownOpen2)}
-            >
-              Sobre Nós <FaChevronDown className="dropdown-icon" />
-            </button>
-            {dropdownOpen2 && (
-              <div className="dropdown-menu">
-                <Link to="/quem-somos">Quem Somos</Link>
-                <Link to="/diretoria">Diretoria</Link>
-                
-              </div>
-            )}
-          </div> */}
-
-          <Link to="/noticias">Blog</Link>
-          
-          <Link to="/boletins-informativos">Boletins</Link>
-          <Link to="/transparencia">Transparência</Link>
-          <Link to="/diretoria">Diretoria</Link>
-
-          <div className="dropdown">
-            {/* <button
-              className="dropdown-toggle"
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-            >
-              Notícias <FaChevronDown className="dropdown-icon" />
-            </button> */}
-
-            
-            {/* {dropdownOpen && (
-              <div className="dropdown-menu">
-                
-                <Link to="/blog-rebeca">Blog Rebeca</Link>
-                <Link to="/galeria">Galeria</Link>
-              </div>
-            )} */}
-          </div>
-
-          <a href="https://somosconexaosocial.org/sra" rel="noopener noreferrer">SRA</a>
-
-          
-
-          <Link to="/doacoes" className="linkComBorda">
+          <Link to="/doacoes" className="linkComBorda nav-doar" onClick={closeNav}>
+            <FaHeart style={{ marginRight: '6px', verticalAlign: 'middle' }} />
             Doar
           </Link>
 
-          <button className="nav-btn nav-close-btn" onClick={showNavBar}>
+          <button className="nav-btn nav-close-btn" onClick={showNavBar} aria-label="Fechar menu">
             <FaTimes />
           </button>
         </nav>
-        <Link to="https://www.seloodsbrasil.com.br/"><img src={jornada} alt="em jornada" /></Link>
 
-        <button className="nav-btn" onClick={showNavBar}>
+        <Link to="https://www.seloodsbrasil.com.br/" target="_blank" rel="noopener noreferrer">
+          <img src={jornada} alt="Em Jornada ODS" className="nav-ods-img" />
+        </Link>
+
+        <button className="nav-btn" onClick={showNavBar} aria-label="Abrir menu">
           <FaBars />
         </button>
       </header>
 
-      <div className='spaceLineNav'></div>
+      <div className="spaceLineNav"></div>
     </>
   );
 }

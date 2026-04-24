@@ -1,0 +1,775 @@
+/* ============================================================
+   ANIMATIONS.CSS — Repaginação ACS
+   Importado em index.css
+   ============================================================ */
+
+/* ── 1. KEYFRAMES GLOBAIS ──────────────────────────────── */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulseHeart {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ── 2. SCROLL-REVEAL (IntersectionObserver via classe JS) ─ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
+              transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── 3. NAVBAR ATUALIZADO ─────────────────────────────── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255,255,255,0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 2px solid transparent;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  animation: fadeInDown 0.6s ease both;
+}
+
+header.header-scrolled {
+  background-color: rgba(255,255,255,0.98);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  border-bottom-color: #f08528;
+}
+
+.nav-logo {
+  width: 80px;
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+.nav-logo:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.nav-ods-img {
+  width: 80px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.nav-ods-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 14px rgba(240,133,40,0.4);
+}
+
+/* Nav links com underline animado */
+nav a.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+  color: #222;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  -webkit-text-fill-color: unset;
+  background-image: none;
+  background-clip: unset;
+}
+nav a.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ffbf00, #f08528);
+  border-radius: 2px;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+nav a.nav-link:hover {
+  color: #f08528;
+  -webkit-text-fill-color: #f08528;
+  background-image: none;
+  font-weight: 700;
+}
+nav a.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Botão DOAR na nav */
+.nav-doar {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f08528, #ffbf00) !important;
+  color: #fff !important;
+  padding: 7px 18px !important;
+  border-radius: 25px !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(240,133,40,0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  -webkit-text-fill-color: #fff !important;
+  background-clip: unset !important;
+}
+.nav-doar:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 20px rgba(240,133,40,0.55) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+/* ── 4. SPACELINE GRADIENTE ANIMADO ──────────────────── */
+.spaceLine,
+.spaceLineNav {
+  background: linear-gradient(90deg, #ffd551, #f08528, #ffd551);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+  width: 90%;
+  height: 3px;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+.spaceLineNav {
+  width: 100%;
+  border-radius: 0;
+}
+
+/* ── 5. POPUP REDESENHADO ────────────────────────────── */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease both;
+}
+
+.popup-box-novo {
+  position: relative;
+  background: #fff;
+  border-radius: 24px;
+  max-width: 420px;
+  width: 90%;
+  padding: 48px 36px 36px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+  animation: scaleIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+  overflow: hidden;
+}
+.popup-box-novo::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #f08528, #ffbf00, #f08528);
+  background-size: 200%;
+  animation: shimmer 2s linear infinite;
+}
+
+.popup-close-novo {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #777;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.popup-close-novo:hover {
+  background: #ffe0c2;
+  color: #f08528;
+}
+
+.popup-heart-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #f08528, #ffbf00);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  font-size: 28px;
+  color: #fff;
+  animation: pulseHeart 1.6s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(240,133,40,0.4);
+}
+
+.popup-titulo {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.popup-desc {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.popup-button-novo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f08528, #ffbf00);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(240,133,40,0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+  margin-bottom: 12px;
+}
+.popup-button-novo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(240,133,40,0.55);
+}
+
+.popup-skip {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.popup-skip:hover { color: #666; }
+
+/* ── 6. SEÇÃO QUEM SOMOS (projeto-container) ANIMADO ─── */
+.projeto-container {
+  position: relative;
+  overflow: hidden;
+}
+.projeto-container::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: -60px;
+  width: 220px; height: 220px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.projeto-foto-container {
+  animation: fadeInUp 0.8s ease both;
+}
+.info-container {
+  animation: fadeInUp 0.8s 0.2s ease both;
+}
+
+/* Botão Saiba Mais melhorado */
+.saiba-mais-btn {
+  position: relative;
+  overflow: hidden;
+}
+.saiba-mais-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  border-radius: 25px;
+}
+.saiba-mais-btn:hover::after {
+  transform: translateX(0);
+}
+
+/* ── 7. SECTION TITLES ANIMADOS ──────────────────────── */
+.h1SectionTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+  color: #222;
+}
+.h1SectionTitle::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #f08528, #ffbf00);
+  border-radius: 4px;
+  margin: 10px auto 0;
+  transition: width 0.4s ease;
+}
+.h1SectionTitle:hover::after {
+  width: 100%;
+}
+
+/* ── 8. PARCEIROS SECTION MELHORADA ──────────────────── */
+.parceirosSection {
+  background: linear-gradient(160deg, #1a6e3c 0%, #00A859 60%, #00c46a 100%);
+  position: relative;
+  overflow: hidden;
+}
+.parceirosSection::before {
+  content: '';
+  position: absolute;
+  top: -80px; left: -80px;
+  width: 300px; height: 300px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.parceirosTituloLogo {
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.containerParceiros img {
+  filter: grayscale(30%);
+  transition: filter 0.3s ease, transform 0.3s ease !important;
+}
+.containerParceiros img:hover {
+  filter: grayscale(0%) !important;
+  transform: scale(1.3) !important;
+}
+
+/* ── 9. VISITA SECTION ───────────────────────────────── */
+.visita-section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fff9f0 0%, #fff3e0 100%);
+}
+
+.visita-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(240,133,40,0.15);
+  padding: 48px 40px;
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 0.7s ease both;
+  border: 1px solid rgba(240,133,40,0.15);
+  position: relative;
+  overflow: hidden;
+}
+.visita-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f08528, #ffbf00);
+}
+
+.visita-icon-circle {
+  width: 72px; height: 72px;
+  background: linear-gradient(135deg, #f08528, #ffbf00);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 28px;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(240,133,40,0.35);
+  animation: floatUp 3s ease-in-out infinite;
+}
+
+.visita-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 32px;
+}
+
+.visita-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.visita-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #fdf6ef;
+  border-radius: 14px;
+  border-left: 4px solid #f08528;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.visita-info-item:hover {
+  transform: translateX(6px);
+  box-shadow: 0 6px 20px rgba(240,133,40,0.12);
+}
+
+.visita-item-icon {
+  color: #f08528;
+  font-size: 1.4rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.visita-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #f08528;
+  margin-bottom: 4px;
+}
+
+.visita-info-item p {
+  margin: 0;
+  color: #444;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.visita-info-item a {
+  color: #f08528;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.visita-info-item a:hover { opacity: 0.75; }
+
+@media (max-width: 600px) {
+  .visita-card { padding: 32px 20px; }
+  .visita-title { font-size: 1.5rem; }
+}
+
+/* ── 10. FOOTER REDESENHADO ─────────────────────────── */
+footer.footer-redesign {
+  background: linear-gradient(160deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #ccc;
+  min-height: unset;
+  padding: 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px 40px;
+}
+
+.footer-col {
+  flex: 1 1 220px;
+}
+
+.footer-brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 14px;
+  background: linear-gradient(90deg, #f08528, #ffbf00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-brand-desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px; height: 42px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  color: #ddd;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+.footer-social-btn:hover {
+  background: linear-gradient(135deg, #f08528, #ffbf00);
+  color: #fff;
+  transform: translateY(-4px) scale(1.1);
+  border-color: transparent;
+}
+
+.footer-col-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f08528;
+  margin-bottom: 18px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  display: inline-block;
+}
+.footer-links a:hover {
+  color: #f08528;
+  padding-left: 6px;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #aaa;
+}
+
+.footer-contact-icon {
+  color: #f08528;
+  font-size: 1rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  padding: 20px 40px;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.footer-heart {
+  color: #f08528;
+  animation: pulseHeart 1.6s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    padding: 40px 24px 30px;
+    gap: 28px;
+  }
+  .footer-bottom { padding: 18px 24px; }
+}
+
+/* ── 11. BUTTON MAIN PAGE MELHORADO ─────────────────── */
+.buttonMainPage {
+  background: linear-gradient(135deg, #f08528, #ffbf00);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 12px 36px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(240,133,40,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin-top: 16px;
+}
+.buttonMainPage:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(240,133,40,0.5);
+  background: linear-gradient(135deg, #e07820, #f0b000);
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+}
+
+/* ── 12. NEWS HOME SECTION ───────────────────────────── */
+.divNoticiasHome {
+  margin: 40px auto;
+  max-width: 1400px;
+  padding: 0 20px;
+  text-align: center;
+}
+.divNoticiasHome .h1SectionTitle {
+  margin-bottom: 24px;
+}
+
+/* ── 13. HOVER CARDS ─────────────────────────────────── */
+.containerCardNoticiaHome {
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.containerCardNoticiaHome:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+}
+
+/* ── 14. VALOR-ITEM CARDS (missão/visão) ─────────────── */
+/* ── 15. NAV MOBILE AJUSTE ───────────────────────────── */
+@media (max-width: 1024px) {
+  header nav {
+    background-color: rgba(255,255,255,0.98) !important;
+    backdrop-filter: blur(20px);
+  }
+
+  header nav a.nav-link {
+    font-size: 1.5rem;
+    color: #222 !important;
+    -webkit-text-fill-color: #222 !important;
+  }
+
+  header nav a.nav-link:hover {
+    color: #f08528 !important;
+    -webkit-text-fill-color: #f08528 !important;
+  }
+
+  /* Botão doar no mobile */
+  .nav-doar {
+    font-size: 1.1rem !important;
+    padding: 10px 28px !important;
+  }
+
+  header {
+    height: 72px;
+  }
+}
+
+/* ── 16. OVERRIDE: nav a genérico do style.css ───────── */
+/* Para links com a classe .nav-link, desativa o degradê do style.css */
+nav a.nav-link {
+  background-image: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+}
+nav a.nav-link:hover {
+  background-image: none !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #f08528 !important;
+  color: #f08528 !important;
+}
+
+/* ── 17. PROJETOS SECTION CARD HOVER APRIMORADO ──────── */
+.card-projeto {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+.card-projeto:not(.expandido):hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+/* ── 18. MISSAO VISAO SECTION ────────────────────────── */
+.missao-visao-valores-section {
+  position: relative;
+  overflow: hidden;
+}
+.missao-visao-valores-section::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ── 19. VIDEO CARROSSEL SECTION TÍTULO ──────────────── */
+.divNoticiasHome h1,
+.divNoticiasHome .h1SectionTitle {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #222;
+  padding-bottom: 12px;
+}
+.divNoticiasHome h1::after,
+.divNoticiasHome .h1SectionTitle::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #f08528, #ffbf00);
+  border-radius: 4px;
+  margin: 8px auto 0;
+  transition: width 0.4s ease;
+}
+.divNoticiasHome:hover h1::after,
+.divNoticiasHome:hover .h1SectionTitle::after {
+  width: 100%;
+}
+
