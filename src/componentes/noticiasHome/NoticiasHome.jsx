@@ -8,10 +8,8 @@ import Axios from 'axios';
 
 import { API_BASE_URL_NOTICIAS } from '../../infra/apiConfig';
 import CardNoticiaOld from '../CardNoticiaOld/CardNoticiaOld';
-import CardNoticiaHome from '../CardNoticiaHome/CardNoticiaHome';
-
-
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
@@ -19,13 +17,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import { useNavigate } from 'react-router-dom';
 
-
 const NoticiasHome = () => {
   
   const [noticias, setNoticias] = useState([]);
   
   const [loading, setLoading] = useState(false);
-
   const [numeroSlide, alterarNumeroSlide] = useState(3);
 
   const navigate = useNavigate();
@@ -33,27 +29,25 @@ const NoticiasHome = () => {
   const handleClickTodasNoticias = () => {
     navigate('/noticias');
     window.scrollTo(0, 0);
-    
   };
   
-  
-    useEffect(() => {
-      const handleResize = () => {
-          if (window.innerWidth <= 768) {
-              alterarNumeroSlide(1); // imagem mobile
-          } else {
+  useEffect(() => {
+    const handleResize = () => {
+        if (window.innerWidth <= 768) {
+            alterarNumeroSlide(1); // imagem mobile
+        } else if (window.innerWidth <= 1024) {
+            alterarNumeroSlide(2); // tablet
+        } else {
             alterarNumeroSlide(3); // imagem desktop
-          }
-      };
-  
-      // Adiciona o event listener e executa a verificação inicial
-      window.addEventListener('resize', handleResize);
-      handleResize();
-  
-      // Limpa o event listener ao desmontar o componente
-      return () => window.removeEventListener('resize', handleResize);
+        }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
-  
+
   useEffect(() => {
     const carregarNoticias = async () => {
       setLoading(true);
@@ -86,28 +80,28 @@ const NoticiasHome = () => {
               noticias.length === 0 ? <p></p> :
 
                   <Swiper
-                      slidesPerView={numeroSlide} // Ajuste este valor para o número desejado de vídeos por vez
-                      spaceBetween={5} // Espaçamento entre os slides (em pixels)
+                      modules={[Navigation, Pagination, Autoplay]}
+                      slidesPerView={numeroSlide}
+                      spaceBetween={20}
                       style={{
                           "--swiper-pagination-color": "#f08528",
                           "--swiper-navigation-color": "#f08528",
+                          "width": "100%",
+                          "padding": "10px 0"
                       }}
                       grabCursor={true}
-                      loop={true}
-                      autoplay={true}
-
-                      navigation
-                      
+                      loop={false}
+                      autoplay={{ delay: 3000, disableOnInteraction: false }}
+                      navigation={noticias.length > numeroSlide}
                   >
                       {noticias.map((noticia) => (
-                          <SwiperSlide key={noticia.id_noticia}>
-                              <CardNoticiaHome
+                          <SwiperSlide key={noticia.id_noticia} style={{ display: 'flex', justifyContent: 'center' }}>
+                              <CardNoticiaOld
                                   key={noticia.id_noticia}
                                   foto_capa={noticia.foto_capa}
                                   titulo={noticia.titulo}
                                   slug={noticia.slug}
                               />
-
                           </SwiperSlide>
                       ))}
                   </Swiper>
