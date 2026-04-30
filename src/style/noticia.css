@@ -56,30 +56,33 @@
 /* ── HERO ─────────────────────────────────────────────────── */
 .noticia-hero {
   width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
   overflow: hidden;
-  background: #111;
+  background: #eee;
+  border-radius: 0 0 16px 16px;
   line-height: 0;
 }
 
 .noticia-hero-img {
   width: 100%;
-  height: 520px;
+  height: 420px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   display: block;
   opacity: 1;
   transition: transform 0.5s ease;
 }
 
 .noticia-hero:hover .noticia-hero-img {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 /* ── CABEÇALHO DA NOTÍCIA (abaixo da foto) ────────────────── */
 .noticia-header-info {
-  max-width: 860px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 36px 32px 8px;
+  padding: 28px 32px 8px;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -348,7 +351,7 @@
 
 @media (max-width: 768px) {
   .noticia-hero-img {
-    height: 260px;
+    height: 220px;
   }
   .noticia-header-info {
     padding: 24px 16px 4px;

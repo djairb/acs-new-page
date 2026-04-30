@@ -16,7 +16,22 @@ function Transparencia() {
                 <div id="transparencia" class="transparencia">
                     <h2>Transparência e Publicações</h2>
 
+                    <h2>2026</h2>
+
+                    <a href="https://drive.google.com/file/d/1QFeoNcoWV3_nogtutHGikqGtvFVDoGZx/view?usp=sharing">
+
+                        <h3>TERMO DE FOMENTO 66/2026 - SECRETARIA DA MULHER - ESTADO DE PERNAMBUCO</h3>
+
+                    </a>
+                    
+
                     <h2>2025</h2>
+
+                    <a href="https://drive.google.com/file/d/1EtkTN0D9CUyWLXoVkukoEW0PU5KSXFwn/view?usp=sharing">
+
+                        <h3>1° TA - TERMO DE FOMENTO 006/2024</h3>
+
+                    </a>
 
                     <a href="https://drive.google.com/file/d/1_6BZcxUtsoEytlWb-JXH0iV5TRAZT7Et/view?usp=sharing">
 
