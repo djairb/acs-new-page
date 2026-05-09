@@ -40,9 +40,9 @@ function Footer() {
                 {/* Coluna 3 - Contato */}
                 <div className="footer-col footer-contact">
                     <h4 className="footer-col-title">Contato</h4>
-                    <p><FaMapMarkerAlt className="footer-contact-icon" /> R. Rosa Cândido, 35 — Lagoa do Itaenga, PE</p>
+                    <p><FaMapMarkerAlt className="footer-contact-icon" /> Logradouro: Rua Projetada, SN, Complemento: Setor Tvs R Antonio Neves - Bairro: Salinas, CEP: 55840-000 — Lagoa do Itaenga, PE</p>
                     <p><FaWhatsapp className="footer-contact-icon" /> (81) 97343-2301</p>
-                    <p><FaEnvelope className="footer-contact-icon" /> administrativo@somosconexaosocial.org</p>
+                    <p><FaEnvelope className="footer-contact-icon" /> atendimento@ctacs.org.br</p>
                 </div>
 
             </div>

@@ -13,7 +13,7 @@ function MensagemVisita() {
                         <FaMapMarkerAlt className="visita-item-icon" />
                         <div>
                             <span className="visita-label">Endereço</span>
-                            <p>R. Rosa Cândido, 35 — Lagoa do Itaenga, PE, 55840-000<br/>Centro Tecnológico de Inclusão Digital e Social</p>
+                            <p>Logradouro: Rua Projetada, SN, Complemento: Setor Tvs R Antonio Neves - Bairro: Salinas, CEP: 55840-000 — Lagoa do Itaenga, PE<br/>Centro Tecnológico de Inclusão Digital e Social</p>
                         </div>
                     </div>
                     <div className="visita-info-item">
@@ -28,8 +28,8 @@ function MensagemVisita() {
                         <div>
                             <span className="visita-label">E-mail</span>
                             <p>
-                                <a href="mailto:administrativo@somosconexaosocial.org">
-                                    administrativo@somosconexaosocial.org
+                                <a href="mailto:atendimento@ctacs.org.br">
+                                    atendimento@ctacs.org.br
                                 </a>
                             </p>
                         </div>

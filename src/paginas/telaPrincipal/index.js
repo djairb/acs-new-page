@@ -86,9 +86,9 @@ function TelaPrincipal() {
       <main>               
 
         {/* <CardTechfest/> */}
-        <div data-aos="fade-down" data-aos-duration="1200">
+        {/* <div data-aos="fade-down" data-aos-duration="1200">
           <CardContratacaoSlide/>
-        </div>
+        </div> */}
 
         {/* <CardContratacao/> */}
 
