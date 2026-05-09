@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import Parceiros from "../../componentes/parceiros";
 import Footer from "../../componentes/folter";
 
-import MensagemVisita from "../../componentes/mensagemVisita";
+// MensagemVisita agora está integrada dentro do componente Location
 import ProjetosSelecionar from '../../componentes/projetosSelecionar';
 import VideoCarrossel from '../../componentes/videoCarrossel';
 
@@ -92,7 +92,7 @@ function TelaPrincipal() {
 
         {/* <CardContratacao/> */}
 
-        <div data-aos="fade-right" data-aos-duration="1000">
+        <div id="quem-somos" data-aos="fade-right" data-aos-duration="1000">
           <ProjetoComponent />
         </div>
 
@@ -104,7 +104,7 @@ function TelaPrincipal() {
           <NoticiasHome/>
         </div>
 
-        <div data-aos="fade-left" data-aos-duration="1000">
+        <div id="nossos-projetos" data-aos="fade-left" data-aos-duration="1000">
           <ProjetosSection />
         </div>
 
@@ -151,19 +151,13 @@ function TelaPrincipal() {
 
         {/* <ColaboradorCarrossel/>      */}
         
-        <div data-aos="zoom-in" data-aos-duration="1000">
+        <div id="parceiros" data-aos="zoom-in" data-aos-duration="1000">
           <Parceiros/>
         </div>
 
-        <div data-aos="flip-down" data-aos-duration="1000">
-          <MensagemVisita/>
-        </div>
 
-        <div data-aos="zoom-in" data-aos-duration="800">
-          <div className='spaceLine'></div>
-        </div>
 
-        <div data-aos="fade-right" data-aos-duration="1000">
+        <div id="contato" data-aos="fade-right" data-aos-duration="1000">
           <Location/>
         </div>
 

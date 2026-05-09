@@ -748,40 +748,12 @@ header .dropdown-menu a:hover {
 /* problemas */
 
 
-.sectionLocation {
-  display: flex; /* Alinha os elementos lado a lado */
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  
-}
-
-.iframeLocalizacao, .locationImgDiv {
-  flex: 1; /* Faz com que cada elemento ocupe o mesmo espaço */
-  height: 100%; /* Define a altura para 100% */
-  width: 100%; /* Define a largura para 100% */
-}
-
-.locationImgDiv img {
-  width: 100%; /* Faz a imagem preencher completamente a largura da div */
-  height: 100%; /* Faz a imagem preencher completamente a altura da div */
-  object-fit: cover; /* Faz a imagem cobrir toda a div, cortando o excesso se necessário */
-  object-position: top left;
-}
-
-.slideOxe{
-  height: 100%;
-  background-color: brown;
-}
-
-
-.locationImgDiv{
-  background-color: aquamarine;
-}
-
-.locationImgDiv div{
-  height: 100%;
-}
+/* Estilos antigos de location movidos para animations.css */
+/* .sectionLocation { ... } */
+/* .iframeLocalizacao, .locationImgDiv { ... } */
+/* .locationImgDiv img { ... } */
+/* .locationImgDiv { background-color: aquamarine; } */
+/* .locationImgDiv div { height: 100%; } */
 
 
 .fade-text {

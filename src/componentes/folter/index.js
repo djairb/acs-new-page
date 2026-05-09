@@ -1,7 +1,32 @@
-import { FaFacebookF, FaInstagram, FaYoutube, FaHeart, FaMapMarkerAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaFacebookF, FaInstagram, FaYoutube, FaMapMarkerAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function Footer() {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const isHome = location.pathname === "/";
+
+    const scrollToSection = (id) => {
+        if (isHome) {
+            const el = document.getElementById(id);
+            if (el) {
+                const headerH = document.querySelector("header")?.offsetHeight ?? 80;
+                const top = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
+                window.scrollTo({ top, behavior: "smooth" });
+            }
+        } else {
+            navigate(`/#${id}`);
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                if (el) {
+                    const headerH = document.querySelector("header")?.offsetHeight ?? 80;
+                    const top = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
+                    window.scrollTo({ top, behavior: "smooth" });
+                }
+            }, 300);
+        }
+    };
+
     return (
         <footer className="footer-redesign">
             <div className="footer-inner">
@@ -29,11 +54,31 @@ function Footer() {
                 <div className="footer-col footer-links">
                     <h4 className="footer-col-title">Acesso Rápido</h4>
                     <ul>
-                        <li><Link to="/noticias">Blog</Link></li>
+                        <li>
+                            <button className="footer-anchor-btn" onClick={() => scrollToSection("quem-somos")}>
+                                Quem Somos
+                            </button>
+                        </li>
+                        <li>
+                            <button className="footer-anchor-btn" onClick={() => scrollToSection("nossos-projetos")}>
+                                Nossos Projetos
+                            </button>
+                        </li>
+                        <li>
+                            <button className="footer-anchor-btn" onClick={() => scrollToSection("parceiros")}>
+                                Parceiros
+                            </button>
+                        </li>
+                        <li><Link to="/noticias">Notícias</Link></li>
                         <li><Link to="/boletins-informativos">Boletins</Link></li>
                         <li><Link to="/transparencia">Transparência</Link></li>
                         <li><Link to="/diretoria">Diretoria</Link></li>
-                        <li><Link to="/doacoes">Fazer uma Doação</Link></li>
+                        <li>
+                            <button className="footer-anchor-btn" onClick={() => scrollToSection("contato")}>
+                                Contato
+                            </button>
+                        </li>
+                        <li><Link to="/doacoes">Apoie</Link></li>
                     </ul>
                 </div>
 

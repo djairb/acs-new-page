@@ -83,8 +83,9 @@ header.header-scrolled {
   box-shadow: 0 4px 14px rgba(240,133,40,0.4);
 }
 
-/* Nav links com underline animado */
-nav a.nav-link {
+/* Nav links com underline animado — inclui botões âncora (.nav-anchor-btn) */
+nav a.nav-link,
+nav button.nav-link {
   position: relative;
   padding-bottom: 4px;
   color: #222;
@@ -95,8 +96,19 @@ nav a.nav-link {
   -webkit-text-fill-color: unset;
   background-image: none;
   background-clip: unset;
+  /* reset de estilos de botão */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  /* igual ao margin dos <a> do nav definido no style.css */
+  margin: 0 2rem;
 }
-nav a.nav-link::after {
+nav a.nav-link::after,
+nav button.nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -107,13 +119,15 @@ nav a.nav-link::after {
   border-radius: 2px;
   transition: width 0.3s ease, left 0.3s ease;
 }
-nav a.nav-link:hover {
+nav a.nav-link:hover,
+nav button.nav-link:hover {
   color: #f08528;
   -webkit-text-fill-color: #f08528;
   background-image: none;
   font-weight: 700;
 }
-nav a.nav-link:hover::after {
+nav a.nav-link:hover::after,
+nav button.nav-link:hover::after {
   width: 100%;
   left: 0;
 }
@@ -480,6 +494,148 @@ nav a.nav-link:hover::after {
   .visita-title { font-size: 1.5rem; }
 }
 
+/* ── 9b. VISITA SECTION dentro do Location (layout em coluna) ── */
+.sectionLocation {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ── Painel superior: card "Vem visitar a gente" ── */
+.visita-section-location {
+  width: 100%;
+  padding: 56px 24px;
+  background: linear-gradient(135deg, #fff9f0 0%, #fff3e0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visita-card-wide {
+  max-width: 1100px !important;
+  width: 100% !important;
+}
+
+/* Header do card (ícone + título) centralizados */
+.visita-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+/* Grid 2 colunas para os itens de info */
+.visita-grid-2col {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* O item de endereço pode ficar mais alto quando o mapa abre */
+.visita-item-endereco {
+  align-items: flex-start !important;
+}
+
+/* ── Foto da unidade (abaixo do card) ── */
+.locationImgDiv {
+  width: 100%;
+  height: 560px;
+  overflow: hidden;
+  position: relative;
+  background-color: #111;
+}
+
+.locationLightboxWrapper {
+  width: 100%;
+  height: 100%;
+  display: block !important;
+}
+
+.locationImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transition: transform 0.6s ease;
+  cursor: zoom-in;
+}
+
+.locationImgDiv:hover .locationImg {
+  transform: scale(1.04);
+}
+
+/* ── Botão "Ver rota" ── */
+.visita-btn-rota {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 7px 16px;
+  background: linear-gradient(135deg, #f08528, #ffbf00);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(240,133,40,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.visita-btn-rota:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(240,133,40,0.5);
+}
+
+/* ── Mapa expandível ── */
+.visita-mapa-expandido {
+  margin-top: 14px;
+  border-radius: 12px;
+  overflow: hidden;
+  animation: fadeInUp 0.35s ease both;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* ── Item de Agendamento ── */
+.visita-info-agendamento {
+  border-left-color: #00A859 !important;
+  background: #f0faf5 !important;
+}
+
+.visita-btn-agendamento {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #00A859, #00c46a);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 20px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0,168,89,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.visita-btn-agendamento:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,168,89,0.5);
+  color: #fff;
+  opacity: 1;
+}
+
+/* ── Responsivo mobile ── */
+@media (max-width: 768px) {
+  .visita-grid-2col {
+    grid-template-columns: 1fr !important;
+  }
+  .visita-section-location {
+    padding: 36px 16px;
+  }
+  .locationImgDiv {
+    height: 260px;
+  }
+}
+
 /* ── 10. FOOTER REDESENHADO ─────────────────────────── */
 footer.footer-redesign {
   background: linear-gradient(160deg, #1a1a1a 0%, #2d2d2d 100%);
@@ -563,16 +719,28 @@ footer.footer-redesign {
   gap: 10px;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-links .footer-anchor-btn {
   color: #aaa;
   text-decoration: none;
   font-size: 0.92rem;
   transition: color 0.2s ease, padding-left 0.2s ease;
   display: inline-block;
 }
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links .footer-anchor-btn:hover {
   color: #f08528;
   padding-left: 6px;
+}
+
+/* Reset de botão para .footer-anchor-btn */
+.footer-anchor-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+  text-align: left;
 }
 
 .footer-contact p {
@@ -677,13 +845,15 @@ footer.footer-redesign {
     backdrop-filter: blur(20px);
   }
 
-  header nav a.nav-link {
+  header nav a.nav-link,
+  header nav button.nav-link {
     font-size: 1.5rem;
     color: #222 !important;
     -webkit-text-fill-color: #222 !important;
   }
 
-  header nav a.nav-link:hover {
+  header nav a.nav-link:hover,
+  header nav button.nav-link:hover {
     color: #f08528 !important;
     -webkit-text-fill-color: #f08528 !important;
   }
@@ -700,13 +870,15 @@ footer.footer-redesign {
 }
 
 /* ── 16. OVERRIDE: nav a genérico do style.css ───────── */
-/* Para links com a classe .nav-link, desativa o degradê do style.css */
-nav a.nav-link {
+/* Para links e botões com a classe .nav-link, desativa o degradê do style.css */
+nav a.nav-link,
+nav button.nav-link {
   background-image: none !important;
   background-clip: unset !important;
   -webkit-background-clip: unset !important;
 }
-nav a.nav-link:hover {
+nav a.nav-link:hover,
+nav button.nav-link:hover {
   background-image: none !important;
   background-clip: unset !important;
   -webkit-text-fill-color: #f08528 !important;
