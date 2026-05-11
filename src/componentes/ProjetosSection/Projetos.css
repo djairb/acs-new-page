@@ -1,87 +1,122 @@
 /* =========================================
-   ARQUIVO: Projetos.css (COMPLETO E DEFINITIVO)
+   NOSSOS PROJETOS — LIGHT PREMIUM
    ========================================= */
 
-/* VARIÁVEIS GERAIS */
-:root {
-  --verde: #00A859;
-  --vermelho: #EF3E36;
-  --amarelo: #FFF275;
-  --azul: #3C91E6;
-}
-
-/* === SEÇÃO PAI (Fundo Amarelo) === */
+/* === SEÇÃO PAI === */
 .projetos-section {
   width: 100%;
-  padding: 20px 20px;
+  padding: 80px 24px;
   box-sizing: border-box;
-  background-color: var(--verde); 
+  background: linear-gradient(135deg, #fff9f0 0%, #fff3e0 50%, #fff9f0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Orbs decorativos */
+.projetos-section::before {
+  content: '';
+  position: absolute;
+  top: -80px; left: -80px;
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(240,133,40,0.08), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatUp 10s ease-in-out infinite;
+}
+
+.projetos-section::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: -60px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(255,191,0,0.07), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatUp 8s ease-in-out infinite reverse;
+}
+
+.projetos-header {
+  position: relative;
+  z-index: 1;
 }
 
 .projetos-header h2 {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-  color: var(--amarelo);
+  margin-bottom: 48px;
+  font-size: 2.4rem;
+  color: #222;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 1px;
-  
+  position: relative;
+  display: inline-block;
+}
+
+.projetos-header h2::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #f08528, #ffbf00);
+  border-radius: 4px;
+  margin: 12px auto 0;
+  transition: width 0.4s ease;
+}
+
+.projetos-section:hover .projetos-header h2::after {
+  width: 180px;
 }
 
 /* === GRID (Container dos Cards) === */
 .projetos-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; 
-  justify-content: center; 
+  gap: 32px;
+  justify-content: center;
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* =========================================
-   ESTILO DO CARD (PADRÃO / VERTICAL)
+   ESTILO DO CARD (DARK GLASSMORPHISM)
    ========================================= */
 .card-projeto {
-  /* CONFIGURAÇÃO DE LARGURA: */
-  /* Tenta ter 650px. Não cresce além disso (flex-grow: 0) */
   flex: 0 1 650px;
-  
-  /* Trava dura para manter ele "comportado" quando sozinho na linha */
   width: 100%;
-  max-width: 650px; 
-  
-  /* Estética */
+  max-width: 650px;
+
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: 1px solid rgba(240,133,40,0.12);
+  box-shadow: 0 8px 28px rgba(240,133,40,0.1);
   overflow: hidden;
-  
-  /* Layout Vertical */
+
   display: flex;
   flex-direction: column;
-  
-  /* Animação suave */
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-  
-  /* Centraliza na linha */
+
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Efeito Hover no card fechado */
 .card-projeto:not(.expandido):hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  transform: translateY(-8px) !important;
+  box-shadow: 0 24px 50px rgba(240,133,40,0.2) !important;
+  border-color: rgba(240,133,40,0.35) !important;
 }
 
 /* === IMAGEM (MODO NORMAL) === */
 .card-carousel-container {
   width: 100%;
-  height: 320px; /* Altura fixa quando fechado */
-  background-color: #eee;
+  height: 320px;
+  background-color: #f0f0f0;
   position: relative;
   transition: all 0.5s ease;
+  overflow: hidden;
 }
 
 /* Swiper Configs */
@@ -93,8 +128,8 @@
 .mySwiper img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Preenche tudo */
-  object-position: top center; /* Foca no topo (rostos) */
+  object-fit: cover;
+  object-position: top center;
 }
 
 /* === CORPO DE TEXTO === */
@@ -102,8 +137,8 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  background-color: #fff;
+  gap: 14px;
+  background: transparent;
   transition: all 0.5s ease;
 }
 
@@ -112,139 +147,131 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .card-header-content h3 {
   margin: 0;
-  font-size: 1.6rem;
-  color: #333;
+  font-size: 1.5rem;
+  color: #222;
   font-weight: 800;
 }
 
 /* Logo */
 .project-logo {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
-  object-position: center; /* Centraliza na bolinha */
+  object-position: center;
   border-radius: 50%;
-  border: 3px solid var(--azul);
+  border: 3px solid rgba(240,133,40,0.5);
   padding: 4px;
-  background: white;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 4px 16px rgba(240,133,40,0.25);
+  flex-shrink: 0;
+  margin-left: 12px;
 }
 
 /* Resumo e Botão */
 .resumo-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
 }
 
 .texto-curto {
   margin: 0;
   color: #555;
-  font-size: 1.05rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .btn-leia-mais {
   align-self: flex-start;
-  background-color: transparent;
-  border: 2px solid var(--verde);
-  color: var(--verde);
+  background: transparent;
+  border: 2px solid rgba(240,133,40,0.6);
+  color: #f08528;
   padding: 10px 28px;
   border-radius: 30px;
   cursor: pointer;
   font-weight: 800;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   transition: all 0.3s ease;
+  font-family: inherit;
 }
 
 .btn-leia-mais:hover {
-  background-color: var(--verde);
-  color: white;
+  background: linear-gradient(135deg, #f08528, #ffbf00);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(240,133,40,0.4);
+  transform: translateY(-2px);
 }
 
 /* =========================================
-   ESTADO EXPANDIDO (HORIZONTAL & QUADRADO 1:1)
+   ESTADO EXPANDIDO (HORIZONTAL)
    ========================================= */
 .card-projeto.expandido {
-  /* Ocupa 100% da linha */
   flex: 1 1 100%;
-  /* Remove o limite de 650px para poder crescer */
-  max-width: 100%; 
-  
-  /* Vira Horizontal */
+  max-width: 100%;
   flex-direction: row;
   align-items: stretch;
-  
-  /* Fundo Azul */
-  background-color: var(--azul);
-  box-shadow: 0 20px 50px rgba(60, 145, 230, 0.4);
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(240,133,40,0.18);
+  border-color: rgba(240,133,40,0.3);
 }
 
-/* IMAGEM NO MODO EXPANDIDO (A MÁGICA DO 1080x1080) */
 .card-projeto.expandido .card-carousel-container {
-  width: 50%; /* Metade da largura do card */
-  
-  /* ISSO GARANTE O FORMATO QUADRADO PERFEITO */
-  aspect-ratio: 1/1; 
-  height: auto; /* Altura se ajusta para manter o quadrado */
-  
-  min-width: 400px; /* Garante visibilidade mínima */
+  width: 50%;
+  aspect-ratio: 1/1;
+  height: auto;
+  min-width: 400px;
 }
 
-/* TEXTO NO MODO EXPANDIDO */
 .card-projeto.expandido .card-body {
   width: 50%;
-  background-color: var(--azul);
-  
-  /* Centraliza verticalmente o conteúdo ao lado da imagem gigante */
+  background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
   padding: 40px;
 }
 
-/* Ajustes de Cores (Fundo Azul) */
 .card-projeto.expandido .card-header-content h3 {
-  color: #fff;
+  color: #222;
   font-size: 2rem;
 }
 
 .card-projeto.expandido .texto-curto {
-  color: #e0e0e0;
+  color: #555;
 }
 
-/* Botão (Branco no Azul) */
 .card-projeto.expandido .btn-leia-mais {
-  border-color: #fff;
-  color: #fff;
+  border-color: rgba(240,133,40,0.5);
+  color: #f08528;
 }
 .card-projeto.expandido .btn-leia-mais:hover {
-  background-color: #fff;
-  color: var(--azul);
+  background: linear-gradient(135deg, #f08528, #ffbf00);
+  border-color: transparent;
+  color: #fff;
 }
 
 /* Caixa de Texto Longo */
 .texto-completo {
-  margin-top: 25px;
-  padding: 25px;
-  background-color: #fff; /* Caixa branca */
-  border-left: 6px solid var(--vermelho);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin-top: 24px;
+  padding: 24px;
+  background: #fdf6ef;
+  border-left: 4px solid #f08528;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 8px 24px rgba(240,133,40,0.08);
   animation: slideInRight 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .texto-completo p {
   margin: 0;
-  color: #333;
-  font-size: 1.1rem;
+  color: #444;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
@@ -254,24 +281,24 @@
 }
 
 /* =========================================
-   RESPONSIVIDADE (MOBILE)
+   RESPONSIVIDADE
    ========================================= */
 @media (max-width: 900px) {
-  /* Volta para coluna única */
+  .projetos-section {
+    padding: 56px 16px;
+  }
+  .projetos-header h2 {
+    font-size: 1.9rem;
+  }
   .card-projeto.expandido {
     flex-direction: column;
   }
-
   .card-projeto.expandido .card-carousel-container {
     width: 100%;
     min-width: 0;
-    
-    /* No celular, mantém quadrado 1:1 (vai ficar alto e bonito) */
-    /* Se achar muito grande, troque por: aspect-ratio: 16 / 9; */
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 1;
     height: auto;
   }
-
   .card-projeto.expandido .card-body {
     width: 100%;
     padding: 20px;

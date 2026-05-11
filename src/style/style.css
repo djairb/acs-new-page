@@ -830,6 +830,13 @@ header .dropdown-menu a:hover {
   align-items: center;
   gap: 30px;
 
+  /* O estilo final é definido em animations.css */
+}
+
+/* Override: o tema dark do animations.css prevalece */
+.parceirosSection {
+  background-color: unset;
+  min-height: unset;
 }
 
 
@@ -856,6 +863,9 @@ header .dropdown-menu a:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  
   
 
 }
@@ -919,10 +929,11 @@ header .dropdown-menu a:hover {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background-color: white;
-  width: 85%;
+  /* Removido fundo branco fixo — animations.css usa glassmorphism */
+  background-color: transparent;
+  width: 90%;
   border-radius: 30px;
-  padding: 20px 05px;
+  padding: 28px 20px;
   margin: 10px 0;
 
 }

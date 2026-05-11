@@ -1,41 +1,80 @@
-/* ================================
-   VARIÁVEIS
-   ================================ */
-:root {
-  --verde: #00A859;
-  --vermelho: #EF3E36;
-  --amarelo: #FFF275;
-  --azul: #3C91E6;
-}
+/* =========================================
+   ATIVIDADES ENCERRADAS — LIGHT PREMIUM
+   ========================================= */
 
-/* ================================
-   SECTION PRINCIPAL
-   ================================ */
+/* === SECTION PRINCIPAL === */
 .projetos-section2 {
   width: 100%;
-  padding: 20px 20px;
+  padding: 80px 24px;
   box-sizing: border-box;
-  background-color: var(--amarelo);
+  background: linear-gradient(135deg, #f0faf5 0%, #e8f7f0 50%, #f0faf5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Orb decorativo */
+.projetos-section2::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(0,168,89,0.08), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatUp 9s ease-in-out infinite;
+}
+
+.projetos-section2::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(0,196,106,0.06), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatUp 11s ease-in-out infinite reverse;
+}
+
+.projetos-header2 {
+  position: relative;
+  z-index: 1;
 }
 
 .projetos-header2 h2 {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-  color: var(--azul);
+  margin-bottom: 48px;
+  font-size: 2.4rem;
+  color: #222;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
 }
 
-/* ================================
-   GRID QUE CONTÉM OS CARDS
-   ================================ */
+.projetos-header2 h2::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #f08528, #ffbf00);
+  border-radius: 4px;
+  margin: 12px auto 0;
+  transition: width 0.4s ease;
+}
+
+.projetos-section2:hover .projetos-header2 h2::after {
+  width: 200px;
+}
+
+/* === GRID QUE CONTÉM OS CARDS === */
 .projetos-grid2 {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 32px;
   justify-content: center;
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
