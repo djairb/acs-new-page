@@ -7,9 +7,9 @@ import './QuemSomos.css';
 /* ─── Estatísticas animadas ─────────────────────────────── */
 const STATS = [
   { value: 2005, label: "Fundada em", suffix: "", prefix: "", raw: true, icon: true },
-  { value: 20,   label: "Anos de impacto", suffix: "+", prefix: "" },
+  { value: 21,   label: "Anos mudando vidas", suffix: "", prefix: "" },
   { value: 8,    label: "Projetos ativos", suffix: "", prefix: "" },
-  { value: 1000, label: "Vidas transformadas", suffix: "+", prefix: "" },
+  { value: 1000, label: "Pessoas transformadas", suffix: "+", prefix: "" },
 ];
 
 function useCountUp(target, duration = 1800, start = false) {
