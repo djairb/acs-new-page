@@ -1,0 +1,340 @@
+/* ===== PÁGINA TRANSPARÊNCIA ===== */
+
+.tp-page {
+    flex: 1;
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+/* Sections */
+.tp-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 0 40px;
+}
+
+.tp-section-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.tp-titulo-secao {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    position: relative;
+    display: inline-block;
+}
+
+.tp-titulo-secao::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #f08528, #ff9c00);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.tp-subtitulo-secao {
+    color: #777;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+/* Grupo label */
+.tp-grupo-label {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #f08528;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.tp-grupo-label::before,
+.tp-grupo-label::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background: #f08528;
+    vertical-align: middle;
+    opacity: 0.5;
+}
+
+.tp-grupo-label::before { margin-right: 12px; }
+.tp-grupo-label::after  { margin-left: 12px; }
+
+/* Members grid */
+.tp-membros-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Member card */
+.tp-membro-card {
+    background: white;
+    border-radius: 16px;
+    padding: 22px 16px 18px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 170px;
+    border-top: 4px solid #f08528;
+}
+
+.tp-membros-grid--conselho .tp-membro-card {
+    border-top-color: #00A859;
+    width: 155px;
+}
+
+.tp-membro-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Photo */
+.tp-membro-foto {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    margin: 0 auto 14px;
+    border: 3px solid #f08528;
+    box-shadow: 0 3px 10px rgba(240, 133, 40, 0.22);
+}
+
+/* Placeholder (no photo) */
+.tp-membro-placeholder {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f08528, #ff9c00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+    box-shadow: 0 3px 10px rgba(240, 133, 40, 0.22);
+}
+
+.tp-membros-grid--conselho .tp-membro-foto {
+    border-color: #00A859;
+    box-shadow: 0 3px 10px rgba(0, 168, 89, 0.22);
+    width: 96px;
+    height: 96px;
+}
+
+.tp-membros-grid--conselho .tp-membro-placeholder {
+    width: 96px;
+    height: 96px;
+    background: linear-gradient(135deg, #00A859, #00c96e);
+    box-shadow: 0 3px 10px rgba(0, 168, 89, 0.22);
+}
+
+.tp-membro-iniciais {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+/* Member info */
+.tp-membro-info h3 {
+    font-size: 0.87rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    line-height: 1.35;
+}
+
+.tp-membro-info p {
+    font-size: 0.76rem;
+    color: #f08528;
+    font-weight: 600;
+}
+
+/* Divisor */
+.tp-divisor {
+    width: 80%;
+    max-width: 900px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #f08528, transparent);
+    margin: 0 auto;
+    opacity: 0.3;
+}
+
+/* ===== DOCUMENTS SECTION ===== */
+
+.tp-anos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.tp-ano-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 22px;
+    border-radius: 50px;
+    border: 2px solid #f08528;
+    background: white;
+    color: #f08528;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tp-ano-card:hover,
+.tp-ano-card--ativo {
+    background: linear-gradient(135deg, #f08528, #ff9c00);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 14px rgba(240, 133, 40, 0.4);
+    transform: translateY(-2px);
+}
+
+.tp-ano-numero {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.tp-ano-icone {
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Dropdown */
+.tp-dropdown {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.09);
+    border: 1px solid #f5e8d8;
+    padding: 28px 32px;
+    animation: tpFadeIn 0.28s ease;
+    margin-top: 4px;
+}
+
+@keyframes tpFadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.tp-dropdown-titulo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #f08528;
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ffe5c0;
+}
+
+/* Category grid inside dropdown */
+.tp-categoria-bloco {
+    margin-bottom: 22px;
+}
+
+.tp-categoria-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #2c3e50;
+    background: #f8f8f8;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border-left: 3px solid #f08528;
+}
+
+.tp-docs-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 4px;
+}
+
+.tp-doc-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #444;
+    font-size: 0.83rem;
+    font-weight: 500;
+    line-height: 1.4;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tp-doc-link:hover {
+    background: #fff5e8;
+    color: #f08528;
+}
+
+.tp-doc-icone {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: #f08528;
+    font-size: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tp-titulo-secao {
+        font-size: 1.6rem;
+    }
+
+    .tp-membro-card {
+        width: 140px;
+        padding: 18px 12px 14px;
+    }
+
+    .tp-membros-grid--conselho .tp-membro-card {
+        width: 130px;
+    }
+
+    .tp-membro-foto,
+    .tp-membro-placeholder {
+        width: 88px;
+        height: 88px;
+    }
+
+    .tp-membros-grid--conselho .tp-membro-foto,
+    .tp-membros-grid--conselho .tp-membro-placeholder {
+        width: 76px;
+        height: 76px;
+    }
+
+    .tp-membro-iniciais {
+        font-size: 1.4rem;
+    }
+
+    .tp-membro-info h3 {
+        font-size: 0.8rem;
+    }
+
+    .tp-dropdown {
+        padding: 20px 18px;
+    }
+
+    .tp-ano-card {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}

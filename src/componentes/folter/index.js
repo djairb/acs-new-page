@@ -94,7 +94,7 @@ function Footer() {
 
             <div className="footer-bottom">
                 <p>
-                    Feito pelo CTAS &mdash; Centro de Tecnologia da Associação Conexão Social &copy; 2025
+                    Feito pelo CTAS &mdash; Centro de Tecnologia da Associação Conexão Social &copy; 2026
                 </p>
             </div>
         </footer>

@@ -79,7 +79,6 @@ function Navbar() {
           <Link to="/noticias" className="nav-link" onClick={closeNav}>Notícias</Link>
           
           <Link to="/transparencia" className="nav-link" onClick={closeNav}>Transparência</Link>
-          <Link to="/diretoria" className="nav-link" onClick={closeNav}>Diretoria</Link>
 
           {isHome ? (
             <button className="nav-link nav-anchor-btn" onClick={() => scrollToSection("contato")}>

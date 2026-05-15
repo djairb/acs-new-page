@@ -2568,3 +2568,290 @@ summary:focus {
 .compartilharOpcao:hover {
   background: #f5f5f5;
 }
+
+/* ═══════════════════════════════════════════
+   TRANSPARÊNCIA — nova página unificada
+   ═══════════════════════════════════════════ */
+
+.tp-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+.tp-section {
+  margin-bottom: 60px;
+}
+
+.tp-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tp-titulo-secao {
+  font-size: 2em;
+  color: #2c3e50;
+  margin: 0 0 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.tp-titulo-secao::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2c3e50);
+  border-radius: 2px;
+  margin: 10px auto 0;
+}
+
+.tp-subtitulo-secao {
+  color: #7f8c8d;
+  font-size: 1em;
+  margin: 14px 0 0;
+}
+
+.tp-divisor {
+  border: none;
+  border-top: 2px solid #ecf0f1;
+  margin: 0 0 60px;
+}
+
+/* ── Grupo label ── */
+.tp-grupo-label {
+  text-align: center;
+  font-size: 0.85em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #3498db;
+  margin: 0 0 20px;
+}
+
+/* ── Cards de membros ── */
+.tp-membros-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 44px;
+}
+
+.tp-membro-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 200px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.tp-membro-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(52, 152, 219, 0.18);
+}
+
+.tp-membro-foto {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.tp-membro-placeholder {
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(135deg, #eaf4fb, #d6eaf8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tp-membro-iniciais {
+  font-size: 2em;
+  font-weight: 700;
+  color: #3498db;
+  opacity: 0.7;
+}
+
+.tp-membro-info {
+  padding: 14px 16px 16px;
+  text-align: center;
+  border-top: 3px solid #3498db;
+}
+
+.tp-membro-info h3 {
+  font-size: 0.95em;
+  color: #2c3e50;
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+
+.tp-membro-info p {
+  font-size: 0.8em;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+/* ── Conselho Fiscal: borda laranja ── */
+.tp-membros-grid:last-of-type .tp-membro-card .tp-membro-info {
+  border-top-color: #e67e22;
+}
+
+.tp-membros-grid:last-of-type .tp-membro-card:hover {
+  box-shadow: 0 10px 30px rgba(230, 126, 34, 0.15);
+}
+
+.tp-membros-grid:last-of-type .tp-membro-iniciais {
+  color: #e67e22;
+}
+
+/* ── Cards de anos ── */
+.tp-anos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.tp-ano-card {
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 30px;
+  cursor: pointer;
+  font-size: 1.3em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 14px rgba(52, 152, 219, 0.25);
+  letter-spacing: 0.5px;
+}
+
+.tp-ano-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(52, 152, 219, 0.35);
+}
+
+.tp-ano-card--ativo {
+  background: linear-gradient(135deg, #1a6fa8, #1a252f);
+  box-shadow: 0 6px 20px rgba(26, 111, 168, 0.4);
+}
+
+.tp-ano-numero {
+  line-height: 1;
+}
+
+.tp-ano-icone {
+  font-size: 0.7em;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Dropdown de documentos ── */
+.tp-dropdown {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.09);
+  padding: 32px 36px;
+  animation: tp-fadeDown 0.28s ease;
+  border: 1px solid #eaf4fb;
+}
+
+@keyframes tp-fadeDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tp-dropdown-titulo {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #eaf4fb;
+}
+
+.tp-categoria-bloco {
+  margin-bottom: 24px;
+}
+
+.tp-categoria-label {
+  font-size: 0.78em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #3498db;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #eaf4fb;
+}
+
+.tp-docs-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tp-doc-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #34495e;
+  font-size: 0.92em;
+  line-height: 1.45;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.tp-doc-link:hover {
+  background: #eaf4fb;
+  color: #2980b9;
+}
+
+.tp-doc-icone {
+  color: #3498db;
+  margin-top: 3px;
+  flex-shrink: 0;
+  font-size: 0.8em;
+}
+
+/* ── Responsividade ── */
+@media (max-width: 768px) {
+  .tp-page {
+    padding: 24px 16px 40px;
+  }
+
+  .tp-titulo-secao {
+    font-size: 1.6em;
+  }
+
+  .tp-membro-card {
+    width: 160px;
+  }
+
+  .tp-membro-foto {
+    height: 170px;
+  }
+
+  .tp-membro-placeholder {
+    height: 130px;
+  }
+
+  .tp-ano-card {
+    font-size: 1.1em;
+    padding: 14px 22px;
+  }
+
+  .tp-dropdown {
+    padding: 20px 18px;
+  }
+}
