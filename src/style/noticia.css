@@ -6,6 +6,7 @@
 .noticia-page-main {
   background: #f5f6f8;
   min-height: calc(100vh - 105px);
+  min-height: calc(100dvh - 105px); /* barra de URL dinâmica no mobile */
   padding-bottom: 0;
 }
 
@@ -303,6 +304,7 @@
   padding: 8px 18px;
   border-radius: 30px;
   letter-spacing: 0.04em;
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 

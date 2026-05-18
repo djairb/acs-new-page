@@ -12,27 +12,30 @@
 }
 
 /* ── Orbs decorativos ─────────────────────────────────────── */
+/* blur reduzido de 80px e tamanhos menores: blur(80px) em elementos
+   de 500px gerava bitmaps offscreen enormes na GPU e ajudava a estourar
+   a memória do iOS Safari. */
 .qs-bg-orb {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(80px);
+  filter: blur(30px);
   opacity: 0.25;
 }
 .qs-orb-1 {
-  width: 500px; height: 500px;
+  width: 280px; height: 280px;
   background: radial-gradient(circle, #f08528, transparent);
-  top: -120px; left: -120px;
+  top: -80px; left: -80px;
   animation: qs-float 8s ease-in-out infinite;
 }
 .qs-orb-2 {
-  width: 400px; height: 400px;
+  width: 220px; height: 220px;
   background: radial-gradient(circle, #3C91E6, transparent);
-  bottom: 100px; right: -100px;
+  bottom: 100px; right: -60px;
   animation: qs-float 10s ease-in-out infinite reverse;
 }
 .qs-orb-3 {
-  width: 250px; height: 250px;
+  width: 160px; height: 160px;
   background: radial-gradient(circle, #ffbf00, transparent);
   top: 40%; left: 45%;
   animation: qs-float 12s ease-in-out infinite 2s;

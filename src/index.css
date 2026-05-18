@@ -6,8 +6,51 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  overflow-x: hidden; /* previne scroll horizontal no Android */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* === Otimização iOS Safari ===
+   iOS WebKit tem orçamento de memória bem mais baixo que Chrome Android.
+   backdrop-filter empilhado + animações `infinite` em elementos grandes
+   estouravam o limite e disparavam a tela "um problema ocorreu repetidamente
+   em ...". Em mobile, desligamos os efeitos mais caros e escondemos
+   decoração que não compensa o custo. */
+@media (max-width: 900px) {
+  *,
+  *::before,
+  *::after {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Esconde orbs decorativos (blurs grandes animados) */
+  .qs-bg-orb,
+  .parceirosSection::before,
+  .parceirosSection::after,
+  .projetos-section::before,
+  .projetos-section::after,
+  .projetos-section2::before,
+  .projetos-section2::after,
+  .video-carousel-section::before,
+  .video-carousel-section::after {
+    display: none !important;
+  }
+
+  /* Pausa animações decorativas (spinners de loading ficam preservados) */
+  .qs-badge-since,
+  .qs-badge-local,
+  .qs-eyebrow-dot,
+  .qs-logo,
+  .popup-heart-icon,
+  .popup-box-novo::before,
+  .footer-heart,
+  .visita-icon-circle,
+  .spaceLine,
+  .spaceLineNav {
+    animation: none !important;
+  }
 }

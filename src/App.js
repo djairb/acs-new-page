@@ -14,7 +14,7 @@ function App() {
       AOS.init({
         duration: 1000,
         easing: 'ease-out-cubic',
-        once: false,
+        once: true,
         offset: 100,
       });
       setTimeout(() => AOS.refresh(), 1000);

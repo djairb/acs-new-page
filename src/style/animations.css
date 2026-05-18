@@ -1164,6 +1164,7 @@ nav button.nav-link:hover {
 .mainTodasNoticias {
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh; /* barras de URL dinâmicas no mobile (Chrome Android / Safari iOS) */
   background: #f7f8fa;
   padding: 40px 20px 60px;
   box-sizing: border-box;

@@ -169,12 +169,34 @@ const Noticia = () => {
         }
     };
 
+    const fallbackCopy = (text) => {
+        const el = document.createElement('textarea');
+        el.value = text;
+        el.style.position = 'fixed';
+        el.style.top = '0';
+        el.style.left = '0';
+        el.style.opacity = '0';
+        document.body.appendChild(el);
+        el.focus();
+        el.select();
+        try { document.execCommand('copy'); } catch (err) { console.warn('Fallback copy falhou:', err); }
+        document.body.removeChild(el);
+        setLinkCopiado(true);
+        setTimeout(() => setLinkCopiado(false), 2500);
+    };
+
     const handleCopiarLink = () => {
         const url = `https://noticia.somosconexaosocial.org/og/${noticiaCarregada.slug}`;
-        navigator.clipboard.writeText(url).then(() => {
-            setLinkCopiado(true);
-            setTimeout(() => setLinkCopiado(false), 2500);
-        });
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url)
+                .then(() => {
+                    setLinkCopiado(true);
+                    setTimeout(() => setLinkCopiado(false), 2500);
+                })
+                .catch(() => fallbackCopy(url));
+        } else {
+            fallbackCopy(url);
+        }
     };
 
     const navigate = useNavigate();
