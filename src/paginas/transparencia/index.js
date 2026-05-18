@@ -7,9 +7,9 @@ import { FaChevronDown, FaChevronUp, FaExternalLinkAlt } from 'react-icons/fa';
 
 const diretoria = [
   {
-    nome: 'Ione Severina da Silva',
+    nome: 'Iaura Lima',
     cargo: 'Diretora Institucional',
-    foto: 'https://somosconexaosocial.org/site_img/transparencia/ione_severina.jpeg',
+    foto: 'https://somosconexaosocial.org/site_img/transparencia/iaura_lima.jpg',
   },
   {
     nome: 'Vitória Silva de Oliveira',
@@ -24,12 +24,13 @@ const diretoria = [
 ];
 
 const conselhoFiscal = [
-  { nome: 'Helionelys Barbosa', foto: null },
+  { nome: 'Ione Severina da Silva', foto: 'https://somosconexaosocial.org/site_img/transparencia/ione_severina.jpeg' },
+  { nome: 'Helionelys Barbosa', foto: 'https://somosconexaosocial.org/site_img/transparencia/helionelys_barbosa.jpeg' },
   { nome: 'Andreis Victor', foto: 'https://somosconexaosocial.org/site_img/transparencia/andreis_victor.jpeg' },
-  { nome: 'Marcio Rodolfo', foto: 'https://somosconexaosocial.org/site_img/transparencia/marcio_rodolfo.jpeg' },
-  { nome: 'André Albuquerque', foto: null },
-  { nome: 'Leidiane França', foto: null },
-  { nome: 'Janailton Batista', foto: null },
+  { nome: 'Marcio Rodolfo', foto: 'https://somosconexaosocial.org/site_img/transparencia/marcio_rodolfo.jpeg' },,
+  { nome: 'Leidiane França', foto: 'https://somosconexaosocial.org/site_img/transparencia/leidiane_franca.jpeg' },
+  { nome: 'Beatriz Sandra', foto: 'https://somosconexaosocial.org/site_img/transparencia/beatriz_sandra.jpg' }
+  ,
 ];
 
 const documentosPorAno = {
@@ -39,6 +40,10 @@ const documentosPorAno = {
     ],
   },
   2025: {
+
+    'Relatório': [
+      { titulo: 'Relatório Anual de Impacto 2025', link: 'https://drive.google.com/file/d/1vVTAYStv8PbT1Ke1noygA2Rj0cP3ezT7/view?usp=sharing' },
+    ],
     'Termos de Fomento': [
       { titulo: '1° TA - TERMO DE FOMENTO 006/2024', link: 'https://drive.google.com/file/d/1EtkTN0D9CUyWLXoVkukoEW0PU5KSXFwn/view?usp=sharing' },
       { titulo: 'TERMO DE FOMENTO N 004-2025', link: 'https://drive.google.com/file/d/1QoDylPQ3JEHqOY77lpD5J9opIA5XQQaZ/view?usp=sharing' },
