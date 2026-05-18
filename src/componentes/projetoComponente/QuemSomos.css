@@ -100,6 +100,48 @@
   border-radius: 2px;
 }
 
+/* Facade do vídeo: thumb + botão play, evita carregar o iframe no load. */
+.qs-video-facade {
+  position: relative;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  background: #000;
+}
+.qs-video-facade-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.25s ease;
+}
+.qs-video-facade:hover .qs-video-facade-thumb {
+  transform: scale(1.04);
+  filter: brightness(0.85);
+}
+.qs-video-facade-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f08528, #ffbf00);
+  color: #fff;
+  font-size: 1.4rem;
+  padding-left: 4px;
+  box-shadow: 0 6px 24px rgba(240,133,40,0.55);
+  transition: transform 0.25s ease;
+}
+.qs-video-facade:hover .qs-video-facade-play {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
 .qs-video-caption {
   color: #555;
   font-size: 0.82rem;

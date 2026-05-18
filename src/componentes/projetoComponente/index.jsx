@@ -46,10 +46,15 @@ function StatCard({ stat, animate }) {
 }
 
 /* ─── Componente principal ──────────────────────────────── */
+const YT_VIDEO_ID = '-eabN_tSE9g';
+
 const ProjetoComponent = () => {
   const [mostrarValores, setMostrarValores] = useState(false);
   const [statsVisible, setStatsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
+  // O iframe do YouTube só carrega após clique. Antes era autoplay e
+  // contribuía pro estouro de memória do iOS Safari.
+  const [videoAtivo, setVideoAtivo] = useState(false);
   const statsRef = useRef(null);
 
   useEffect(() => {
@@ -75,14 +80,34 @@ const ProjetoComponent = () => {
         <div className="qs-media-col">
           <div className="qs-video-wrapper">
             <div className="qs-video-frame">
-              <iframe
-                className="qs-video"
-                src="https://www.youtube.com/embed/-eabN_tSE9g?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Vídeo da Associação Conexão Social"
-              />
+              {videoAtivo ? (
+                <iframe
+                  className="qs-video"
+                  src={`https://www.youtube.com/embed/${YT_VIDEO_ID}?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="Vídeo da Associação Conexão Social"
+                />
+              ) : (
+                <button
+                  type="button"
+                  className="qs-video qs-video-facade"
+                  onClick={() => setVideoAtivo(true)}
+                  aria-label="Reproduzir vídeo da Associação Conexão Social"
+                >
+                  <img
+                    src={`https://img.youtube.com/vi/${YT_VIDEO_ID}/hqdefault.jpg`}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    className="qs-video-facade-thumb"
+                  />
+                  <span className="qs-video-facade-play" aria-hidden="true">
+                    <FaPlay />
+                  </span>
+                </button>
+              )}
               <div className="qs-video-shine" aria-hidden="true" />
             </div>
             <p className="qs-video-caption qs-video-caption--white">

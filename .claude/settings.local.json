@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npx react-scripts *)",
       "Bash(git -C \"c:/Users/djairb/Documents/GitHub/acs-new-page\" diff src/index.css src/style/animations.css)",
-      "Bash(git -C \"c:/Users/djairb/Documents/GitHub/acs-new-page\" diff --stat)"
+      "Bash(git -C \"c:/Users/djairb/Documents/GitHub/acs-new-page\" diff --stat)",
+      "Bash(git -C \"c:/Users/djairb/Documents/GitHub/acs-new-page\" diff --stat src/componentes/videoCarrossel src/componentes/projetoComponente)"
     ]
   }
 }
