@@ -19,7 +19,7 @@ const diretoria = [
   {
     nome: 'Erlane Maria Bezerra',
     cargo: 'Diretora Secretária',
-    foto: null,
+    foto: 'https://somosconexaosocial.org/site_img/transparencia/erlane_maria.jpg',
   },
 ];
 

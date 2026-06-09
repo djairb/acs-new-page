@@ -2,6 +2,13 @@
 export const reportagensDrive = [
 
   {
+    id: 64,
+    videoUrl: "https://www.youtube.com/embed/_MMMGdwUGuA",
+    descricaoVideo: "Gleide Ângelo na homenagem aos 21 anos da Associação Conexão Social na ALEPE."
+
+  },
+
+  {
     id: 63,
     videoUrl: "https://drive.google.com/file/d/1ayNhW7Aci9-4Kpb6uNLRkXyCiG1pHYry/preview",
     descricaoVideo: "Diagnóstico Interno - Conecta Vidas VamoSimbora"

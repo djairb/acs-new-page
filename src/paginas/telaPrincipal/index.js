@@ -29,6 +29,7 @@ import ProjetoComponent from '../../componentes/projetoComponente';
 import ProjetosSection from '../../componentes/ProjetosSection/ProjetosSection';
 import ProjetosSection2 from '../../componentes/ProjetosSection2/ProjetosSection2';
 import BannerResponsivo from '../../componentes/BannerResponsivo';
+import Celebracao21Anos from '../../componentes/celebracao21Anos';
 import { FaHeart, FaTimes } from 'react-icons/fa';
 
 
@@ -98,6 +99,10 @@ function TelaPrincipal() {
 
         <div data-aos="zoom-in" data-aos-duration="800">
           <div className='spaceLineNav'></div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="1200">
+          <Celebracao21Anos/>
         </div>
 
         <div data-aos="zoom-in-up" data-aos-duration="1000">
