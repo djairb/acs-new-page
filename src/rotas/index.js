@@ -12,6 +12,7 @@ import GaleriaImagens from "../paginas/galeria";
 import PaginaRebeca from "../paginas/paginaRebeca";
 import Doacoes from "../paginas/doacoes";
 import Diretoria from "../paginas/diretoria";
+import BiografiaIaura from "../paginas/biografiaIaura";
 import Mudanca from "../paginas/mudanca";
 import Login from "../paginas/loginMudanca";
 import ListarDoacoes from "../paginas/listaMudanca";
@@ -37,6 +38,7 @@ const Rotas = () => (
       <Route exact path='doacoes' element={<Doacoes/>} />
 
       <Route exact path='diretoria' element={<Diretoria/>} />
+      <Route exact path='biografia-iaura' element={<BiografiaIaura/>} />
       <Route exact path='campanha-seja-a-mudanca' element={<Mudanca/>} />
       
 

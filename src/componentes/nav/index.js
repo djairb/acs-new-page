@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { FaBars, FaTimes, FaHeart } from "react-icons/fa";
+import { FaBars, FaTimes, FaHeart, FaChevronDown } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 
 import logo from "../../img/logoAcs.png";
@@ -9,6 +9,7 @@ function Navbar() {
   const navRef = useRef();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [quemSomosOpen, setQuemSomosOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
 
@@ -28,6 +29,7 @@ function Navbar() {
 
   const closeNav = () => {
     setMobileOpen(false);
+    setQuemSomosOpen(false);
     navRef.current.classList.remove("responsive_nav");
   };
 
@@ -51,14 +53,37 @@ function Navbar() {
 
         <nav ref={navRef}>
 
-          {/* ── Links âncora (só na home) ou rota normal ── */}
-          {isHome ? (
-            <button className="nav-link nav-anchor-btn" onClick={() => scrollToSection("quem-somos")}>
-              Quem Somos
-            </button>
-          ) : (
-            <Link to="/#quem-somos" className="nav-link" onClick={closeNav}>Quem Somos</Link>
-          )}
+          {/* ── Quem Somos: navega pra seção; no hover abre submenu (Biografia) ── */}
+          <div
+            className="dropdown"
+            onMouseEnter={() => setQuemSomosOpen(true)}
+            onMouseLeave={() => setQuemSomosOpen(false)}
+          >
+            {isHome ? (
+              <button
+                className="nav-link nav-anchor-btn dropdown-toggle"
+                onClick={() => { scrollToSection("quem-somos"); setQuemSomosOpen(false); }}
+              >
+                Quem Somos
+                <FaChevronDown style={{ fontSize: "0.75em", marginLeft: "4px" }} />
+              </button>
+            ) : (
+              <Link
+                to="/#quem-somos"
+                className="nav-link dropdown-toggle"
+                onClick={closeNav}
+              >
+                Quem Somos
+                <FaChevronDown style={{ fontSize: "0.75em", marginLeft: "4px" }} />
+              </Link>
+            )}
+
+            {quemSomosOpen && (
+              <div className="dropdown-menu">
+                <Link to="/biografia-iaura" onClick={closeNav}>Biografia</Link>
+              </div>
+            )}
+          </div>
 
           {isHome ? (
             <button className="nav-link nav-anchor-btn" onClick={() => scrollToSection("nossos-projetos")}>
@@ -77,7 +102,7 @@ function Navbar() {
           )}
 
           <Link to="/noticias" className="nav-link" onClick={closeNav}>Notícias</Link>
-          
+
           <Link to="/transparencia" className="nav-link" onClick={closeNav}>Transparência</Link>
 
           {isHome ? (
