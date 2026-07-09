@@ -10,6 +10,7 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [quemSomosOpen, setQuemSomosOpen] = useState(false);
+  const [noticiasOpen, setNoticiasOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
 
@@ -30,6 +31,7 @@ function Navbar() {
   const closeNav = () => {
     setMobileOpen(false);
     setQuemSomosOpen(false);
+    setNoticiasOpen(false);
     navRef.current.classList.remove("responsive_nav");
   };
 
@@ -44,6 +46,19 @@ function Navbar() {
     }
   };
 
+  const handleDropdownClick = (e, type) => {
+    if (window.innerWidth <= 1024) {
+      e.preventDefault();
+      if (type === 'quemsomos') {
+        setQuemSomosOpen(!quemSomosOpen);
+        setNoticiasOpen(false);
+      } else if (type === 'noticias') {
+        setNoticiasOpen(!noticiasOpen);
+        setQuemSomosOpen(false);
+      }
+    }
+  };
+
   return (
     <>
       <header className={scrolled ? "header-scrolled" : ""}>
@@ -53,7 +68,7 @@ function Navbar() {
 
         <nav ref={navRef}>
 
-          {/* ── Quem Somos: navega pra seção; no hover abre submenu (Biografia) ── */}
+          {/* ── Quem Somos: navega pra seção; no hover/clique abre submenu ── */}
           <div
             className="dropdown"
             onMouseEnter={() => setQuemSomosOpen(true)}
@@ -62,7 +77,14 @@ function Navbar() {
             {isHome ? (
               <button
                 className="nav-link nav-anchor-btn dropdown-toggle"
-                onClick={() => { scrollToSection("quem-somos"); setQuemSomosOpen(false); }}
+                onClick={(e) => {
+                  if (window.innerWidth <= 1024) {
+                    handleDropdownClick(e, 'quemsomos');
+                  } else {
+                    scrollToSection("quem-somos");
+                    setQuemSomosOpen(false);
+                  }
+                }}
               >
                 Quem Somos
                 <FaChevronDown style={{ fontSize: "0.75em", marginLeft: "4px" }} />
@@ -71,7 +93,7 @@ function Navbar() {
               <Link
                 to="/#quem-somos"
                 className="nav-link dropdown-toggle"
-                onClick={closeNav}
+                onClick={(e) => handleDropdownClick(e, 'quemsomos')}
               >
                 Quem Somos
                 <FaChevronDown style={{ fontSize: "0.75em", marginLeft: "4px" }} />
@@ -80,6 +102,19 @@ function Navbar() {
 
             {quemSomosOpen && (
               <div className="dropdown-menu">
+                {window.innerWidth <= 1024 && (
+                  isHome ? (
+                    <button
+                      className="dropdown-item"
+                      onClick={() => scrollToSection("quem-somos")}
+                      style={{ background: 'none', border: 'none', font: 'inherit', fontWeight: 'bold' }}
+                    >
+                      Quem Somos
+                    </button>
+                  ) : (
+                    <Link to="/#quem-somos" onClick={closeNav}>Quem Somos</Link>
+                  )
+                )}
                 <Link to="/biografia-iaura" onClick={closeNav}>Biografia</Link>
               </div>
             )}
@@ -101,7 +136,28 @@ function Navbar() {
             <Link to="/#parceiros" className="nav-link" onClick={closeNav}>Parceiros</Link>
           )}
 
-          <Link to="/noticias" className="nav-link" onClick={closeNav}>Notícias</Link>
+          {/* ── Notícias: no hover/clique abre submenu ── */}
+          <div
+            className="dropdown"
+            onMouseEnter={() => setNoticiasOpen(true)}
+            onMouseLeave={() => setNoticiasOpen(false)}
+          >
+            <Link
+              to="/noticias"
+              className="nav-link dropdown-toggle"
+              onClick={(e) => handleDropdownClick(e, 'noticias')}
+            >
+              Notícias
+              <FaChevronDown style={{ fontSize: "0.75em", marginLeft: "4px" }} />
+            </Link>
+
+            {noticiasOpen && (
+              <div className="dropdown-menu">
+                <Link to="/noticias" onClick={closeNav}>Feed de Notícias</Link>
+                <Link to="/boletins-informativos" onClick={closeNav}>Boletins</Link>
+              </div>
+            )}
+          </div>
 
           <Link to="/transparencia" className="nav-link" onClick={closeNav}>Transparência</Link>
 

@@ -1,0 +1,391 @@
+/* ===== PAGINA DE BOLETINS INFORMATIVOS ===== */
+
+.bl-page {
+    flex: 1;
+    width: 100%;
+    padding-bottom: 60px;
+    background-color: #fcfcfc;
+    min-height: calc(100vh - 100px);
+}
+
+.bl-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0 40px;
+}
+
+.bl-section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.bl-titulo-secao {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    position: relative;
+    display: inline-block;
+}
+
+.bl-titulo-secao::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #00A859, #f08528);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.bl-subtitulo-secao {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 12px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+/* Tabs de Ano */
+.bl-anos-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.bl-ano-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 26px;
+    border-radius: 50px;
+    border: 2px solid #00A859;
+    background: white;
+    color: #00A859;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    box-shadow: 0 2px 6px rgba(0, 168, 89, 0.08);
+}
+
+.bl-ano-btn:hover {
+    background: rgba(0, 168, 89, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 168, 89, 0.15);
+}
+
+.bl-ano-btn--ativo {
+    background: linear-gradient(135deg, #00A859, #02c76a);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 14px rgba(0, 168, 89, 0.35);
+    transform: translateY(-2px);
+}
+
+.bl-ano-btn--ativo:hover {
+    background: linear-gradient(135deg, #00914c, #00b35e);
+    color: white;
+    box-shadow: 0 6px 18px rgba(0, 168, 89, 0.45);
+}
+
+/* Layout Split-Screen */
+.bl-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Sidebar de Meses */
+.bl-months-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 700px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Custom scrollbar para a sidebar */
+.bl-months-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+.bl-months-sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.bl-months-sidebar::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+.bl-months-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Cards de Mês */
+.bl-month-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 20px;
+    background: white;
+    border-radius: 14px;
+    border: 1px solid #eef2f3;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+    text-align: left;
+    width: 100%;
+}
+
+.bl-month-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    border-color: #f08528;
+}
+
+.bl-month-card--active {
+    background: linear-gradient(135deg, #ffffff, #fffdfb);
+    border: 2px solid #f08528;
+    box-shadow: 0 5px 18px rgba(240, 133, 40, 0.12);
+}
+
+.bl-month-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #fff4eb;
+    color: #f08528;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.bl-month-card--active .bl-month-card-icon {
+    background: linear-gradient(135deg, #f08528, #ff9c00);
+    color: white;
+    box-shadow: 0 3px 8px rgba(240, 133, 40, 0.3);
+}
+
+.bl-month-card-info {
+    flex: 1;
+}
+
+.bl-month-card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 3px 0;
+}
+
+.bl-month-card-subtitle {
+    font-size: 0.78rem;
+    color: #888;
+    margin: 0;
+}
+
+.bl-month-card-chevron {
+    color: #bbb;
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+}
+
+.bl-month-card:hover .bl-month-card-chevron {
+    color: #f08528;
+    transform: translateX(3px);
+}
+
+/* Painel de Visualização do PDF */
+.bl-viewer-pane {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #eef2f3;
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 700px;
+}
+
+.bl-viewer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-bottom: 16px;
+    border-bottom: 2px dashed #f1f1f1;
+}
+
+.bl-viewer-title-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bl-viewer-title-icon {
+    font-size: 1.8rem;
+    color: #f08528;
+}
+
+.bl-viewer-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.bl-viewer-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.bl-btn-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.bl-btn-action--primary {
+    background-color: #00A859;
+    color: white;
+}
+
+.bl-btn-action--primary:hover {
+    background-color: #00914c;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0, 168, 89, 0.2);
+}
+
+.bl-btn-action--secondary {
+    background-color: #f4f6f7;
+    color: #4a5568;
+    border: 1px solid #e2e8f0;
+}
+
+.bl-btn-action--secondary:hover {
+    background-color: #e2e8f0;
+    color: #2d3748;
+    transform: translateY(-1px);
+}
+
+.bl-iframe-container {
+    flex: 1;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #eef2f3;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bl-viewer-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.bl-iframe-loading {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #888;
+}
+
+/* Estado Vazio */
+.bl-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: 100%;
+    color: #888;
+    text-align: center;
+    padding: 40px;
+}
+
+.bl-empty-icon {
+    font-size: 3.5rem;
+    color: #ccc;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .bl-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .bl-months-sidebar {
+        max-height: 250px;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 8px;
+        padding-right: 0;
+    }
+
+    .bl-month-card {
+        min-width: 260px;
+        max-width: 300px;
+    }
+
+    .bl-month-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .bl-viewer-pane {
+        height: 600px;
+    }
+}
+
+@media (max-width: 576px) {
+    .bl-titulo-secao {
+        font-size: 1.8rem;
+    }
+    
+    .bl-subtitulo-secao {
+        font-size: 0.95rem;
+    }
+
+    .bl-viewer-pane {
+        padding: 16px;
+        height: 500px;
+        gap: 15px;
+    }
+
+    .bl-viewer-title {
+        font-size: 1.1rem;
+    }
+
+    .bl-btn-action span {
+        display: none; /* Esconde o texto do botão, mantém apenas o ícone no mobile */
+    }
+
+    .bl-btn-action {
+        padding: 10px;
+    }
+}
