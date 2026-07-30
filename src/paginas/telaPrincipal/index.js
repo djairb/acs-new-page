@@ -93,7 +93,7 @@ function TelaPrincipal() {
 
         {/* <CardContratacao/> */}
 
-        <div id="quem-somos" data-aos="fade-right" data-aos-duration="1000">
+        <div id="quem-somos">
           <ProjetoComponent />
         </div>
 

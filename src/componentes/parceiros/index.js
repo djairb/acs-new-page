@@ -74,9 +74,9 @@ function Parceiros(){
 
                     {quemEsta.map((image, index) => (
                         
-                        <a href={quemEstaLink[index]} target="_blank">
+                        <a key={index} href={quemEstaLink[index]} target="_blank" rel="noopener noreferrer">
 
-                            <img key={index} src={image} alt={`Imagem ${index}`} target="_blank" />                   
+                            <img src={image} alt={`Imagem ${index}`} />                   
                         
                         </a>
                         
@@ -91,9 +91,9 @@ function Parceiros(){
 
                     {quemJaEsteve.map((image, index) => (
 
-                        <a href={quemJaEsteveLink[index]} target="_blank">
+                        <a key={index} href={quemJaEsteveLink[index]} target="_blank" rel="noopener noreferrer">
 
-                            <img key={index} src={image} alt={`Imagem ${index}`} target="_blank" />
+                            <img src={image} alt={`Imagem ${index}`} />
 
 
                         </a>

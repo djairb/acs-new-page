@@ -1024,7 +1024,7 @@ nav button.nav-link:hover {
 }
 .card-projeto:not(.expandido):hover {
   transform: translateY(-8px) !important;
-  box-shadow: 0 20px 40px rgba(240,133,40,0.2) !important;
+  box-shadow: 0 20px 40px rgba(240,133,40,0.25), 0 0 0 1.5px rgba(240,133,40,0.4) !important;
 }
 
 /* ── 18. MISSAO VISAO SECTION ────────────────────────── */
@@ -1083,7 +1083,7 @@ nav button.nav-link:hover {
 }
 .cardNoticia:hover {
   transform: translateY(-8px) scale(1.015);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.18);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.18), 0 0 0 1.5px rgba(240,133,40,0.45);
 }
 
 /* Wrapper da imagem com proporção fixa */

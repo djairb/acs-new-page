@@ -1,8 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import logo from "../../img/logoAcs.png";
 import { mainHomeVisao } from "../../dados/data-missao";
 import { FaPlay, FaHeart, FaUsers, FaCalendarAlt, FaMapMarkerAlt, FaChevronDown } from 'react-icons/fa';
 import './QuemSomos.css';
+
+/* ─── Variantes de animação (Framer Motion) ─────────────── */
+const EASE = [0.22, 1, 0.36, 1];
+
+const textContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
+};
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+};
+const statsContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+const statItem = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE } },
+};
 
 /* ─── Estatísticas animadas ─────────────────────────────── */
 const STATS = [
@@ -35,13 +56,13 @@ function StatCard({ stat, animate }) {
     ? (stat.raw ? String(count) : count.toLocaleString('pt-BR'))
     : '0';
   return (
-    <div className="qs-stat-card">
+    <motion.div className="qs-stat-card" variants={statItem}>
       {stat.icon && <FaCalendarAlt className="qs-stat-icon" />}
       <span className="qs-stat-number">
         {stat.prefix}{display}{stat.suffix}
       </span>
       <span className="qs-stat-label">{stat.label}</span>
-    </div>
+    </motion.div>
   );
 }
 
@@ -77,7 +98,12 @@ const ProjetoComponent = () => {
       <div className="qs-inner">
 
         {/* ── Coluna esquerda: vídeo polaroid ── */}
-        <div className="qs-media-col">
+        <motion.div
+          className="qs-media-col"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
+        >
           <div className="qs-video-wrapper">
             <div className="qs-video-frame">
               {videoAtivo ? (
@@ -121,33 +147,38 @@ const ProjetoComponent = () => {
             <FaMapMarkerAlt />
             <span>Lagoa do Itaenga, PE</span>
           </div>
-        </div>
+        </motion.div>
 
         {/* ── Coluna direita: texto ── */}
-        <div className="qs-text-col">
+        <motion.div
+          className="qs-text-col"
+          variants={textContainer}
+          initial="hidden"
+          animate="show"
+        >
 
-          <div className="qs-logo-title">
+          <motion.div className="qs-logo-title" variants={fadeUp}>
             <img src={logo} alt="Logo ACS" className="qs-logo" />
             <h1 className="qs-title">
               Quem <span className="qs-title-highlight">Somos</span>?
             </h1>
-          </div>
+          </motion.div>
 
-          <p className="qs-description">
+          <motion.p className="qs-description" variants={fadeUp}>
             A <strong>Associação Conexão Social (ACS)</strong> é uma organização sem fins lucrativos
             fundada em maio de 2005 em Lagoa do Itaenga, na Zona da Mata Norte de Pernambuco.
             Nosso objetivo é mobilizar a população em busca da garantia dos direitos das pessoas
             em situação de vulnerabilidade social — acreditando que a <em>educação é a mais poderosa
             ferramenta de transformação social</em>.
-          </p>
+          </motion.p>
 
-          <p className="qs-description">
+          <motion.p className="qs-description" variants={fadeUp}>
             Atendemos crianças, adolescentes, jovens, mulheres e idosos por meio de projetos
             inovadores que conectam educação, tecnologia e cidadania.
-          </p>
+          </motion.p>
 
           {/* ── CTA ── */}
-          <div className="qs-cta-row">
+          <motion.div className="qs-cta-row" variants={fadeUp}>
             <button
               className="qs-btn-primary"
               onClick={() => setMostrarValores(prev => !prev)}
@@ -164,16 +195,23 @@ const ProjetoComponent = () => {
             >
               Nos siga no Instagram
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* ── Estatísticas ── */}
-      <div className="qs-stats-row" ref={statsRef}>
+      <motion.div
+        className="qs-stats-row"
+        ref={statsRef}
+        variants={statsContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {STATS.map((stat) => (
           <StatCard key={stat.label} stat={stat} animate={statsVisible} />
         ))}
-      </div>
+      </motion.div>
 
       {/* ── Missão / Visão / Valores (tabs) ── */}
       {mostrarValores && (

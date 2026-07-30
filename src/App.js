@@ -5,6 +5,9 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import ScrollProgress from './componentes/scrollProgress';
+import BackToTop from './componentes/backToTop';
+
 function App() {
 
   useEffect(() => {
@@ -31,7 +34,9 @@ function App() {
 
   return (
     <div className="App">
+      <ScrollProgress />
       <Rotas/>
+      <BackToTop />
     </div>
   );
 }

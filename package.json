@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "axios": "^1.7.9",
+    "framer-motion": "^11.18.2",
     "lightbox.js-react": "^1.0.7",
     "pix-payload": "^1.0.4",
     "qrcode.react": "^4.2.0",

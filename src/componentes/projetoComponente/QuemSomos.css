@@ -11,6 +11,24 @@
   width: 100%;
 }
 
+/* Aurora sutil no fundo do hero — leve e barata (sem blur), desloca devagar */
+.qs-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(55% 45% at 18% 22%, rgba(240, 133, 40, 0.12), transparent 70%),
+    radial-gradient(50% 50% at 82% 78%, rgba(60, 145, 230, 0.12), transparent 70%);
+  background-size: 200% 200%;
+  animation: qs-aurora 20s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes qs-aurora {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
 /* ── Orbs decorativos ─────────────────────────────────────── */
 /* blur reduzido de 80px e tamanhos menores: blur(80px) em elementos
    de 500px gerava bitmaps offscreen enormes na GPU e ajudava a estourar
@@ -260,11 +278,16 @@
   letter-spacing: -1px;
 }
 .qs-title-highlight {
-  background: linear-gradient(90deg, #f08528, #ffbf00);
+  background: linear-gradient(90deg, #f08528, #ffbf00, #f08528);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
+  animation: qs-text-shimmer 4s linear infinite;
+}
+@keyframes qs-text-shimmer {
+  to { background-position: 200% center; }
 }
 .qs-title-highlight::after {
   content: '';
