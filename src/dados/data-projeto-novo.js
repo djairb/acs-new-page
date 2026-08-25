@@ -17,144 +17,176 @@ const projetoImagens = {
     'Projeto Sementes': logosProjetos[8]
 };
 
+// Gera as 6 imagens do carrossel (01.jpg ... 06.jpg) de uma pasta.
+const imgs = (pasta) =>
+  Array.from({ length: 6 }, (_, i) =>
+    `https://somosconexaosocial.org/site_img/${pasta}/${String(i + 1).padStart(2, "0")}.jpg`
+  );
+
 export const meusProjetos = [
   {
     id: 1,
     titulo: "Projeto Conecta Vidas",
     logo: logosProjetos[0],
-    descricaoCurta: "Inclusão digital e social de idosos, estimulando o envelhecimento ativo e fortalecendo seus vínculos comunitários.",
-    descricaoLonga: "A iniciativa busca incluir pessoas idosas no meio digital e social. De acordo com o “Pew Research Center”, em 2021, dos cerca de 29 milhões de idosos brasileiros, apenas 5 milhões estavam conectados, mostrando que 80% ainda não usufruem dos benefícios da tecnologia. Diante desse cenário, o projeto foi criado para promover o envelhecimento ativo e saudável, fortalecendo os vínculos comunitários dos participantes. A ACS oferece diversas atividades, incluindo hidroginástica, que visa desenvolver habilidades que melhorem o desempenho dos idosos em suas tarefas diárias.",
-    imagens: [
-      "https://somosconexaosocial.org/site_img/conecta_vidas/01.jpg",
-      "https://somosconexaosocial.org/site_img/conecta_vidas/02.jpg",
-      "https://somosconexaosocial.org/site_img/conecta_vidas/03.jpg",
-      "https://somosconexaosocial.org/site_img/conecta_vidas/04.jpg",
-      "https://somosconexaosocial.org/site_img/conecta_vidas/05.jpg",
-    ]
+    descricaoCurta: "Promove o envelhecimento ativo por meio de ações integradas de saúde, educação, tecnologia, sustentabilidade e convivência, fortalecendo a autonomia, a inclusão social e a qualidade de vida da pessoa idosa.",
+    descricaoLonga: [
+      "O Projeto Conecta Vidas é uma iniciativa da Associação Conexão Social voltada à promoção do envelhecimento ativo, saudável e participativo. Desenvolvido para pessoas idosas, o projeto integra atividades que estimulam a saúde física, emocional, cognitiva e social, oferecendo oportunidades de aprendizado, inclusão digital, convivência comunitária e acesso a novas tecnologias.",
+      "A iniciativa reúne ações que incentivam hábitos saudáveis, fortalecem vínculos sociais e promovem a autonomia dos participantes, contribuindo para uma vida mais ativa, independente e conectada com a comunidade."
+    ],
+    areasTitulo: "Áreas de Atuação",
+    areas: [
+      { nome: "Hidroginástica", descricao: "Promove fortalecimento muscular, mobilidade, equilíbrio, condicionamento físico e prevenção de doenças." },
+      { nome: "Letramento Digital", descricao: "Desenvolve competências para utilização de dispositivos digitais, ampliando o acesso à informação e aos serviços tecnológicos." },
+      { nome: "Internet das Coisas (IoT)", descricao: "Apresenta soluções inteligentes voltadas à saúde, segurança e qualidade de vida." },
+      { nome: "Educação Financeira", descricao: "Estimula planejamento financeiro, consumo consciente e autonomia econômica." },
+      { nome: "Rodas de Diálogo", descricao: "Promovem acolhimento, fortalecimento emocional e participação social." },
+      { nome: "Caminhadas Orientadas", descricao: "Incentivam hábitos saudáveis, melhorando resistência física e qualidade de vida." },
+      { nome: "Dança", descricao: "Estimula coordenação motora, memória, autoestima e integração comunitária." },
+      { nome: "Hidroponia", descricao: "Promove educação ambiental, alimentação saudável, sustentabilidade e empreendedorismo." }
+    ],
+    impacto: "O projeto fortalece a autonomia da pessoa idosa por meio da integração entre saúde, educação, tecnologia e convivência, promovendo inclusão social, bem-estar e envelhecimento ativo.",
+    imagens: imgs("conecta_vidas")
   },
   {
     id: 2,
-    titulo: "Projeto Passaporte Digital",
-    descricaoCurta: "O projeto capacita jovens em tecnologia para melhorar seu desempenho profissional.",
-    logo: logosProjetos[1],
-    descricaoLonga: "O projeto promove a formação profissional de adolescentes e jovens na área de tecnologia e inovação, oferecendo atividades que desenvolvem conhecimentos teóricos e práticos, além de habilidades e atitudes que favorecem o desempenho e a proatividade em suas futuras carreiras. Assim, o Passaporte Digital amplia a oferta de mão de obra qualificada para setores que demandam tecnologia e estimula o empreendedorismo ao fortalecer o domínio dos participantes sobre os princípios da tecnologia da informação e comunicação.",
-    imagens: [
-      "https://somosconexaosocial.org/site_img/passaporte_digital/01.jpg",
-      "https://somosconexaosocial.org/site_img/passaporte_digital/02.jpg",
-      "https://somosconexaosocial.org/site_img/passaporte_digital/03.jpg",
-      "https://somosconexaosocial.org/site_img/passaporte_digital/04.jpg",
-      "https://somosconexaosocial.org/site_img/passaporte_digital/05.jpg",
-    ]
+    titulo: "Projeto 'VamoSimbora'",
+    logo: logosProjetos[5],
+    descricaoCurta: "Fortalece o envelhecimento saudável por meio da promoção da saúde, educação, tecnologia e prevenção, ampliando a autonomia e a participação social da pessoa idosa.",
+    descricaoLonga: [
+      "O Projeto VamoSimbora! desenvolve ações voltadas à promoção da saúde, prevenção de doenças e fortalecimento da autonomia da pessoa idosa. A iniciativa integra atividades físicas, inclusão digital, educação e acompanhamento em saúde, incentivando hábitos saudáveis e maior qualidade de vida.",
+      "O projeto também fortalece a atuação da Atenção Primária, promovendo ações conjuntas entre a comunidade e os Agentes Comunitários de Saúde para ampliar o cuidado integral aos participantes."
+    ],
+    areasTitulo: "Áreas de Atuação",
+    areas: [
+      { nome: "Hidroginástica", descricao: "Favorece mobilidade, fortalecimento muscular e prevenção de limitações físicas." },
+      { nome: "Letramento Digital", descricao: "Promove inclusão tecnológica e autonomia no uso das ferramentas digitais." },
+      { nome: "Internet das Coisas (IoT)", descricao: "Apresenta tecnologias que auxiliam no cuidado, segurança e bem-estar da pessoa idosa." },
+      { nome: "Educação Financeira", descricao: "Estimula organização financeira e planejamento consciente." },
+      { nome: "Caminhadas Orientadas", descricao: "Contribuem para prevenção de doenças, melhora cardiovascular e fortalecimento físico." },
+      { nome: "Rodas de Conversa", descricao: "Fortalecem vínculos comunitários, saúde emocional e acesso à informação." },
+      { nome: "Formação com Agentes Comunitários de Saúde", descricao: "Integra profissionais da saúde às atividades do projeto, fortalecendo ações preventivas e educativas junto à comunidade." }
+    ],
+    impacto: "O projeto amplia o acesso à saúde preventiva, fortalece a cidadania, incentiva hábitos saudáveis e promove maior autonomia para o envelhecimento ativo.",
+    imagens: imgs("vamo_simbora")
   },
   {
     id: 3,
-    titulo: "Centro de Formação Conexão Social",
-    descricaoCurta: "Desenvolve adolescentes por meio do futebol, promovendo saúde, qualidade de vida e formação cidadã.",
-    logo: logosProjetos[2],
-    descricaoLonga: "O esporte representa um importante comportamento sociopolítico e uma das principais expressões culturais, tornando-se essencial para o desenvolvimento educacional, social e econômico das sociedades contemporâneas. Com base nisso, o Projeto Centro de Formação atua com adolescentes, promovendo seu crescimento físico e social por meio da prática esportiva — especialmente do futebol de campo —, contribuindo para sua saúde, qualidade de vida e formação tanto como atletas quanto como cidadãos.",
-    imagens: [
-      "https://somosconexaosocial.org/site_img/centro_formacao/01.jpg",
-      "https://somosconexaosocial.org/site_img/centro_formacao/02.jpg",
-      "https://somosconexaosocial.org/site_img/centro_formacao/03.jpg",
-      "https://somosconexaosocial.org/site_img/centro_formacao/04.jpg",
-      "https://somosconexaosocial.org/site_img/centro_formacao/05.jpg",
-    ]
+    titulo: "Projeto Oportunizar Comunidades",
+    logo: logosProjetos[9],
+    descricaoCurta: "Utiliza o esporte como ferramenta de inclusão social, desenvolvimento humano e formação cidadã de crianças e adolescentes.",
+    descricaoLonga: [
+      "O Projeto Oportunizar Comunidades promove o desenvolvimento integral de crianças e adolescentes por meio da prática esportiva, incentivando disciplina, respeito, cooperação e convivência comunitária.",
+      "As atividades fortalecem competências físicas, emocionais e sociais, criando oportunidades para que os participantes desenvolvam valores essenciais para sua formação pessoal e cidadã."
+    ],
+    areasTitulo: "Modalidades",
+    areas: [
+      { nome: "Handebol", descricao: "Estimula trabalho em equipe, disciplina, coordenação motora e tomada de decisões." },
+      { nome: "Voleibol", descricao: "Fortalece cooperação, comunicação, respeito às regras e integração social." },
+      { nome: "Futsal", descricao: "Desenvolve habilidades motoras, raciocínio rápido, espírito esportivo e convivência." }
+    ],
+    impacto: "O esporte torna-se instrumento de transformação social, promovendo inclusão, desenvolvimento humano, cidadania e oportunidades para crianças e adolescentes.",
+    imagens: imgs("oportunizar_pe")
   },
   {
     id: 4,
-    titulo: "Projeto Oportunizar Comunidade Urbano",
-    descricaoCurta: "Incentiva crianças e adolescentes por meio de atividades esportivas e educativas",
-    logo: logosProjetos[3],
-    descricaoLonga: "O Projeto Oportunizar Comunidade Urbano é voltado para crianças e adolescentes, incentivando a prática de esportes educativos e recreativos, o protagonismo juvenil e a integração entre escolas públicas e entidades da sociedade civil. Em parceria com instituições educacionais, o projeto oferece diversas atividades nos períodos em que os participantes não estão em aula. Dessa forma, transforma a rotina dessas crianças e adolescentes, atuando na prevenção da violência por meio do esporte inclusivo e promovendo impacto positivo em suas vidas.",
-    imagens: [
-      "https://somosconexaosocial.org/site_img/comunidade_urbano/01.jpg",
-      "https://somosconexaosocial.org/site_img/comunidade_urbano/02.jpg",
-      "https://somosconexaosocial.org/site_img/comunidade_urbano/03.jpg",
-      "https://somosconexaosocial.org/site_img/comunidade_urbano/04.jpg",
-      "https://somosconexaosocial.org/site_img/comunidade_urbano/05.jpg",
-    ]
+    titulo: "Projeto Oportunizar Comunidade Rural",
+    logo: logosProjetos[4],
+    descricaoCurta: "Promove inclusão social, cidadania, lazer e fortalecimento comunitário para crianças e adolescentes das comunidades rurais.",
+    descricaoLonga: [
+      "O Projeto Oportunizar Rural foi criado para ampliar oportunidades de desenvolvimento social nas comunidades rurais, oferecendo atividades educativas, recreativas e ações voltadas ao fortalecimento da cidadania.",
+      "A iniciativa busca reduzir desigualdades sociais, fortalecer vínculos comunitários e incentivar a participação ativa de crianças e adolescentes em espaços de aprendizagem e convivência."
+    ],
+    areasTitulo: "Áreas de Atuação",
+    areas: [
+      { nome: "Recreação", descricao: "Estimula criatividade, integração social e desenvolvimento infantil." },
+      { nome: "Lazer", descricao: "Promove bem-estar, convivência comunitária e valorização da infância." },
+      { nome: "Direitos e Cidadania", descricao: "Desenvolve ações educativas voltadas ao conhecimento dos direitos, deveres e participação cidadã." }
+    ],
+    impacto: "O projeto fortalece a inclusão social nas comunidades rurais, amplia oportunidades de desenvolvimento e promove cidadania por meio da educação e da convivência.",
+    imagens: imgs("comunidade_rural")
   },
   {
     id: 5,
-    titulo: "Projeto Oportunizar Comunidade Rural",
-    descricaoCurta: "Oferece atividades esportivas e educativas para crianças e adolescentes da zona rural, promovendo inclusão, integração e prevenção da violência",
-    logo: logosProjetos[4],
-    descricaoLonga: "Com o sucesso do Projeto Oportunizar Comunidade Urbano, foi criado o Projeto Oportunizar Comunidade Rural, voltado especificamente para crianças e adolescentes das áreas rurais. A iniciativa incentiva a prática de esportes educativos e recreativos, o protagonismo juvenil e a integração entre escolas públicas e entidades da sociedade civil. Em parceria com as instituições educacionais, o projeto oferece diversas atividades nos períodos em que os participantes não estão em aula, promovendo também na zona rural uma transformação significativa em suas rotinas e atuando na prevenção da violência por meio do esporte inclusivo.",
-    imagens: [
-      "https://somosconexaosocial.org/site_img/comunidade_rural/01.jpg",
-      "https://somosconexaosocial.org/site_img/comunidade_rural/02.jpg",
-      "https://somosconexaosocial.org/site_img/comunidade_rural/03.jpg",
-      "https://somosconexaosocial.org/site_img/comunidade_rural/04.jpg",
-      "https://somosconexaosocial.org/site_img/comunidade_rural/05.jpg",
-    ]
+    titulo: "Projeto Passaporte Digital",
+    logo: logosProjetos[1],
+    descricaoCurta: "Qualifica jovens para o mercado de trabalho por meio da tecnologia, inovação e desenvolvimento de competências profissionais para a economia digital.",
+    descricaoLonga: [
+      "O Projeto Passaporte Digital prepara jovens para os desafios do mercado de trabalho, oferecendo formação profissional voltada às áreas de tecnologia, inovação e transformação digital.",
+      "A iniciativa desenvolve competências técnicas e comportamentais, estimulando criatividade, pensamento crítico, empreendedorismo e inovação, ampliando as oportunidades de empregabilidade e geração de renda."
+    ],
+    areasTitulo: "Áreas de Formação",
+    areas: [
+      { nome: "Infraestrutura de Tecnologia da Informação" },
+      { nome: "Redes de Computadores" },
+      { nome: "Programação Web" },
+      { nome: "Mídias Digitais" },
+      { nome: "Inovação e Empreendedorismo" }
+    ],
+    impacto: "O projeto fortalece a inclusão produtiva da juventude, formando profissionais preparados para atuar em um mercado cada vez mais tecnológico e inovador.",
+    imagens: imgs("passaporte_digital")
   },
   {
     id: 6,
-    titulo: "Projeto 'VamoSimbora'",
-    descricaoCurta: "Promove a autonomia e a participação social de idosos, contribuindo para reduzir vulnerabilidades e fortalecer o desenvolvimento local",
-    logo: logosProjetos[5],
-    descricaoLonga: "O projeto “VamoSimbora” busca fortalecer a autonomia e a participação da pessoa idosa e de suas famílias na sociedade, incentivando uma atuação ativa e contínua para que se reconheçam como corresponsáveis pela Política Municipal da Pessoa Idosa. A iniciativa também propõe alternativas que impulsionem o desenvolvimento local de Lagoa de Itaenga-PE e reduzam os riscos e situações de vulnerabilidade enfrentadas por essa população.",
-    imagens: [
-      "https://somosconexaosocial.org/site_img/vamo_simbora/01.jpg",
-      "https://somosconexaosocial.org/site_img/vamo_simbora/02.jpg",
-      "https://somosconexaosocial.org/site_img/vamo_simbora/03.jpg",
-      "https://somosconexaosocial.org/site_img/vamo_simbora/04.jpg",
-      "https://somosconexaosocial.org/site_img/vamo_simbora/05.jpg",
-    ]
+    titulo: "Inovação e Tecnologia com Elas",
+    logo: logosProjetos[7],
+    descricaoCurta: "Promove autonomia, empreendedorismo, inclusão tecnológica e fortalecimento dos direitos das mulheres por meio da educação, inovação e desenvolvimento social.",
+    descricaoLonga: [
+      "O Projeto Inovação e Tecnologia com Elas fortalece o protagonismo feminino por meio da qualificação em tecnologia, empreendedorismo e educação para os direitos. A iniciativa amplia oportunidades de desenvolvimento profissional, geração de renda e inclusão digital, contribuindo para a autonomia econômica e social das participantes.",
+      "Além da formação técnica, o projeto promove ações educativas voltadas à valorização da mulher, ao fortalecimento da cidadania e à disseminação de informações sobre direitos, igualdade de oportunidades e enfrentamento à violência de gênero."
+    ],
+    areasTitulo: "Áreas de Atuação",
+    areas: [
+      { nome: "Empreendedorismo", descricao: "Desenvolve competências para criação e fortalecimento de negócios, geração de renda e autonomia financeira." },
+      { nome: "Tecnologia", descricao: "Capacita as participantes em ferramentas digitais, inovação e inclusão tecnológica, preparando-as para novas oportunidades profissionais." },
+      { nome: "Promoção dos Direitos das Mulheres", descricao: "Fortalece o acesso à informação, à cidadania e às políticas públicas, promovendo igualdade de direitos, prevenção da violência e fortalecimento das redes de apoio." }
+    ],
+    impacto: "Ao integrar tecnologia, empreendedorismo e promoção dos direitos, o projeto contribui para a autonomia das mulheres, amplia oportunidades de desenvolvimento socioeconômico e fortalece sua participação ativa na sociedade.",
+    imagens: imgs("inovacao_com_elas")
   },
   {
     id: 7,
     titulo: "Skate Livre",
-    descricaoCurta: "Promove o desenvolvimento de crianças e adolescentes por meio de oficinas de skate",
     logo: logosProjetos[6],
-    descricaoLonga: "O Projeto Skate Livre, realizado pela Conexão Social através do Programa Skate pela Mudança Social, busca promover o desenvolvimento integral de crianças e adolescentes de 7 a 14 anos por meio de oficinas de skate. A iniciativa parte da ideia de que oferecer oportunidades e estimular a participação ativa contribui para formar cidadãos mais conscientes e responsáveis.",
-    imagens: [
-      "https://somosconexaosocial.org/site_img/skate_livre/01.jpg",
-      "https://somosconexaosocial.org/site_img/skate_livre/02.jpg",
-      "https://somosconexaosocial.org/site_img/skate_livre/03.jpg",
-      "https://somosconexaosocial.org/site_img/skate_livre/04.jpg",
-      "https://somosconexaosocial.org/site_img/skate_livre/05.jpg",
-    ]
-  },
-  {
-    id: 8,
-    titulo: "Oportunizar Comunidade",
-    descricaoCurta: "O projeto promove esportes e desenvolvimento integral de crianças e adolescentes, incentivando inclusão e hábitos saudáveis.",
-    logo: logosProjetos[9],
-    descricaoLonga: "O Projeto Oportunizar Comunidade oferece atividades esportivas como vôlei, futebol, futsal e handebol para crianças e adolescentes de 7 a 15 anos, focando no desenvolvimento físico, social e emocional, além de estimular trabalho em equipe, inclusão e hábitos saudáveis.",
-    imagens: [
-      "https://somosconexaosocial.org/site_img/oportunizar_pe/01.jpg",
-      "https://somosconexaosocial.org/site_img/oportunizar_pe/02.jpg",
-      "https://somosconexaosocial.org/site_img/oportunizar_pe/03.jpg",
-      "https://somosconexaosocial.org/site_img/oportunizar_pe/04.jpg",
-      "https://somosconexaosocial.org/site_img/oportunizar_pe/05.jpg",
-    ]
-  },
-  
+    descricaoCurta: "Utiliza o esporte como ferramenta de inclusão, desenvolvimento social e fortalecimento do protagonismo juvenil.",
+    descricaoLonga: [
+      "O Projeto Skate Livre oferece oficinas esportivas que promovem inclusão social, desenvolvimento físico e fortalecimento das habilidades socioemocionais de crianças e adolescentes.",
+      "Por meio da prática do skate, os participantes desenvolvem disciplina, equilíbrio, persistência, respeito e convivência comunitária em um ambiente seguro e acolhedor."
+    ],
+    areasTitulo: "Área de Atuação",
+    areas: [
+      { nome: "Oficinas de Skate", descricao: "Promovem coordenação motora, equilíbrio, concentração, autoestima, responsabilidade e desenvolvimento esportivo, fortalecendo o protagonismo e a inclusão social." }
+    ],
+    impacto: "O projeto amplia oportunidades de desenvolvimento pessoal e social, utilizando o esporte como instrumento de transformação e construção da cidadania.",
+    imagens: imgs("skate_livre")
+  }
 ];
 
+// Projetos com ciclo de atividades encerrado — mesmo padrão de card (carrossel + expansão).
 export const destaquesOuParcerias = [
   {
     id: 1,
-    titulo: "Inovação e Tecnologia com Elas",
-    logo: logosProjetos[7], // Usando sua lista de imports de logos
-    // AQUI MUDA: É apenas uma string, não um array []
-    imagem: "https://somosconexaosocial.org/site_img/inovacao_com_elas/02.jpg", 
-    // AQUI MUDA: Apenas uma descrição direta
-    descricao: "O Projeto Inovação e Tecnologia com Elas foi uma iniciativa que capacitou mulheres de 16 a 35 anos para empreender e ampliar suas oportunidades por meio da tecnologia, oferecendo ferramentas que contribuíram para a transformação de suas vidas e para a conquista da independência financeira.",
-    
+    titulo: "Projeto Sementes",
+    logo: logosProjetos[8],
+    descricaoCurta: "Capacitou jovens em Infraestrutura de Redes, unindo formação técnica de qualidade a uma visão prática do mercado de trabalho.",
+    descricaoLonga: "O Projeto Sementes capacitou jovens em Infraestrutura de Redes, combinando formação técnica de qualidade com experiência prática, promovendo crescimento profissional e desenvolvimento pessoal.",
+    imagens: imgs("projeto_sementes")
   },
   {
     id: 2,
-    titulo: "Projeto Sementes",
-    logo: logosProjetos[8], // Usando sua lista de imports de logos
-    // AQUI MUDA: É apenas uma string, não um array []
-    imagem: "https://somosconexaosocial.org/site_img/projeto_sementes/01.jpg", 
-    // AQUI MUDA: Apenas uma descrição direta
-    descricao: "O Projeto Sementes capacitou jovens em Infraestrutura de Redes, combinando formação técnica de qualidade com experiência prática, promovendo crescimento profissional e desenvolvimento pessoal.",
-    
+    titulo: "Centro de Formação Conexão Social",
+    logo: logosProjetos[2],
+    descricaoCurta: "Desenvolve adolescentes por meio do futebol, promovendo saúde, qualidade de vida e formação cidadã.",
+    descricaoLonga: "O esporte representa um importante comportamento sociopolítico e uma das principais expressões culturais, tornando-se essencial para o desenvolvimento educacional, social e econômico das sociedades contemporâneas. Com base nisso, o Projeto Centro de Formação atua com adolescentes, promovendo seu crescimento físico e social por meio da prática esportiva — especialmente do futebol de campo —, contribuindo para sua saúde, qualidade de vida e formação tanto como atletas quanto como cidadãos.",
+    imagens: imgs("centro_formacao")
   },
-  
+  {
+    id: 3,
+    titulo: "Projeto Oportunizar Comunidade Urbano",
+    logo: logosProjetos[3],
+    descricaoCurta: "Incentiva crianças e adolescentes por meio de atividades esportivas e educativas.",
+    descricaoLonga: "O Projeto Oportunizar Comunidade Urbano é voltado para crianças e adolescentes, incentivando a prática de esportes educativos e recreativos, o protagonismo juvenil e a integração entre escolas públicas e entidades da sociedade civil. Em parceria com instituições educacionais, o projeto oferece diversas atividades nos períodos em que os participantes não estão em aula. Dessa forma, transforma a rotina dessas crianças e adolescentes, atuando na prevenção da violência por meio do esporte inclusivo e promovendo impacto positivo em suas vidas.",
+    imagens: imgs("comunidade_urbano")
+  }
 ];
 
 export const odsHomeData = [
@@ -236,7 +268,7 @@ export const odsHomeData = [
         projetoLogo: projetoImagens['Projeto Sementes'],
         descricao: "Trazendo mais oportunidades de profissionalização dos jovens, combate a fome por meio da capacitação profissional."
       },
-      
+
 
     ],
 
@@ -399,7 +431,7 @@ export const odsHomeData = [
     color:'#fd6925',
     logoOds: logosOds[8],
     listaProjetos: [
-      
+
       {
         projetoLogo: projetoImagens['Passaporte Digital'],
         descricao: "Fomenta a inovação tecnológica e o desenvolvimento de competências digitais, alinhando-se às demandas do mercado de trabalho moderno."
@@ -422,7 +454,7 @@ export const odsHomeData = [
     color:'#dd1367',
     logoOds: logosOds[9],
     listaProjetos: [
-      
+
       {
         projetoLogo: projetoImagens['Conecta Vidas'],
         descricao: "Combate a exclusão digital e social dos idosos, um grupo frequentemente marginalizado no acesso à tecnologia e participação comunitária."
@@ -473,7 +505,7 @@ export const odsHomeData = [
     color:'#fd9d24',
     logoOds: logosOds[10],
     listaProjetos: [
-      
+
       {
         projetoLogo: projetoImagens['Conecta Vidas'],
         descricao: "Fortalece vínculos comunitários e promove a inclusão social dos idosos, tornando as cidades mais acolhedoras e participativas para todas as idades."
@@ -506,7 +538,7 @@ export const odsHomeData = [
     color:'#56c02b',
     logoOds: logosOds[14],
     listaProjetos: [
-      
+
       {
         projetoLogo: projetoImagens['Oportunizar Rural'],
         descricao: "Ao utilizar espaços naturais rurais para atividades esportivas, promove consciência ambiental."
@@ -527,7 +559,7 @@ export const odsHomeData = [
     color:'#00689d',
     logoOds: logosOds[15],
     listaProjetos: [
-      
+
       {
         projetoLogo: projetoImagens['Centro Formação'],
         descricao: "Fortalece a formação cidadã, promovendo valores como trabalho em equipe, disciplina e respeito, essenciais para sociedades pacíficas."
@@ -552,7 +584,7 @@ export const odsHomeData = [
         projetoLogo: projetoImagens['Oportunizar Comunidade'],
         descricao: "Previne violência e conflitos ao ocupar jovens com atividades positivas e construtivas."
       }
-      
+
     ],
   },
   {
@@ -561,7 +593,7 @@ export const odsHomeData = [
   color:'#19486a',
   logoOds: logosOds[16],
   listaProjetos: [
-    
+
     {
       projetoLogo: projetoImagens['Conecta Vidas'],
       descricao: "Envolve a colaboração de organizações (como a ACS) e possivelmente parcerias público-privadas para viabilizar o projeto."
@@ -594,7 +626,7 @@ export const odsHomeData = [
       projetoLogo: projetoImagens['Tecnologia com Elas'],
       descricao: "Potencialmente envolve colaborações com empresas de tecnologia, governos e ONGs para ampliar seu alcance."
     }
-    
+
   ],
   }
 

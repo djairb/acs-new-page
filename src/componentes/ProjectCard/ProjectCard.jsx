@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -6,21 +6,32 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const ProjectCard = ({ data }) => {
+  // "expandido" controla o layout (card em tela cheia); "conteudoVisivel" controla
+  // o fade do texto. Separar os dois deixa a transição suave em duas etapas:
+  // ao abrir, o card expande e só então o texto aparece; ao fechar, o texto some
+  // primeiro e só depois o card retrai.
   const [expandido, setExpandido] = useState(false);
+  const [conteudoVisivel, setConteudoVisivel] = useState(false);
+  const cardRef = useRef(null);
 
-  // Função para rolar a tela até o card quando abrir (Opcional, mas melhora a UX)
-  const toggleExpandir = (e) => {
-    setExpandido(!expandido);
-    // Pequeno delay para dar tempo do CSS animar
+  const toggleExpandir = () => {
     if (!expandido) {
-        setTimeout(() => {
-            e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 300);
+      setExpandido(true);
+      // Deixa o layout começar a expandir antes de revelar o texto.
+      setTimeout(() => setConteudoVisivel(true), 220);
+      // Rola até o card depois que a expansão acomodou.
+      setTimeout(() => {
+        cardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 480);
+    } else {
+      // Some com o texto primeiro; só então retrai o card.
+      setConteudoVisivel(false);
+      setTimeout(() => setExpandido(false), 260);
     }
   };
 
   return (
-    <div className={`card-projeto ${expandido ? 'expandido' : ''}`}>
+    <div ref={cardRef} className={`card-projeto ${expandido ? 'expandido' : ''}`}>
       
       {/* SLIDER */}
       <div className="card-carousel-container">
@@ -65,11 +76,34 @@ const ProjectCard = ({ data }) => {
 
         {/* TEXTO LONGO */}
         {expandido && (
-          <div className="texto-completo">
+          <div className={`texto-completo ${conteudoVisivel ? 'visivel' : ''}`}>
              {/* Destaque do Título ou Intro no modo expandido */}
-             <p><strong>{data.descricaoCurta}</strong></p> 
-             <br/>
-             <p>{data.descricaoLonga}</p>
+             <p className="texto-destaque"><strong>{data.descricaoCurta}</strong></p>
+
+             {(Array.isArray(data.descricaoLonga) ? data.descricaoLonga : [data.descricaoLonga]).map((paragrafo, index) => (
+               <p key={index} className="texto-paragrafo">{paragrafo}</p>
+             ))}
+
+             {data.areas && data.areas.length > 0 && (
+               <div className="card-secao">
+                 <h4 className="card-secao-titulo">{data.areasTitulo || 'Áreas de Atuação'}</h4>
+                 <ul className="card-areas-lista">
+                   {data.areas.map((area, index) => (
+                     <li key={index}>
+                       <strong>{area.nome}</strong>
+                       {area.descricao ? ` — ${area.descricao}` : ''}
+                     </li>
+                   ))}
+                 </ul>
+               </div>
+             )}
+
+             {data.impacto && (
+               <div className="card-secao">
+                 <h4 className="card-secao-titulo">Impacto Social</h4>
+                 <p className="texto-paragrafo">{data.impacto}</p>
+               </div>
+             )}
           </div>
         )}
       </div>

@@ -96,7 +96,13 @@
   display: flex;
   flex-direction: column;
 
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* easeOutQuint — desaceleração suave, dá sensação premium na expansão/retração */
+  transition: flex-basis 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              flex-grow 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              max-width 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s ease,
+              border-color 0.4s ease,
+              transform 0.4s ease;
 
   margin-left: auto;
   margin-right: auto;
@@ -115,7 +121,8 @@
   height: 320px;
   background-color: #f0f0f0;
   position: relative;
-  transition: all 0.5s ease;
+  transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              height 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   overflow: hidden;
 }
 
@@ -265,7 +272,16 @@
   border-left: 4px solid #f08528;
   border-radius: 0 12px 12px 0;
   box-shadow: 0 8px 24px rgba(240,133,40,0.08);
-  animation: slideInRight 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Fade + leve deslize, controlado pela classe .visivel (entrada e saída suaves) */
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.texto-completo.visivel {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .texto-completo p {
@@ -275,9 +291,63 @@
   line-height: 1.8;
 }
 
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
+.texto-destaque {
+  color: #333 !important;
+  font-size: 1.05rem !important;
+}
+
+.texto-paragrafo {
+  margin-top: 14px !important;
+}
+
+/* Seções internas: Áreas de Atuação / Modalidades / Impacto Social */
+.card-secao {
+  margin-top: 22px;
+}
+
+.card-secao-titulo {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #f08528;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-areas-lista {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-areas-lista li {
+  color: #444;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.card-areas-lista li::marker {
+  color: #f08528;
+}
+
+.card-areas-lista li strong {
+  color: #333;
+}
+
+/* Respeita quem prefere menos animação (acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  .card-projeto,
+  .card-carousel-container,
+  .card-body,
+  .texto-completo {
+    transition: none !important;
+  }
+  .texto-completo {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* =========================================
