@@ -1,4 +1,10 @@
 export const boletimData2026Inverse = [
+
+  {
+    title: "Boletim Informativo - Julho 2026",
+    link: "https://drive.google.com/file/d/1SQAvtgPhP1hfqdtLUF0fg3o0BjDbwhT-/preview"
+  },
+
   {
     title: "Boletim Informativo - Junho 2026",
     link: "https://drive.google.com/file/d/1Cv9-KbbygySjA6zJdtVigvmvl7e1eCnR/preview"
