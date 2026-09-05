@@ -116,6 +116,7 @@ function Navbar() {
                   )
                 )}
                 <Link to="/biografia-iaura" onClick={closeNav}>Biografia</Link>
+                <Link to="/premios-reconhecimentos" onClick={closeNav}>Prêmios e Reconhecimentos</Link>
               </div>
             )}
           </div>

@@ -5,6 +5,7 @@ import Boletins from "../paginas/boletins";
 import Transparencia from "../paginas/transparencia";
 import Colaboradores from "../paginas/colaboradores";
 import QuemSomos from "../paginas/quemSomos";
+import Premios from "../paginas/premios";
 import Noticia from "../paginas/noticia";
 import TodasNoticias from "../paginas/todasNoticias";
 import GaleriaImagens from "../paginas/galeria";
@@ -25,6 +26,7 @@ const Rotas = () => (
       <Route exact path='transparencia' element={<Transparencia/>} />   
       <Route exact path='colaboradores' element={<Colaboradores/>} />
       <Route exact path='quem-somos' element={<QuemSomos/>} />
+      <Route exact path='premios-reconhecimentos' element={<Premios/>} />
 
       <Route exact path='noticias' element={<TodasNoticias/>} />
 

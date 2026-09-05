@@ -2,6 +2,27 @@
 export const reportagensDrive = [
 
   {
+    id: 67,
+    videoUrl: "https://www.youtube.com/embed/zhyl4sbwFTs",
+    descricaoVideo: "Conecta Vidas em Tracunhaém: cultura, barro e os saberes do Mestre Ivo"
+
+  },
+
+  {
+    id: 66,
+    videoUrl: "https://www.youtube.com/embed/cGMwix-WxMA",
+    descricaoVideo: "Idosos aprendem a usar celular e mudam de vida em Lagoa de Itaenga"
+
+  },
+
+  {
+    id: 65,
+    videoUrl: "https://www.youtube.com/embed/liBCtohXTAQ",
+    descricaoVideo: "Projeto Inovação e Tecnologia com Elas profissionaliza negócio de moda infantil"
+
+  },
+
+  {
     id: 64,
     videoUrl: "https://www.youtube.com/embed/_MMMGdwUGuA",
     descricaoVideo: "Gleide Ângelo na homenagem aos 21 anos da Associação Conexão Social na ALEPE."
